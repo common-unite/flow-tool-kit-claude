@@ -16,7 +16,7 @@ FORM_STYLE_TOKENS = {
 }
 SCALE_LABELS = {"Border thickness", "Input size", "Text size", "Field spacing"}
 
-# Inputs people can find: a darker border at 150%, text and inputs 150%, spacing 125% (house rules, form-house-rules.md)
+# Inputs people can find: a darker border at 150%, text and inputs 150%, spacing 125% (house rules, _shared/standards/form-type-rules.md)
 DEFAULT_FORM_STYLE = {"Borders": "#8A8A8A", "Border thickness": "150%", "Text size": "150%", "Field spacing": "125%", "Input size": "150%"}
 
 

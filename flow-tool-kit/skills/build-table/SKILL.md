@@ -1,6 +1,6 @@
 ---
 name: build-table
-description: Use when a Flow Tool Kit Table has to be built or changed, on a Form Template page section or as a Form (Table) component on a screen flow, after repeating-data chose a Table or when someone asks for one directly ("list the 20 volunteers in a table", "keep this section compact, edit each row in a window"). Sets the table component with its key columns, the row form the New, Edit and Clone windows open, the bulk form, the actions, their labels and window wording, the display settings and the Section Tag a prefill flow fills, checks them against the package's property list, and writes them into plan.json, onto an existing section, or as the flow screen component.
+description: Not a front door: when ftk-start has not run in this conversation, load ftk-start first and let it route here. Use when a Flow Tool Kit Table has to be built or changed, on a Form Template page section or as a Form (Table) component on a screen flow, after repeating-data chose a Table or when someone asks for one directly ("list the 20 volunteers in a table", "show the shifts as a compact table, edit each row in a pop-up"). Sets the table component with its key columns, the row form the New, Edit and Clone windows open, the bulk form, the actions, their labels and window wording, the display settings and the Section Tag a prefill flow fills, checks them against the package's property list, and writes them into plan.json, onto an existing section, or as the flow screen component. 
 ---
 
 # Build Table
@@ -12,7 +12,7 @@ A **Table is a form component** (root type `table`) rendered through the Table c
 Read first, beside this file:
 - [_shared/standards/repeating-rows.md](_shared/standards/repeating-rows.md): the rules both build skills follow and the spec's common keys.
 - [references/properties.md](references/properties.md): every page section field and every flow screen property a Table uses, which renderer reads it, and when to set it.
-- Plugin standards: [_shared/standards/documentation.md](_shared/standards/documentation.md), [_shared/standards/naming.md](_shared/standards/naming.md), [_shared/standards/component-shapes.md](_shared/standards/component-shapes.md), [_shared/standards/project-config.md](_shared/standards/project-config.md).
+- Plugin standards: [_shared/standards/documentation.md](_shared/standards/documentation.md) (section 6 is Naming), [_shared/standards/component-shapes.md](_shared/standards/component-shapes.md), [_shared/standards/project-config.md](_shared/standards/project-config.md).
 
 ## Where it runs
 

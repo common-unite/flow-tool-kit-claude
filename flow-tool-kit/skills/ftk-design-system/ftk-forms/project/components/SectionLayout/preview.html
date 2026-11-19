@@ -1,0 +1,116 @@
+<!-- @dsCard group="Sections" height=2130 width=900 subtitle="accordion sections · divider headers · section width · Flow Action" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>SectionLayout preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  /* Every example is a real section: a titled group of related questions on the 12-column grid */
+  function C(key, l, m, child) { return h(F.Column, { key: key, large: l, medium: m, small: 12 }, child); }
+  function OrgFields() {
+    return [
+      C('a', 12, 12, h(F.TextInput, { label: 'Legal organization name', required: true, placeholder: 'As it appears on your IRS letter' })),
+      C('b', 6, 6, h(F.TextInput, { label: 'EIN', required: true, placeholder: '12-3456789' })),
+      C('c', 6, 6, h(F.NumberInput, { label: 'Year founded', placeholder: '1998' })),
+      C('d', 6, 6, h(F.FormattedInput, { type: 'url', label: 'Website' })),
+      C('e', 6, 6, h(F.FormattedInput, { type: 'phone', label: 'Main phone' })),
+      C('f', 12, 12, h(F.TextArea, { label: 'Mission statement', placeholder: 'One or two sentences' }))
+    ];
+  }
+  function ContactFields() {
+    return [
+      C('a', 5, 5, h(F.TextInput, { label: 'First name', required: true })),
+      C('b', 7, 7, h(F.TextInput, { label: 'Last name', required: true })),
+      C('c', 5, 5, h(F.FormattedInput, { type: 'email', label: 'Email', required: true })),
+      C('d', 4, 4, h(F.FormattedInput, { type: 'phone', label: 'Phone' })),
+      C('e', 3, 3, h(F.Picklist, { label: 'Best time', placeholder: 'Select...', options: ['Morning', 'Afternoon', 'Evening'] }))
+    ];
+  }
+  function EmergencyFields() {
+    return [
+      C('a', 5, 5, h(F.TextInput, { label: 'First name', required: true })),
+      C('b', 7, 7, h(F.TextInput, { label: 'Last name', required: true })),
+      C('c', 4, 4, h(F.Picklist, { label: 'Relationship', placeholder: 'Select...', options: ['Spouse or partner', 'Parent', 'Friend', 'Other'] })),
+      C('d', 4, 4, h(F.FormattedInput, { type: 'phone', label: 'Phone', required: true })),
+      C('e', 4, 4, h(F.FormattedInput, { type: 'email', label: 'Email' }))
+    ];
+  }
+  function AddressFields() {
+    return [
+      C('a', 9, 9, h(F.TextInput, { label: 'Street', required: true })),
+      C('b', 3, 3, h(F.TextInput, { label: 'Unit' })),
+      C('c', 5, 5, h(F.TextInput, { label: 'City', required: true })),
+      C('d', 3, 3, h(F.Picklist, { label: 'State', placeholder: 'Select...', options: ['Kansas', 'Missouri'] })),
+      C('e', 4, 4, h(F.TextInput, { label: 'ZIP code', required: true }))
+    ];
+  }
+  function ProgramFields() {
+    return [
+      C('a', 6, 6, h(F.Picklist, { label: 'Program', required: true, placeholder: 'Select...', options: ['After-school tutoring', 'Summer camp', 'Family garden plots'] })),
+      C('b', 6, 6, h(F.DateInput, { label: 'Preferred start date' })),
+      C('c', 4, 4, h(F.NumberInput, { label: 'Participants', variant: 'stepper', min: 1 })),
+      C('d', 4, 4, h(F.Picklist, { label: 'Preferred time', placeholder: 'Select...', options: ['Weekday afternoons', 'Weekday evenings', 'Saturdays'] })),
+      C('e', 4, 4, h(F.Picklist, { label: 'Language', placeholder: 'Select...', options: ['English', 'Spanish', 'Vietnamese', 'Somali'] }))
+    ];
+  }
+  function BudgetFields() {
+    return [
+      C('a', 4, 4, h(F.NumberInput, { label: 'Amount requested', format: 'currency', required: true })),
+      C('b', 4, 4, h(F.NumberInput, { label: 'Total project budget', format: 'currency' })),
+      C('c', 4, 4, h(F.NumberInput, { label: 'Other funding secured', format: 'currency' })),
+      C('d', 6, 6, h(F.DateInput, { label: 'Grant period start' })),
+      C('e', 6, 6, h(F.DateInput, { label: 'Grant period end' }))
+    ];
+  }
+  function ExtraFields() {
+    return [
+      C('a', 6, 6, h(F.Picklist, { label: 'How did you hear about us?', placeholder: 'Select...', options: ['Friend', 'Social media', 'Event'] })),
+      C('b', 6, 6, h(F.TextInput, { label: 'Referred by' })),
+      C('c', 4, 4, h(F.TextInput, { label: 'Referral code' })),
+      C('d', 4, 4, h(F.DateInput, { label: 'Date referred' })),
+      C('e', 4, 4, h(F.Picklist, { label: 'Event attended', placeholder: 'Select...', options: ['Spring fair', 'Library talk', 'None'] }))
+    ];
+  }
+  function IncomeFields() {
+    return [
+      C('a', 4, 4, h(F.NumberInput, { label: 'Monthly household income', format: 'currency' })),
+      C('b', 4, 4, h(F.NumberInput, { label: 'People in household', variant: 'stepper', min: 1 })),
+      C('c', 4, 4, h(F.NumberInput, { label: 'Monthly rent', format: 'currency' })),
+      C('d', 6, 6, h(F.Picklist, { label: 'Main income source', placeholder: 'Select...', options: ['Wages', 'Social Security', 'Disability', 'Other'] })),
+      C('e', 6, 6, h(F.Picklist, { label: 'Pay frequency', placeholder: 'Select...', options: ['Weekly', 'Every two weeks', 'Monthly'] }))
+    ];
+  }
+  function HalfContact() {
+    return [
+      C('a', 5, 5, h(F.TextInput, { label: 'First name', required: true })),
+      C('b', 7, 7, h(F.TextInput, { label: 'Last name', required: true })),
+      C('c', 12, 12, h(F.FormattedInput, { type: 'email', label: 'Email' })),
+      C('d', 6, 6, h(F.FormattedInput, { type: 'phone', label: 'Phone' })),
+      C('e', 6, 6, h(F.TextInput, { label: 'Title' }))
+    ];
+  }
+  var org = { title: 'Organization details', subtitle: 'Step 2 of 4', icon: 'utility:company' };
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('Accordion sections (sectionType__c = accordionSection, lightning-accordion-section): closed by default, open on load only with accordionOpen__c (here the first one). Summary #f3f2f2, heading #080707, 2px #bbbbbb rule under each', h('div', null,
+      h(F.Section, { title: 'How you found us', accordion: true, open: true }, ExtraFields()),
+      h(F.Section, { title: 'Board members', accordion: true }, ExtraFields()),
+      h(F.Section, { title: 'Program history', accordion: true }, ExtraFields()))),
+    Demo('Accordion theme: accordionBackgroundColor__c and accordionFontColor__c (open, then closed), and hideAccordionBorder__c on the last', h('div', null,
+      h(F.Section, { title: 'Referral', accordion: true, open: true, accordionBackground: '#2e844a', accordionFontColor: '#ffffff' }, ExtraFields()),
+      h(F.Section, { title: 'Income', accordion: true, accordionBackground: '#2e844a', accordionFontColor: '#ffffff' }, IncomeFields()),
+      h(F.Section, { title: 'Additional information', accordion: true, hideAccordionBorder: true }, ExtraFields()))),
+    Demo('Header_Display__c = Divider · Divider_Style__c bookmark, with subtitle and icon', h(F.Section, { title: 'MAILING ADDRESS', subtitle: 'Where should we send your award letter?', headerDisplay: 'Divider', dividerStyle: 'bookmark', icon: 'utility:location' }, AddressFields())),
+    Demo('Divider section · sectionType__c = dividerSection, opening the next section', h('div', null,
+      h(F.Divider, { variant: 'ornament', label: 'PART TWO', subtitle: 'Program information' }),
+      h(F.Section, { title: 'Program information', icon: 'utility:event' }, ProgramFields()))),
+    Demo('Section width (the section’s widthLarge__c / widthMedium__c / widthSmall__c): two 6-column sections side by side, stacking on phones', h(F.SectionGrid, null,
+      h(F.Section, { title: 'Primary contact', large: 6, medium: 6, small: 12, frame: 'box', headerStyle: 'outlined' }, HalfContact()),
+      h(F.Section, { title: 'Billing contact', large: 6, medium: 6, small: 12, frame: 'box', headerStyle: 'outlined' }, HalfContact()))),
+    Demo('Flow Action (flowApiName__c): a brand button on the section rich text that opens a screen flow in a modal. flowButtonLabel__c "Check eligibility"; flowButtonStyle__c left at its default CSS, right:0; bottom:20%', h('div', null, h('div', { style: { font: '700 11px/1.4 var(--font-sans)', letterSpacing: '.06em', textTransform: 'uppercase', color: 'var(--label)', margin: '0 0 6px' } }, 'Flow Action button · Form Builder \u201cAdd Flow Action\u201d on the section rich text · opens a screen flow in a modal'), h(F.Section, { title: 'Household income', richText: '<p><b>Already receive SNAP or Medicaid?</b></p><p>Check first and skip the income questions.</p>', flowButtonLabel: 'Check eligibility' }, IncomeFields())))
+  ));
+</script>
+</body>
+</html>

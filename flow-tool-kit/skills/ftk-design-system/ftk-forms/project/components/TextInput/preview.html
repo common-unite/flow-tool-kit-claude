@@ -1,0 +1,29 @@
+<!-- @dsCard group="Fields" height=1360 subtitle="flowFormField · lightning-input" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>TextInput preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('Default · required, empty', h(F.TextInput, { label: 'Organization name', placeholder: 'Your organization', required: true })),
+    Demo('Focus: brand border and focus-ring', h(F.TextInput, { label: 'Organization name', defaultValue: 'Riverside Community Garden', required: true, focused: true })),
+    Demo('Error: error border, inset ring and message', h(F.TextInput, { label: 'Email', defaultValue: 'jordan@', type: 'email', required: true, error: 'Enter a valid email address.' })),
+    Demo('Read only · displayType__c = READONLY', h(F.TextInput, { label: 'Account number', defaultValue: 'A-10442', readOnly: true })),
+    Demo('helpTextDisplay = Hover Bubble (default): hover the info icon', h(F.TextInput, { label: 'Hover Bubble', placeholder: 'Default', helpText: 'Shown in a tooltip from the info icon.', helpTextDisplay: 'Hover Bubble' })),
+    Demo('helpTextDisplay = Below Label', h(F.TextInput, { label: 'Below Label', placeholder: 'Subtitle under the label', helpText: 'We use this on your receipt.', helpTextDisplay: 'Below Label' })),
+    Demo('helpTextDisplay = Below Field', h(F.TextInput, { label: 'Below Field', placeholder: 'Line under the input', helpText: 'Up to 80 characters.', helpTextDisplay: 'Below Field' })),
+    Demo('labelSize = slds-text-title_bold', h(F.TextInput, { label: 'Title bold label', labelSize: 'slds-text-title_bold', placeholder: 'Organization name' })),
+    Demo('labelVariant__c = label-inline · inlineLabelWidth__c 30%. Supported, but not recommended for most forms: keep labels above the field', h(F.TextInput, { label: 'Organization name', labelVariant: 'label-inline', inlineLabelWidth: '30%', required: true, placeholder: 'Your organization' })),
+    Demo('labelVariant__c = none: no label and no label space', h(F.TextInput, { label: 'Search', labelVariant: 'none', placeholder: 'Search programs' })),
+    Demo('prepend__c / append__c: small grey text on the input\'s bottom edge (flow-form-affix)', h(F.TextInput, { label: 'Years at this address', prepend: 'About', append: 'years', placeholder: '0' })),
+    Demo('prepend__c / append__c with an error: the message goes under the input and Before and After stay on the input\'s bottom edge', h(F.TextInput, { label: 'Years at this address', prepend: 'About', append: 'years', required: true, error: 'Complete this field.' })),
+    Demo('viewAsPlainText__c: label over the value as text', h(F.TextInput, { label: 'Account number', defaultValue: 'A-10442', plainText: true })),
+    Demo('Label_Rich_Text__c: an HTML label', h(F.TextInput, { label: 'Website', labelRichText: 'Website <a href="#">(why we ask)</a>', placeholder: 'https://' }))
+  ));
+</script>
+</body>
+</html>

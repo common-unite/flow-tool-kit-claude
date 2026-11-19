@@ -1,0 +1,19 @@
+<!-- @dsCard group="Features" height=120 subtitle="stat order and icons" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Stat order and icons */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "statsBar", "paddingTop": "medium", "paddingBottom": "medium", "items": [{"value": "10", "title": "order value", "icon": "utility:clock"}, {"value": "100%", "title": "with an icon", "icon": "utility:success"}, {"value": "0", "title": "label position", "icon": "utility:info"}], "countUp": true, "statsTreatment": "row"}),
+        h(SB.Block, {"sectionType": "statsBar", "paddingTop": "medium", "paddingBottom": "medium", "items": [{"value": "10", "title": "order label", "icon": "utility:clock"}, {"value": "100%", "title": "with an icon", "icon": "utility:success"}, {"value": "0", "title": "label position", "icon": "utility:info"}], "countUp": true, "statsTreatment": "row"})))));
+</script>
+</body>
+</html>

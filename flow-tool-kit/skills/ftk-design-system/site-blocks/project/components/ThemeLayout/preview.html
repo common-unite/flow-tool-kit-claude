@@ -1,0 +1,17 @@
+<!-- @dsCard group="Page layout" height=120 subtitle="siteforce:serviceBody, the Customer Service theme" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* The Customer Service theme layout: logo, search, login and navigation over the page, the footer region under it */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, { layout: 'customerService', logo: 'FlowToolKit__FlowToolKit_Gray', siteName: 'Riverside Volunteers', navItems: ['Home', 'Volunteer', 'Programs', 'Contact'], searchPlaceholder: 'Search...', footer: '<p style="text-align: center;">Riverside Volunteers · 100 Riverside Plaza · (555) 555-0193</p>' },
+      h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+        h(SB.Hero, { headingAlign: 'left', bodyAlign: 'left', background: '#032D60', backgroundGradient: 'diagonal', brandColor: '#53B95B', heading: 'Give a Saturday, feed a neighborhood', subheading: 'Shifts every week at the Riverside pantry. No experience needed.', buttons: [{ label: 'See open shifts', url: '/volunteer', style: 'brand' }] })))));
+</script>
+</body>
+</html>

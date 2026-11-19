@@ -1,0 +1,38 @@
+<!-- @dsCard group="Examples" height=120 subtitle="one record's page: a single fund" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* The Community Resilience Fund record page: hero with the fund's status, tabs for the detail beside its facts and deadline, the process, then the ask */
+  var site = { layout: 'customerService', logo: 'FlowToolKit__FlowToolKit_Gray', siteName: 'Riverside Community Fund', navItems: ['Home', 'Funding', 'Programs', 'Apply', 'Contact'], currentNav: 1,
+    footer: '<p style="text-align: center;">Riverside Community Fund · 100 Riverside Plaza · grants@riverside.example.org</p>' };
+  var brand = { brandColor: '#2e844a', accentColor: '#F4BE45' };
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, site,
+      h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+        h(SB.Hero, Object.assign({ headingAlign: 'left', bodyAlign: 'left', background: '#032D60', backgroundGradient: 'diagonal', badgePosition: 'top', badges: [{ title: 'Open', style: 'brand' }, { title: 'Closes Sept 30', style: 'accent' }],
+          heading: 'Community Resilience Fund', subheading: 'General operating support · $25,000 to $75,000 · two-year term',
+          buttons: [{ label: 'Start application', url: '/apply/community-resilience', style: 'brand' }, { label: 'Save for later', url: '/funding/saved', style: 'outline' }] }, brand)))),
+      h(SB.Section, { sectionHeight: 32 },
+        h(SB.Column, { columnWidth: '8' },
+          h(SB.Tabs, { tabs: [{ tabName: 'Overview', tabKey: 'tab1' }, { tabName: 'Eligibility', tabKey: 'tab2' }, { tabName: 'Questions', tabKey: 'tab3' }] },
+            h(SB.RichContent, { richTextValue: '<h2>What the fund supports</h2><p>Unrestricted operating money for groups that keep the valley running through hard years: food access, housing help, care for elders and kids. Spend it on what your work needs most.</p><p>Grantees report once a year, in a 20-minute conversation, not a form.</p>' }),
+            h(SB.RichContent, { richTextValue: '<h2>Who can apply</h2><ul><li>501(c)(3) organizations, or groups with a fiscal sponsor</li><li>Annual budget under $2 million</li><li>Serving people in the five valley counties</li></ul>' }),
+            h(SB.RichContent, { richTextValue: '<h2>Common questions</h2><p><b>Can we apply to two funds?</b> Yes, if the projects differ.</p><p><b>Is there a match?</b> No.</p>' }))),
+        h(SB.Column, { columnWidth: '4' },
+          h(SB.ActionCard, Object.assign({ heading: 'Closes in', opensOn: '2026-11-01', deadline: '2027-09-30', buttons: [{ label: 'Start an application', url: '/apply/community-resilience', style: 'brand' }], footnote: 'Save and return any time' }, brand)),
+          h(SB.Facts, Object.assign({ factsDisplay: 'stacked', items: [{ title: 'Pool', value: '$1.2 million' }, { title: 'Awards', value: '$25k to $75k' }, { title: 'Term', value: 'Two years, unrestricted' }] }, brand)))),
+      h(SB.Section, { sectionHeight: 32 },
+        h(SB.Column, { columnWidth: '6' },
+          h(SB.Timeline, Object.assign({ timelineOrientation: 'vertical', heading: 'How it works', headingAlign: 'left', items: [{ title: 'Letter of interest', meta: 'Five questions, about 3 hours. Saves as you go.', state: 'done' }, { title: 'Full proposal, by invitation', meta: 'Budget detail, references and a conversation.', state: 'current' }, { title: 'Decision and award', meta: 'Within 60 days of close; first payment in 30.' }] }, brand))),
+        h(SB.Column, { columnWidth: '6' },
+          h(SB.Quote, Object.assign({ description: 'The fund paid for the boring things that keep our doors open, which is exactly what we needed.', attribution: 'Maria Lopez', attributionDetail: 'Director, Valley Food Share' }, brand)))),
+      h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+        h(SB.Callout, Object.assign({ background: '#EEF1F4', heading: 'Ready when you are.', description: 'The letter of interest takes about three hours and saves as you go.', headingAlign: 'left', bodyAlign: 'left', buttonAlign: 'right', buttons: [{ label: 'Start application', url: '/apply/community-resilience', style: 'brand' }] }, brand))))));
+</script>
+</body>
+</html>

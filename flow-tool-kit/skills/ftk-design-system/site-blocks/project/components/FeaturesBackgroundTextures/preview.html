@@ -1,0 +1,18 @@
+<!-- @dsCard group="Features" height=120 subtitle="background textures" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Background textures */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "Texture on a light section", "columns": "2", "cardStyle": "outlined", "backgroundTexture": "grid", "background": "#ffffff", "paddingTop": "medium", "paddingBottom": "medium", "items": [{"title": "Texture color follows the section", "description": "Dark lines on light, light lines on dark."}, {"title": "Cards sit above it", "description": "The pattern never bleeds into card surfaces."}], "hoverStyle": "lift"})))));
+</script>
+</body>
+</html>

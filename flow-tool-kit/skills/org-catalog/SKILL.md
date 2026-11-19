@@ -1,6 +1,6 @@
 ---
 name: org-catalog
-description: Reads a Salesforce org's Flow Tool Kit (FTK) Form Components (metadata and record, including JSON ones), Form Templates with their pages and sections, the layers between them (components built from other components, sections repeated across templates), every place each component is used (templates, flows, Lightning pages, site pages), mapped forms on other objects and any brand kit, into a catalog file in the project that form-design and build-template read. Use first, before designing or building any FTK form (ftk-start runs it every time), and for "what components do we already have?", "can this form reuse our address block?", "which sections repeat across our templates?", "refresh the catalog", or whether a new field name is free. Never reuses silently: offers each matching section as reuse, extend or new, and recommends a shape (metadata, record or JSON) with its reason. Works in Claude Code with the Salesforce CLI and in claude.ai chat with a Salesforce connector.
+description: Reads a Salesforce org's Flow Tool Kit (FTK) Form Components (metadata and record, including JSON ones), Form Templates with their pages and sections, the layers between them (components built from other components, sections repeated across templates), every place each component is used (templates, flows, Lightning pages, site pages), mapped forms on other objects and any brand kit, into a catalog file in the project that form-design and build-template read. ftk-start runs it before any design or build. Use it directly for "what form components do we already have?", "can this form reuse our address block?", "which sections repeat across our templates?", "refresh the catalog", or whether a new field name is free on Form Submission. Never reuses silently: offers each matching section as reuse, extend or new, and recommends a shape (metadata, record or JSON) with its reason. Works in Claude Code with the Salesforce CLI and in claude.ai chat with a Salesforce connector.
 ---
 
 # Org Catalog
@@ -69,7 +69,7 @@ What each query and retrieve reads and why: [references/reading-the-org.md](refe
 
 Both paths write `ftk-catalog/<org Id>/catalog.json` and `catalog.md` (and `raw.json` in Claude Code). The catalog records the time it was taken (`taken_at`, UTC) so form-design can refuse a stale one. Put the catalog's path in `flow-tool-kit.json` under this org (`orgs.<org Id>.catalog`), and its `platforms` there too, so ftk-start does not ask what the org already says. In chat, write the files to the outputs folder and suggest adding them to the claude.ai Project's files, so the next chat reads them.
 
-The format, key by key: [references/catalog-format.md](references/catalog-format.md).
+The format, key by key: [_shared/standards/catalog-format.md](_shared/standards/catalog-format.md).
 
 ### 4. Tell the person, in a few lines
 
@@ -77,7 +77,7 @@ Lead with the counts, then what is reusable, then anything that needs attention.
 
 > I cataloged Riverside Community Garden: 6 Form Components (3 metadata, 3 record) and 3 Form Templates. Household Contact, a record component, is used on 2 templates, the Volunteer Intake flow, the Contact record page and the Volunteer site page, and maps to the Form Submission's name, email and phone fields. Emergency Contact is JSON built in place on 2 templates. One template section points to a component that no longer exists, and your field Submitted_By__c sits beside the packaged one of the same name. Saved brand file found: Riverside Community Garden.
 
-Say plainly when the catalog is `partial` (an essential read was refused) and what is missing, and when flows, Lightning pages, site pages or wrapper components were not read (`placements.note`): "used in" is then not every place a component is used. Problems and warnings are listed at the end of `catalog.md`; the ones worth saying out loud are a section pointing at a missing component, a component on another object placed in a template without a Form Template Mapping (nothing it collects reaches the submission), and twin field names.
+Say plainly when the catalog is `partial` (an essential read was refused) and what is missing, and when flows, Lightning pages, site pages or wrapper components were not read, or were read in part because a retrieve listed more files than arrived (`placements.note`, a warning with both counts; run collect again with no other retrieve against that org at the same time): "used in" is then not every place a component is used. Problems and warnings are listed at the end of `catalog.md`; the ones worth saying out loud are a section pointing at a missing component, a component on another object placed in a template without a Form Template Mapping (nothing it collects reaches the submission), and twin field names.
 
 ### 5. No org
 

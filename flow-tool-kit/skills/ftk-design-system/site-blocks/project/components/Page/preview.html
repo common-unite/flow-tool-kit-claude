@@ -1,0 +1,29 @@
+<!-- @dsCard group="Page layout" height=120 subtitle="Aura Flexible Layout page" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Page preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* A grant program page: four Sections, full width and 8/4 splits, with a form beside the facts */
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+      h(SB.Section, null, h(SB.Column, null,
+        h(SB.Hero, { headingAlign: 'left', bodyAlign: 'left', background: '#032D60', backgroundGradient: 'diagonal', brandColor: '#53B95B', accentColor: '#F4BE45', badgePosition: 'top',
+          badges: [{ title: 'Open', style: 'brand' }, { title: 'Closes Sept 30', style: 'accent' }],
+          heading: 'Community Resilience Fund', subheading: 'General operating · $25,000 to $75,000 · 2-year term',
+          buttons: [{ label: 'Start application', url: '#', style: 'brand' }, { label: 'Save for later', url: '#', style: 'outline' }] }))),
+      h(SB.Section, null,
+        h(SB.Column, { columnWidth: '8' }, h(SB.FormSlot, { form: 'Grant Application', kind: 'Form Template', component: 'FormTemplate', description: 'Eligibility, organization, budget and narrative pages', height: 420 })),
+        h(SB.Column, { columnWidth: '4' },
+          h(SB.Facts, { brandColor: '#53B95B', factsDisplay: 'stacked', items: [{ title: 'Pool', value: '$1.2 million' }, { title: 'Awards', value: '$25k to $75k' }, { title: 'Term', value: 'Two years, unrestricted' }, { title: 'Closes', value: 'Sept 30' }], footnote: 'No. 04 in a series of five funds · 2026' }))),
+      h(SB.Section, null, h(SB.Column, null,
+        h(SB.StatsBar, { background: '#032D60', backgroundGradient: 'off', brandColor: '#53B95B', statsTreatment: 'tiles', cardBackgroundColor: '#FFFFFF', cardBackgroundOpacity: 10, countUp: true, backgroundTexture: 'crosshatch',
+          items: [{ title: 'applications received so far', value: '214' }, { title: 'already given a first read', value: '61%' }, { title: 'median time to decision, 2025', value: '43 days' }, { title: 'of applicants get written feedback', value: '100%' }] }))),
+      h(SB.Section, null, h(SB.Column, null,
+        h(SB.Callout, { background: '#EEF1F4', brandColor: '#53B95B', heading: 'You will need these documents', description: 'IRS determination letter · most recent Form 990 · current operating budget · board list · one letter of community support', headingAlign: 'left', bodyAlign: 'left', buttonAlign: 'right', buttons: [{ label: 'Run the eligibility check', url: '#', style: 'brand' }], backgroundTexture: 'crosshatch' })))));
+</script>
+</body>
+</html>

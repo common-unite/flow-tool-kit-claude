@@ -31,7 +31,7 @@ Read on demand, beside this file:
 - [references/safe-guest-setup.md](references/safe-guest-setup.md): what a safe Flow Tool Kit guest setup has.
 - [references/outside-probe.md](references/outside-probe.md): the opt-in outside probe.
 - Scripts: `guest_pass.cjs` (Node), and `exposure.py`, `flow_review.py`, `guest_audit.py`, `probe.py` (Python 3 standard library). Each takes `--help`.
-- Plugin standards: `_shared/standards/project-config.md` (which org), `_shared/standards/naming.md` (where files go), `_shared/standards/runtime.md` (installing Playwright, network access on the web). Where this skill and a standard disagree, the standard wins.
+- Plugin standards: `_shared/standards/project-config.md` (which org), `_shared/standards/documentation.md` (section 6, Naming: where files go), `_shared/standards/runtime.md` (installing Playwright, network access on the web). Where this skill and a standard disagree, the standard wins.
 
 ## Safety rules for the live pass
 

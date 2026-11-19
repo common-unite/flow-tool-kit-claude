@@ -1,0 +1,20 @@
+<!-- @dsCard group="Page layout" height=120 subtitle="a form or component in a column" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FormSlot preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* The two site forms every client asks for, each in the column it usually takes */
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+      h(SB.Section, { sectionHeight: 32 },
+        h(SB.Column, { columnWidth: '4' }, h(SB.Callout, { background: '#EEF1F4', brandColor: '#53B95B', heading: 'Questions?', description: 'We answer every message within two business days.', headingAlign: 'left', bodyAlign: 'left' })),
+        h(SB.Column, { columnWidth: '8' }, h(SB.FormSlot, { form: 'Contact Us', kind: 'Form Template', component: 'FormTemplate', description: 'Name, email, topic and message', height: 280 }))),
+      h(SB.Section, { sectionHeight: 32 },
+        h(SB.Column, null, h(SB.FormSlot, { form: 'Volunteer Application', kind: 'Form Template', component: 'FormTemplatePages', description: 'About you, availability, interests and a background check consent, over four pages', height: 280 })))));
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Features" height=120 subtitle="showcase options" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Showcase options */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"backgroundGradient": "off", "headingAlign": "center", "footnoteAlign": "center", "imageFit": "natural", "sectionType": "hero", "showcaseItems": "list", "heading": "Items as list", "blockTitle": "Item display", "description": "Cards renders each item as its own panel.", "paddingTop": "medium", "paddingBottom": "medium", "stats": [{"value": "3,180", "title": "inline stat"}, {"value": "742", "title": "between rules"}], "shell": "section", "headerPlacement": "above", "buttonPlacement": "copy", "statsPlacement": "copy", "bulletsPlacement": "copy", "bullets": [{"title": "Parking", "description": "Free lot on the north side."}, {"title": "Transit", "description": "Bus 14, two minute walk."}], "reversed": true}),
+        h(SB.Block, {"backgroundGradient": "off", "headingAlign": "center", "footnoteAlign": "center", "imageFit": "natural", "sectionType": "hero", "showcaseItems": "cards", "heading": "Items as cards", "blockTitle": "Item display", "description": "Cards renders each item as its own panel.", "paddingTop": "medium", "paddingBottom": "medium", "stats": [{"value": "3,180", "title": "inline stat"}, {"value": "742", "title": "between rules"}], "shell": "section", "headerPlacement": "above", "buttonPlacement": "copy", "statsPlacement": "copy", "bulletsPlacement": "copy", "bullets": [{"title": "Parking", "description": "Free lot on the north side."}, {"title": "Transit", "description": "Bus 14, two minute walk."}], "reversed": true})))));
+</script>
+</body>
+</html>

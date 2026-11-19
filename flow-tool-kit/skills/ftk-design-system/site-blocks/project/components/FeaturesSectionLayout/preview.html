@@ -1,0 +1,20 @@
+<!-- @dsCard group="Features" height=120 subtitle="section layout" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Section layout */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "Layout: centered", "columns": "2", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "outlined", "subheading": "The header component reads alignment tokens, so no template branches.", "items": [{"title": "First", "description": "Split moves the heading into a left column.", "icon": "utility:layout"}, {"title": "Second", "description": "Left only changes the alignment.", "icon": "utility:apps"}], "hoverStyle": "lift", "headingAlign": "center", "bodyAlign": "center"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "Layout: left", "columns": "2", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "outlined", "subheading": "The header component reads alignment tokens, so no template branches.", "items": [{"title": "First", "description": "Split moves the heading into a left column.", "icon": "utility:layout"}, {"title": "Second", "description": "Left only changes the alignment.", "icon": "utility:apps"}], "hoverStyle": "lift", "headingAlign": "left", "bodyAlign": "left"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "Layout: split", "columns": "2", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "outlined", "subheading": "The header component reads alignment tokens, so no template branches.", "items": [{"title": "First", "description": "Split moves the heading into a left column.", "icon": "utility:layout"}, {"title": "Second", "description": "Left only changes the alignment.", "icon": "utility:apps"}], "hoverStyle": "lift", "headingAlign": "left", "bodyAlign": "left", "arrangement": "split"})))));
+</script>
+</body>
+</html>

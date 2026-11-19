@@ -7,9 +7,11 @@ Read-only: SOQL and describes only, through the Salesforce CLI. Needs Claude
 Code (local or web) with the CLI connected to the org. In chat, read the same
 records through a Salesforce connector and save them in this export's shape.
 
-It reuses the field-audit org helpers (the ``fieldaudit`` package): from this
-skill's ``_shared/lib/`` copy when the plugin ships one, else from the
-field-audit skill installed beside this one.
+It reuses the field-audit org helpers (the ``fieldaudit`` package) in place, from
+the field-audit skill of this same plugin, found by ``_shared/lib/siblings.py``
+whether its folder is called ``field-audit`` or ``<plugin name>:field-audit``. This
+extract runs only where the Salesforce CLI runs (Claude Code), and there the plugin
+is installed whole.
 """
 
 from __future__ import annotations
@@ -21,15 +23,18 @@ import pathlib
 import sys
 
 _SKILL = pathlib.Path(__file__).resolve().parents[4]
-for _candidate in (_SKILL / "_shared" / "lib", _SKILL.parent / "field-audit" / "scripts"):
-    if (_candidate / "fieldaudit").is_dir():
-        if str(_candidate) not in sys.path:
-            sys.path.insert(0, str(_candidate))
-        break
-else:
-    raise SystemExit(
-        "The field-audit org helpers (fieldaudit) were not found. Install the whole "
-        "Flow Tool Kit plugin, which ships them, then run this again.")
+if str(_SKILL / "_shared" / "lib") not in sys.path:
+    sys.path.insert(0, str(_SKILL / "_shared" / "lib"))
+try:
+    import siblings  # noqa: E402
+except ImportError:
+    raise SystemExit("This skill's _shared/lib/siblings.py is missing: install the whole Flow Tool Kit plugin.")
+try:
+    _FOUND = siblings.find(str(_SKILL), "field-audit", subdir="scripts", markers=["fieldaudit"])
+except siblings.NotFound as _missing:
+    raise SystemExit("The field-audit org helpers (fieldaudit) were not found. %s" % _missing)
+if _FOUND not in sys.path:
+    sys.path.insert(0, _FOUND)
 
 from fieldaudit import NAMESPACE as N  # noqa: E402
 from fieldaudit import org as org_module  # noqa: E402

@@ -1,0 +1,66 @@
+<!-- @dsCard group="Template" height=3990 width=1100 subtitle="formTemplate · Form_Template__c · modeled on the Grant Application | Demo template" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FormTemplate preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:1100px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(520px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-cap{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 10px}.pv-page{background:#f3f3f3;border-radius:12px;padding:16px}.pv-states{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}.pv-state-cap{font:600 12px/1.4 var(--font-sans);color:var(--label);margin:0 0 6px}
+.pv .ftk-rt-content h2{margin:0 0 .5rem;font-size:1.25rem;line-height:1.3}.pv .ftk-rt-content p{margin:0 0 .75rem}.pv .ftk-rt-content p:last-child,.pv .ftk-rt-content ul:last-child{margin-bottom:0}.pv .ftk-rt-content ul{margin:0 0 .75rem;padding-left:1.25rem}.pv .ftk-rt-content li{margin:0 0 .25rem}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, cap, child) { return h('div', { className: 'pv-item', tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), h('div', { className: 'pv-cap' }, cap), child); }
+  /* The Grant Application | Demo template's Form Style: Brand #52b552, labels and text #032d60, Borders #042d60 at 50%, Corner radius 20px, Input size 130%, Text size 110%, Field spacing 200%, Label weight 600, Horizontal padding 10px */
+  var style = { brand: '#52b552', fieldLabels: '#032d60', inputText: '#032d60', borders: '#042d60', bordersOpacity: 50, inputBackground: '#f7f7f7', cornerRadius: 20, inputSize: 130, textSize: 110, fieldSpacing: 200, labelWeight: 600, paddingInline: 10 };
+  /* Header form (FormQualifiedApiName_Header__c): a Banner section, the house default for a Stages Mode or multi-page template: Overlay, Small, placement header, the scrim in the brand, one tag. The photo stands in for the Banner's Background Image */
+  var banner = '../../assets/Backgrounds/Background_Volunteer_Team_Tables.jpg';
+  function Header() {
+    return h(F.Banner, { layout: 'overlay', height: 'small', placement: 'header', image: banner, imageAlt: 'Volunteers working together', logo: '../../assets/Logos/FlowToolKit_Gray.png', logoAlt: 'Flow Tool Kit', scrimColor: '#2f6f2f', scrimOpacity: 85, title: '<p>Grant Application | Demo</p>', subtitle: '<p>Funding programs that strengthen our communities. Applications are open for the FY26 cycle.</p>', tags: 'FY26 cycle; About 30 minutes' });
+  }
+  var stageRows = [
+    { title: 'Grant Information', description: 'Read about this grant opportunity. What it funds and requirements', status: 'optional', time: 3, startLabel: 'Get Started' },
+    { title: 'Organization Info', description: 'Tell us about your organization: legal name, EIN, mission, primary contact. Auto-filled from your Salesforce account where possible.', status: 'todo', time: 4, meta: { fields: 19, completedFields: 0 } },
+    { title: 'Project Details', description: 'Outline what you are proposing: goals, beneficiaries, methodology, expected timeline. This is the heart of the application.', status: 'todo', time: 12, meta: { fields: 11, completedFields: 0 } },
+    { title: 'Eligibility Verification', description: 'Confirm 501(c)(3) status and that your service area is within the funding region.', status: 'todo', time: 3, meta: { fields: 7, completedFields: 0 } },
+    { title: 'Budget Details', status: 'todo', startLabel: 'Get Started' },
+    { title: 'Supporting Documents', description: 'Upload 990, board roster, audited financials, and any letters of support. Files up to 25MB each.', status: 'optional', time: 6, startLabel: 'Add Documents' },
+    { title: 'Certification', description: 'Final read-through, certification, and electronic signature. You will receive a confirmation email and a copy of your submission.', status: 'todo', time: 2 }
+  ];
+  var pages = stageRows.map(function (s) { return s.title; });
+  function DividerSection(title, subtitle, icon, children) { return h(F.Section, { title: title, subtitle: subtitle, icon: icon, headerDisplay: 'Divider', dividerStyle: 'compact' }, children); }
+  function Col(l, m, s, child) { return h(F.Column, { large: l, medium: m, small: s }, child); }
+  function OrgInfo() {
+    return [
+      DividerSection('Legal Information', 'Legal entity name, EIN, and 501(c)(3) determination letter date.', null, [
+        Col(12, 12, 12, h(F.TextInput, { key: 'a', label: 'Legal entity name', required: true })),
+        Col(6, 6, 12, h(F.TextInput, { key: 'b', label: 'EIN (Tax ID)', required: true, placeholder: '12-3456789' })),
+        Col(6, 6, 12, h(F.DateInput, { key: 'c', label: '501(c)(3) determination date' })),
+        Col(6, 6, 12, h(F.Picklist, { key: 'd', label: 'Primary field of work', placeholder: 'Select...', options: ['Arts and culture', 'Education', 'Environment', 'Health', 'Human services'] })),
+        Col(6, 6, 12, h(F.NumberInput, { key: 'e', label: 'Paid staff (FTE)', variant: 'stepper', min: 0 })),
+        Col(6, 6, 12, h(F.NumberInput, { key: 'f', label: 'Annual operating budget', format: 'currency' })),
+        Col(6, 6, 12, h(F.FormattedInput, { key: 'g', type: 'url', label: 'Website' })),
+        Col(12, 12, 12, h(F.Checkbox, { key: 'h', label: 'Applying through a fiscal sponsor?' }))
+      ]),
+      DividerSection('Primary contact', 'The person we should reach with questions about this application.', null, [
+        Col(5, 5, 12, h(F.TextInput, { key: 'a', label: 'First Name', required: true })),
+        Col(7, 7, 12, h(F.TextInput, { key: 'b', label: 'Last Name', required: true })),
+        Col(12, 12, 12, h(F.TextInput, { key: 'c', label: 'Role or title' })),
+        Col(6, 6, 12, h(F.FormattedInput, { key: 'd', type: 'email', label: 'Email', required: true })),
+        Col(6, 6, 12, h(F.FormattedInput, { key: 'e', type: 'phone', label: 'Phone' })),
+        Col(12, 12, 12, h(F.Picklist, { key: 'f', label: 'Preferred Contact Method', variant: 'visualpicker', columns: 4, options: [{ label: 'Email', value: 'Email', icon: 'utility:email' }, { label: 'Phone', value: 'Phone', icon: 'utility:call' }, { label: 'Text Message', value: 'Text Message', icon: 'utility:sms' }, { label: 'Mail', value: 'Mail', icon: 'utility:send' }] })),
+        Col(12, 12, 12, h(F.Picklist, { key: 'g', label: 'Best Time to Contact', variant: 'surveybuttons', options: ['Morning', 'Afternoon', 'Evening'] }))
+      ])
+    ];
+  }
+  function Wrap(child) { return h(F.FormStyle, style, h('div', { className: 'pv-page' }, child)); }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('Stages_Mode__c on: the header form card, then the Stages overview (formTemplateStages) with the progress banner and one row per page. Optional pages show the dashed ring, Optional badge and an outline start button. Docked bar with Save Progress (Allow_Save_Progress__c)', 'Stages Mode · overview', Wrap(
+      h(F.FormTemplate, { stagesMode: true, view: 'overview', header: Header(), stageRows: stageRows, buttonsPosition: 'Docked', buttonAlignment: 'center' }))),
+    Demo('Inside a step: header form card; Stage_Indicator_Type__c = vertical in its own card on the left; the page card with field-set sections whose headers display as a compact divider (title and rule) with the subtitle under it. In Stages Mode the docked bar reads Return, Save Progress and Mark Complete', 'Stages Mode · in a step (Organization Info)', Wrap(
+      h(F.FormTemplate, { stagesMode: true, view: 'step', header: Header(), stages: pages, currentStage: 'Organization Info', stageIndicator: { type: 'vertical' }, buttonsPosition: 'Docked', buttonAlignment: 'center' }, OrgInfo()))),
+    Demo('Other template states, same Form Style', 'States · inactive · confirmation (loading has its own LoadingStencil card)', h(F.FormStyle, style, h('div', { className: 'pv-states' },
+      h('div', { className: 'pv-page' }, h('div', { className: 'pv-state-cap' }, 'Inactive · Offline_Message__c'), h(F.FormTemplate, { state: 'inactive', name: 'Grant Application | Demo', offlineMessage: 'Applications for the next cycle open January 1.' })),
+      h('div', { className: 'pv-page' }, h('div', { className: 'pv-state-cap' }, 'Confirmation · after submit'), h(F.FormTemplate, { state: 'confirmation', confirmationMessage: '<h2>Thank you. Your grant application is submitted.</h2><p>A copy of your answers is on its way to the primary contact on this application.</p><p><b>What happens next</b></p><ul><li><b>Within 2 weeks:</b> program staff check your application for eligibility and may email you with questions.</li><li><b>By March 15:</b> the review committee scores every eligible application.</li><li><b>By April 1:</b> we let you know whether you are funded, with the grant agreement and payment schedule if you are.</li></ul><p>Need to change something? Reply to the confirmation email or write to grants@example.org.</p>' })))))
+  ));
+</script>
+</body>
+</html>

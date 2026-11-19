@@ -1,0 +1,19 @@
+<!-- @dsCard group="Features" height=120 subtitle="stats options" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Stats options */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "statsBar", "cardStyle": "deep", "items": [{"title": "Cards on", "value": "3"}, {"title": "Deep shadow", "value": "2"}, {"title": "Stats", "value": "1"}], "countUp": true, "statsTreatment": "tiles"}),
+        h(SB.Block, {"sectionType": "statsBar", "items": [{"title": "Cards off", "value": "3"}, {"title": "No chrome", "value": "2"}, {"title": "Stats", "value": "1"}], "countUp": true, "statsTreatment": "row"})))));
+</script>
+</body>
+</html>

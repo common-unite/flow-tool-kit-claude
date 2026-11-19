@@ -1,0 +1,22 @@
+<!-- @dsCard group="Standard components" height=120 subtitle="forceCommunity:tabset" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Tabs in the 8 of an 8/4 Section: a block in the first tab, rich text in the second; an HTML Editor beside them */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, { layout: 'customerService', logo: 'FlowToolKit__FlowToolKit_Gray', siteName: 'Riverside Volunteers', navItems: ['Home', 'Volunteer', 'Programs', 'Contact'], currentNav: 1 },
+      h(SB.Section, { sectionHeight: 32 },
+        h(SB.Column, { columnWidth: '8' },
+          h(SB.Tabs, { tabs: [{ tabName: 'Volunteer', tabKey: 'tab1' }, { tabName: 'What to bring', tabKey: 'tab2' }], activeTab: 'tab1' },
+            h(SB.Callout, { brandColor: '#2e844a', background: '#EEF1F4', heading: 'Bring your whole crew.', description: 'Groups of five to twenty can book a Saturday shift together.', headingAlign: 'left', bodyAlign: 'left', buttons: [{ label: 'Book a group shift', url: '/volunteer', style: 'brand' }] }),
+            h(SB.RichContent, { richTextValue: '<h2>What to bring</h2><p>Closed-toe shoes, a water bottle and a jacket. We provide gloves, tools and lunch.</p>' }))),
+        h(SB.Column, { columnWidth: '4' },
+          h(SB.HtmlEditor, { richTextValue: '<div style="padding:16px;border:1px solid #dddbda;border-radius:4px"><h3 style="margin:0 0 8px">Office hours</h3><p style="margin:0">Monday to Friday, 9 am to 5 pm</p></div>' })))));
+</script>
+</body>
+</html>

@@ -23,7 +23,7 @@ On the web the CLI signs in with `sf org login sfdx-url` or `sf org login jwt` (
 
 ## Before you start
 
-1. **The org and the catalog.** The org's alias comes from `flow-tool-kit.json` ([_shared/standards/project-config.md](_shared/standards/project-config.md)), else the CLI's default org. Run **org-catalog** first if its `catalog.json` is older than a day, or was taken before the latest templates were built: the catalog is what knows every template. Keep this skill's files in `_forms/consolidate-<yyyy-mm-dd>/` ([_shared/standards/naming.md](_shared/standards/naming.md)).
+1. **The org and the catalog.** The org's alias comes from `flow-tool-kit.json` ([_shared/standards/project-config.md](_shared/standards/project-config.md)), else the CLI's default org. Run **org-catalog** first if its `catalog.json` is older than a day, or was taken before the latest templates were built: the catalog is what knows every template. Keep this skill's files in `_forms/consolidate-<yyyy-mm-dd>/` ([_shared/standards/documentation.md](_shared/standards/documentation.md), section 6, Naming).
 2. **Plans.** If any of these templates are rebuilt from a `plan.json` by build-template, a rebuild from the old plan would put each section's own JSON back. Pass those plans to `build --plan` (step 4), which records the shared component in them, or use the plan route below instead.
 
 ## 1. Read the member sections
@@ -134,7 +134,7 @@ A few lines, outcome first:
 |---|---|
 | A rebuild puts the JSON back | The template is built from a plan: pass it to `build --plan`, or use the plan route |
 | The dry run groups nothing you expected | The catalog is older than the templates: run org-catalog again. Sections must match at 80% (org-catalog's measure) on two or more templates |
-| A one-off record component is not grouped | org-catalog is not beside this skill (chat): only JSON sections are grouped. Run it in Claude Code |
+| A one-off record component is not grouped | org-catalog's scripts were not found beside this skill (as `org-catalog` or `<plugin name>:org-catalog`): only JSON sections are grouped. Install the whole plugin, or pass `--org-catalog-scripts` |
 | The build stops on the checker | Read each error: a field the org lacks, a section with no title, a description the documentation standard rejects. Fix the source section or the answer (`--describe`), then dry run again |
 | A shared component's name exists | Pick another with `--name`; the import would change an existing component in place |
 | The template still shows the old questions | Metadata: Reset Form Cache. An Experience Cloud LWR site serves its last publish: publish it again |

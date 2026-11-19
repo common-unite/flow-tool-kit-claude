@@ -1,0 +1,36 @@
+<!-- @dsCard group="Sections" height=2950 width=900 subtitle="flowFormRepeat · repeats a form component" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Repeater preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-cap{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 8px}.pv-panel{border:1px solid var(--border);border-radius:10px;padding:16px 20px;background:var(--ftk-color-background,var(--surface))}.pv-stack{gap:28px}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide, cap) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), h('div', { className: 'pv-cap' }, cap), h('div', { className: 'pv-panel' }, child)); }
+  var memberCols = [
+    { field: 'first', label: 'First name', required: true, widths: [5, 5, 12] },
+    { field: 'last', label: 'Last name', required: true, widths: [7, 7, 12] },
+    { field: 'age', label: 'Age', type: 'number', widths: [3, 4, 12] },
+    { field: 'relationship', label: 'Relationship', type: 'picklist', options: ['Spouse or partner', 'Child', 'Parent', 'Other'], widths: [4, 4, 12] },
+    { field: 'income', label: 'Monthly income', type: 'currency', widths: [5, 4, 12] }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('flowFormRepeat with no header: each record is one copy of the repeated form component (its fields on the 12-column grid). Every record carries the brand-outline New and Clone group, Move Up/Down and Delete; min 1, max 4; a rule between records', h(F.Repeater, { layout: 'card', label: 'Household members', recordTitle: 'Member {n}', columns: memberCols, allowClone: true, allowReposition: true, min: 1, max: 4,
+      defaultRows: [{ first: 'Ana', last: 'Ruiz', age: 67, relationship: 'Spouse or partner', income: 1450 }, { first: 'Luis', last: 'Ruiz', age: 70, income: 1800 }] }), true, '1 · No header · New and Clone on every record, Move Up/Down, Delete · min 1, max 4'),
+    Demo('showHeader with title, subtitle and icon: Import and New move into the repeater header, right-aligned; the records keep Clone, Move and Delete', h(F.Repeater, { layout: 'card', showHeader: true, title: 'Household members', subtitle: 'Everyone who lives with you', icon: 'utility:people', allowImport: true, recordTitle: 'Member {n}', columns: memberCols, allowClone: true, min: 1, max: 4,
+      defaultRows: [{ first: 'Ana', last: 'Ruiz', age: 67, relationship: 'Spouse or partner', income: 1450 }] }), true, '2 · Header on · Import and New in the header'),
+    Demo('card · allowImport with no header: Import and New on each record, records side by side (recordWidths 6/6/12) with recordSpacingHorizontal = small, and hideDivider', h(F.Repeater, { layout: 'card', allowImport: true, hideDivider: true, recordWidths: [6, 6, 12], recordSpacingHorizontal: 'small', recordTitle: 'Contact {n}', min: 1, max: 4,
+      columns: [{ field: 'name', label: 'Name', widths: [12, 12, 12] }, { field: 'email', label: 'Email', type: 'email', widths: [12, 12, 12] }],
+      defaultRows: [{ name: 'Ana Ruiz', email: 'ana@example.org' }, { name: 'Luis Ruiz', email: 'luis@example.org' }] }), true, '3 · Import and New on each record · records side by side · no divider'),
+    Demo('card · Edit opens the edit form in a modal (c-modal) that covers the screen, drawn here covering the repeater: editModalHeading, editModalSubheading and the Return button (editReturnButtonLabel)', h(F.Repeater, { layout: 'card', allowEdit: true, editOpen: 0, editModalHeading: 'Edit household member', editModalSubheading: 'Changes save when you return to the form.', recordTitle: 'Member {n}', min: 1, max: 4, columns: memberCols.slice(0, 3),
+      defaultRows: [{ first: 'Ana', last: 'Ruiz', age: 67 }, { first: 'Luis', last: 'Ruiz', age: 70 }] }), true, '4 · Edit clicked on Member 1 · the edit modal covers the screen'),
+    Demo('layout card · review (read only): no buttons', h(F.Repeater, { layout: 'card', review: true, recordTitle: 'Member {n}', columns: memberCols.slice(0, 3), defaultRows: [{ first: 'Ana', last: 'Ruiz', age: 67 }] }), true, '5 · Review (read only) · no buttons'),
+    Demo('Pagination (flowFormRepeat displayPagination): a Prefill Collection of 7 programs and max 4, so the records page 4 at a time under c-flow-pagination, Viewing 1-4 of 7 on the left and the pages on the right. Each record is a repeated form component holding a RecordCard (fieldList), two per row (recordWidths 6/6/12). New, Clone and Import stay hidden because the records already exceed max', h(F.Repeater, { layout: 'card', recordWidths: [6, 6, 12], recordSpacingHorizontal: 'small', hideDivider: true, allowNew: false, allowDelete: false, min: 0, max: 4,
+      renderRecord: function (r) { return h(F.RecordCard, { cardType: 'fieldList', title: r.name, badge: r.seats > 0 ? 'Open' : 'Full', rows: [{ label: 'Where', value: r.site }, { label: 'When', value: r.when }], buttons: [{ label: 'Choose', style: 'brand' }] }); },
+      columns: [{ field: 'name', label: 'Program' }],
+      defaultRows: [{ name: 'After-school tutoring', site: 'Eastside Library', when: 'Tue and Thu, 3:30 pm', seats: 4 }, { name: 'Family garden plots', site: 'Riverside Community Garden', when: 'Spring season', seats: 12 }, { name: 'Summer camp', site: 'Riverside Park', when: 'June 8 to 26', seats: 0 }, { name: 'Teen mentoring', site: 'Northeast Center', when: 'Wednesdays, 5 pm', seats: 6 }, { name: 'Cooking basics', site: 'Westside Kitchen', when: 'Saturdays, 10 am', seats: 8 }, { name: 'Tax help', site: 'Main Library', when: 'February to April', seats: 20 }, { name: 'Bike repair', site: 'Bike Co-op', when: 'Second Sunday', seats: 5 }] }), true, '6 · Record cards in a repeater · pagination')
+  ));
+</script>
+</body>
+</html>

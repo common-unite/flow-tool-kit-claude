@@ -48,8 +48,9 @@ FTK = [
      "why": "metadata Form Components"},
     {"key": "sections_mdt",
      "soql": f"SELECT QualifiedApiName, MasterLabel, {NS}Form__r.QualifiedApiName, {NS}formComponent__r.QualifiedApiName, "
-             f"{NS}Default_Table_Form__r.QualifiedApiName, {NS}position__c, {NS}Delete__c, {NS}config__c FROM {NS}Form_Section__mdt",
-     "why": "sections of metadata components, and the components placed inside them"},
+             f"{NS}Default_Table_Form__r.QualifiedApiName, {NS}Default_Table_Form_bulk__r.QualifiedApiName, {NS}position__c, {NS}Delete__c, "
+             f"{NS}config__c FROM {NS}Form_Section__mdt",
+     "why": "sections of metadata components, and the components placed inside them (table forms, bulk edit forms too)"},
     {"key": "fields_mdt",
      "soql": f"SELECT QualifiedApiName, MasterLabel, {NS}Form__r.QualifiedApiName, {NS}Form_Section__r.QualifiedApiName, "
              f"{NS}Object__r.QualifiedApiName, {NS}fieldName__c, {NS}referenceFormComponent__r.QualifiedApiName, {NS}position__c, "
@@ -57,9 +58,9 @@ FTK = [
      "why": "fields of metadata components (fieldName holds a field's durable Id, resolved from FieldDefinition)"},
     {"key": "components",
      "soql": f"SELECT Id, Name, RecordType.DeveloperName, {NS}QualifiedApiName__c, {NS}VersionId__c, {NS}Version__c, {NS}Label__c, "
-             f"{NS}ObjectApiName__c, {NS}type__c, {NS}Active__c, {NS}Description__c, {NS}Folder__c, {NS}Has_Submission_Map__c, "
+             f"{NS}ObjectApiName__c, {NS}type__c, {NS}Active__c, {NS}Description__c, {NS}Folder__c, {NS}Tags__c, {NS}Has_Submission_Map__c, "
              f"{NS}Submission_Field_Map__c, {NS}FormConfigJSON__c, LastModifiedDate FROM {NS}Form_Component__c",
-     "why": "record Form Components, with their JSON and Form Template Mapping"},
+     "why": "record Form Components, with their JSON, Form Template Mapping, folder and tags"},
     {"key": "templates",
      "soql": f"SELECT Id, Name, {NS}IsActive__c, {NS}FormQualifiedApiName_Header__c, {NS}FormQualifiedApiName_Footer__c, "
              f"{NS}Logo__c, {NS}Logo_Override__c, {NS}Theme__c, LastModifiedDate FROM {NS}Form_Template__c",
@@ -166,8 +167,8 @@ def next_queries(raw):
                               f"WHERE {NS}Form_Component__c IN ({soql_list(missing)})",
                       "why": "fields of record components whose JSON is blank"})
         later.append({"key": "component_sections", "optional": True,
-                      "soql": f"SELECT {NS}Form_Component__c, {NS}formComponent__c, {NS}Default_Table_Form__c, {NS}title__c, "
-                              f"{NS}position__c FROM {NS}Form_Component_Section__c WHERE {NS}Form_Component__c IN ({soql_list(missing)})",
+                      "soql": f"SELECT {NS}Form_Component__c, {NS}formComponent__c, {NS}Default_Table_Form__c, {NS}Default_Table_Form_bulk__c, "
+                              f"{NS}title__c, {NS}position__c FROM {NS}Form_Component_Section__c WHERE {NS}Form_Component__c IN ({soql_list(missing)})",
                       "why": "components placed inside record components whose JSON is blank"})
     docs = sorted({val(r, "ContentDocumentId") for r in records(raw, "brand_files") if val(r, "ContentDocumentId")})
     if docs and not ran(raw, "brand_file_libraries"):

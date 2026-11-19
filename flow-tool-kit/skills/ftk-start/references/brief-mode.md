@@ -14,7 +14,7 @@ First write down what the brief already says: purpose, pages, blocks, who signs.
 
 ## 2. Pick the form type and the blocks
 
-The form type (survey, simple single page, two pages, three or more short pages, long application in stages) sets the header, buttons, indicator and first page, as `_shared/standards/form-type-rules.md` says, and the defaults in `_shared/standards/form-house-rules.md` apply. A three-page form is long only when it is an application or grant, or its counted time reaches about 10 minutes; a generic three-page form is row 5 (base indicator, no stages).
+The form type (survey, simple single page, two pages, three or more short pages, long application in stages) sets the header, buttons, indicator and first page, as `_shared/standards/form-type-rules.md` says, and the house rules in the same file apply. A three-page form is long only when it is an application or grant, or its counted time reaches about 10 minutes; a generic three-page form is row 5 (base indicator, no stages).
 
 Build each page from the pattern blocks: contact, address, organization, demographics, consent, signature, funding request, uploads. The blocks, their controls and the packaged fields to try first are in `_shared/examples/brief-patterns/README.md`.
 

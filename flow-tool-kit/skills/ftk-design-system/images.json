@@ -1,0 +1,237 @@
+{
+ "about": "Written by tools/build_kits.py. The images packaged with Flow Tool Kit as Content Assets. Each kit_path is the preview copy inside this skill (Site Blocks reads the same files from the Forms kit). In an org with the package, set an image field to the content_asset name (namespaced FlowToolKit__<name> where the package's own asset is read); the full-size original is that Content Asset. images.html beside this file shows the photos as thumbnails.",
+ "groups": [
+  {
+   "group": "Backgrounds",
+   "about": "The background photos packaged with FlowToolKit as Content Assets. Each file name is the Content Asset API name, so a design that uses `Background_Forest_Sunbeams.jpg` sets the image asset to `Background_Forest_Sunbeams` in the org. Copies here are resized to 1280px wide for previews, with the camera and stock-library metadata removed; the package holds the 2400px originals.",
+   "images": [
+    {
+     "content_asset": "Background_Bamboo_Forest_Joy",
+     "file": "Background_Bamboo_Forest_Joy.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Bamboo_Forest_Joy.jpg",
+     "preview_width": 1280,
+     "preview_height": 620,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Farmland_Aerial",
+     "file": "Background_Farmland_Aerial.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Farmland_Aerial.jpg",
+     "preview_width": 1280,
+     "preview_height": 720,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Forest_Sunbeams",
+     "file": "Background_Forest_Sunbeams.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Forest_Sunbeams.jpg",
+     "preview_width": 1280,
+     "preview_height": 570,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Green_Leaves_Banner",
+     "file": "Background_Green_Leaves_Banner.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Green_Leaves_Banner.jpg",
+     "preview_width": 1280,
+     "preview_height": 434,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Mountain_Meadow_Sunset",
+     "file": "Background_Mountain_Meadow_Sunset.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Mountain_Meadow_Sunset.jpg",
+     "preview_width": 1280,
+     "preview_height": 648,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Shoreline_Cleanup_Sunset",
+     "file": "Background_Shoreline_Cleanup_Sunset.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Shoreline_Cleanup_Sunset.jpg",
+     "preview_width": 1280,
+     "preview_height": 852,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Solar_Panel_Install",
+     "file": "Background_Solar_Panel_Install.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Solar_Panel_Install.jpg",
+     "preview_width": 1280,
+     "preview_height": 716,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Tree_Planting_Autumn",
+     "file": "Background_Tree_Planting_Autumn.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Tree_Planting_Autumn.jpg",
+     "preview_width": 1280,
+     "preview_height": 720,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Turbine_Blades_Blue",
+     "file": "Background_Turbine_Blades_Blue.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Turbine_Blades_Blue.jpg",
+     "preview_width": 1280,
+     "preview_height": 856,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Volunteer_Build_Day",
+     "file": "Background_Volunteer_Build_Day.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Volunteer_Build_Day.jpg",
+     "preview_width": 1280,
+     "preview_height": 716,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Volunteer_Team_Tables",
+     "file": "Background_Volunteer_Team_Tables.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Volunteer_Team_Tables.jpg",
+     "preview_width": 1280,
+     "preview_height": 674,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Volunteer_Team_Talking",
+     "file": "Background_Volunteer_Team_Talking.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Volunteer_Team_Talking.jpg",
+     "preview_width": 1280,
+     "preview_height": 674,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Wind_Farm_Mountains",
+     "file": "Background_Wind_Farm_Mountains.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Wind_Farm_Mountains.jpg",
+     "preview_width": 1280,
+     "preview_height": 716,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "Background_Wind_Turbine_Sky",
+     "file": "Background_Wind_Turbine_Sky.jpg",
+     "kit_path": "ftk-forms/project/assets/Backgrounds/Background_Wind_Turbine_Sky.jpg",
+     "preview_width": 1280,
+     "preview_height": 720,
+     "thumbnail": true
+    }
+   ]
+  },
+  {
+   "group": "People",
+   "about": "Volunteer photos packaged with FlowToolKit as Content Assets. The file name is the Content Asset API name (`People_Volunteer_Pair`, `People_Volunteer_Seniors`). White backgrounds, so they suit image upload examples, profile cards and Display Image sections on a light page.",
+   "images": [
+    {
+     "content_asset": "People_Volunteer_Pair",
+     "file": "People_Volunteer_Pair.jpg",
+     "kit_path": "ftk-forms/project/assets/People/People_Volunteer_Pair.jpg",
+     "preview_width": 1280,
+     "preview_height": 532,
+     "thumbnail": true
+    },
+    {
+     "content_asset": "People_Volunteer_Seniors",
+     "file": "People_Volunteer_Seniors.jpg",
+     "kit_path": "ftk-forms/project/assets/People/People_Volunteer_Seniors.jpg",
+     "preview_width": 1280,
+     "preview_height": 853,
+     "thumbnail": true
+    }
+   ]
+  },
+  {
+   "group": "Bears",
+   "about": "The bear illustrations packaged with FlowToolKit as Content Assets (Cold, Just Right, Hot, Delightful). The file name is the Content Asset API name. Transparent PNGs.",
+   "images": [
+    {
+     "content_asset": "Cold_Bear_1",
+     "file": "Cold_Bear_1.png",
+     "kit_path": "ftk-forms/project/assets/Bears/Cold_Bear_1.png",
+     "preview_width": 700,
+     "preview_height": 663,
+     "thumbnail": false
+    },
+    {
+     "content_asset": "Cold_Bear_2",
+     "file": "Cold_Bear_2.png",
+     "kit_path": "ftk-forms/project/assets/Bears/Cold_Bear_2.png",
+     "preview_width": 685,
+     "preview_height": 800,
+     "thumbnail": false
+    },
+    {
+     "content_asset": "Delightful_Bear_3",
+     "file": "Delightful_Bear_3.png",
+     "kit_path": "ftk-forms/project/assets/Bears/Delightful_Bear_3.png",
+     "preview_width": 700,
+     "preview_height": 605,
+     "thumbnail": false
+    },
+    {
+     "content_asset": "Delightful_Bear_4",
+     "file": "Delightful_Bear_4.png",
+     "kit_path": "ftk-forms/project/assets/Bears/Delightful_Bear_4.png",
+     "preview_width": 735,
+     "preview_height": 800,
+     "thumbnail": false
+    },
+    {
+     "content_asset": "Hot_Bear_1",
+     "file": "Hot_Bear_1.png",
+     "kit_path": "ftk-forms/project/assets/Bears/Hot_Bear_1.png",
+     "preview_width": 600,
+     "preview_height": 511,
+     "thumbnail": false
+    },
+    {
+     "content_asset": "Hot_Bear_2",
+     "file": "Hot_Bear_2.png",
+     "kit_path": "ftk-forms/project/assets/Bears/Hot_Bear_2.png",
+     "preview_width": 600,
+     "preview_height": 464,
+     "thumbnail": false
+    },
+    {
+     "content_asset": "Just_Right_Bear_1",
+     "file": "Just_Right_Bear_1.png",
+     "kit_path": "ftk-forms/project/assets/Bears/Just_Right_Bear_1.png",
+     "preview_width": 640,
+     "preview_height": 800,
+     "thumbnail": false
+    },
+    {
+     "content_asset": "Just_Right_Bear_2",
+     "file": "Just_Right_Bear_2.png",
+     "kit_path": "ftk-forms/project/assets/Bears/Just_Right_Bear_2.png",
+     "preview_width": 714,
+     "preview_height": 800,
+     "thumbnail": false
+    }
+   ]
+  },
+  {
+   "group": "Logos",
+   "about": "FlowToolKit logos, packaged as Content Assets in the Flow Tool Kit package. The file name is the Content Asset API name. `FlowToolKit_White` is for dark surfaces, `FlowToolKit_Gray` for light ones. A form's own logo comes from the brand kit, never from here.",
+   "images": [
+    {
+     "content_asset": "FlowToolKit_Gray",
+     "file": "FlowToolKit_Gray.png",
+     "kit_path": "ftk-forms/project/assets/Logos/FlowToolKit_Gray.png",
+     "preview_width": 1200,
+     "preview_height": 225,
+     "thumbnail": false
+    },
+    {
+     "content_asset": "FlowToolKit_White",
+     "file": "FlowToolKit_White.png",
+     "kit_path": "ftk-forms/project/assets/Logos/FlowToolKit_White.png",
+     "preview_width": 1679,
+     "preview_height": 316,
+     "thumbnail": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+<!-- @dsCard group="Layout" height=1430 subtitle="buttonsCustom · navigation and action buttons · Button_Alignment__c · Buttons_Position__c Docked · Footer · Standard" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Buttons preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-label{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 6px}.pv-frame{position:relative;border:1px dashed var(--border);border-radius:8px;overflow:hidden;background:var(--ftk-color-background,var(--surface))}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  function frame(child) { return h('div', { className: 'pv-frame', style: { paddingTop: 12 } }, child); }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('Docked (default position) · Button_Alignment__c spread: Back takes the previous page label, Continue moves forward', frame(h(F.Buttons, { position: 'Docked', alignment: 'spread', backLabel: 'About you', nextLabel: 'Continue' }))),
+    Demo('Docked · center (the template default) with Save Progress, grouped in the middle', frame(h(F.Buttons, { position: 'Docked', alignment: 'center', backLabel: 'Household', saveProgress: true, nextLabel: 'Continue' }))),
+    Demo('Docked · first page with only a forward button: spread lines it up at the end', frame(h(F.Buttons, { position: 'Docked', alignment: 'spread', nextLabel: 'Get Started' }))),
+    Demo('Footer · last page: Submit Button Label with utility:save', frame(h(F.Buttons, { position: 'Footer', alignment: 'spread', backLabel: 'Documents', lastPage: true, submitLabel: 'Submit Application' }))),
+    Demo('Standard · inline below the page; last page opens the review screen (Continue to Review)', h(F.Buttons, { position: 'Standard', alignment: 'end', backLabel: 'Documents', lastPage: true, reviewNext: true, nextLabel: 'Continue to Review' })),
+    Demo('Docked at a narrow container: buttons stack full width', h('div', { style: { maxWidth: 380 } }, frame(h(F.Buttons, { position: 'Docked', alignment: 'spread', backLabel: 'About you', saveProgress: true, nextLabel: 'Continue' })))),
+    Demo('Form Template · Review_Page_Button_Label__c = Review & Submit', h(F.Buttons, { position: 'Standard', alignment: 'end', backLabel: 'Documents', lastPage: true, reviewNext: true, reviewLabel: 'Review & Submit' })),
+    Demo('FLOW SCREEN ONLY · numberOfButtonsToShow = 2 with custom buttons: the rest go in the Additional Actions menu (a Form Template always shows 4)', h(F.Buttons, { position: 'Standard', alignment: 'end', numberOfButtonsToShow: 2, buttons: [{ label: 'Approve', variant: 'brand', iconName: 'utility:check', iconPosition: 'left' }, { label: 'Request changes', variant: 'neutral' }, { label: 'Reassign', variant: 'neutral', iconName: 'utility:user' }, { label: 'Withdraw', variant: 'neutral', iconName: 'utility:close' }] })),
+    Demo('FLOW SCREEN ONLY · groupButtons: one lightning-button-group', h(F.Buttons, { position: 'Standard', alignment: 'center', groupButtons: true, numberOfButtonsToShow: 3, buttons: [{ label: 'Save', variant: 'neutral' }, { label: 'Save & New', variant: 'neutral' }, { label: 'Print', variant: 'neutral' }, { label: 'Delete', variant: 'neutral' }] })),
+    Demo('FLOW SCREEN ONLY · showAsPath + currentStage: the buttons draw as a path', h(F.Buttons, { position: 'Standard', showAsPath: true, currentStage: 'In Review', buttons: [{ label: 'Draft' }, { label: 'In Review' }, { label: 'Approved' }, { label: 'Paid' }] })),
+    Demo('FLOW SCREEN ONLY · enableModal on a button: confirm before it fires (click Submit)', h(F.Buttons, { position: 'Standard', alignment: 'end', backLabel: 'Documents', lastPage: true, submitLabel: 'Submit Application', confirmModal: { heading: 'Submit your application?', body: 'You cannot edit it after this.', confirmLabel: 'Submit' } }))
+  ));
+</script>
+</body>
+</html>

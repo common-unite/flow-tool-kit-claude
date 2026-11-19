@@ -61,6 +61,11 @@ def _admin_base(base: str) -> str:
     return urllib.parse.urlunsplit((parts.scheme, parts.netloc, "/admin/api_v1/", "", ""))
 
 
+def admin_base() -> str:
+    """The admin API base (``/admin/api_v1/``) on this session's FormAssembly host."""
+    return _admin_base(_base())
+
+
 def token_value() -> str:
     """The access token from the plugin setting, else the environment; "" when neither is set."""
     for name in TOKEN_SOURCES:

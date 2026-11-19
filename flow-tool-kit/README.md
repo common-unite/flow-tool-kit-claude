@@ -19,6 +19,22 @@ claude plugin install flow-tool-kit@common-unite
 
 Each skill then runs as `/flow-tool-kit:<skill-name>`, or Claude picks it up when your request matches.
 
+## Install in claude.ai
+
+A plugin added to your claude.ai account works in chat, in Cowork, and in Claude Code signed in to the same account. Install it from its marketplace:
+
+1. Open **Customize > Plugins** and select **Add marketplace** (in the **Add** menu).
+2. Paste `https://github.com/common-unite/flow-tool-kit-claude` and add it.
+3. Select the **flow-tool-kit** plugin and select **Install**. Open it to check that its 26 skills are listed (25 that do the work, and ftk-design-system, the design-system library they read).
+
+Updates come from the marketplace: select **Check for updates** on it to pull a new release, or turn on **Sync automatically**.
+
+**Team and Enterprise:** an Owner may need to allow it. Members see the marketplace option in **Add** only while **User-created skills** is on in **Organization settings > Plugins & skills > Policy**, and an Owner can limit which marketplaces members add.
+
+## The design systems
+
+The review canvases draw with two design systems, FlowToolKit Forms (form components) and FlowToolKit Site Blocks (site design blocks). Both ship inside this plugin, in its **ftk-design-system** skill, at the version that matches the plugin: there is nothing to download, attach or unpack, in Claude Code or in claude.ai chat (Team and Enterprise included), and each plugin update brings the matching kits. The first time a request needs one, ftk-start installs your own copy into your claude.ai account from those files. Ask Claude to "check my Flow Tool Kit design systems" to see the version this plugin ships and the one you have installed. Details: [The design systems](https://common-unite.gitbook.io/flow-tool-kit-or-form-and-table-builder/flow-tool-kit-for-claude/flow-tool-kit-for-claude#the-design-systems).
+
 ## Try it
 
 Start with any of these. The first three need no org.
@@ -33,7 +49,7 @@ The **ftk-start** skill is the front door: describe the job in plain words and i
 
 ## What it runs, sends and fetches
 
-**Run-time download (Claude Code only).** The plugin does not contain the full design-system kits (FlowToolKit Forms and FlowToolKit Site Blocks: component bundles, libraries and the package photos). The first time you run ftk-start's design system step, it downloads them: two zips named `flow-tool-kit-<version>-ftk-forms.zip` and `flow-tool-kit-<version>-site-blocks.zip` for the version of this plugin you have installed, from the GitHub release `v<version>` of `common-unite/flow-tool-kit-claude`. It uses `gh release download` when the GitHub CLI is signed in, else `github.com` and `release-assets.githubusercontent.com` (allow these on Claude Code on the web). It downloads once, then again only when a plugin update changes a kit. Every file is checked against the sha256 checksums shipped in the plugin (`kits.json`); a zip that does not match is refused and nothing is installed. The kits are kept in `~/.flow-tool-kit/design-systems/`. In claude.ai chat nothing is downloaded: you attach the zip instead (download it from that release, or keep it in your Project's files), and ftk-start checks it the same way.
+**No run-time download.** The design-system kits (FlowToolKit Forms and FlowToolKit Site Blocks: component bundles, libraries and the package photos) ship inside the plugin, in the ftk-design-system skill, so nothing is downloaded to draw a design. They are built for previews (minified, only the files the canvases, review pages, render checks and your own Design System use); their third-party licences are in that skill's `THIRD_PARTY_NOTICES.md`.
 
 Everything runs in your own Claude session, against your own Salesforce org, your own accounts and the websites you name. The plugin has no server of its own. Nothing is sent anywhere other than the places listed here, and Common-Unite collects no data: no telemetry, no analytics, no usage reports.
 
@@ -51,7 +67,7 @@ Everything runs in your own Claude session, against your own Salesforce org, you
 | brand-kit | Reads the public website you name (its pages, stylesheets, images and linked fonts), optionally renders those pages in headless Playwright to read colors and fonts, and saves the kit you confirm into your org as Asset Files and Form Style values through the Salesforce API. |
 | form-migrate | Reads the source you give it: a public FormAssembly form page (`www.tfaforms.com` or your instance), the FormAssembly API with your own access token, a public Google Form (`docs.google.com`), or a web page you name. Reads your org's object and field definitions with `sf`. PDFs are read locally. |
 | formassembly-capture | Calls the FormAssembly API with your own access token: the form list, each form's definition and connector list, and only with `--response-check` one response per form to read its submission date (the answers are dropped at once). An optional browser step saves the Salesforce connector pages from a FormAssembly window you signed in to yourself. |
-| ftk-start, org-catalog, field-audit, repeating-data | Read your org's Flow Tool Kit records, metadata and object definitions with `sf`. ftk-start installs the design systems into your claude.ai account. The full design-system kits are not inside the plugin: in Claude Code ftk-start downloads the zip for this plugin version from the GitHub release of `common-unite/flow-tool-kit-claude` (see "Run-time download" below; with `gh release download` when the GitHub CLI is signed in, else from `github.com` and `release-assets.githubusercontent.com`), checks every file against checksums shipped in the plugin, and keeps it in `~/.flow-tool-kit/design-systems/`; in chat you attach the zip instead and nothing is downloaded. repeating-data only reads what the earlier skills wrote. |
+| ftk-start, org-catalog, field-audit, repeating-data | Read your org's Flow Tool Kit records, metadata and object definitions with `sf`. ftk-start installs the design systems into your claude.ai account from the kits inside the plugin (nothing is downloaded). repeating-data only reads what the earlier skills wrote. |
 | form-design, design-to-blocks | Draw the review canvas in your claude.ai account and, in Claude Code, check it with headless Playwright on your own computer. design-to-blocks may read pages of your organization's website that you name, with Claude's web fetch tool or a headless browser. |
 | build-template, build-form-component, build-flow-section, build-repeater, build-table, convert-to-metadata, consolidate-sections, pull-form, new-mapping-flow, new-invocable | Read and write Flow Tool Kit records and metadata in your org with `sf` (queries, record updates, anonymous Apex, retrieves and deploys). |
 | build-custom-lwc, new-record-page-form | Deploy and retrieve the component with `sf`, and run its Jest tests in your project with `npx sfdx-lwc-jest`. |

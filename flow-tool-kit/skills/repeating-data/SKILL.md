@@ -1,6 +1,6 @@
 ---
 name: repeating-data
-description: Use when a Flow Tool Kit form or screen flow must collect several of the same thing (household members, additional contacts, volunteers, line items, references, shifts) and nobody has decided yet how. Listens to the outcome the person describes, recommends a Repeater or a Table with the reason and asks, settles where it goes (a Form Template page section or a screen flow), the row component's shape, and the rows in and out (prefill by Section Tag, saving, conversion), then hands off to build-repeater or build-table. Also when someone asks "should this be a repeater or a table", "let people add more than one", or a plan names a Repeater the build cannot place.
+description: Not a front door: when ftk-start has not run in this conversation, load ftk-start first and let it route here. Use when a Flow Tool Kit form or screen flow must collect several of the same thing (household members, additional contacts, emergency contacts, volunteers, line items, references, shifts) and nobody has decided yet how: "let parents add more than one emergency contact", "families list everyone in the household", "should this be a repeater or a table". Recommends a Repeater or a Table with the reason, settles where it goes (a Form Template page section or a screen flow), the row component's shape, and the rows in and out (prefill by Section Tag, saving, conversion), then hands off to build-repeater or build-table.
 ---
 
 # Repeating Data

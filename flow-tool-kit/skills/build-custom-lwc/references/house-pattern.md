@@ -34,7 +34,7 @@ The package's form is exposed to your org as `<FlowToolKit-flow-form>`. Render t
 
 `validate()` on your component calls the form's own `validate()` first, so the admin's required-field checks still block the page, then adds any rule only your code knows.
 
-**The form inherits the template's styles by itself.** When it connects, the package's form asks the nearest Flow Tool Kit style owner for its styles with an event that crosses shadow boundaries; the Form Template (or, on a Form Component section, the surrounding form) answers. Every input, label, section and button inside then follows the template's Form Style settings and theme with no code from you. Anything else you draw uses the style variables: [style-matching.md](style-matching.md).
+**The form inherits the template's styles by itself.** When it connects, the package's form asks the nearest Flow Tool Kit style owner for its styles with an event that crosses shadow boundaries; the Form Template (or, on a Form Component section, the surrounding form) answers. Every input, label, section and button inside then follows the template's Form Style settings and theme with no code from you. Anything else you draw uses the style variables: [style-variables.md](style-variables.md), Matching the form's look.
 
 ### Giving the section its form
 

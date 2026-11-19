@@ -1,0 +1,36 @@
+<!-- @dsCard group="Layout" height=3300 width=900 subtitle="formTemplateStages · Stages_Mode__c overview · Stage_Mode_Layout__c" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>StagesOverview preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-label{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 6px}.pv-frame{position:relative;border:1px dashed var(--border);border-radius:8px;overflow:hidden;background:var(--ftk-color-background,var(--surface))}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  var photo = '../../assets/Backgrounds/Background_Volunteer_Team_Talking.jpg';
+  var logo = '../../assets/Logos/FlowToolKit_Gray.png';
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var stages = [
+    { title: 'About you', description: 'Contact details and how to reach you.', status: 'done', time: 3, meta: { fields: 8, completedFields: 8 } },
+    { title: 'Household', description: 'Who lives with you and your housing situation.', status: 'requires-correction', time: 5, meta: { fields: 12, completedFields: 10, errors: 2 }, correctionDetails: 'Add the date of birth for each household member under 18.' },
+    { title: 'Income', description: 'Monthly income for every adult in the household.', status: 'in-progress', hasStarted: true, progress: 0.4, time: 6, meta: { fields: 10, completedFields: 4 }, substeps: [{ title: 'Employment income', description: 'Wages, tips and self-employment.' }, { title: 'Benefits', description: 'SNAP, SSI, unemployment.' }] },
+    { title: 'Documents', description: 'Upload proof of income and residence.', status: 'todo', time: 4, substeps: ['Proof of income', 'Proof of residence'] },
+    { title: 'Volunteer interest', description: 'Tell us if you would like to help.', status: 'optional', time: 2, conditional: true },
+    { title: 'Agreement', description: 'Opens once every required step is complete.', status: 'locked', time: 1 }];
+  var fresh = [
+    { title: 'About you', description: 'Contact details and how to reach you.', status: 'todo', time: 3, meta: { fields: 8 } },
+    { title: 'Household', description: 'Who lives with you and your housing situation.', status: 'todo', time: 5, meta: { fields: 12 } },
+    { title: 'Income', description: 'Monthly income for every adult in the household.', status: 'todo', time: 6, meta: { fields: 10 }, substeps: [{ title: 'Employment income', description: 'Wages, tips and self-employment.' }, { title: 'Benefits', description: 'SNAP, SSI, unemployment.' }] },
+    { title: 'Documents', description: 'Upload proof of income and residence.', status: 'todo', time: 4, substeps: ['Proof of income', 'Proof of residence'] },
+    { title: 'Volunteer interest', description: 'Tell us if you would like to help.', status: 'optional', time: 2, conditional: true },
+    { title: 'Agreement', description: 'Opens once every required step is complete.', status: 'locked', time: 1 }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('Fresh start · nothing begun: every step To do with Start Step, optional and locked steps marked, banner at 0%', h(F.StagesOverview, { title: 'Rental assistance application', subtitle: 'Finish the steps in any order. Your answers save as you go.', stages: fresh })),
+    Demo('Stages overview · progress banner, then one row per page with status circle, badge, meta pills, time and action', h(F.StagesOverview, { title: 'Rental assistance application', subtitle: 'Finish the steps in any order. Your answers save as you go.', lastSaved: 'Draft saved 2 minutes ago', current: 'Income', stages: stages })),
+    Demo('Stage_Mode_Layout__c Display Template Header · the template\'s configured Header form (a Banner: Overlay, Small, placement header) replaces the title and subtitle; Draft saved floats over its top right', h(F.StagesOverview, { layout: ['Display Template Header'], lastSaved: 'Draft saved 2 minutes ago', current: 'Income', stages: stages.slice(0, 4), templateHeader: h(F.Banner, { layout: 'overlay', height: 'small', placement: 'header', image: photo, imageAlt: 'Volunteers talking at a community event', logo: logo, logoAlt: 'Flow Tool Kit', title: '<p>Rental assistance application</p>', subtitle: '<p>Finish the steps in any order. Your answers save as you go.</p>', tags: 'About 20 minutes' }) })),
+    Demo('Stage_Mode_Layout__c Hide Progress Banner and Hide Completed Fields', h(F.StagesOverview, { title: 'Rental assistance application', layout: ['Hide Progress Banner', 'Hide Completed Fields'], stages: stages.slice(0, 3) })),
+    Demo('Visibility__c badges and Is_Optional__c', h(F.StagesOverview, { title: 'Grant application', layout: ['Hide Progress Banner'], stages: [{ title: 'Applicant', status: 'done' }, { title: 'Staff scoring', visibility: 'Internal Only', status: 'todo', action: null }, { title: 'Applicant documents', visibility: 'External Only', optional: true }] }))
+  ));
+</script>
+</body>
+</html>

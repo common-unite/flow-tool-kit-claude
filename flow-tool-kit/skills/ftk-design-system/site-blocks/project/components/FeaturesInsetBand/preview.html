@@ -1,0 +1,18 @@
+<!-- @dsCard group="Features" height=120 subtitle="inset band" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Inset band */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "Cards section as an inset band", "width": "inset", "background": "#0e2a5c", "backgroundAccentColor": "#2e844a", "backgroundGradient": "diagonal", "backgroundTexture": "crosshatch", "paddingTop": "medium", "paddingBottom": "medium", "columns": "2", "cardStyle": "clean", "items": [{"title": "Rounded corners", "description": "The band clips its own background."}, {"title": "Side margins", "description": "It never touches the viewport edge."}], "hoverStyle": "lift"})))));
+</script>
+</body>
+</html>

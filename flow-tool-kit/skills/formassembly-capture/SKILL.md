@@ -19,7 +19,7 @@ This is the bulk companion to **form-migrate**. Both read FormAssembly with the 
 
 ## Before you start
 
-1. **The plugin is installed whole.** The scripts import form-migrate's reader from `_shared/lib/` or from the form-migrate skill beside this one; `scripts/reader.py` stops with a clear message when neither is there.
+1. **The plugin is installed whole.** The scripts import form-migrate's reader in place, from the form-migrate skill of this plugin, whose folder is `form-migrate` or `<plugin name>:form-migrate` beside this one (`_shared/lib/siblings.py` finds either); `scripts/reader.py` stops with a clear message when neither is there.
 2. **Read the project config.** ftk-start writes `flow-tool-kit.json` at the project root ([_shared/standards/project-config.md](_shared/standards/project-config.md)). Take the org's edition (paid or free) from it: the flow plan's packaged rules take their answers through Form Template Mapping on a paid org and through the flow's Transform on a free one ([_shared/standards/mapping-preference.md](_shared/standards/mapping-preference.md)).
 3. **Output goes in the project**, under `_formassembly/` at its root. Add `_formassembly/raw/` to `.gitignore`: it holds API listings and browser bundles, and the archive folders carry the same content.
 4. **Ask which access the person has**, in one question, and say what each gives:
@@ -130,4 +130,4 @@ A form page with no fields; show/hide rule counts that changed on disk; a Salesf
 | Counting steps or mappings by hand for a page | Use the rendered page |
 | Removing a helper field that existed only as the old connector's match key | List it as a retirement candidate (rebuild check 11); the org decides, after its other users are listed |
 
-Naming and descriptions for anything built from this archive follow [_shared/standards/naming.md](_shared/standards/naming.md) and [_shared/standards/documentation.md](_shared/standards/documentation.md).
+Naming and descriptions for anything built from this archive follow [_shared/standards/documentation.md](_shared/standards/documentation.md) (section 6 is Naming).

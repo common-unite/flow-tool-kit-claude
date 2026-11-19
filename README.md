@@ -4,7 +4,7 @@ The `flow-tool-kit` plugin gives Claude the skills, standards and worked example
 
 It works against whichever Salesforce org you connect, on the free or paid Flow Tool Kit edition. Nothing in it names a particular org, computer or company, and it collects no data: everything runs in your own Claude session, against your own org and the websites you name.
 
-**Version 2.0.0**, 25 skills. Start with **ftk-start**: describe the job in plain words and it runs the right skills in the right order. The others: org-catalog, form-migrate, formassembly-capture, brand-kit, form-design, build-template, build-form-component, repeating-data, build-repeater, build-table, convert-to-metadata, consolidate-sections, pull-form, field-audit, new-mapping-flow, flow-access-fix, new-invocable, build-flow-section, build-custom-lwc, design-to-blocks, build-site-pages, sf-guest-audit, new-record-page-form and build-email-templates.
+**Version 2.1.0**, 26 skills. Start with **ftk-start**: describe the job in plain words and it runs the right skills in the right order. The others: org-catalog, form-migrate, formassembly-capture, brand-kit, form-design, build-template, build-form-component, repeating-data, build-repeater, build-table, convert-to-metadata, consolidate-sections, pull-form, field-audit, new-mapping-flow, flow-access-fix, new-invocable, build-flow-section, build-custom-lwc, design-to-blocks, build-site-pages, sf-guest-audit, new-record-page-form and build-email-templates, plus ftk-design-system, the library of the two design systems the others draw with.
 
 ## What you need
 
@@ -37,22 +37,27 @@ Each skill then runs as `/flow-tool-kit:<skill-name>`, or Claude picks it up whe
 
 ## Install in claude.ai
 
-A plugin added to your claude.ai account works in chat, in Cowork, and in Claude Code signed in to the same account.
+A plugin added to your claude.ai account works in chat, in Cowork, and in Claude Code signed in to the same account. Install it from its marketplace:
 
-- **Add the marketplace:** in **Customize > Plugins**, select **Add > Add marketplace** and enter `common-unite/flow-tool-kit-claude`. Select **Check for updates** to pull a new release, or turn on **Sync automatically**.
-- **Or upload it:** select **Add > Upload plugin** with a `.zip` of the `flow-tool-kit` folder. An upload is a copy of one release: upload the new zip for each release.
+1. Open **Customize > Plugins** and select **Add marketplace** (in the **Add** menu).
+2. Paste `https://github.com/common-unite/flow-tool-kit-claude` and add it.
+3. Select the **flow-tool-kit** plugin and select **Install**. Open it to check that its 26 skills are listed (25 that do the work, and ftk-design-system, the design-system library they read).
+
+Updates come from the marketplace: select **Check for updates** on it to pull a new release, or turn on **Sync automatically**.
+
+**Team and Enterprise:** an Owner may need to allow it. Members see the marketplace option in **Add** only while **User-created skills** is on in **Organization settings > Plugins & skills > Policy**, and an Owner can limit which marketplaces members add.
 
 ## The design systems
 
-The review canvases draw with two design systems, FlowToolKit Forms and FlowToolKit Site Blocks. The plugin carries a slim copy; each [release](https://github.com/common-unite/flow-tool-kit-claude/releases) attaches the full kits as two zips, `flow-tool-kit-<version>-ftk-forms.zip` and `flow-tool-kit-<version>-site-blocks.zip`. The first time you need them, ftk-start downloads the zips for your plugin version (Claude Code) or asks you to attach them (claude.ai chat), checks every file against the checksums shipped in the plugin, and installs your own copy of each design system into your claude.ai account.
+The review canvases draw with two design systems, FlowToolKit Forms and FlowToolKit Site Blocks. Both ship inside the plugin, in its **ftk-design-system** skill, at the version that matches the plugin: there is nothing to download, attach or unpack, in Claude Code or in claude.ai chat (Team and Enterprise included), and each plugin update brings the matching kits. The first time a request needs one, ftk-start installs your own copy into your claude.ai account from those files. Ask Claude to "check my Flow Tool Kit design systems" to see what is installed. Details, including what the status check reports: [The design systems](https://common-unite.gitbook.io/flow-tool-kit-or-form-and-table-builder/flow-tool-kit-for-claude/flow-tool-kit-for-claude#the-design-systems).
 
 ## Claude Code on the web
 
-Cloud sessions load the skills enabled on your claude.ai account, so install the plugin in claude.ai first. Then, in your cloud environment, allow the Salesforce, FormAssembly, Google Fonts and GitHub release hosts the skills use, install the Salesforce CLI in the setup script, and sign in to your org from an environment variable you keep in your own environment. The [runtime standard](flow-tool-kit/skills/sf-guest-audit/_shared/standards/runtime.md) lists every host and the sign-in steps.
+Cloud sessions load the skills enabled on your claude.ai account, so install the plugin in claude.ai first. Then, in your cloud environment, allow the Salesforce, FormAssembly and Google Fonts hosts the skills use, install the Salesforce CLI in the setup script, and sign in to your org from an environment variable you keep in your own environment. The [runtime standard](flow-tool-kit/skills/sf-guest-audit/_shared/standards/runtime.md) lists every host and the sign-in steps.
 
 ## How updates reach you
 
-Every release raises `version` in `flow-tool-kit/.claude-plugin/plugin.json` and attaches the two design-system zips to the GitHub release `v<version>`. Claude Code gives you a new copy only when that version changes.
+Every release raises `version` in `flow-tool-kit/.claude-plugin/plugin.json`, and the design-system kits inside the plugin come with it. Claude Code gives you a new copy only when that version changes.
 
 ## License
 

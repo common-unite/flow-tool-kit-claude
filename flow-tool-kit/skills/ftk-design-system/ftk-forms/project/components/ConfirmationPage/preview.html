@@ -1,0 +1,18 @@
+<!-- @dsCard group="Template" height=640 subtitle="formTemplate showConfirmationPage · Confirmation_Page_Message__c" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ConfirmationPage preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-frame{border:1px solid var(--border-subtle);border-radius:var(--radius-medium);overflow:hidden;position:relative}.pv-frame .ftk-confirm{padding-bottom:4px}.pv-frame .ftk-confirm-message{margin-bottom:0}.pv-frame .ftk-confirm-receipt{margin-bottom:12px}.pv .ftk-rt-content h2{margin:0 0 .5rem;font-size:1.25rem;line-height:1.3}.pv .ftk-rt-content p{margin:0 0 .75rem}.pv .ftk-rt-content p:last-child,.pv .ftk-rt-content ul:last-child{margin-bottom:0}.pv .ftk-rt-content ul{margin:0 0 .75rem;padding-left:1.25rem}.pv .ftk-rt-content li{margin:0 0 .25rem}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('Confirmation_Page_Message__c · a thank-you with what happens next and the impact of the gift of time', h('div', { className: 'pv-frame' }, h(F.ConfirmationPage, { message: '<h2>Thank you, Jordan. Your application is in.</h2><p>Your plot request for <b>Maple Street Community Garden</b> is on its way to our garden coordinator. You will get an email from <b>gardens@example.org</b> within 5 business days with your plot assignment and a calendar of spring workdays.</p><p><b>What your membership makes possible:</b></p><ul><li>Last season, gardeners like you grew more than 12,000 pounds of fresh produce across our 40 plots.</li><li>Your plot fee keeps seeds, transplants and water free for the neighborhood school garden.</li><li>One in four plots is shared with a family on a waiting list, so every bed you plant feeds neighbors too.</li></ul><p>Questions before then? Call us at (555) 010-0142.</p>' }))),
+    Demo('After a Stripe payment: impact of the gift, then View Receipt', h('div', { className: 'pv-frame' }, h(F.ConfirmationPage, { message: '<h2>Thank you for your gift of $50.</h2><p>Your donation buys seeds and transplants for 10 family garden plots this spring. A tax receipt is on its way to your inbox, and you can open it now below.</p>', receiptUrl: '#' })))
+  ));
+</script>
+</body>
+</html>

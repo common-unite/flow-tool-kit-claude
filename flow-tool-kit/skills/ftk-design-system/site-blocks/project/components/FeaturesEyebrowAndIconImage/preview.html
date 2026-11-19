@@ -1,0 +1,18 @@
+<!-- @dsCard group="Features" height=120 subtitle="eyebrow and icon image" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Eyebrow and icon image */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "Eyebrow and icon art", "columns": "3", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "outlined", "items": [{"eyebrow": "Today", "title": "Eyebrow renders above", "description": "Small uppercase brand label.", "icon": "utility:clock"}, {"eyebrow": "With Flow Tool Kit", "title": "Second panel", "description": "This is the before/after pattern.", "icon": "utility:success"}, {"eyebrow": "Both set", "title": "Image wins", "description": "Icon image takes precedence over the icon name.", "icon": "utility:image"}], "hoverStyle": "lift"})))));
+</script>
+</body>
+</html>

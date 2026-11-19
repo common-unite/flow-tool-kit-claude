@@ -1,6 +1,6 @@
 """Show/hide rules as plan.json writes them, and what the canvas says about each one.
 
-A rule is the structured shape the build reads (references/plan-format.md, `condition`):
+A rule is the structured shape the build reads (_shared/standards/plan-format.md, `condition`):
 
     {"label": "Volunteering chosen", "show_when": "<source text>", "object": "Form_Submission__c", "mode": "showWhen",
      "type": "OR", "conditions": [{"field": "Interest__c", "operator": "==", "value": "Volunteering", "source_id": "q7"}]}

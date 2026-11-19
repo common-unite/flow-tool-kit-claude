@@ -1,0 +1,17 @@
+<!-- @dsCard group="Shared parts" height=120 subtitle="footnote" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Footnote preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* The small line under a block's content, left and centered */
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+      h(SB.Footnote, { heading: 'Your shift, in four lines', headingAlign: 'left', footnote: 'Free · Ages 14 and up · Service hours letter provided on request', footnoteAlign: 'left', brandColor: '#53B95B' }),
+      h(SB.Footnote, { heading: 'Pick the plot size that fits your season.', headingAlign: 'center', footnote: 'Plot sizes and prices are placeholders for this sample.', footnoteAlign: 'center', brandColor: '#53B95B' })))));
+</script>
+</body>
+</html>

@@ -1,8 +1,60 @@
-# Flow Tool Kit style variables
+# Matching the form's look, and the Flow Tool Kit style variables
+
+A custom section component looks like the rest of the form through two mechanisms the package already has. Importing Flow Tool Kit's style sheets is not one of them: its style modules are internal to the package, so a component in your org cannot import them.
+
+## 1. Wrap the inputs in the package's own form
+
+Render the admin's form inside the component with `<FlowToolKit-flow-form is-extension ...>` ([house-pattern.md](house-pattern.md)). On connect, that form asks the nearest Flow Tool Kit style owner for its styles with a composed event that crosses shadow boundaries, and the Form Template answers (on a Form Component section, the surrounding form does). Every input, label, section and button inside then follows the template's Form Style settings and theme. Nothing to write.
+
+## 2. Use the style variables for anything else you draw
+
+The Form Template sets its resolved Form Style settings, its theme's Brand color and its border color as CSS custom properties on its container. Custom properties inherit through shadow DOM, so your CSS reads them directly:
+
+```css
+.fee-card {
+    padding: var(--ftk-section-padding, calc(0.75rem * var(--ftk-layout-spacing-scale, 1)));
+    border: var(--ftk-section-border-width, var(--ftk-border-width, calc(1px * var(--ftk-border-scale, 1)))) solid var(--ftk-section-border-color, var(--ftk-color-border, var(--borderColor, #dddbda)));
+    border-radius: var(--ftk-section-radius, var(--ftk-radius-medium, calc(5px * var(--ftk-radius-scale, 1))));
+    background: var(--ftk-section-surface, var(--ftk-color-surface, #ffffff));
+}
+.fee-card__amount { color: var(--ftk-color-primary, #0176d3); }
+.fee-card__note { color: var(--ftk-help-color, var(--ftk-color-text-muted, #5c5c5c)); font-size: var(--ftk-help-font-size, 0.8125rem); }
+```
+
+When the admin changes the brand color, a border or a corner radius in Form Style settings, the card follows with no deploy.
+
+Rules, all checked by `scripts/check_lwc.py`:
+
+- **Only the Form Style settings** listed in [Flow Tool Kit style variables](#flow-tool-kit-style-variables) below, plus the theme's `--borderColor` and a section theme's `--labelColor`. Never `--_ftk-` names, never other `--ftk-` names you find in the inspector.
+- **Always a fallback.** A variable exists only where an admin or a theme set it. Fall back the way the package does: the specific setting, then the general one, then a plain value (`--ftk-section-radius`, then `--ftk-radius-medium`, then `5px`).
+- **Scale settings are multipliers**: `calc(1rem * var(--ftk-font-scale, 1))`.
+
+Common choices:
+
+| You are drawing | Use |
+|---|---|
+| A brand accent, a highlighted amount | `--ftk-color-primary` (text on it: `--ftk-color-on-primary`) |
+| A card or panel | `--ftk-section-padding`, `--ftk-section-radius`, `--ftk-section-border-width`, `--ftk-section-border-color`, `--ftk-section-surface`, `--ftk-section-shadow` |
+| Body text | `--ftk-color-text`, `--ftk-font-family`, `--ftk-font-size` |
+| A label | `--ftk-color-label`, `--ftk-font-size-label`, `--ftk-font-weight-label` |
+| A heading inside the card | `--ftk-font-family-heading`, `--ftk-font-size-heading`, `--ftk-font-weight-heading` |
+| Help or a note | `--ftk-help-color`, `--ftk-help-font-size` |
+| An error | `--ftk-color-danger` |
+| A divider line | `--ftk-color-border-muted`, `--ftk-border-width` |
+
+## 3. Let Lightning's own components take the brand
+
+A brand theme also sets Lightning's styling hooks for buttons, inputs, checkboxes and toggles on the template. A `lightning-button` with `variant="brand"` inside your component is the brand color without any CSS. Prefer base components to hand-styled buttons.
+
+## Check it
+
+Look at the section in the template's Preview Form twice: once with the org's default look, once after changing the Brand color and the section corner radius in the template's Style Overrides. The card must follow both changes, and must still look right with no Form Style settings at all (the fallbacks). On an Experience Cloud site, check an Aura and an LWR site if the form is on both; an LWR site shows a change only after it is published.
+
+## Flow Tool Kit style variables
 
 Every Form Style setting an admin can set in Flow Tool Kit, as the CSS custom property a custom component reads. The list is read from the package's style runtime (release 5.3): the settings editor and the runtime list the same 157 names. `scripts/check_lwc.py` checks every `var(--ftk-...)` in a component against `scripts/style_tokens.json`, the same list.
 
-## How the values get there
+### How the values get there
 
 - **Org Form Style defaults** (Form Builder, Global Styles) and the **template's Style Overrides** are written onto the Form Template's outer container as custom properties. The template's value wins over the org's.
 - **The template's theme** sets `--ftk-color-primary` from its Brand color, and `--borderColor` from its border color. A brand theme also sets Lightning's own button, input, checkbox and toggle styling hooks, so a `lightning-button` with `variant="brand"` inside your component follows the brand with no CSS at all.
@@ -23,24 +75,24 @@ A variable exists only where one of those set it. An org with no Form Style sett
 
 **Scale settings** (kind `scale`) are plain multipliers with no unit, 1 by default. Multiply a length by them: `calc(1rem * var(--ftk-font-scale, 1))`.
 
-## Never use
+### Never use
 
 - Anything starting `--_ftk-`: private to the package, renamed without notice.
 - Any other `--ftk-` name you see in the browser's inspector (banner, hero, site, survey card, frame and header internals). They belong to one package component and are not settings an admin controls; build only on the names below.
 - Flow Tool Kit's style modules themselves (`formStyles` and its relatives). They are internal to the package, so a component in your org cannot import them.
 
-## Theme variables
+### Theme variables
 
 | Variable | Set by |
 |---|---|
 | `--borderColor` | Border color of the template's theme, or of the section's own theme inside a themed section. |
 | `--labelColor` | Label color of a section theme, inside that section only. |
 
-## The settings, by group
+### The settings, by group
 
 The group and label are what the admin sees in Form Style settings, so you can tell them which setting changes your component.
 
-### Form fields
+#### Form fields
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -51,14 +103,14 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-border-scale` | Border thickness | scale | Scales input, textarea, choice, button, and section border thickness. |
 | `--ftk-radius-medium` | Corner radius | length or percentage | One corner radius for inputs, buttons, choices, and containers. |
 
-### Text
+#### Text
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
 | `--ftk-font-scale` | Text size | scale | Scales field labels, help text, headings, stage text, and unformatted rich text. Input text follows Input size. |
 | `--ftk-font-family` | Font | font-family | Font for the whole form. |
 
-### Form layout
+#### Form layout
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -66,7 +118,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-section-padding-block` | Vertical padding | length | Sets top and bottom padding inside form sections. |
 | `--ftk-layout-spacing-scale` | Section padding | scale | Scales padding around form sections without changing field gaps or input padding. |
 
-### Color
+#### Color
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -78,7 +130,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-color-footer` | Color Footer | color | Docked action bar surface |
 | `--ftk-color-footer-border` | Color Footer Border | color | Docked action bar top boundary |
 
-### State
+#### State
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -87,20 +139,20 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-focus-ring` | Focus Ring | box-shadow | Visible keyboard focus; optional override |
 | `--ftk-color-danger` | Color Danger | color | Color of field errors: the error border, icon and message, the required mark, and the attestation error tint. |
 
-### Surfaces
+#### Surfaces
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
 | `--ftk-color-background` | Form background | color | Background behind the entire form template. Transparent lets the page background show through. |
 
-### Typography
+#### Typography
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
 | `--ftk-font-size` | Body and input text size | font-size | Sets inherited body and input text size. Native controls may grow to fit larger text. Labels and headings have separate controls. |
 | `--ftk-line-height` | Text line spacing | number or length | Line spacing for body text, rich text and multiline inputs. Headings retain independent spacing. |
 
-### Labels and help
+#### Labels and help
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -109,7 +161,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-help-font-size` | Help text size | font-size | Help text size for labels and help. Specific overrides take priority over shared controls. |
 | `--ftk-help-color` | Help text color | color | Help text color for labels and help. Specific overrides take priority over shared controls. |
 
-### Headers
+#### Headers
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -130,19 +182,19 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-header-title-color` | Header title color | color | Title color for section headers. A Form Theme's heading color takes priority, except the packaged Form Default theme. |
 | `--ftk-header-subtitle-color` | Header subtitle color | color | Header subtitle color for headers. Specific overrides take priority over shared controls. |
 
-### Spacing
+#### Spacing
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
 | `--ftk-field-gap` | Additional field gap | length | Additional field separation |
 
-### Shape
+#### Shape
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
 | `--ftk-container-border-width` | Container Border Width | border-width | Decorative template framing independent of essential field boundaries |
 
-### Sections
+#### Sections
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -160,7 +212,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-section-border-color` | Section border color | color | Section border color for sections. Specific overrides take priority over shared controls. |
 | `--ftk-section-shadow` | Section shadow | box-shadow | Section shadow for sections. Specific overrides take priority over shared controls. |
 
-### Form card
+#### Form card
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -170,7 +222,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-form-card-surface` | Form card background | color | Form card background for form card. Specific overrides take priority over shared controls. |
 | `--ftk-form-card-border-color` | Form card border color | color | Form card border color for form card. Specific overrides take priority over shared controls. |
 
-### Text fields
+#### Text fields
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -190,7 +242,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-input-height` | Input height | length | Input height for text fields. Specific overrides take priority over shared controls. |
 | `--ftk-input-placeholder-color` | Placeholder text color | color | Placeholder text in empty inputs and text areas. Follows an authored input text color unless overridden. |
 
-### Survey choices
+#### Survey choices
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -202,14 +254,14 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-survey-padding-inline` | Survey horizontal padding | length | Survey horizontal padding for survey choices. Specific overrides take priority over shared controls. |
 | `--ftk-survey-padding-block` | Survey vertical padding | length | Survey vertical padding for survey choices. Specific overrides take priority over shared controls. |
 
-### Joined choices
+#### Joined choices
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
 | `--ftk-joined-choice-padding-inline` | Joined-choice horizontal padding | length | Joined-choice horizontal padding for joined choices. Specific overrides take priority over shared controls. |
 | `--ftk-joined-choice-radius` | Joined-choice corners | length | Joined-choice corners for joined choices. Specific overrides take priority over shared controls. |
 
-### Separated choices
+#### Separated choices
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -219,7 +271,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-separated-choice-padding-inline` | Separated-choice horizontal padding | length | Separated-choice horizontal padding for separated choices. Specific overrides take priority over shared controls. |
 | `--ftk-separated-choice-padding-block` | Separated-choice vertical padding | length | Separated-choice vertical padding for separated choices. Specific overrides take priority over shared controls. |
 
-### Visual choices
+#### Visual choices
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -228,7 +280,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-visual-choice-border-color` | Visual-choice border color | color | Visual-choice border color for visual choices. Specific overrides take priority over shared controls. |
 | `--ftk-visual-choice-surface` | Visual-choice background | color | Visual-choice background for visual choices. Specific overrides take priority over shared controls. |
 
-### Matrix
+#### Matrix
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -243,7 +295,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-matrix-divider-color` | Matrix divider color | color | Matrix divider color for matrix. Specific overrides take priority over shared controls. |
 | `--ftk-matrix-choice-border-color` | Matrix choice border color | color | Matrix choice border color for matrix. Specific overrides take priority over shared controls. |
 
-### Checkboxes
+#### Checkboxes
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -254,7 +306,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-checkbox-border-color` | Checkbox border color | color | Checkbox border color for checkboxes. Specific overrides take priority over shared controls. |
 | `--ftk-checkbox-surface` | Checkbox background | color | Unchecked checkbox fill. Follows Input background; a specific override takes priority. |
 
-### Calendar
+#### Calendar
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -263,13 +315,13 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-calendar-border-width` | Calendar border width | border-width | Calendar border width for calendar. Specific overrides take priority over shared controls. |
 | `--ftk-calendar-border-color` | Calendar border color | color | Calendar border color for calendar. Specific overrides take priority over shared controls. |
 
-### Modals
+#### Modals
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
 | `--ftk-modal-surface` | Modal background | color | Modal background for modals. Specific overrides take priority over shared controls. |
 
-### Tables
+#### Tables
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -277,14 +329,14 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-table-shade` | Table shaded background | color | Table shaded background for tables. Specific overrides take priority over shared controls. |
 | `--ftk-table-surface` | Table background | color | Table background for tables. Specific overrides take priority over shared controls. |
 
-### Dividers
+#### Dividers
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
 | `--ftk-divider-subtitle-color` | Divider subtitle color | color | Divider subtitle color for dividers. Specific overrides take priority over shared controls. |
 | `--ftk-divider-rule-color` | Divider rule color | color | Divider rule color for dividers. Specific overrides take priority over shared controls. |
 
-### Buttons
+#### Buttons
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -293,7 +345,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-button-height` | Button height | length | Button height for buttons. Specific overrides take priority over shared controls. |
 | `--ftk-icon-button-size` | Icon button size (platform limited) | length | Icon button size for buttons. Specific overrides take priority over shared controls. |
 
-### Shared overrides
+#### Shared overrides
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -317,7 +369,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-radius-large` | Radius Large | length | Template card corners; separate scale for large surfaces |
 | `--ftk-color-control-surface` | Input background | color | Fill inside inputs, textareas, dropdowns, survey choices, visual pickers, and attestation cards. |
 
-### Stacked headers
+#### Stacked headers
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|
@@ -331,7 +383,7 @@ The group and label are what the admin sees in Form Style settings, so you can t
 | `--ftk-hero-lead-gap` | Title to body gap | length | Title to body gap for the Stacked header style. Shared text and layout scales apply until a specific value is set. |
 | `--ftk-hero-max-width` | Maximum text width | length | Maximum text width for the Stacked header style. Shared text and layout scales apply until a specific value is set. |
 
-### Section surfaces
+#### Section surfaces
 
 | Variable | Setting | Kind | What it styles |
 |---|---|---|---|

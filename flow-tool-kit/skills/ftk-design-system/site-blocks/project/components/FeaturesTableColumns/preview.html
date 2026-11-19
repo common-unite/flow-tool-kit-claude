@@ -1,0 +1,24 @@
+<!-- @dsCard group="Features" height=120 subtitle="table columns" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Table columns */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "table", "heading": "Two columns", "paddingTop": "medium", "paddingBottom": "medium", "tableColumns": [{"label": "Feature", "width": "auto", "display": "emphasis"}, {"label": "Included", "width": "narrow", "align": "right", "display": "badge"}], "items": [{"cell1": "Save and resume", "cell2": "Yes"}, {"cell1": "Conditional sections", "cell2": "Yes"}, {"cell1": "Custom code", "cell2": "No", "featured": true}]}),
+        h(SB.Block, {"sectionType": "table", "heading": "Six columns, the maximum", "paddingTop": "medium", "paddingBottom": "medium", "tableColumns": [{"label": "Col 1", "width": "auto", "display": "text"}, {"label": "Col 2", "width": "auto", "display": "text"}, {"label": "Col 3", "width": "auto", "display": "text"}, {"label": "Col 4", "width": "auto", "display": "text"}, {"label": "Col 5", "width": "auto", "display": "text"}, {"label": "Col 6", "width": "auto", "display": "text"}], "items": [{"cell1": "r1c1", "cell2": "r1c2", "cell3": "r1c3", "cell4": "r1c4", "cell5": "r1c5", "cell6": "r1c6"}, {"cell1": "r2c1", "cell2": "r2c2", "cell3": "r2c3", "cell4": "r2c4", "cell5": "r2c5", "cell6": "r2c6"}]}),
+        h(SB.Block, {"sectionType": "table", "heading": "Every column width", "paddingTop": "medium", "paddingBottom": "medium", "tableColumns": [{"label": "Fit", "width": "fit", "display": "emphasis"}, {"label": "Narrow", "width": "narrow"}, {"label": "Auto", "width": "auto"}, {"label": "Wide", "width": "wide"}, {"label": "Widest", "width": "widest"}], "items": [{"cell1": "A", "cell2": "narrow", "cell3": "auto", "cell4": "wide", "cell5": "widest is for long running copy that needs the room"}, {"cell1": "BB", "cell2": "narrow", "cell3": "auto", "cell4": "wide", "cell5": "second row"}]}),
+        h(SB.Block, {"sectionType": "table", "heading": "Alignment and display", "paddingTop": "medium", "paddingBottom": "medium", "tableColumns": [{"label": "Left text", "align": "left", "display": "text"}, {"label": "Center emphasis", "align": "center", "display": "emphasis"}, {"label": "Right badge", "align": "right", "display": "badge"}, {"label": "Rich text", "align": "left", "width": "wide", "display": "richtext"}], "items": [{"cell1": "plain", "cell2": "bold", "cell3": "9", "cell4": "<p>Formatted <b>copy</b> with <i>marks</i></p>"}, {"cell1": "plain", "cell2": "bold", "cell3": "12", "cell4": "<p>Second row</p>"}]}),
+        h(SB.Block, {"sectionType": "table", "heading": "Third column hides at tablet", "paddingTop": "medium", "paddingBottom": "medium", "tableColumns": [{"label": "Size", "display": "emphasis"}, {"label": "Always visible", "width": "wide"}, {"label": "Tablet hidden", "hideOnTablet": true}, {"label": "Fee", "align": "right", "display": "badge", "width": "narrow"}], "items": [{"cell1": "Small", "cell2": "Shown at every width", "cell3": "Drops below 1024px", "cell4": "1"}, {"cell1": "Large", "cell2": "Shown at every width", "cell3": "Drops below 1024px", "cell4": "8"}]}),
+        h(SB.Block, {"sectionType": "table", "heading": "Every table color", "paddingTop": "medium", "paddingBottom": "medium", "tableColumns": [{"label": "Item", "display": "emphasis"}, {"label": "Detail", "width": "wide"}, {"label": "Count", "align": "right", "display": "badge", "width": "narrow"}], "items": [{"cell1": "Purple header", "cell2": "Header fill and header text are set", "cell3": "1"}, {"cell1": "Amber highlight", "cell2": "This row uses the highlight fill", "cell3": "2", "featured": true}, {"cell1": "Red grid lines", "cell2": "Borders come from the grid color", "cell3": "3"}], "tableHeaderBackground": "#4c1d95", "tableHeaderColor": "#ffffff", "tableGridColor": "#dc2626", "tableRowHighlight": "#fef3c7", "tableBadgeBackground": "#c7d2fe", "tableBadgeColor": "#312e81"}),
+        h(SB.Block, {"sectionType": "table", "heading": "Table on a dark section", "paddingTop": "medium", "paddingBottom": "medium", "tableColumns": [{"label": "Item", "display": "emphasis"}, {"label": "Detail", "width": "wide"}, {"label": "Count", "align": "right", "display": "badge", "width": "narrow"}], "items": [{"cell1": "Still readable", "cell2": "The table card keeps light ink", "cell3": "1"}, {"cell1": "Chrome inverts", "cell2": "Only the heading above flips", "cell3": "2"}], "background": "#0b1220", "backgroundAccentColor": "#1e293b", "backgroundGradient": "diagonal"})))));
+</script>
+</body>
+</html>

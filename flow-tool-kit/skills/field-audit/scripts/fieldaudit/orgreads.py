@@ -14,7 +14,8 @@ helpers rather than a second copy:
   when present.
 
 They are found in this skill's ``_shared/lib/orgreads/`` when the plugin ships
-them there, otherwise in the org-catalog skill installed beside this one.
+them there, otherwise in the org-catalog skill of this plugin, whose folder is
+org-catalog or <plugin name>:org-catalog (``_shared/lib/siblings.py`` finds either).
 Set ``FTK_ORGREADS_DIR`` to point at another copy (tests do).
 """
 
@@ -26,12 +27,25 @@ import sys
 
 _SKILL = pathlib.Path(__file__).resolve().parents[2]
 _CANDIDATES = [os.environ.get("FTK_ORGREADS_DIR") or "",
-               str(_SKILL / "_shared" / "lib" / "orgreads"),
-               str(_SKILL.parent / "org-catalog" / "scripts")]
+               str(_SKILL / "_shared" / "lib" / "orgreads")]
+
+
+def _org_catalog():
+    """org-catalog's scripts folder beside this skill, in either install layout, or None."""
+    if str(_SKILL / "_shared" / "lib") not in sys.path:
+        sys.path.insert(0, str(_SKILL / "_shared" / "lib"))
+    try:
+        import siblings
+    except ImportError:
+        return None
+    try:
+        return siblings.find(str(_SKILL), "org-catalog", subdir="scripts", markers=["ocutil.py"])
+    except siblings.NotFound:
+        return None
 
 
 def _find():
-    for candidate in _CANDIDATES:
+    for candidate in _CANDIDATES + [_org_catalog() or ""]:
         if candidate and (pathlib.Path(candidate) / "ocutil.py").is_file():
             return candidate
     return None

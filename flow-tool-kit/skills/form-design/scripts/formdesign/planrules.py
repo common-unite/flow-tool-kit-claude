@@ -165,7 +165,7 @@ def with_time(text: str | None, plan: dict) -> str:
 
 # ---------------------------------------------------------------- the form-type rules
 def form_row(plan: dict) -> int:
-    """The row of the form-type rules table (form-type-rules.md) this form follows.
+    """The row of the form-type rules table (_shared/standards/form-type-rules.md) this form follows.
 
     1 survey, one page; 2 survey, two or more pages; 3 simple single page; 4 two pages; 5 three or more pages, not long;
     6 long: an application or grant with three or more pages, or any form with three or more pages and about 10 minutes

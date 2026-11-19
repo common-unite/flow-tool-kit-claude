@@ -1,0 +1,23 @@
+<!-- @dsCard group="Layout" height=920 width=900 subtitle="lightning-tabset · FlowToolKit__type__c default · scoped · vertical" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Tabset preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-label{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 6px}.pv-frame{position:relative;border:1px dashed var(--border);border-radius:8px;overflow:hidden;background:var(--ftk-color-background,var(--surface))}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  function fields(a, b) { return h(F.Section, { title: a }, h(F.Column, { large: 5, medium: 5, small: 12 }, h(F.TextInput, { label: 'First name', required: true })), h(F.Column, { large: 7, medium: 7, small: 12 }, h(F.TextInput, { label: 'Last name', required: true })), h(F.Column, { large: 12 }, h(F.TextInput, { label: b }))); }
+  function tabs() { return [
+    h(F.Tab, { key: 1, label: 'Contact', icon: 'utility:user' }, fields('Contact information', 'Email')),
+    h(F.Tab, { key: 2, label: 'Household', icon: 'utility:home', invalid: true }, fields('Household', 'Household size')),
+    h(F.Tab, { key: 3, label: 'Program', icon: 'utility:knowledge_base' }, fields('Program interest', 'How did you hear about us?'))]; }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('default · lightning-tabset variant default: brand underline on the active tab; error icon on a tab with invalid fields', h(F.Tabset, { variant: 'default' }, tabs())),
+    Demo('scoped · bordered tabs over a white panel', h(F.Tabset, { variant: 'scoped', defaultValue: 'Household' }, tabs())),
+    Demo('vertical · 12rem rail on the left; stacks below 500px', h(F.Tabset, { variant: 'vertical' }, tabs()))
+  ));
+</script>
+</body>
+</html>

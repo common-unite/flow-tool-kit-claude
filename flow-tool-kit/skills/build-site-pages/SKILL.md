@@ -127,7 +127,7 @@ LWR is the default and the shape everything above describes. An Aura site takes 
 | File | What it is |
 |---|---|
 | `scripts/design_to_site.py`, `scripts/site_views.py` | The generator: `page.json` or a block folder to the site's metadata |
-| `scripts/render_check.cjs`, `scripts/playwright.cjs` | The headless render check, and how it finds Playwright and Chromium |
+| `scripts/render_check.cjs` | The headless render check, and (at its top) how it finds Playwright and Chromium |
 | `scripts/asset_files.py` | Photos to public Asset Files |
 | `_shared/sf/site_publish.py`, `_shared/sf/guest_site_setup.py` | Publish and wait; the guest user's permission sets, sharing rules and publish |
 | `_shared/standards/` | Naming, documentation, the project config and the brand kit keys |

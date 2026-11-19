@@ -1,0 +1,20 @@
+<!-- @dsCard group="Features" height=120 subtitle="column ratio" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Column ratio */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "Ratio: even", "columns": "2", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "flat", "splitRatio": "even", "subheading": "Hero, showcase and split layouts all honour this.", "items": [{"title": "Panel", "description": "Ratio applies to any two column arrangement."}], "hoverStyle": "lift", "headingAlign": "left", "bodyAlign": "left", "arrangement": "split"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "Ratio: left", "columns": "2", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "flat", "splitRatio": "left", "subheading": "Hero, showcase and split layouts all honour this.", "items": [{"title": "Panel", "description": "Ratio applies to any two column arrangement."}], "hoverStyle": "lift", "headingAlign": "left", "bodyAlign": "left", "arrangement": "split"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "Ratio: right", "columns": "2", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "flat", "splitRatio": "right", "subheading": "Hero, showcase and split layouts all honour this.", "items": [{"title": "Panel", "description": "Ratio applies to any two column arrangement."}], "hoverStyle": "lift", "headingAlign": "left", "bodyAlign": "left", "arrangement": "split"})))));
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- @dsCard group="Fields" height=1600 subtitle="flowFormCheckbox" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Checkbox preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var att = 'I certify this information is accurate';
+  var attText = 'Checking this box serves as my electronic signature.';
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('toggle · booleanType__c default: on and off', h('div', { style: { display: 'flex', gap: 40 } }, h(F.Checkbox, { label: 'Receive updates', defaultChecked: true }), h(F.Checkbox, { label: 'Receive updates' }))),
+    Demo('toggle · labelVariant__c left, booleanPicklistTypeOverride__c Yes/No: state text Yes / No', h(F.Checkbox, { label: 'Are you 18 or older?', labelPosition: 'left', defaultChecked: true, booleanLabels: 'Yes/No' })),
+    Demo('toggle · labelVariant__c left, stacked: a run of yes/no questions with long labels. Each question reads on the left and every switch lines up in one column on the right (booleanPicklistTypeOverride__c Yes/No)', h('div', { style: { display: 'grid', gap: 14 } },
+      h(F.Checkbox, { label: 'Has anyone in your household received rental assistance from another program in the last 12 months?', labelPosition: 'left', booleanLabels: 'Yes/No' }),
+      h(F.Checkbox, { label: 'Is anyone in your household currently facing an eviction notice or a court date?', labelPosition: 'left', booleanLabels: 'Yes/No', defaultChecked: true }),
+      h(F.Checkbox, { label: 'Would you like us to connect you with free legal aid or financial counseling?', labelPosition: 'left', booleanLabels: 'Yes/No' })), true),
+    Demo('toggle · labelVariant__c right, no override: state text defaults to Enabled / Disabled', h(F.Checkbox, { label: 'Text message reminders', labelPosition: 'right' })),
+    Demo('checkbox: checked fills brand with an on-brand check', h('div', null, h(F.Checkbox, { variant: 'checkbox', label: 'I would like to volunteer', defaultChecked: true }), h('div', { style: { height: 10 } }), h(F.Checkbox, { variant: 'checkbox', label: 'Add me to the newsletter' }))),
+    Demo('checkbox · required, error', h(F.Checkbox, { variant: 'checkbox', label: 'I agree to the program rules', required: true, error: 'Complete this field.' })),
+    Demo('attestation: unchecked, the whole card is clickable', h(F.Checkbox, { variant: 'attestation', label: 'Authorization', required: true, attestationTitle: att, attestationText: attText })),
+    Demo('attestation · checked: brand border on brand-wash', h(F.Checkbox, { variant: 'attestation', label: 'Authorization', required: true, defaultChecked: true, attestationTitle: att, attestationText: attText })),
+    Demo('attestation · required, error: error-strong on error-wash', h(F.Checkbox, { variant: 'attestation', label: 'Photo release', required: true, error: 'Complete this field.', attestationText: 'I give permission to use photos taken at program events.' })),
+    Demo('picklist · booleanType__c picklist, labels Yes/No (booleanPicklistTypeOverride__c)', h('div', { style: { minHeight: 40 } }, h(F.Checkbox, { variant: 'picklist', label: 'Do you rent your home?', booleanLabels: 'Yes/No', required: true }))),
+    Demo('radio · booleanType__c radio, no override: True / False (the package default for every two-choice variant)', h(F.Checkbox, { variant: 'radio', label: 'Is the household income verified?', defaultChecked: true })),
+    Demo('radio · labels Enabled/Disabled', h(F.Checkbox, { variant: 'radio', label: 'Online giving', booleanLabels: 'Enabled/Disabled', defaultChecked: true })),
+    Demo('picklist · labels Valid/Invalid', h('div', { style: { minHeight: 40 } }, h(F.Checkbox, { variant: 'picklist', label: 'Document check', booleanLabels: 'Valid/Invalid', defaultChecked: false }))),
+    Demo('radiobuttons · joined, labels Active/Inactive', h(F.Checkbox, { variant: 'radiobuttons', label: 'Volunteer status', booleanLabels: 'Active/Inactive', defaultChecked: true })),
+    Demo('radiobuttons · labels On/Off', h(F.Checkbox, { variant: 'radiobuttons', label: 'Auto-renew', booleanLabels: 'On/Off' }))
+  ));
+</script>
+</body>
+</html>

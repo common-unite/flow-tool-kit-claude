@@ -112,7 +112,7 @@ Both paths write into `field-audit/<org Id>/` (or `--out`); in chat, write them 
 | `coverage.csv` | place read, or not read | Knowing what an empty answer means |
 | `raw.json` | query (Claude Code) | Rebuilding with `build` without reading the org again |
 
-Columns, roles and verdicts in full: [references/outputs.md](references/outputs.md). Every place a field can be stored and how each is read: [references/surfaces.md](references/surfaces.md).
+Columns, roles and verdicts in full: [references/outputs.md](references/outputs.md). Every place a field can be stored and how each is read: the same page, [Where Flow Tool Kit stores a field name](references/outputs.md#where-flow-tool-kit-stores-a-field-name).
 
 ### 4. Tell the person, in a few lines
 

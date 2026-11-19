@@ -1,0 +1,20 @@
+<!-- @dsCard group="Features" height=120 subtitle="banner and flat" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Banner and flat */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "hero", "backgroundGradient": "banner", "heading": "hero with gradient banner", "subheading": "Brand Banner: the deep gradient, glows on, chrome inverted", "paddingTop": "medium", "paddingBottom": "medium", "buttons": [{"label": "Brand", "url": "#", "style": "brand"}, {"label": "Light", "url": "#", "style": "light"}, {"label": "Outline", "url": "#", "style": "outline"}], "badges": [{"title": "Badge chip"}, {"title": "Veil follows the backdrop"}]}),
+        h(SB.Block, {"sectionType": "hero", "backgroundGradient": "off", "heading": "hero with gradient off", "subheading": "Off: no background at all, so text and buttons flip to light-surface ink", "paddingTop": "medium", "paddingBottom": "medium", "buttons": [{"label": "Brand", "url": "#", "style": "brand"}, {"label": "Light", "url": "#", "style": "light"}, {"label": "Outline", "url": "#", "style": "outline"}], "badges": [{"title": "Badge chip"}, {"title": "Veil follows the backdrop"}]}),
+        h(SB.Block, {"sectionType": "cards", "heading": "Banner on a cards block", "columns": "2", "backgroundGradient": "banner", "cardStyle": "clean", "paddingTop": "medium", "paddingBottom": "medium", "items": [{"title": "Any type can use it", "description": "Brand Banner is no longer hero and cta only."}, {"title": "Ink follows", "description": "Banner counts as dark, so the chrome inverts."}], "hoverStyle": "lift"})))));
+</script>
+</body>
+</html>

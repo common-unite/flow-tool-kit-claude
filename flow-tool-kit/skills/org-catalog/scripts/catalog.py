@@ -145,6 +145,18 @@ RETRIEVE = {"flows": ["Flow"], "lightning_pages": ["FlexiPage"], "site_pages": [
             "wrapper_components": ["LightningComponentBundle"]}
 
 
+def short_read(result, out):
+    """The retrieve's own list of files against the files that reached the folder: {"listed", "arrived"} when fewer
+    arrived (seen with several retrieves against one org at the same time), else None. package.xml is not counted."""
+    listed = (result or {}).get("fileProperties") or []
+    listed = [listed] if isinstance(listed, dict) else listed
+    names = {str(p.get("fileName") or "") for p in listed if isinstance(p, dict)}
+    names = {n for n in names if n and not n.endswith("package.xml")}
+    out = pathlib.Path(out)
+    arrived = sum(1 for n in names if (out / n).exists() or (out / "unpackaged" / n).exists())
+    return {"listed": len(names), "arrived": arrived} if arrived < len(names) else None
+
+
 def read_placements(raw, org):
     """Retrieve flows, Lightning pages, site pages and the org's own Lightning web components into a temporary folder
     (Metadata API format, read only; nothing is deployed) and keep only the places that name a form."""
@@ -162,6 +174,9 @@ def read_placements(raw, org):
                 if not ok:
                     errors.append(f"{mtype}: {result}")
                     continue
+                short = short_read(result, out)
+                if short:
+                    entry.setdefault("short", []).append({"type": mtype, **short})
                 found = scan_folder(out).get(kind) or {}
                 entry["files"] += found.get("files", 0)
                 entry["items"] += found.get("items", [])

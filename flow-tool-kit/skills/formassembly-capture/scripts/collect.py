@@ -232,7 +232,7 @@ def collect_api(args, opener=None) -> list[dict]:
     where = archive.paths(args.root)
     os.makedirs(where["raw"], exist_ok=True)
     os.makedirs(where["archive"], exist_ok=True)
-    base = api._admin_base(api._base()) if args.admin else None
+    base = api.admin_base() if args.admin else None
     raw = api.get("forms/index.json", base=base, opener=opener)
     with open(os.path.join(where["raw"], "api-forms.json"), "wb") as handle:
         handle.write(raw)

@@ -1,0 +1,25 @@
+{
+ "about": "Written by tools/build_kits.py; never edit by hand. The design-system kits this plugin ships, in this skill's folder: each kit's version (the plugin version in which its files last changed) and content checksum (sha256 over its sorted 'path<TAB>sha256' lines). ftk-start's ds_install.py reads it to report the bundled version and to offer an update of an older installed design system. from_forms: the folders Site Blocks reads from the Forms kit beside it.",
+ "plugin_version": "2.1.0",
+ "notices": "THIRD_PARTY_NOTICES.md",
+ "kits": {
+  "ftk-forms": {
+   "title": "FlowToolKit Forms",
+   "version": "2.1.0",
+   "files": 139,
+   "bytes": 5844999,
+   "content_sha256": "f590b9632c2aa60ac9c13961d7316f5b40d4107fce7652ea706e28a2fc0511a0"
+  },
+  "site-blocks": {
+   "title": "FlowToolKit Site Blocks",
+   "version": "2.1.0",
+   "files": 192,
+   "bytes": 4365370,
+   "content_sha256": "14ec319890efd845a8f5c4ba39e196301a47f7268aad8a7ccca149fdf12b1e03",
+   "from_forms": [
+    "project/components/lib/",
+    "project/assets/"
+   ]
+  }
+ }
+}

@@ -129,8 +129,8 @@ def control_node(f: dict, hide_label: bool = False) -> dict | None:
         text = re.sub(r'<a [^>]*href="https?://([^"]+)"[^>]*>([^<]+)</a>', r"\2 (\1)", f.get("attestation_text") or f.get("help") or "")
         return el("FTK.Checkbox", {"variant": "attestation", "label": label, "labelHidden": True, "attestationTitle": label,
                                    "attestationText": html.unescape(re.sub(r"<[^>]+>", " ", text)).strip() or None, "required": common.get("required")})
-    if c == "Checkbox":
-        return el("FTK.Checkbox", {"variant": v, **common})
+    if c == "Checkbox":  # standard is the package default, the toggle
+        return el("FTK.Checkbox", {"variant": None if v == "standard" else v, **common})
     if c == "NumberInput":
         extra = {"format": "currency", "variant": "standard"} if v == "currency" else {"variant": v, "min": 0}
         return el("FTK.NumberInput", {**extra, **common})
@@ -461,7 +461,7 @@ def stages_board(ctx: Ctx) -> dict:
     stages = []
     for page in ctx.pages:
         titled = [{"title": s["Header_Title__c"], "description": s.get("Header_Subtitle__c") or ""} for s in page.get("sections") or [] if s.get("Header_Title__c")]
-        stages.append({"title": page.get("Page_Label__c"), "description": page.get("Description__c") or "", "status": "Not Started",
+        stages.append({"title": page.get("Page_Label__c"), "description": page.get("Description__c") or "", "status": "todo",
                        "hasStarted": False, "progress": 0, "time": planrules.page_minutes(page), "startLabel": page.get("Button_Label__c") or "Start",
                        "substeps": titled if len(titled) >= 2 else []})  # the accordion lists sections only when two or more are titled
     height = int(math.ceil((520 + 170 * len(stages) + 44 * sum(len(s["substeps"]) for s in stages)) / 20) * 20)
@@ -476,7 +476,7 @@ def stages_board(ctx: Ctx) -> dict:
 def review_type(f: dict) -> str:
     c, v = f.get("control"), f.get("variant")
     return {"NumberInput": "currency" if v == "currency" else "double", "DateInput": "date", "FileUpload": "fileupload",
-            "Checkbox": "boolean", "MultiPicklist": "multipicklist"}.get(c) or ("tel" if c == "FormattedInput" and v == "phone" else "text")
+            "Checkbox": "boolean", "MultiPicklist": "multipicklist"}.get(c) or ("tel" if c == "FormattedInput" and v == "phone" else "string")
 
 
 def review_boards(ctx: Ctx) -> list:
@@ -562,6 +562,18 @@ def source_boards(ctx: Ctx, screenshot_url: str | None, screenshot_size: tuple) 
                                    f"gap: 14px; background: #ffffff; color: #353535; font-family: {ctx.style['font_css']}"}, raw(inner))
         out.append({"name": part_name(f"{ctx.slug}-source", n), "title": f"Original form: {ctx.title}" + (f" (part {n} of {len(parts)})" if len(parts) > 1 else ""),
                     "w": 1100, "h": h, "tree": tree})
+    return out
+
+
+def form_boards(ctx: Ctx, screenshot_url: str | None = None, screenshot_size: tuple = (0, 0)) -> list:
+    """One form's boards in canvas order: the source, the stages start screen (long forms), each page, the review."""
+    out = source_boards(ctx, screenshot_url, screenshot_size)
+    if ctx.long:
+        out.append(stages_board(ctx))
+    for i in range(len(ctx.pages)):
+        out += page_boards(ctx, i)
+    if ctx.long:
+        out += review_boards(ctx)
     return out
 
 
