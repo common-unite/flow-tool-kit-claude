@@ -1,0 +1,20 @@
+<!-- @dsCard group="Page layout" height=120 subtitle="formDynamicRepeater" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Repeater preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* One Media Top card per record, three across */
+  var records = [
+    { eyebrow: 'Youth programs', title: 'After-School Garden Club', subtitle: 'Weekly mentors for grades 3 to 6', badge: 'Now enrolling', imageAsset: 'FlowToolKit__Background_Tree_Planting_Autumn', items: [{ title: 'Where', value: 'Riverside Community Garden' }, { title: 'When', value: 'Tuesdays, 3:30 pm' }], buttons: [{ label: 'Sign up', url: '/volunteer/signup', style: 'link' }] },
+    { eyebrow: 'Environment', title: 'Shoreline Cleanup Crew', subtitle: 'Saturday mornings, gloves provided', badge: '12 spots left', imageAsset: 'FlowToolKit__Background_Shoreline_Cleanup_Sunset', items: [{ title: 'Where', value: 'Riverside shoreline, north lot' }, { title: 'When', value: 'Saturdays, 9 am' }], buttons: [{ label: 'Sign up', url: '/volunteer/signup', style: 'link' }] },
+    { eyebrow: 'Food access', title: 'Pantry Distribution Day', subtitle: 'Pack and hand out grocery boxes', badge: 'Weekly', imageAsset: 'FlowToolKit__Background_Volunteer_Team_Tables', items: [{ title: 'Where', value: 'Riverside Community Kitchen' }, { title: 'When', value: 'Thursdays, 4 pm' }], buttons: [{ label: 'Sign up', url: '/volunteer/signup', style: 'link' }] }
+  ];
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null, h(SB.Repeater, { cardType: 'mediaTop', columns: 3, records: records })))));
+</script>
+</body>
+</html>

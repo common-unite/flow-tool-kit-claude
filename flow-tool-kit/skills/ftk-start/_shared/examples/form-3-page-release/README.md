@@ -20,6 +20,8 @@ The worked example for a form described in plain words, with no source form and 
 - **The information page.** Kept because the brief asks for it and it carries real information. Labelled for its purpose ("About the Program", never "Welcome"), button Get Started, visible to respondents only, so staff reviewing a submission land on the questions.
 - **Packaged targets first.** Every answer lands on a packaged Form Submission field: the Contact 1 block, the mailing text fields behind one Address component, the demographic fields with their "prefer not to" values, the organization block, and the electronic signature block (signature pad, printed name, date). With no org connected, nothing else could be checked, and these fields exist in every Flow Tool Kit org.
 - **Copy.** Every page has a description of at least two sentences, every section a title and subtitle, and the confirmation runs three paragraphs. Facts the brief does not give are bracketed placeholders listed in `questions`.
+- **Reuse and shape asked, even with no org.** Every component says `reason: "no catalog"` and records the shape question and its answer (JSON on the section), so build-template builds exactly what was agreed.
+- **A confirmation email.** Every form that collects an email address gets one (`emails.confirmation`), with the same placeholders as the confirmation message.
 - **No invented logic.** The brief has no show-and-hide rules, so the capture says `"conditions": "none_exist"` and the plan has none.
 
 ## On a paid edition with an org connected

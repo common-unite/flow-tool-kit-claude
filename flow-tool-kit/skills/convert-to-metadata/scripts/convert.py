@@ -978,8 +978,22 @@ def print_plan(conversion, out=None):
 
 def load_component_module(path=None):
     """build-form-component's scripts/component.py, which writes the custom metadata record files (emit_cmt) and checks
-    them (Checker). It sits beside this skill in the plugin."""
-    candidates = [pathlib.Path(path)] if path else [HERE.parent.parent / "build-form-component" / "scripts" / "component.py"]
+    them (Checker). It is the build-form-component skill of this plugin, whose folder is build-form-component or
+    <plugin name>:build-form-component (_shared/lib/siblings.py finds either)."""
+    candidates = [pathlib.Path(path)] if path else []
+    if not path:
+        if str(HERE.parent / "_shared" / "lib") not in sys.path:
+            sys.path.insert(0, str(HERE.parent / "_shared" / "lib"))
+        try:
+            import siblings
+        except ImportError:
+            siblings = None
+        if siblings is not None:
+            try:
+                candidates.append(pathlib.Path(siblings.find(str(HERE.parent), "build-form-component", subdir="scripts",
+                                                             markers=["component.py"])) / "component.py")
+            except siblings.NotFound:
+                pass  # reported below
     for candidate in candidates:
         if candidate.is_file():
             spec = importlib.util.spec_from_file_location("ftk_component", candidate)

@@ -1,0 +1,36 @@
+<!-- @dsCard group="Sections" height=3000 width=900 subtitle="recordCard · 11 card types" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>RecordCard preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.rc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}.rc-grid.rc-row{align-items:stretch}.rc-grid:not(.rc-row)>.ftk-rc{height:auto}.rc-grid>.pv-item{margin:0;padding:8px}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var IMG = { mediaTop: '../../assets/Backgrounds/Background_Tree_Planting_Autumn.jpg', photoOverlay: '../../assets/Backgrounds/Background_Shoreline_Cleanup_Sunset.jpg', progress: '../../assets/Backgrounds/Background_Solar_Panel_Install.jpg' };
+  var types = ['mediaTop', 'photoOverlay', 'dateTile', 'progress', 'headerBand', 'countdown', 'iconLead', 'profile', 'fieldList', 'valueSpotlight'];
+  var names = { mediaTop: 'Media Top', photoOverlay: 'Photo Overlay', dateTile: 'Date Tile', progress: 'Progress', headerBand: 'Header Band', countdown: 'Countdown', iconLead: 'Icon Lead', profile: 'Centered Profile', fieldList: 'Field List', valueSpotlight: 'Value Spotlight' };
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    h('div', { className: 'rc-grid' }, types.map(function (t) {
+      return h('div', { key: t, className: 'pv-item' + (t === 'photoOverlay' ? ' rc-tall' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, 'cardType ' + t + ' · ' + names[t] + (t === 'dateTile' ? ' (no image: the tile leads)' : '')), h(F.RecordCard, { cardType: t, sample: true, cardStyle: 'elevated', image: IMG[t] }));
+    })),
+    Demo('cardType strip · stripTone info, warning, success, error', h('div', { style: { display: 'grid', gap: 10 } },
+      h(F.RecordCard, { cardType: 'strip', sample: true }),
+      h(F.RecordCard, { cardType: 'strip', stripTone: 'warning', title: 'Your application is missing a budget', subtitle: 'Add it before March 7', buttons: [{ label: 'Open budget', style: 'link' }], cardStyle: 'outlined' }),
+      h(F.RecordCard, { cardType: 'strip', stripTone: 'success', title: 'Letter of Agreement signed', cardStyle: 'flat' }),
+      h(F.RecordCard, { cardType: 'strip', stripTone: 'error', title: 'Payment failed', subtitle: 'Card ending 4242', buttons: [{ label: 'Retry', style: 'brand' }] })), true),
+    Demo('A row of two cards of one type (how a repeater or Design Block row uses them): the package card is height:100%, so cards in a row stretch to the tallest and their footers line up', h('div', { className: 'rc-grid rc-row' },
+      h(F.RecordCard, { cardType: 'fieldList', title: 'Front Desk Greeter', badge: 'Open', rows: [{ label: 'Location', value: '100 Riverside Plaza' }, { label: 'Schedule', value: 'Weekdays' }], buttons: [{ label: 'Apply', style: 'brand' }] }),
+      h(F.RecordCard, { cardType: 'fieldList', title: 'Garden Workday Lead', badge: 'Open', rows: [{ label: 'Location', value: 'Riverside Community Garden' }, { label: 'Schedule', value: 'First Saturday, 9 am to noon' }, { label: 'Commitment', value: 'Six months' }], buttons: [{ label: 'Apply', style: 'brand' }] })), true),
+    Demo('cardStyle outlined and flat · fieldList and iconLead with avatarType initials, iconStyle tile', h('div', { className: 'rc-grid' },
+      h(F.RecordCard, { cardType: 'fieldList', sample: true, cardStyle: 'outlined' }),
+      h(F.RecordCard, { cardType: 'iconLead', title: 'Maria Okafor', subtitle: 'Case manager', avatarType: 'initials', iconStyle: 'tile', rows: [{ label: 'Email', value: 'maria@example.org' }], buttons: [{ label: 'Message', style: 'outline' }], cardStyle: 'flat' }),
+      h(F.RecordCard, { cardType: 'mediaTop', sample: true, image: '../../assets/Backgrounds/Background_Volunteer_Team_Tables.jpg', mediaHeight: 'medium', imageFrame: true, cornerTag: '2 spots left', cardStyle: 'outlined' })), true),
+    Demo('allowSelect · a repeater with Allow Selection and Max Selection Size 1: each card adds a Select button first; the selected card reads Selected with a check, Unselect on hover', h('div', { className: 'rc-grid rc-row' },
+      h(F.RecordCard, { cardType: 'iconLead', title: 'Maria Okafor', subtitle: 'Head of household', avatarType: 'initials', cardStyle: 'outlined', allowSelect: true, isSelected: true }),
+      h(F.RecordCard, { cardType: 'iconLead', title: 'Sam Okafor', subtitle: 'Household member', avatarType: 'initials', cardStyle: 'outlined', allowSelect: true })), true)
+  ));
+</script>
+</body>
+</html>

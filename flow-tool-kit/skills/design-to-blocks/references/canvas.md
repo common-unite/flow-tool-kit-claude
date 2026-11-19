@@ -37,7 +37,7 @@ The canvas serves an image only as an upload to it (`/_blob/<id>`), never as a f
    Map each uploaded file (or its `name` in `uploads.json`) to its `/_blob/` url exactly as returned. `uploads.json` should now list nothing.
 4. Publish each batch of `design/publish-batches.json` in order: `url` the canvas, `root` and `files` as written. `canvas.json` is in the last batch, so the canvas opens on a complete set.
    - **Claude Code (`--mode code`):** the design system's bundle, stylesheet, libraries and `tokens.json` are copied server side from the person's own design system (`{"artifact": <link>, "path": ...}` entries), never its images. Up to 255 files a call, so usually one call.
-   - **Chat (`--mode chat`):** chat cannot copy between artifacts, so the run writes those files from the full Site Blocks kit (the release zip the person attaches, unpacked by ftk-start's `ds_install.py unpack`) into `design/project/ds/sb/`, and each batch holds at most 16 files.
+   - **Chat (`--mode chat`):** chat cannot copy between artifacts, so the run writes those files from the Site Blocks kit the plugin ships (its ftk-design-system skill) into `design/project/ds/sb/`, and each batch holds at most 16 files.
 
 Later redraws reuse the blobs in `site.json`: only an image a page newly draws is listed, so only it uploads. A changed image is a new upload: remove its `blob` from `site.json` and rerun.
 
@@ -47,8 +47,8 @@ Before every later publish, read the canvas first (`read`, `project/canvas.json`
 
 **In Claude Code**, two headless checks (Node and Playwright):
 
-- `node scripts/check_review_page.cjs _site/<slug>/design` renders `review.html` at 1280 and 390, screenshots every artboard into `design/render/`, and fails on console errors, unknown components and broken images. It needs nothing from the canvas.
-- After publishing, read the canvas's own runtime once (Artifact `read`, `path` `artifact-type/dc-runtime.js`), then `node scripts/check_site_review.cjs _site/<slug>/design <dc-runtime.js> <screenshot folder>`. It plays every artboard at its frame size, serving uploads from `site.json` as the canvas serves `/_blob/` urls, and prints one line each: console errors, missing files, broken images, any image that is not an upload, unresolved components, clipped content, and whether each section's height matches the measured render. Every line must say `ok`.
+- `node scripts/site_review.cjs check _site/<slug>/design` renders `review.html` at 1280 and 390, screenshots every artboard into `design/render/`, and fails on console errors, unknown components and broken images. It needs nothing from the canvas.
+- After publishing, read the canvas's own runtime once (Artifact `read`, `path` `artifact-type/dc-runtime.js`), then `node scripts/site_review.cjs site _site/<slug>/design <dc-runtime.js> <screenshot folder>`. It plays every artboard at its frame size, serving uploads from `site.json` as the canvas serves `/_blob/` urls, and prints one line each: console errors, missing files, broken images, any image that is not an upload, unresolved components, clipped content, and whether each section's height matches the measured render. Every line must say `ok`.
 
 Then open every screenshot and look. **In chat**, open the published canvas and look at every artboard at both widths, top to bottom. A canvas swapped while open can show a stale render; reload before judging. Check again after every publish, the last small one included.
 

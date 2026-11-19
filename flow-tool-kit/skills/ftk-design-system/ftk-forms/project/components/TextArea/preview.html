@@ -1,0 +1,20 @@
+<!-- @dsCard group="Fields" height=882 subtitle="flowFormField · lightning-textarea" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>TextArea preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('Default · required · maxLength 500: the counter appears once typing starts', h(F.TextArea, { label: 'Program description', placeholder: 'Tell us about the program', required: true, maxLength: 500 })),
+    Demo('Focus · counter shows typed / max', h(F.TextArea, { label: 'Program description', defaultValue: 'Weekly garden workdays for neighbors on the east side.', required: true, maxLength: 500, focused: true })),
+    Demo('Error · required, empty', h(F.TextArea, { label: 'Program description', required: true, error: 'Complete this field.' })),
+    Demo('Essay · minHeight 240px (textAreaMinHeight__c): a taller box for long answers', h(F.TextArea, { label: 'Why do you want a garden plot this year?', placeholder: 'A few paragraphs is perfect', required: true, minHeight: '240px', maxLength: 5000 })),
+    Demo('Read only: no counter', h(F.TextArea, { label: 'Staff notes', defaultValue: 'Approved by the grants committee on October 14.', readOnly: true }))
+  ));
+</script>
+</body>
+</html>

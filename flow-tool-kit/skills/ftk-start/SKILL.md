@@ -1,11 +1,11 @@
 ---
 name: ftk-start
-description: The front door for any Flow Tool Kit (FTK) work described in plain words. Use when someone wants a form built, moved or designed on Flow Tool Kit, for example "convert this FormAssembly form into a form template", "turn this Google Form or PDF into an FTK form", "turn this into a screen flow", "make these into form components", "design a grant application on Outbound Funds", "I need a three-page registration form with a signature", or "build a site page with this form". Reads the org first, asks the few setup questions once per org, shows a short plan, then runs the right Flow Tool Kit skills in order. Works in claude.ai chat and Claude Code.
+description: The front door for Flow Tool Kit (FTK) in Salesforce, and the skill to load first whenever someone wants a form built, converted, designed or changed, even when they never say Flow Tool Kit, Form Template or a skill name, and whenever a request names Flow Tool Kit. Use when: "let's add this form to Salesforce", "can we convert this form?", "build a form template out of this PDF", a Word document, screenshot or photo of a form, a FormAssembly, Jotform, Google Forms or other web form link, "can we build a new form template", "a new flow form" or "a form component", an intake, application, registration or sign-up form, a Repeater or Table, a screen flow for sign-ups, a page where people update their details, or a mockup before building. Reads the org, asks only what it cannot read (one plain question when the build approach is open), states a short plan and runs the other Flow Tool Kit skills itself, in order, without the person naming them. Works in claude.ai chat and Claude Code.
 ---
 
 # FTK Start
 
-The entry point for building on Flow Tool Kit. A person asks in their own words; this skill reads the org, settles the few things only they can answer, shows a short plan, and then runs the specialist skills in the right order. They never need to know the other skill names.
+The entry point for building on Flow Tool Kit, and the first skill to load for any form request, whether or not the person says Flow Tool Kit. A person asks in their own words; this skill reads the org, settles the few things only they can answer, states a short plan, and then runs the specialist skills in the right order itself. They never need to know, or be asked about, the other skill names.
 
 It decides **what happens and in what order**. The specialist skills do the detailed work, and each one owns its own rules; never redo their steps here.
 
@@ -13,7 +13,7 @@ It decides **what happens and in what order**. The specialist skills do the deta
 
 | Surface | What works |
 |---|---|
-| claude.ai chat (code execution on) | Everything up to an approved design: org catalog (with a Salesforce connector), setup questions, design system install, reading a source or a brief, brand kit, `plan.json` and the review canvas. With a Salesforce connector that can create records, the Form Template records too |
+| claude.ai chat (code execution on) | Everything up to an approved design: org catalog (with a Salesforce connector), setup questions, design system install from the plugin's own files, reading a source or a brief, brand kit, `plan.json` and the review canvas. With a Salesforce connector that can create records, the Form Template records too |
 | Claude Code (local or on the web) with the Salesforce CLI | All of the above, plus everything that deploys metadata: new fields, metadata form components, Flow Sections, custom LWCs, conversion flows, email templates, site pages, access fixes |
 
 In chat, say plainly which steps of the plan need Claude Code, and hand over `plan.json` and the project config file: the same files build there without edits.
@@ -35,7 +35,7 @@ Run the **org-catalog** skill before any planning or design, on every request, e
 
 ### 3. Setup questions, once per org
 
-Ask only when the project config has no answer for this org. Ask all three in one message, each with what was found and a default, so the person can answer "yes" to all of it (see Confirm, don't ask):
+Ask only when the project config has no answer for this org. On a clear request, do not stop for them: take each default, name the defaults in one line of the plan as assumptions the person can correct, and go on (nothing reaches the org before the person has seen the design). Otherwise ask all three in one message, each with what was found and a default, so the person can answer "yes" to all of it (see Confirm, don't ask):
 
 1. **Edition.** "Is this org on the paid or the free Flow Tool Kit edition? This decides whether forms are built on the records' own objects (Contact, Account, your objects) with Form Builder field mapping, or directly on Form Submission." No default can be read from the org: sandboxes and scratch orgs always run without limits, so the edition that matters is production's. If they do not know, use **paid** and mark it `assumed` in the config; their license page or Flow Tool Kit support can confirm.
 2. **Audiences.** "Who fills in forms in this org: the public on a site (guest), signed-in site users (portal), internal staff? Pick all that apply." Default from the request and the catalog (a template on a site page suggests guest).
@@ -59,7 +59,7 @@ Carry these into the plan whenever a guest or portal audience is chosen:
 
 ### 4. Design systems, once per account
 
-form-design and design-to-blocks draw with the person's own copies of the **FlowToolKit Forms** and (when the request involves a site) **FlowToolKit Site Blocks** design systems. If the project config has no link for one that this request needs, install it now, following [references/design-systems.md](references/design-systems.md). The plugin carries only the slim kit (`_shared/design-systems/kits.json`); the full kit is a release zip that Claude Code downloads (`scripts/ds_install.py fetch`) and that the person attaches in chat (`scripts/ds_install.py unpack`). `scripts/ds_install.py status` compares the installed version with the one this plugin expects. `scripts/ds_install.py prepare` builds the folder and a plan of calls sized for Claude Code or chat. Install Forms before Site Blocks, which links to it. Save each link to the project config. Never point at a design system on someone else's account.
+form-design and design-to-blocks draw with the person's own copies of the **FlowToolKit Forms** and (when the request involves a site) **FlowToolKit Site Blocks** design systems. The kits ship inside the plugin, in its **ftk-design-system** skill: nothing to download or attach. If the project config has no link for one that this request needs, install it now, following [references/design-systems.md](references/design-systems.md). `scripts/ds_install.py status` reports the version this plugin ships, checks the bundled files, and compares the installed design system's version. `scripts/ds_install.py prepare` copies a kit out of the plugin and plans the calls for Claude Code or chat. Install Forms before Site Blocks, which links to it. Save each link to the project config. Never point at a design system on someone else's account.
 
 ### 5. Clarify an unclear request
 
@@ -67,13 +67,13 @@ If the request itself is unclear (which form, what it is for, who fills it in, w
 
 ### 6. Show the plan
 
-Classify the request with the routing table below, then show a short plan before running anything: one line per step, the skill it uses, what it produces, and where it runs (chat or Claude Code). Ask to confirm or correct it, once. Example:
+Classify the request with the routing table below, then state a short plan in plain words: one line per step, what it produces, and where it runs (chat or Claude Code). The person does not need the skill names. On a clear request, state the plan and start step 7 in the same reply, inviting corrections without waiting for them. Wait for an answer only when the request is genuinely open (step 5, or the approach row in Routing), and then ask about the use case in plain words, never whether to use a skill. Example:
 
-> Here is the plan. 1. Read your FormAssembly form (form-migrate): every question, choice and rule, then a short round on anything it does not say. 2. Brand kit: your saved kit, as you said. 3. Design (form-design): plan.json and a review canvas, three pages. 4. Build the template (build-template, needs a Salesforce connector or Claude Code). 5. Conversion flow to Contact and Opportunity (new-mapping-flow, Claude Code). 6. Guest access (flow-access-fix, Claude Code). Go ahead, or change anything?
+> Here's how I'll do it: read your FormAssembly form (every question, choice and rule), design it as a three-page form you can review before anything is built, then build the template, the conversion to Contact and Opportunity, and guest access in Claude Code. I'm assuming the paid edition and a public site form; tell me if either is wrong. Starting with the form now.
 
 ### 7. Run the skills in order
 
-Run each step's skill and read that skill before starting it. After each step, show what it produced in a few lines and ask to confirm or correct before the next step uses it. Nothing reaches the org until the person has seen the design.
+Run each step's skill and read that skill before starting it (load it as a skill; see The rest of this plugin). After each step, show what it produced in a few lines and carry on; stop for an answer only where the next step needs a decision only the person can make. Nothing reaches the org until the person has seen the design.
 
 ### 8. The gap interview, after the source is read
 
@@ -88,7 +88,10 @@ Right after form-migrate (or brief mode) and before form-design, check what a co
 | A described form, no source ("a three-page form with...", "design a grant application on Outbound Funds") | org-catalog, **brief mode** ([references/brief-mode.md](references/brief-mode.md)) which writes `ir.json` through form-migrate's manual adapter, then as above from brand-kit |
 | Clean up, redesign or merge existing Form Templates | org-catalog, form-migrate (Form Template source), form-design, build-template, field-audit |
 | Make forms into reusable form components | org-catalog, form-migrate per form, build-form-component (boundaries and reuse), build-template's review pass |
-| Turn this into a screen flow | Say plainly that no skill here builds a standalone screen flow. A Flow Section (a screen flow that runs inside one section of a Form Template page) is built by build-flow-section. Otherwise offer the form as a Form Template through the route for its source above |
+| The build approach is open ("a screen flow for sign-ups", "a new flow form", "we need a form for our food pantry in Salesforce", "a page where families update their info", with no source form) | Ask one plain question about the use case, with your recommendation and its reason, then route from the answer yourself: "Is this a form people fill in on its own, like an application or sign-up, or one step inside a process your team already runs as a flow?" A form on its own: a Form Template, through the route for its source or brief above (the default). A step in an existing flow: Flow Tool Kit form components on the flow's screen (build-form-component, and repeating-data for rows); a Flow Section inside a Form Template page is build-flow-section. A handful of staff-only fields with nothing Flow Tool Kit adds: say a standard Flow screen is enough and that no skill here builds standalone flows |
+| A reusable block of questions, a Repeater or a Table ("can we build a form component?", "let families add everyone in the household", "show the shifts as a table") | org-catalog, then build-form-component, or repeating-data for repeating rows (it hands over to build-repeater or build-table) |
+| Build, rebuild or check a Form Template from an approved design | org-catalog, build-template, then the steps after it above |
+| One section of an existing form needs org data or a custom control ("applicants pick their school from our Accounts", "branch on whether they already have a membership", "a running total as people pick tickets") | org-catalog, then build-flow-section (records, branching, several steps) or build-custom-lwc (a live total, a widget) straight away; no redesign unless the form does not exist yet |
 | Save answers to records, fix a conversion | org-catalog, new-mapping-flow |
 | Build a site page with this form | org-catalog, the form route above if the form is not built yet, design-to-blocks, build-site-pages, flow-access-fix and sf-guest-audit for guest |
 | A form on a record page | org-catalog, new-record-page-form |
@@ -101,7 +104,26 @@ Right after form-migrate (or brief mode) and before form-design, check what a co
 | Check a client's guest exposure (what the public can reach through their sites) | sf-guest-audit |
 | A site page with no form (a landing page, program page or listing) | org-catalog, brand-kit if chosen, design-to-blocks, build-site-pages, sf-guest-audit when guests see records |
 
-A request that matches two rows runs both, sharing their common steps once.
+A request that matches two rows runs both, sharing their common steps once. When it is unclear whether the request is about a form or about a site, ask in plain words, for example "Is this a form or flow you want built in Salesforce, or more website, UX and UI design?", and pick the route from the answer.
+
+## The rest of this plugin
+
+Every other Flow Tool Kit skill is yours to use without the person naming it. Pick the next one from the conversation and load it yourself: in Claude Code with the Skill tool (`flow-tool-kit:<name>`); in chat, read its `SKILL.md` in the sibling skill folder. Never ask whether to use a skill, never name one in a question, and never offer one as a choice; when the request is genuinely unclear, ask about the use case in plain words (as above) and choose from the answer.
+
+| Need | Skill |
+|---|---|
+| Read a source form or a brief | form-migrate (one form), formassembly-capture (a whole FormAssembly account) |
+| Design the form, review canvas | form-design |
+| Build the template | build-template |
+| Reusable blocks, Repeaters, Tables | build-form-component, repeating-data, build-repeater, build-table |
+| Logic in a section, custom controls | build-flow-section, build-custom-lwc, new-invocable |
+| Answers to records, prefill | new-mapping-flow |
+| Emails | build-email-templates |
+| Brand, site pages | brand-kit, design-to-blocks, build-site-pages |
+| A form on a record or site page | new-record-page-form |
+| Access errors, guest exposure | flow-access-fix, sf-guest-audit |
+| What the org has, where fields are used | org-catalog, field-audit |
+| Source control, merging, metadata | pull-form, consolidate-sections, convert-to-metadata |
 
 ## Confirm, don't ask
 
@@ -134,7 +156,8 @@ Show what you extracted or planned and ask the person to confirm or correct it. 
 | Designing before org-catalog ran | Catalog first, every time, even with a catalog file present |
 | Asking the setup questions again for an org already in the config | Read the config; ask only what is missing |
 | Asking a question the source or org answers | Show what you found and ask to confirm |
-| Skipping the plan and running skills straight away | One short plan, confirmed once |
+| Skipping the plan and running skills straight away | One short plan, stated in plain words, then carry on |
+| Asking "should I use the form-migrate skill?" or waiting for a go-ahead on a clear request | Choose the skills yourself; ask only about an open use case, in plain words |
 | Designing with the confirmation idea, senders, Save Progress or images unknown | The gap round after the source is read: only what is missing, each with a default |
 | Planning a request you did not understand | Clarifying questions first, each with a best guess |
 | Treating a sandbox's unlimited behaviour as proof of the paid edition | Ask; production's edition is what matters |

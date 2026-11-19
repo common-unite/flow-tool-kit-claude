@@ -1,0 +1,19 @@
+<!-- @dsCard group="Shared parts" height=120 subtitle="lightning-icon, SLDS 2.30.7" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Icon preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* Icons a block's items, stats and steps commonly take, at the four sizes */
+  var names = ['utility:heart', 'utility:groups', 'utility:event', 'utility:location', 'utility:moneybag', 'utility:check', 'standard:volunteer_work', 'standard:form', 'standard:event', 'standard:account'];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'slds-p-around_medium' }, ['x-small', 'small', 'medium', 'large'].map(function (size) {
+      return h('div', { key: size, className: 'slds-grid slds-grid_vertical-align-center slds-m-bottom_small' },
+        h('span', { className: 'slds-text-title slds-size_1-of-12' }, size),
+        names.map(function (name) { return h('span', { key: name, className: 'slds-m-right_medium', title: name }, h(SB.Icon, { iconName: name, size: size })); }));
+    })));
+</script>
+</body>
+</html>

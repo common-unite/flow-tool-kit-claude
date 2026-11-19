@@ -1,0 +1,20 @@
+<!-- @dsCard group="Features" height=120 subtitle="borders" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Borders */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "Top only, default width", "columns": "2", "cardStyle": "clean", "paddingTop": "medium", "paddingBottom": "medium", "items": [{"title": "Border check", "description": "Border sits on the section edge."}, {"title": "Full width", "description": "It should span the whole viewport."}], "borderTop": true, "hoverStyle": "lift"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "Bottom only", "columns": "2", "cardStyle": "clean", "paddingTop": "medium", "paddingBottom": "medium", "items": [{"title": "Border check", "description": "Border sits on the section edge."}, {"title": "Full width", "description": "It should span the whole viewport."}], "borderBottom": true, "hoverStyle": "lift"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "Both, 8px red", "columns": "2", "cardStyle": "clean", "paddingTop": "medium", "paddingBottom": "medium", "items": [{"title": "Border check", "description": "Border sits on the section edge."}, {"title": "Full width", "description": "It should span the whole viewport."}], "borderTop": true, "borderBottom": true, "borderWidth": 8, "borderColor": "#dc2626", "hoverStyle": "lift"})))));
+</script>
+</body>
+</html>

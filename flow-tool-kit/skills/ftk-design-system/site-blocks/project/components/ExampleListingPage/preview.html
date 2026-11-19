@@ -1,0 +1,33 @@
+<!-- @dsCard group="Examples" height=120 subtitle="a page of many records: every open funding opportunity" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Riverside Community Fund, Funding page: a short hero, the open opportunities as record cards beside the help column, then the year in numbers */
+  var site = { layout: 'customerService', logo: 'FlowToolKit__FlowToolKit_Gray', siteName: 'Riverside Community Fund', navItems: ['Home', 'Funding', 'Programs', 'Apply', 'Contact'], currentNav: 1,
+    footer: '<p style="text-align: center;">Riverside Community Fund · 100 Riverside Plaza · grants@riverside.example.org</p>' };
+  var brand = { brandColor: '#2e844a', accentColor: '#F4BE45' };
+  var opportunities = [
+    { eyebrow: 'General operating', title: 'Community Resilience Fund', subtitle: '$25,000 to $75,000 · two years', badge: 'Closes Sept 30', imageAsset: 'FlowToolKit__Background_Volunteer_Team_Tables', items: [{ title: 'Who', value: 'Nonprofits in the valley' }, { title: 'Decision', value: 'Within 60 days' }], buttons: [{ label: 'View fund', url: '/funding/community-resilience', style: 'link' }] },
+    { eyebrow: 'Capital', title: 'Green Spaces Grant', subtitle: 'Up to $40,000 · one year', badge: 'Rolling', imageAsset: 'FlowToolKit__Background_Tree_Planting_Autumn', items: [{ title: 'Who', value: 'Gardens, parks, school yards' }, { title: 'Decision', value: 'Quarterly' }], buttons: [{ label: 'View fund', url: '/funding/green-spaces', style: 'link' }] },
+    { eyebrow: 'Youth', title: 'After-School Futures', subtitle: '$10,000 to $20,000 · one year', badge: 'Opens Jan 15', imageAsset: 'FlowToolKit__Background_Volunteer_Build_Day', items: [{ title: 'Who', value: 'Programs for grades 3 to 8' }, { title: 'Decision', value: 'By March 30' }], buttons: [{ label: 'View fund', url: '/funding/after-school', style: 'link' }] },
+    { eyebrow: 'Emergency', title: 'Rapid Response Fund', subtitle: 'Up to $5,000 · decided in a week', badge: 'Always open', imageAsset: 'FlowToolKit__Background_Shoreline_Cleanup_Sunset', items: [{ title: 'Who', value: 'Groups meeting an urgent need' }, { title: 'Decision', value: 'Within 7 days' }], buttons: [{ label: 'View fund', url: '/funding/rapid-response', style: 'link' }] }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, site,
+      h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+        h(SB.Hero, Object.assign({ headingAlign: 'left', bodyAlign: 'left', background: '#032D60', backgroundGradient: 'diagonal', sectionLabel: 'Funding', heading: 'Open funding opportunities', subheading: 'Four funds take applications this year. Pick the one that fits your work, or ask us which one does.' }, brand)))),
+      h(SB.Section, { sectionHeight: 32 },
+        h(SB.Column, { columnWidth: '8' }, h(SB.Repeater, { cardType: 'mediaTop', columns: 2, records: opportunities })),
+        h(SB.Column, { columnWidth: '4' },
+          h(SB.Callout, Object.assign({ background: '#EEF1F4', heading: 'Not sure which fund fits?', description: 'Answer five questions and we will point you to the right one.', headingAlign: 'left', bodyAlign: 'left', buttons: [{ label: 'Check eligibility', url: '/apply/eligibility', style: 'brand' }] }, brand)),
+          h(SB.RichContent, { richTextValue: '<h3>Office hours</h3><p>Talk to a program officer every Tuesday, 10 am to noon. <a href="/contact">Book a time</a>.</p>' }))),
+      h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+        h(SB.StatsBar, Object.assign({ background: '#032D60', statsTreatment: 'tiles', cardBackgroundColor: '#FFFFFF', cardBackgroundOpacity: 10, items: [{ title: 'awarded in 2025', value: '$1.8M' }, { title: 'organizations funded', value: '64' }, { title: 'median decision time', value: '43 days' }, { title: 'first-time grantees', value: '38%' }] }, brand))))));
+</script>
+</body>
+</html>

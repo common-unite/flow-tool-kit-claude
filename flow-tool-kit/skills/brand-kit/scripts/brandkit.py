@@ -21,7 +21,6 @@ plan-style     the style, assets, images and brand_board keys form-design's plan
 Picks may name an image by its index in candidates.json or by its URL. Standard library only.
 """
 import argparse
-import colorsys
 import datetime
 import json
 import os
@@ -29,53 +28,15 @@ import pathlib
 import re
 import sys
 
-MIN_CONTRAST = 4.5
+# Colour and contrast: one copy for every skill (shared lib contrast.py); form-design's plan check measures the same way
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "_shared" / "lib"))
+from contrast import HEXCOLOR, MIN_CONTRAST, darken_to, luminance, normalize_hex  # noqa: E402,F401
+from contrast import ratio as contrast  # noqa: E402
+
 TEXT_ON_BACKGROUND = "#1b1f24"  # the darkest body text a form shows on a tinted background
-HEXCOLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
 ASSET_NAME = re.compile(r"^[A-Za-z](?:[A-Za-z0-9]|_(?!_))*$")
 IMAGE_ROLES = ("logo", "logoAlternate", "favicon", "banner", "tile")
 SERIF_HINT = re.compile(r"serif|garamond|georgia|merriweather|playfair|lora|baskerville|caslon|times|bodoni|crimson|libre|slab|roboto slab|pt serif|noto serif|source serif|cormorant|spectral", re.I)
-
-
-# ---- color and contrast ---------------------------------------------------------------------------------------------
-
-def normalize_hex(value):
-    value = (value or "").strip()
-    if re.fullmatch(r"#?[0-9a-fA-F]{3}", value):
-        value = "#" + "".join(c * 2 for c in value.lstrip("#"))
-    if re.fullmatch(r"[0-9a-fA-F]{6}", value):
-        value = "#" + value
-    if not HEXCOLOR.match(value):
-        raise ValueError(f"not a color: {value!r} (use #rrggbb)")
-    return value.lower()
-
-
-def luminance(hex_color):
-    def channel(c):
-        c = c / 255
-        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
-    r, g, b = (int(hex_color[i:i + 2], 16) for i in (1, 3, 5))
-    return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b)
-
-
-def contrast(a, b="#ffffff"):
-    x, y = luminance(normalize_hex(a)), luminance(normalize_hex(b))
-    return (max(x, y) + 0.05) / (min(x, y) + 0.05)
-
-
-def darken_to(hex_color, against="#ffffff", minimum=MIN_CONTRAST):
-    """The same hue, darkened step by step until it reaches the contrast; the color itself when it already does."""
-    hex_color = normalize_hex(hex_color)
-    if contrast(hex_color, against) >= minimum:
-        return hex_color
-    r, g, b = (int(hex_color[i:i + 2], 16) / 255 for i in (1, 3, 5))
-    h, l, s = colorsys.rgb_to_hls(r, g, b)
-    while l > 0:
-        l = max(0.0, l - 0.01)
-        candidate = "#" + "".join(f"{round(c * 255):02x}" for c in colorsys.hls_to_rgb(h, l, s))
-        if contrast(candidate, against) >= minimum:
-            return candidate
-    return "#000000"
 
 
 # ---- reading picks ----------------------------------------------------------------------------------------------------
@@ -338,7 +299,7 @@ def global_styles_import(kit, exported=None):
 
 
 def plan_style(kit, images=None):
-    """The keys form-design's plan.json takes from the kit (its references/plan-format.md)."""
+    """The keys form-design's plan.json takes from the kit (_shared/standards/plan-format.md)."""
     colors, fonts, style, assets, voice = (kit.get(k) or {} for k in ("colors", "fonts", "style", "assets", "voice"))
     plan_style_keys = {"brand": colors.get("primary"), "heading_color": colors.get("heading"), "accent": colors.get("accent"),
                        "background": colors.get("background"), "font": fonts.get("body"), "heading_font": fonts.get("heading"),

@@ -1,0 +1,18 @@
+<!-- @dsCard group="Features" height=120 subtitle="per-item overrides" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Per-item overrides */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "Per-item overrides", "columns": "3", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "flat", "items": [{"title": "Deep + red brand", "description": "Own style and brand color.", "icon": "utility:money", "cardStyle": "deep", "brandColor": "#dc2626"}, {"title": "Glow + tinted bg", "description": "Own style and background.", "icon": "utility:world", "cardStyle": "glow", "backgroundColor": "#fef3c7"}, {"title": "Inherits section", "description": "No override, so Flat Fill.", "icon": "utility:apps"}], "hoverStyle": "lift"})))));
+</script>
+</body>
+</html>

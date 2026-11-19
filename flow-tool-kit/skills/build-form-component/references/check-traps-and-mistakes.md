@@ -1,6 +1,6 @@
 # Checking, traps and common mistakes
 
-Moved from this skill's SKILL.md, read on demand: Check, write, verify, Traps, Common mistakes.
+Moved from this skill's SKILL.md, read on demand: Check, write, verify, What a reviewed design can promise, Traps, Common mistakes.
 
 ## Check, write, verify
 
@@ -9,7 +9,20 @@ Moved from this skill's SKILL.md, read on demand: Check, write, verify, Traps, C
 3. **Write, in the chosen shape.** Record: the package's import (chat or Claude Code), then read the component back by `QualifiedApiName__c` to confirm its Id. Metadata: `scripts/component.py cmt`, `sf project deploy start`, then **Reset Form Cache** in the Form Builder's footer: configs are served from a platform cache, and a stale form looks exactly like a failed deploy. A metadata component build-template handed over (`action: build metadata`) is built under the name in the handoff, then build-template is run again to bind it. JSON: hand the checked JSON to build-template for the section, or give it to the person for the flow's or page's form component.
 4. **Extend makes a new version, in the chosen shape; updating the shared component is its own question.** Extend: take the component's current JSON (the Export action on the record, or the catalog's copy if current), then `python3 scripts/component.py extend <original.json> --name <New_Name> --add <added-fields.json> --out <new.json>`. It copies the design under the new name, renames every section, field and rule after it, and adds the fields; import the result as a new record component (or, in the metadata shape, write it with `scripts/component.py cmt` and deploy it) and point only this section at it. The original keeps serving every template that uses it. Update the shared component: only after its own question, listing every template and component it reaches, was answered yes; then import the changed JSON under the **same** name (same Id, every template changes) ([references/record-path.md](record-path.md)).
 5. **Bind.** build-template places the component in its page sections ([references/template-binding.md](template-binding.md)): a record component as `<Name>_v0`, a metadata component by its name. A header or footer component is built on **Form Template**, never on Form Submission.
-6. **Walk it.** Open the template's **Preview Form** and walk every page: each field, each option word for word, each required marker, every rule both ways. For a public form, also open it as a guest: record components need a guest sharing rule giving Read on Form Component where the record type is Record Component, or the guest sees nothing. A form is not built until this walk passes. [references/fidelity-contract.md](fidelity-contract.md) says what a reviewed design can and cannot promise.
+6. **Walk it.** Open the template's **Preview Form** and walk every page: each field, each option word for word, each required marker, every rule both ways. For a public form, also open it as a guest: record components need a guest sharing rule giving Read on Form Component where the record type is Record Component, or the guest sees nothing. A form is not built until this walk passes. [What a reviewed design can promise](#what-a-reviewed-design-can-promise), below, says what a reviewed design can and cannot promise.
+
+## What a reviewed design can promise
+
+A reviewer settles a design on form-design's canvas. The canvas is drawn with the real FlowToolKit Forms design system that ships with this plugin, from `plan.json`. That review is only worth something if the component built afterwards delivers the same thing. These rules keep the two together.
+
+1. **One source for both.** The canvas and the component are built from the same `plan.json`. A change goes into the plan, the canvas is redrawn, and the component is rebuilt from the plan. Never translate a screenshot or the drawing back into settings, and never invent a field mapping to make a design look complete.
+2. **The canvas promises only what the package has.** Every control and variant on the canvas is one the design system names, and form-design marks each field `supported`, `verify` or `gap`. Build `supported` fields as drawn. A `verify` field needs its check in the org before you call it built. A `gap` is not built as if it works: it stays in the plan's `gaps` until a Flow Section, a custom LWC or a package change covers it.
+3. **Translate one way.** Plan fields become package keys through the one table in [authoring-cookbook.md](authoring-cookbook.md), Part 4. A second translation is how a canvas and a build drift apart: a hidden label that loses its screen-reader text, consent wording that lands in 255-character help text under the card.
+4. **Evidence belongs to one revision and one org.** A preview checked against an earlier plan, another org or another package version says nothing about this one. Re-check after any change to the plan, the component or the org's package version.
+5. **Readiness comes from what is left open.** A component is not ready while any mapping is unresolved, a control or composition is unsupported, a behavior or integration is a gap, or a check is stale. A partial catalog match or a stand-in for a real service blocks a "ready" claim; design work can continue meanwhile.
+6. **The walk is the proof.** Built means the template's **Preview Form** walk passed against the plan: every field and option word for word, every required marker, every rule both ways, values saved on the Form Submission, at desktop and phone width, and as a guest for a public form. A page that looks right in a local preview is not proof the package draws it the same way.
+
+When a check cannot be run (no org connected, no browser), say which one and why; never mark a design ready without it.
 
 ## Traps
 

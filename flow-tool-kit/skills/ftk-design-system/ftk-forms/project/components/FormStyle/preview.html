@@ -1,0 +1,29 @@
+<!-- @dsCard group="Foundations" height=1090 width=900 subtitle="Form_Style__c Basic values · how a design picks up the Form Style" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Form Style</title><style>body{margin:0;background:var(--surface)}.pv{box-sizing:border-box;width:100%;max-width:900px;padding:20px 24px 28px;font-family:var(--font-sans)}.pv-cap{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:24px 0 4px}.pv-cap:first-child{margin-top:0}.pv-note{margin:0 0 10px;font-size:12px;line-height:1.5;color:var(--label)}.pv-sample{padding:4px 0 8px;border:1px solid var(--border-subtle);border-radius:10px;background:var(--ftk-color-background,var(--surface))}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  function C(key, l, child) { return h(F.Column, { key: key, large: l, medium: l, small: 12 }, child); }
+  function Sample() {
+    return h(F.Section, { title: 'Primary contact', subtitle: 'Who should we call about this application?', icon: 'utility:user', frame: 'box', headerStyle: 'outlined' },
+      C('a', 5, h(F.TextInput, { label: 'First name', required: true, defaultValue: 'Jordan' })),
+      C('b', 7, h(F.TextInput, { label: 'Last name', required: true })),
+      C('c', 7, h(F.FormattedInput, { type: 'email', label: 'Email', required: true })),
+      C('d', 5, h(F.Picklist, { label: 'Preferred contact', options: ['Email', 'Phone'], defaultValue: 'Email' })),
+      C('e', 12, h(F.Picklist, { label: 'Best time to reach you', variant: 'separatedbuttons', options: ['Morning', 'Afternoon', 'Evening'], defaultValue: 'Afternoon' })),
+      C('f', 12, h(F.Checkbox, { variant: 'attestation', label: 'Authorization', defaultChecked: true, attestationText: 'I certify this information is accurate.' })));
+  }
+  var grant = { brand: '#52b552', fieldLabels: '#032d60', inputText: '#032d60', borders: '#042d60', bordersOpacity: 50, inputBackground: '#f7f7f7', cornerRadius: 20, inputSize: 130, textSize: 110, fieldSpacing: 200, labelWeight: 600, paddingInline: 10 };
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv' },
+    h('div', { className: 'pv-cap' }, 'No Form Style · package defaults'),
+    h('p', { className: 'pv-note' }, 'Every Basic value unset, as on a template with no Form_Style__c.'),
+    h(Sample),
+    h('div', { className: 'pv-cap' }, 'FormStyle · the Grant Application | Demo template\u2019s Form Style'),
+    h('p', { className: 'pv-note' }, 'Brand #52b552 · Field labels and Input text #032d60 · Borders #042d60 at 50% · Input background #f7f7f7 · Corner radius 20px · Input size 130% · Text size 110% · Field spacing 200% · Label weight 600 · Horizontal padding 10px'),
+    h(F.FormStyle, grant, h(Sample))));
+</script>
+</body>
+</html>

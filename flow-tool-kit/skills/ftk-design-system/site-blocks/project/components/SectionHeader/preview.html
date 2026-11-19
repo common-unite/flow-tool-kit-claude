@@ -1,0 +1,18 @@
+<!-- @dsCard group="Shared parts" height=120 subtitle="sectionLabel, heading, subheading" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>SectionHeader preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* The header every block draws from the same keys: left, centered, and a Statement on a dark block */
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+      h(SB.SectionHeader, { sectionLabel: 'How it works', heading: 'Three steps from interest to your first shift', subheading: 'Apply online, meet the coordinator, and pick a day that suits you.', headingAlign: 'left', brandColor: '#53B95B' }),
+      h(SB.SectionHeader, { sectionLabel: 'Garden memberships', heading: 'Pick the plot size that fits your season.', headingHighlight: 'plot size', headingAlign: 'center', brandColor: '#53B95B' }),
+      h(SB.SectionHeader, { heading: 'Applications now close October 15.', headingStyle: 'statement', headingAlign: 'left', background: '#032D60', brandColor: '#53B95B' })))));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Features" height=120 subtitle="column counts" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Column counts */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "2 columns", "columns": "2", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "elevated", "items": [{"title": "Card 1", "description": "Grid check.", "icon": "utility:layout"}, {"title": "Card 2", "description": "Grid check.", "icon": "utility:layout"}], "hoverStyle": "lift"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "3 columns", "columns": "3", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "elevated", "items": [{"title": "Card 1", "description": "Grid check.", "icon": "utility:layout"}, {"title": "Card 2", "description": "Grid check.", "icon": "utility:layout"}, {"title": "Card 3", "description": "Grid check.", "icon": "utility:layout"}], "hoverStyle": "lift"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "4 columns", "columns": "4", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "elevated", "items": [{"title": "Card 1", "description": "Grid check.", "icon": "utility:layout"}, {"title": "Card 2", "description": "Grid check.", "icon": "utility:layout"}, {"title": "Card 3", "description": "Grid check.", "icon": "utility:layout"}, {"title": "Card 4", "description": "Grid check.", "icon": "utility:layout"}], "hoverStyle": "lift"})))));
+</script>
+</body>
+</html>

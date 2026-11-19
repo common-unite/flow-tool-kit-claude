@@ -1,0 +1,39 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Cover</title>
+<style>
+  html, body { margin: 0; background: var(--site-surface); }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--site-surface); font-family: var(--font-sans); }
+  .cover svg { position: absolute; inset: 0; }
+  .brand { fill: var(--site-brand); }
+  .navy { fill: var(--site-navy); }
+  .muted { fill: var(--site-surface-muted); }
+  .ink { fill: var(--site-surface); opacity: .9; }
+  .mark { position: absolute; left: 40px; top: 32px; display: flex; align-items: center; justify-content: center; width: 88px; height: 64px; border-radius: 12px; background: var(--site-surface); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .mark img { display: block; width: 64px; height: auto; }
+  .name { position: absolute; left: 40px; bottom: 40px; max-width: 420px; }
+  .name h1 { margin: 0; font-size: 56px; line-height: .95; font-weight: 700; letter-spacing: -0.01em; color: var(--site-text); }
+  .name p { margin: 12px 0 0; font-size: 14px; line-height: 1.4; color: var(--site-text); opacity: .75; }
+</style></head>
+<body>
+<div class="cover">
+  <svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+    <!-- a page drawn as Experience Builder stacks it: a full-width navy hero Section, an 8/4 Section, then a 4/4/4 Section of cards, on the 12-column grid right of x=480 -->
+    <rect class="navy" x="480" y="0" width="480" height="120"/>
+    <rect class="brand" x="504" y="64" width="96" height="24" rx="12"/>
+    <rect class="ink" x="504" y="28" width="210" height="20" rx="4"/>
+    <rect class="muted" x="480" y="136" width="312" height="64" rx="8"/>
+    <rect class="brand" x="800" y="136" width="160" height="64" rx="8"/>
+    <rect class="muted" x="480" y="216" width="152" height="72" rx="8"/>
+    <rect class="muted" x="640" y="216" width="152" height="72" rx="8"/>
+    <rect class="muted" x="800" y="216" width="160" height="72" rx="8"/>
+  </svg>
+  <div class="mark"><img src="../../assets/Logos/FlowToolKit_Gray.png" alt="Flow Tool Kit"></div>
+  <div class="name">
+    <h1>FlowToolKit<br>Site Blocks</h1>
+    <p>Experience Cloud pages, drawn by the package's own blocks.</p>
+  </div>
+</div>
+</body>
+</html>

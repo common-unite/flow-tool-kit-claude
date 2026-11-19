@@ -1,0 +1,21 @@
+<!-- @dsCard group="Fields" height=788 subtitle="formFieldFileUpload · lightning-file-upload" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FileUpload preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var files = [{ name: 'Board roster 2025.pdf', mimeType: 'application/pdf' }, { name: 'Program budget.xlsx', mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }, { name: 'Site photo.jpg', mimeType: 'image/jpeg' }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('longTextType__c fileUpload · empty: Upload Files or drop files (try it)', h(F.FileUpload, { label: 'Proof of address', required: true, acceptedFormats: '.pdf;.png;.jpg' })),
+    Demo('required, error', h(F.FileUpload, { label: 'Signed MOU', required: true, error: 'Complete this field.' })),
+    Demo('single file uploaded: the selector hides, the file shows in a shaded box with its doctype icon', h(F.FileUpload, { label: 'Proof of address', required: true, defaultValue: [files[0]] }), true),
+    Demo('uploadMultipleFiles__c · max 4: files two to a row, the selector stays until the max', h(F.FileUpload, { label: 'Supporting documents', multiple: true, max: 4, defaultValue: files }), true),
+    Demo('preventFileDeletion__c + disablePreviewLink__c: no remove button, plain file names', h(F.FileUpload, { label: 'Submitted documents', multiple: true, preventFileDeletion: true, disablePreviewLink: true, defaultValue: files.slice(0, 2) }), true)
+  ));
+</script>
+</body>
+</html>

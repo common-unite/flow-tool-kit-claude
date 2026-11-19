@@ -1,0 +1,19 @@
+<!-- @dsCard group="Features" height=120 subtitle="card slots" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Card slots */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "cards", "heading": "Inline layout with meta", "columns": "3", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "outlined", "cardLayout": "inline", "footnote": "A footnote renders below the grid.", "items": [{"title": "Grant applications", "description": "Icon beside the title.", "icon": "utility:page", "meta": "12 needed"}, {"title": "Event registrations", "description": "Compact chip shape.", "icon": "utility:event", "meta": "8 needed"}, {"title": "Program intake", "description": "Meta renders below.", "icon": "utility:builder", "meta": "4 needed"}], "hoverStyle": "lift"}),
+        h(SB.Block, {"sectionType": "cards", "heading": "Joined grid", "columns": "4", "paddingTop": "medium", "paddingBottom": "medium", "cardStyle": "joined", "items": [{"eyebrow": "8:30", "title": "Check in", "description": "One bordered panel."}, {"eyebrow": "8:45", "title": "Orientation", "description": "Dividers, not separate cards."}, {"eyebrow": "9:00", "title": "Distribution", "description": "The grid carries the chrome."}, {"eyebrow": "12:00", "title": "Clean up", "description": "Last cell highlighted.", "cardStyle": "glow"}], "hoverStyle": "lift"})))));
+</script>
+</body>
+</html>

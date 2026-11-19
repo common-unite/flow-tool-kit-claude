@@ -30,7 +30,7 @@ Read on demand, beside this file:
 - [references/setup-clicks.md](references/setup-clicks.md): the same fixes as clicks in Setup and Flow Builder, for chat or a person.
 - [references/worked-example.md](references/worked-example.md): one public form fixed end to end, with the commands.
 - `scripts/flowaccess.py --help`: the helper. Editing commands change nothing without `--write`.
-- Plugin standards: `_shared/standards/documentation.md` (flow names and descriptions), `_shared/standards/naming.md`, `_shared/standards/project-config.md` (the audiences). Where this skill and a standard disagree, the standard wins.
+- Plugin standards: `_shared/standards/documentation.md` (flow names and descriptions; section 6, Naming), `_shared/standards/project-config.md` (the audiences). Where this skill and a standard disagree, the standard wins.
 
 ## 1. Who runs it, and which flow
 

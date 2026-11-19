@@ -1,0 +1,18 @@
+<!-- @dsCard group="Shared parts" height=120 subtitle="badges" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Badges preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* Badge styles above the heading, then below the buttons */
+  var badges = [{ title: 'Neutral', style: 'neutral' }, { title: 'Brand', style: 'brand' }, { title: 'Accent', style: 'accent' }, { title: 'Outline', style: 'outline' }, { title: 'Pulsing', style: 'brand', pulse: true }];
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+      h(SB.Badges, { badges: badges, badgePosition: 'top', heading: 'Badges above the heading', headingAlign: 'left', badgeAlign: 'left', brandColor: '#53B95B', accentColor: '#F4BE45' }),
+      h(SB.Badges, { badges: badges, badgePosition: 'bottom', heading: 'Badges below the buttons', headingAlign: 'left', badgeAlign: 'left', buttons: [{ label: 'Sign up', url: '#', style: 'brand' }], brandColor: '#53B95B', accentColor: '#F4BE45', background: '#032D60' })))));
+</script>
+</body>
+</html>

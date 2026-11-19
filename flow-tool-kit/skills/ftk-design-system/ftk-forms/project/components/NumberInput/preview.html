@@ -1,0 +1,23 @@
+<!-- @dsCard group="Fields" height=830 subtitle="flowFormField number · currency · percent · flowFormNumberInput" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>NumberInput preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('standard · format currency: shows $1,250.00, edits as 1250', h(F.NumberInput, { label: 'Annual household income', format: 'currency', defaultValue: 1250, required: true })),
+    Demo('standard · format percent', h(F.NumberInput, { label: 'Share of rent paid', format: 'percent', defaultValue: 35 })),
+    Demo('standard · number, placeholder', h(F.NumberInput, { label: 'Household members', placeholder: '0' })),
+    Demo('standard · required, error', h(F.NumberInput, { label: 'Monthly rent', format: 'currency', required: true, error: 'Complete this field.' })),
+    Demo('stepper · numberType__c stepper: border-filled dash and add buttons, min 1, max 12', h(F.NumberInput, { label: 'Tickets', variant: 'stepper', defaultValue: 2, min: 1, max: 12 })),
+    Demo('slider · numberType__c slider, 0 to 100, step 5, percent', h(F.NumberInput, { label: 'Confidence in the program', variant: 'slider', format: 'percent', defaultValue: 60, min: 0, max: 100, step: 5 })),
+    Demo('presetamounts · joined amounts plus Other, currency', h(F.NumberInput, { label: 'Gift amount', variant: 'presetamounts', format: 'currency', presets: [25, 50, 100, 250], defaultValue: 50, required: true }), true),
+    Demo('presetamounts · Other selected reveals the custom amount input', h(F.NumberInput, { label: 'Gift amount', variant: 'presetamounts', format: 'currency', presets: [25, 50, 100, 250], defaultValue: 75 }), true)
+  ));
+</script>
+</body>
+</html>

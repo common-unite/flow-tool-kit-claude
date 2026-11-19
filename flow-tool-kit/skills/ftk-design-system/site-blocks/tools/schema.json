@@ -1,0 +1,7320 @@
+{
+ "generatedFrom": "siteDesignBlockConfig + siteDesignBlockPropertyEditor",
+ "optionLists": 51,
+ "paneTitles": {
+  "card": "Card",
+  "cardContent": "Card Content",
+  "heading": "Heading",
+  "picture": "Image",
+  "body": "Body",
+  "tableColumns": "Columns",
+  "items": "Items",
+  "bullets": "Bullets",
+  "stats": "Stats",
+  "media": "Media",
+  "footnote": "Footnote",
+  "layout": "Arrangement",
+  "cardStyle": "Card Style",
+  "badges": "Badges",
+  "buttons": "Buttons",
+  "styles": "Background",
+  "border": "Border",
+  "spacing": "Spacing",
+  "motion": "Motion",
+  "visibility": "Visibility",
+  "images": "Images"
+ },
+ "options": {
+  "ALIGN_OPTIONS": [
+   {
+    "value": "left",
+    "label": "Left",
+    "description": ""
+   },
+   {
+    "value": "center",
+    "label": "Center",
+    "description": ""
+   },
+   {
+    "value": "right",
+    "label": "Right",
+    "description": ""
+   }
+  ],
+  "ARRANGEMENT_OPTIONS": [
+   {
+    "value": "stacked",
+    "label": "Stacked",
+    "description": "Heading above the content"
+   },
+   {
+    "value": "split",
+    "label": "Split",
+    "description": "Heading in a left column with the content beside it"
+   }
+  ],
+  "BACKGROUND_EFFECT_OPTIONS": [
+   {
+    "value": "none",
+    "label": "None",
+    "description": "The photo sits still"
+   },
+   {
+    "value": "parallax",
+    "label": "Parallax",
+    "description": "The photo drifts slower than the page as the block scrolls past. Off for visitors who prefer reduced motion"
+   },
+   {
+    "value": "kenburns",
+    "label": "Ken Burns",
+    "description": "The photo slowly zooms and pans over 18 seconds, the living-photo treatment for section breaks"
+   }
+  ],
+  "BACKGROUND_OVERLAY_OPTIONS": [
+   {
+    "value": "auto",
+    "label": "Automatic",
+    "description": "A scrim only when the block needs one to keep its copy readable"
+   },
+   {
+    "value": "none",
+    "label": "None",
+    "description": "No tint; the photo shows at full strength"
+   },
+   {
+    "value": "bottom",
+    "label": "Bottom Scrim",
+    "description": "Clear at the top fading to a strong tint at the bottom, so copy sitting low stays readable"
+   },
+   {
+    "value": "side",
+    "label": "Side Scrim",
+    "description": "Strong tint on the left fading out to the right, for copy set beside the photo"
+   },
+   {
+    "value": "tint",
+    "label": "Brand Tint",
+    "description": "Even tint across the whole photo, so it reads as texture behind the content"
+   },
+   {
+    "value": "light",
+    "label": "Light Wash",
+    "description": "Barely-there tint that settles the photo into the palette"
+   },
+   {
+    "value": "custom",
+    "label": "Custom",
+    "description": "Even tint using the Overlay Color and its opacity"
+   }
+  ],
+  "BLOCK_HEIGHT_OPTIONS": [
+   {
+    "value": "auto",
+    "label": "Auto",
+    "description": "As tall as the content needs"
+   },
+   {
+    "value": "band",
+    "label": "Band",
+    "description": "Short banner, about 300px, for stat rows and dividers"
+   },
+   {
+    "value": "standard",
+    "label": "Standard",
+    "description": "About 420px, the usual height for an image feature"
+   },
+   {
+    "value": "tall",
+    "label": "Tall",
+    "description": "About 520px, for a full-bleed hero photo"
+   }
+  ],
+  "BUTTON_PLACEMENT_OPTIONS": [
+   {
+    "value": "heading",
+    "label": "With the heading",
+    "description": "Under the heading, above the two columns"
+   },
+   {
+    "value": "copy",
+    "label": "Under the copy",
+    "description": "At the end of the copy's column"
+   }
+  ],
+  "BUTTON_STYLE_OPTIONS": [
+   {
+    "value": "brand",
+    "label": "Brand",
+    "description": "Solid button in the brand color"
+   },
+   {
+    "value": "light",
+    "label": "Light",
+    "description": "Translucent light button"
+   },
+   {
+    "value": "accent",
+    "label": "Accent",
+    "description": "Solid button in the accent color"
+   },
+   {
+    "value": "outline",
+    "label": "Outline",
+    "description": "Transparent button with a border"
+   },
+   {
+    "value": "link",
+    "label": "Link",
+    "description": "Text only with an underline accent, no fill or border"
+   },
+   {
+    "value": "panel",
+    "label": "Panel",
+    "description": "Full-width tile with a brand border and tinted fill; renders the Subtitle under the label"
+   }
+  ],
+  "BUTTON_TYPE_OPTIONS": [
+   {
+    "value": "url",
+    "label": "URL",
+    "description": "Navigates to a link, the same as before"
+   },
+   {
+    "value": "formTemplate",
+    "label": "Form Template",
+    "description": "Opens a form in a modal. The page's record drives Source Mappings, so the mapped template, theme and prefill all apply"
+   },
+   {
+    "value": "formSubmission",
+    "label": "Form Submission",
+    "description": "Opens the page record's Latest Form Submission in a modal. Available on Account, Campaign Member, Case, Contact, Lead and Opportunity"
+   },
+   {
+    "value": "flow",
+    "label": "Flow",
+    "description": "Opens a screen flow in a modal. The flow's recordId input receives a record's Id"
+   },
+   {
+    "value": "recordForm",
+    "label": "Record Form",
+    "description": "Opens a record in a Form Component, in a modal, to edit or to read"
+   }
+  ],
+  "CARD_LAYOUT_OPTIONS": [
+   {
+    "value": "stacked",
+    "label": "Stacked",
+    "description": "Icon above the title"
+   },
+   {
+    "value": "inline",
+    "label": "Inline",
+    "description": "Icon beside the title, for compact chips"
+   },
+   {
+    "value": "banner",
+    "label": "Banner Header",
+    "description": "Eyebrow and title on a brand-tinted header band, body below - the directory card"
+   }
+  ],
+  "CARD_MEDIA_OPTIONS": [
+   {
+    "value": "icon",
+    "label": "Icon",
+    "description": "Artwork renders as a small glyph above the title"
+   },
+   {
+    "value": "cover",
+    "label": "Cover",
+    "description": "Artwork renders full width across the top of the card"
+   }
+  ],
+  "CAROUSEL_INTERVAL_OPTIONS": [
+   {
+    "value": "0",
+    "label": "Off",
+    "description": "Slides only advance when the visitor asks"
+   },
+   {
+    "value": "4",
+    "label": "4 seconds",
+    "description": "Brisk"
+   },
+   {
+    "value": "5",
+    "label": "5 seconds",
+    "description": "The design default"
+   },
+   {
+    "value": "8",
+    "label": "8 seconds",
+    "description": "Relaxed, easier to read longer headlines"
+   }
+  ],
+  "COLUMN_OPTIONS": [
+   {
+    "value": "2",
+    "label": "2 Columns",
+    "description": ""
+   },
+   {
+    "value": "3",
+    "label": "3 Columns",
+    "description": ""
+   },
+   {
+    "value": "4",
+    "label": "4 Columns",
+    "description": ""
+   },
+   {
+    "value": "5",
+    "label": "5 Columns",
+    "description": ""
+   }
+  ],
+  "CONTENT_POSITION_OPTIONS": [
+   {
+    "value": "center",
+    "label": "Centered",
+    "description": "Copy sits in the middle of the block"
+   },
+   {
+    "value": "bottom",
+    "label": "Bottom",
+    "description": "Copy pins to the lower edge - pair with the Bottom Scrim so the tint sits directly behind it"
+   },
+   {
+    "value": "top",
+    "label": "Top",
+    "description": "Copy pins to the upper edge"
+   }
+  ],
+  "ENTRANCE_STYLE_OPTIONS": [
+   {
+    "value": "",
+    "label": "Off",
+    "description": "No entrance; the block renders in place"
+   },
+   {
+    "value": "rise",
+    "label": "Rise and Fade",
+    "description": "Content rises 26px as it fades in. The safe default for heroes and single features"
+   },
+   {
+    "value": "cascade",
+    "label": "Cascade",
+    "description": "The same rise with a longer stagger, for grids of three or more"
+   },
+   {
+    "value": "wipe",
+    "label": "Wipe Reveal",
+    "description": "A left-to-right unmasking. The statement option, best used once per page"
+   },
+   {
+    "value": "zoom",
+    "label": "Soft Zoom",
+    "description": "Content settles from 93% scale"
+   },
+   {
+    "value": "blur",
+    "label": "Blur In",
+    "description": "Content sharpens from a 10px blur"
+   }
+  ],
+  "FACTS_DISPLAY_OPTIONS": [
+   {
+    "value": "rows",
+    "label": "Rows",
+    "description": "Label left, value right, a divider between rows. The At-a-glance card."
+   },
+   {
+    "value": "bars",
+    "label": "Progress",
+    "description": "Each value renders as a labelled percentage bar. For rubrics, weightings, and goals."
+   },
+   {
+    "value": "stacked",
+    "label": "Stacked",
+    "description": "Small uppercase label above its value, no dividers. The editorial fact column."
+   },
+   {
+    "value": "segmented",
+    "label": "Segmented",
+    "description": "One bar split by each value's share of the whole, with a legend below. For an income mix, a budget split or a status mix."
+   }
+  ],
+  "FONT_SIZE_OPTIONS": [
+   {
+    "value": "",
+    "label": "Default",
+    "description": "The theme's own size for this text"
+   },
+   {
+    "value": "xx-small",
+    "label": "XX-Small",
+    "description": "0.625em"
+   },
+   {
+    "value": "x-small",
+    "label": "X-Small",
+    "description": "0.75em"
+   },
+   {
+    "value": "small",
+    "label": "Small",
+    "description": "0.875em"
+   },
+   {
+    "value": "medium",
+    "label": "Medium",
+    "description": "1em"
+   },
+   {
+    "value": "large",
+    "label": "Large",
+    "description": "1.25em"
+   },
+   {
+    "value": "x-large",
+    "label": "X-Large",
+    "description": "1.5em"
+   },
+   {
+    "value": "xx-large",
+    "label": "XX-Large",
+    "description": "2em"
+   }
+  ],
+  "GALLERY_LAYOUT_OPTIONS": [
+   {
+    "value": "mosaic",
+    "label": "Mosaic",
+    "description": "One lead photo beside four smaller ones"
+   },
+   {
+    "value": "grid",
+    "label": "Grid",
+    "description": "Even rows of photos at one shape"
+   },
+   {
+    "value": "masonry",
+    "label": "Masonry",
+    "description": "Columns of photos at their own shapes"
+   },
+   {
+    "value": "filmstrip",
+    "label": "Filmstrip",
+    "description": "One row of every photo that scrolls sideways"
+   }
+  ],
+  "GRADIENT_STYLE_OPTIONS": [
+   {
+    "value": "off",
+    "label": "Off",
+    "description": "Flat background color, or nothing at all when no background is set"
+   },
+   {
+    "value": "banner",
+    "label": "Brand Banner",
+    "description": "The deep headline gradient, built from the brand and accent colors rather than the background"
+   },
+   {
+    "value": "diagonal",
+    "label": "Diagonal",
+    "description": "Fades corner to corner, top left to bottom right"
+   },
+   {
+    "value": "vertical",
+    "label": "Vertical",
+    "description": "Fades top to bottom"
+   },
+   {
+    "value": "horizontal",
+    "label": "Horizontal",
+    "description": "Fades left to right"
+   },
+   {
+    "value": "radial",
+    "label": "Radial",
+    "description": "Fades outward from the center"
+   },
+   {
+    "value": "spotlight",
+    "label": "Spotlight",
+    "description": "Fades outward from the top center"
+   },
+   {
+    "value": "corner",
+    "label": "Corner Glow",
+    "description": "Fades outward from the top left corner"
+   }
+  ],
+  "HEADER_GAP_OPTIONS": [
+   {
+    "value": "default",
+    "label": "Default",
+    "description": ""
+   },
+   {
+    "value": "none",
+    "label": "None",
+    "description": ""
+   },
+   {
+    "value": "xxx-small",
+    "label": "XXX-Small",
+    "description": ""
+   },
+   {
+    "value": "xx-small",
+    "label": "XX-Small",
+    "description": ""
+   },
+   {
+    "value": "x-small",
+    "label": "X-Small",
+    "description": ""
+   },
+   {
+    "value": "small",
+    "label": "Small",
+    "description": ""
+   },
+   {
+    "value": "medium",
+    "label": "Medium",
+    "description": ""
+   },
+   {
+    "value": "large",
+    "label": "Large",
+    "description": ""
+   },
+   {
+    "value": "x-large",
+    "label": "X-Large",
+    "description": ""
+   },
+   {
+    "value": "xx-large",
+    "label": "XX-Large",
+    "description": ""
+   }
+  ],
+  "HEADER_PLACEMENT_OPTIONS": [
+   {
+    "value": "column",
+    "label": "Beside the media",
+    "description": "In the copy's column, above the body"
+   },
+   {
+    "value": "above",
+    "label": "Across the top",
+    "description": "Full width, with the body and the media side by side under it"
+   }
+  ],
+  "HEADING_STYLE_OPTIONS": [
+   {
+    "value": "standard",
+    "label": "Standard",
+    "description": ""
+   },
+   {
+    "value": "statement",
+    "label": "Statement",
+    "description": ""
+   }
+  ],
+  "HERO_MEDIA_OPTIONS": [
+   {
+    "value": "image",
+    "label": "Image",
+    "description": "The overlay image, as today"
+   },
+   {
+    "value": "facts",
+    "label": "Facts",
+    "description": "A key-facts panel on the hero's card surface instead of an image"
+   },
+   {
+    "value": "timeline",
+    "label": "Timeline",
+    "description": "A short vertical run of milestones with state markers"
+   },
+   {
+    "value": "bullets",
+    "label": "Bullets",
+    "description": "A checklist or a list of cards"
+   },
+   {
+    "value": "none",
+    "label": "None",
+    "description": "Nothing beside the copy"
+   }
+  ],
+  "HOVER_STYLE_OPTIONS": [
+   {
+    "value": "",
+    "label": "Surface Default",
+    "description": "Whatever the Card Style already does on hover"
+   },
+   {
+    "value": "lift",
+    "label": "Lift",
+    "description": "Rises 6px with a soft shadow. The safe default for any linked card"
+   },
+   {
+    "value": "tilt",
+    "label": "Tilt",
+    "description": "A slight 3D tip toward the pointer, for product and mascot cards"
+   },
+   {
+    "value": "trace",
+    "label": "Accent Trace",
+    "description": "Border turns brand, no movement. The quietest, for dense grids"
+   },
+   {
+    "value": "ring",
+    "label": "Glow Ring",
+    "description": "A brand ring around the card"
+   },
+   {
+    "value": "tint",
+    "label": "Tint Fill",
+    "description": "The surface tints toward the brand color"
+   }
+  ],
+  "ICON_SIZE_OPTIONS": [
+   {
+    "value": "xx-small",
+    "label": "XX-Small",
+    "description": "Bullet-sized, for dense inline rows"
+   },
+   {
+    "value": "x-small",
+    "label": "X-Small",
+    "description": "A tight checklist mark"
+   },
+   {
+    "value": "small",
+    "label": "Small",
+    "description": "Compact glyph for checklist rows"
+   },
+   {
+    "value": "medium",
+    "label": "Medium",
+    "description": "Between a checklist mark and a feature icon"
+   },
+   {
+    "value": "large",
+    "label": "Large",
+    "description": "The full feature-icon size"
+   }
+  ],
+  "ICON_STYLE_OPTIONS": [
+   {
+    "value": "plain",
+    "label": "Plain",
+    "description": "The icon on its own, no backdrop"
+   },
+   {
+    "value": "tile",
+    "label": "Tile",
+    "description": "Rounded square tinted with the brand color"
+   },
+   {
+    "value": "circle",
+    "label": "Circle",
+    "description": "Round badge tinted with the brand color"
+   }
+  ],
+  "IMAGE_ALIGNMENT_OPTIONS": [
+   {
+    "value": "left",
+    "label": "Left",
+    "description": ""
+   },
+   {
+    "value": "right",
+    "label": "Right",
+    "description": ""
+   }
+  ],
+  "IMAGE_BLEED_OPTIONS": [
+   {
+    "value": "none",
+    "label": "Contained",
+    "description": "Image stays inside the section padding"
+   },
+   {
+    "value": "bottom",
+    "label": "Bleed Bottom",
+    "description": "Image runs to the bottom edge of the section"
+   },
+   {
+    "value": "edge",
+    "label": "Bleed Edge",
+    "description": "Image runs past the outer edge of the section"
+   }
+  ],
+  "IMAGE_CAPTION_OPTIONS": [
+   {
+    "value": "below",
+    "label": "Below the image",
+    "description": "Title and description sit in a caption bar under the photo, never on it"
+   },
+   {
+    "value": "overlay",
+    "label": "Over the image",
+    "description": "Caption sits on the photo behind a scrim, pinned to the bottom"
+   },
+   {
+    "value": "none",
+    "label": "No caption",
+    "description": "Photos only - a pure gallery"
+   }
+  ],
+  "IMAGE_FIT_OPTIONS": [
+   {
+    "value": "fill",
+    "label": "Fill",
+    "description": "Image fills the whole space and crops to it. Vertical Alignment picks which part is kept"
+   },
+   {
+    "value": "fit",
+    "label": "Fit",
+    "description": "Whole image stays visible and may leave space above and below. Use for cut-out artwork and logos"
+   },
+   {
+    "value": "natural",
+    "label": "Natural",
+    "description": "Image keeps its own shape at the column's width and sets the height of the row"
+   }
+  ],
+  "IMAGE_SOURCE_OPTIONS": [
+   {
+    "value": "none",
+    "label": "None",
+    "description": "No image on this block"
+   },
+   {
+    "value": "cms",
+    "label": "CMS",
+    "description": "Pick a published CMS image with the content picker below the editor"
+   },
+   {
+    "value": "url",
+    "label": "URL",
+    "description": "Any full URL, or resource:Name/path.png for art packaged with the component"
+   },
+   {
+    "value": "asset",
+    "label": "Asset",
+    "description": "A Salesforce Asset File, referenced by its developer name"
+   }
+  ],
+  "IMAGE_STYLE_OPTIONS": [
+   {
+    "value": "flat",
+    "label": "Flat Fill",
+    "description": "Soft tinted fill, no border; darkens on hover"
+   },
+   {
+    "value": "outlined",
+    "label": "Simple Border",
+    "description": "Thin border that turns brand color on hover"
+   },
+   {
+    "value": "elevated",
+    "label": "Elevated",
+    "description": "Light shadow that lifts on hover"
+   },
+   {
+    "value": "deep",
+    "label": "Deep Drop Shadow",
+    "description": "Borderless with a deep tinted shadow"
+   },
+   {
+    "value": "glow",
+    "label": "Brand Glow",
+    "description": "Brand halo ring with a soft glow shadow"
+   },
+   {
+    "value": "topbar",
+    "label": "Accent Top Bar",
+    "description": "Brand gradient cap along the top edge"
+   },
+   {
+    "value": "siderule",
+    "label": "Side Rule",
+    "description": "Brand rule down the left edge"
+   },
+   {
+    "value": "gradient",
+    "label": "Brand Gradient",
+    "description": "Full brand gradient surface with white text"
+   },
+   {
+    "value": "ghost",
+    "label": "Ghost Outline",
+    "description": "Dashed outline on a transparent surface"
+   },
+   {
+    "value": "inset",
+    "label": "Inset Panel",
+    "description": "Sunken panel with an inner shadow"
+   },
+   {
+    "value": "clean",
+    "label": "Clean",
+    "description": "No background, border, or shadow"
+   },
+   {
+    "value": "joined",
+    "label": "Joined",
+    "description": "One bordered panel with dividers between items instead of separate cards"
+   },
+   {
+    "value": "mascot",
+    "label": "Mascot",
+    "description": "Cut-out artwork with no frame; sits on any background and may break the edge"
+   }
+  ],
+  "LINK_TARGET_OPTIONS": [
+   {
+    "value": "same",
+    "label": "Same Window",
+    "description": "Navigates in the current tab - the default for pages inside your site"
+   },
+   {
+    "value": "new",
+    "label": "New Tab",
+    "description": "Opens in a new browser tab - use for external destinations"
+   }
+  ],
+  "PARALLAX_SPEED_OPTIONS": [
+   {
+    "value": "0.15",
+    "label": "Subtle",
+    "description": "Barely perceptible drift"
+   },
+   {
+    "value": "0.25",
+    "label": "Gentle",
+    "description": "Noticeable but calm, for a text-led block"
+   },
+   {
+    "value": "0.4",
+    "label": "Standard",
+    "description": "The photo clearly moves against the page"
+   },
+   {
+    "value": "0.6",
+    "label": "Strong",
+    "description": "The full drift the photo can give without showing an edge"
+   }
+  ],
+  "PILL_STYLE_OPTIONS": [
+   {
+    "value": "neutral",
+    "label": "Neutral",
+    "description": "Soft tint that reads on light and dark alike"
+   },
+   {
+    "value": "brand",
+    "label": "Brand",
+    "description": "Solid brand fill"
+   },
+   {
+    "value": "accent",
+    "label": "Accent",
+    "description": "Solid accent fill"
+   },
+   {
+    "value": "outline",
+    "label": "Outline",
+    "description": "Transparent with a border"
+   }
+  ],
+  "SECTION_LAYOUT_OPTIONS": [
+   {
+    "value": "centered",
+    "label": "Centered",
+    "description": "Header centered above full width content"
+   },
+   {
+    "value": "left",
+    "label": "Left Aligned",
+    "description": "Header aligned left, content still full width below"
+   },
+   {
+    "value": "split",
+    "label": "Split",
+    "description": "Header in a left column with the content beside it"
+   }
+  ],
+  "SHOWCASE_ITEM_OPTIONS": [
+   {
+    "value": "list",
+    "label": "Checklist",
+    "description": "Ticked bullet list"
+   },
+   {
+    "value": "cards",
+    "label": "Cards",
+    "description": "Small stacked panels, each with its own surface"
+   }
+  ],
+  "SPACING_OPTIONS": [
+   {
+    "value": "none",
+    "label": "None",
+    "description": ""
+   },
+   {
+    "value": "xxx-small",
+    "label": "XXX-Small",
+    "description": ""
+   },
+   {
+    "value": "xx-small",
+    "label": "XX-Small",
+    "description": ""
+   },
+   {
+    "value": "x-small",
+    "label": "X-Small",
+    "description": ""
+   },
+   {
+    "value": "small",
+    "label": "Small",
+    "description": ""
+   },
+   {
+    "value": "medium",
+    "label": "Medium",
+    "description": ""
+   },
+   {
+    "value": "large",
+    "label": "Large",
+    "description": ""
+   },
+   {
+    "value": "x-large",
+    "label": "X-Large",
+    "description": ""
+   },
+   {
+    "value": "xx-large",
+    "label": "XX-Large",
+    "description": ""
+   }
+  ],
+  "SPLIT_RATIO_OPTIONS": [
+   {
+    "value": "even",
+    "label": "Even",
+    "description": "Two equal columns"
+   },
+   {
+    "value": "left",
+    "label": "Wider Left",
+    "description": "Left column takes more room"
+   },
+   {
+    "value": "right",
+    "label": "Wider Right",
+    "description": "Right column takes more room"
+   }
+  ],
+  "STATS_TREATMENT_OPTIONS": [
+   {
+    "value": "row",
+    "label": "Row",
+    "description": "Plain numbers in even columns, value above its label"
+   },
+   {
+    "value": "tiles",
+    "label": "Tiles",
+    "description": "Each stat on its own card surface"
+   },
+   {
+    "value": "spread",
+    "label": "Inline",
+    "description": "Label above the value with the icon beside - first stat flush left, last flush right"
+   }
+  ],
+  "STAT_DISTRIBUTION_OPTIONS": [
+   {
+    "value": "columns",
+    "label": "Even Columns",
+    "description": "Each stat gets an equal share of the row"
+   },
+   {
+    "value": "spread",
+    "label": "Spread",
+    "description": "Stats size to their content and push apart - first flush left, last flush right"
+   }
+  ],
+  "STAT_LAYOUT_OPTIONS": [
+   {
+    "value": "stacked",
+    "label": "Stacked",
+    "description": "Icon above the value"
+   },
+   {
+    "value": "inline",
+    "label": "Inline",
+    "description": "Icon beside the value, for a key-details strip"
+   }
+  ],
+  "STAT_ORDER_OPTIONS": [
+   {
+    "value": "value",
+    "label": "Value First",
+    "description": "Big number above its label"
+   },
+   {
+    "value": "label",
+    "label": "Label First",
+    "description": "Small uppercase label above the value"
+   }
+  ],
+  "SURFACE_STYLE_OPTIONS": [
+   {
+    "value": "flat",
+    "label": "Flat Fill",
+    "description": "Soft tinted fill, no border; darkens on hover"
+   },
+   {
+    "value": "outlined",
+    "label": "Simple Border",
+    "description": "Thin border that turns brand color on hover"
+   },
+   {
+    "value": "elevated",
+    "label": "Elevated",
+    "description": "Light shadow that lifts on hover"
+   },
+   {
+    "value": "deep",
+    "label": "Deep Drop Shadow",
+    "description": "Borderless with a deep tinted shadow"
+   },
+   {
+    "value": "glow",
+    "label": "Brand Glow",
+    "description": "Brand halo ring with a soft glow shadow"
+   },
+   {
+    "value": "topbar",
+    "label": "Accent Top Bar",
+    "description": "Brand gradient cap along the top edge"
+   },
+   {
+    "value": "siderule",
+    "label": "Side Rule",
+    "description": "Brand rule down the left edge"
+   },
+   {
+    "value": "gradient",
+    "label": "Brand Gradient",
+    "description": "Full brand gradient surface with white text"
+   },
+   {
+    "value": "ghost",
+    "label": "Ghost Outline",
+    "description": "Dashed outline on a transparent surface"
+   },
+   {
+    "value": "inset",
+    "label": "Inset Panel",
+    "description": "Sunken panel with an inner shadow"
+   },
+   {
+    "value": "clean",
+    "label": "Clean",
+    "description": "No background, border, or shadow"
+   },
+   {
+    "value": "joined",
+    "label": "Joined",
+    "description": "One bordered panel with dividers between items instead of separate cards"
+   }
+  ],
+  "TABLE_ALIGN_OPTIONS": [
+   {
+    "value": "left",
+    "label": "Left",
+    "description": ""
+   },
+   {
+    "value": "center",
+    "label": "Center",
+    "description": ""
+   },
+   {
+    "value": "right",
+    "label": "Right",
+    "description": ""
+   }
+  ],
+  "TABLE_DISPLAY_OPTIONS": [
+   {
+    "value": "text",
+    "label": "Text",
+    "description": "Plain text"
+   },
+   {
+    "value": "richtext",
+    "label": "Rich Text",
+    "description": "Formatted copy, for the long description column"
+   },
+   {
+    "value": "badge",
+    "label": "Badge",
+    "description": "Pill-shaped highlight, for a price or a count"
+   },
+   {
+    "value": "emphasis",
+    "label": "Emphasis",
+    "description": "Bold, in the block's ink color"
+   }
+  ],
+  "TABLE_WIDTH_OPTIONS": [
+   {
+    "value": "auto",
+    "label": "Auto",
+    "description": "Equal share of the leftover space"
+   },
+   {
+    "value": "narrow",
+    "label": "Narrow",
+    "description": "Around two thirds of an auto column"
+   },
+   {
+    "value": "wide",
+    "label": "Wide",
+    "description": "Around one and a half auto columns"
+   },
+   {
+    "value": "widest",
+    "label": "Widest",
+    "description": "Around two and a half auto columns, for long copy"
+   },
+   {
+    "value": "fit",
+    "label": "Fit Content",
+    "description": "Only as wide as its longest value"
+   }
+  ],
+  "TEXTURE_STYLE_OPTIONS": [
+   {
+    "value": "off",
+    "label": "Off",
+    "description": "No pattern over the background"
+   },
+   {
+    "value": "crosshatch",
+    "label": "Crosshatch",
+    "description": "Faint diagonal lines crossing in both directions"
+   },
+   {
+    "value": "stripes",
+    "label": "Stripes",
+    "description": "Faint diagonal lines running one way"
+   },
+   {
+    "value": "dots",
+    "label": "Dots",
+    "description": "Evenly spaced dot grid"
+   },
+   {
+    "value": "grid",
+    "label": "Grid",
+    "description": "Faint squared graph paper"
+   }
+  ],
+  "TIMELINE_ORIENTATION_OPTIONS": [
+   {
+    "value": "horizontal",
+    "label": "Horizontal",
+    "description": "Nodes on a connector line with a progress fill. The cycle stepper."
+   },
+   {
+    "value": "vertical",
+    "label": "Vertical",
+    "description": "Numbered nodes on a rail. The process journey."
+   }
+  ],
+  "TIMELINE_STATE_OPTIONS": [
+   {
+    "value": "upcoming",
+    "label": "Upcoming",
+    "description": "Muted number, not reached yet"
+   },
+   {
+    "value": "current",
+    "label": "Current",
+    "description": "The active milestone"
+   },
+   {
+    "value": "done",
+    "label": "Done",
+    "description": "Completed, shown with a check"
+   },
+   {
+    "value": "warning",
+    "label": "Warning",
+    "description": "Needs attention, such as a closing deadline"
+   }
+  ],
+  "VERTICAL_ALIGN_OPTIONS": [
+   {
+    "value": "start",
+    "label": "Start",
+    "description": "Both columns align to the top"
+   },
+   {
+    "value": "center",
+    "label": "Center",
+    "description": "Columns center on each other"
+   },
+   {
+    "value": "end",
+    "label": "End",
+    "description": "Both columns align to the bottom"
+   },
+   {
+    "value": "stretch",
+    "label": "Stretch",
+    "description": "Both columns fill the full row height"
+   }
+  ],
+  "WIDTH_OPTIONS": [
+   {
+    "value": "contained",
+    "label": "Contained",
+    "description": "Stays inside whatever column or region it is dropped into"
+   },
+   {
+    "value": "full",
+    "label": "Full Bleed",
+    "description": "Breaks out to span the whole viewport, edge to edge - only use in a full width region"
+   },
+   {
+    "value": "inset",
+    "label": "Inset Band",
+    "description": "Breaks out to full width but keeps a margin and rounded corners, so the background reads as a card"
+   }
+  ]
+ },
+ "fields": {
+  "borderColor": {
+   "labels": [
+    "Border Color"
+   ],
+   "panes": [
+    "border"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Leave empty to use the brand color.",
+   "sources": [
+    "config.BORDER_COLOR_FIELD"
+   ]
+  },
+  "borderColorOpacity": {
+   "labels": [
+    "Border Color Opacity"
+   ],
+   "panes": [
+    "border"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.BORDER_COLOR_FIELD"
+   ]
+  },
+  "brandColor": {
+   "labels": [
+    "Brand Color"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Overrides the site brand color for this block.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "brandColorOpacity": {
+   "labels": [
+    "Brand Color Opacity"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "textColor": {
+   "labels": [
+    "Text Color"
+   ],
+   "panes": [
+    "body"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Overrides body and label ink. Leave empty to derive from the background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "textColorOpacity": {
+   "labels": [
+    "Text Color Opacity"
+   ],
+   "panes": [
+    "body"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "blockTitleColor": {
+   "labels": [
+    "Block Title Color"
+   ],
+   "panes": [
+    "body"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for the large title beside the image. Leave empty to follow the body text colour.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "blockTitleColorOpacity": {
+   "labels": [
+    "Block Title Color Opacity"
+   ],
+   "panes": [
+    "body"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "labelColor": {
+   "labels": [
+    "Label Color"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for every label. An item with its own Label Color overrides this. Leave empty to derive from the background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "labelColorOpacity": {
+   "labels": [
+    "Label Color Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "valueColor": {
+   "labels": [
+    "Value Color"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for every value. An item with its own Value Color overrides this. Leave empty to derive from the background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "valueColorOpacity": {
+   "labels": [
+    "Value Color Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "itemTextColor": {
+   "labels": [
+    "Description Color"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for every point's description. Leave empty to derive from the background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "itemTextColorOpacity": {
+   "labels": [
+    "Description Color Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "bulletTitleColor": {
+   "labels": [
+    "Title Color"
+   ],
+   "panes": [
+    "bullets"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for every bullet title. Leave empty to derive from the background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "bulletTitleColorOpacity": {
+   "labels": [
+    "Title Color Opacity"
+   ],
+   "panes": [
+    "bullets"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "bulletTextColor": {
+   "labels": [
+    "Description Color"
+   ],
+   "panes": [
+    "bullets"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for every bullet description. Leave empty to derive from the background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "bulletTextColorOpacity": {
+   "labels": [
+    "Description Color Opacity"
+   ],
+   "panes": [
+    "bullets"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "bulletCheckColor": {
+   "labels": [
+    "Check Color"
+   ],
+   "panes": [
+    "bullets"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Fill behind every bullet's tick. Leave empty to follow the block's accent color.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "bulletCheckColorOpacity": {
+   "labels": [
+    "Check Color Opacity"
+   ],
+   "panes": [
+    "bullets"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "statValueColor": {
+   "labels": [
+    "Value Color"
+   ],
+   "panes": [
+    "stats"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for every inline stat value. Leave empty to derive from the background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "statValueColorOpacity": {
+   "labels": [
+    "Value Color Opacity"
+   ],
+   "panes": [
+    "stats"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "statLabelColor": {
+   "labels": [
+    "Label Color"
+   ],
+   "panes": [
+    "stats"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for every inline stat label. Leave empty to derive from the background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "statLabelColorOpacity": {
+   "labels": [
+    "Label Color Opacity"
+   ],
+   "panes": [
+    "stats"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "timelineBaseColor": {
+   "labels": [
+    "Marker Base"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Fill behind each milestone marker. White by default so the markers read against any background. The ring around them follows the block's background on its own.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "timelineBaseColorOpacity": {
+   "labels": [
+    "Marker Base Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "timelineMarkerInk": {
+   "labels": [
+    "Marker Ink"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "The number or check inside each marker. Set this when a dark Marker Base needs a light symbol over it.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "timelineMarkerInkOpacity": {
+   "labels": [
+    "Marker Ink Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "iconColor": {
+   "labels": [
+    "Icon Color"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Ink for every item icon. Plain tints the glyph itself; Tile and Circle use it as the backdrop with a white glyph over it. An item with its own Icon Color overrides this.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "iconColorOpacity": {
+   "labels": [
+    "Icon Color Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "accentColor": {
+   "labels": [
+    "Accent Color"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "The block's second brand color. It is the second stop of the Brand Gradient and Accent Top Bar card styles, the hero's glow washes and heading highlight, accent pills, timeline dots, non-featured pricing buttons, and the accent ink on a dark background.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "accentColorOpacity": {
+   "labels": [
+    "Accent Color Opacity"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "cardBackgroundColor": {
+   "labels": [
+    "Card Background"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "cardBackgroundOpacity": {
+   "labels": [
+    "Card Background Opacity"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "background": {
+   "labels": [
+    "Background"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "backgroundOpacity": {
+   "labels": [
+    "Background Opacity"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "backgroundMidColor": {
+   "labels": [
+    "Gradient Midpoint"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Optional third color the gradient passes through at 55%.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "backgroundMidOpacity": {
+   "labels": [
+    "Gradient Midpoint Opacity"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "backgroundAccentColor": {
+   "labels": [
+    "Gradient End"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "The color the gradient finishes on, starting from the Background. Leave empty to fade into a darker shade of the background, or into the accent color when no background color is set.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "backgroundAccentOpacity": {
+   "labels": [
+    "Gradient End Opacity"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableHeaderBackground": {
+   "labels": [
+    "Table Header Fill"
+   ],
+   "panes": [
+    "tableColumns"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableHeaderBackgroundOpacity": {
+   "labels": [
+    "Table Header Fill Opacity"
+   ],
+   "panes": [
+    "tableColumns"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableHeaderColor": {
+   "labels": [
+    "Table Header Text"
+   ],
+   "panes": [
+    "tableColumns"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableHeaderColorOpacity": {
+   "labels": [
+    "Table Header Text Opacity"
+   ],
+   "panes": [
+    "tableColumns"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableGridColor": {
+   "labels": [
+    "Table Grid Lines"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableGridColorOpacity": {
+   "labels": [
+    "Table Grid Lines Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableRowHighlight": {
+   "labels": [
+    "Highlighted Row Fill"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableRowHighlightOpacity": {
+   "labels": [
+    "Highlighted Row Fill Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableBadgeBackground": {
+   "labels": [
+    "Table Badge Fill"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Used by any column set to the Badge display.",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableBadgeBackgroundOpacity": {
+   "labels": [
+    "Table Badge Fill Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableBadgeColor": {
+   "labels": [
+    "Table Badge Text"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "tableBadgeColorOpacity": {
+   "labels": [
+    "Table Badge Text Opacity"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "opacity",
+   "options": null,
+   "help": "",
+   "sources": [
+    "config.COLOR_FIELDS"
+   ]
+  },
+  "bodyGap": {
+   "labels": [
+    "Space Below Body"
+   ],
+   "panes": [
+    "body"
+   ],
+   "type": "combobox",
+   "options": "HEADER_GAP_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.PART_GAP_FIELDS",
+    "editor.html"
+   ]
+  },
+  "statsGap": {
+   "labels": [
+    "Space Below Stats"
+   ],
+   "panes": [
+    "stats"
+   ],
+   "type": "combobox",
+   "options": "HEADER_GAP_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.PART_GAP_FIELDS",
+    "editor.html"
+   ]
+  },
+  "bulletsGap": {
+   "labels": [
+    "Space Below Bullets"
+   ],
+   "panes": [
+    "bullets"
+   ],
+   "type": "combobox",
+   "options": "HEADER_GAP_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.PART_GAP_FIELDS",
+    "editor.html"
+   ]
+  },
+  "buttonsGap": {
+   "labels": [
+    "Space Below Buttons"
+   ],
+   "panes": [
+    "buttons"
+   ],
+   "type": "combobox",
+   "options": "HEADER_GAP_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.PART_GAP_FIELDS",
+    "editor.html"
+   ]
+  },
+  "badgesGap": {
+   "labels": [
+    "Space Below Badges"
+   ],
+   "panes": [
+    "badges"
+   ],
+   "type": "combobox",
+   "options": "HEADER_GAP_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.PART_GAP_FIELDS",
+    "editor.html"
+   ]
+  },
+  "footnoteGap": {
+   "labels": [
+    "Space Above Footnote"
+   ],
+   "panes": [
+    "footnote"
+   ],
+   "type": "combobox",
+   "options": "HEADER_GAP_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.PART_GAP_FIELDS",
+    "editor.html"
+   ]
+  },
+  "marginTop": {
+   "labels": [
+    "Margin Top"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": "SPACING_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.SPACING_FIELDS"
+   ]
+  },
+  "marginBottom": {
+   "labels": [
+    "Margin Bottom"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": "SPACING_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.SPACING_FIELDS"
+   ]
+  },
+  "paddingTop": {
+   "labels": [
+    "Padding Top"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": "SPACING_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.SPACING_FIELDS"
+   ]
+  },
+  "paddingBottom": {
+   "labels": [
+    "Padding Bottom"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": "SPACING_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.SPACING_FIELDS"
+   ]
+  },
+  "paddingLeft": {
+   "labels": [
+    "Padding Left"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": "SPACING_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.SPACING_FIELDS"
+   ]
+  },
+  "paddingRight": {
+   "labels": [
+    "Padding Right"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": "SPACING_OPTIONS",
+   "help": "",
+   "sources": [
+    "config.SPACING_FIELDS"
+   ]
+  },
+  "headerGap": {
+   "labels": [
+    "Space Below Heading"
+   ],
+   "panes": [
+    "heading"
+   ],
+   "type": "combobox",
+   "options": "HEADER_GAP_OPTIONS",
+   "help": "The gap between the heading and the content under it. None puts the content right under the heading.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "width": {
+   "labels": [
+    "Width"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "combobox",
+   "options": "WIDTH_OPTIONS",
+   "help": "Blocks stay inside their container by default. Full Bleed and Inset Band break out to the viewport, so only use them in a full width region.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "labelSize": {
+   "labels": [
+    "Title Size"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "combobox",
+   "options": "FONT_SIZE_OPTIONS",
+   "help": "Scales every stat title relative to the block's body text. A stat with its own Title Size overrides this.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "valueSize": {
+   "labels": [
+    "Value Size"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "combobox",
+   "options": "FONT_SIZE_OPTIONS",
+   "help": "Scales every stat value relative to the block's body text. Default follows the treatment: display scale in a row, body scale in tiles and inline. A stat with its own Value Size overrides this.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "backgroundGradient": {
+   "labels": [
+    "Gradient"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "combobox",
+   "options": "GRADIENT_STYLE_OPTIONS",
+   "help": "Direction the background fades into the background accent. Works with or without a background color.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "backgroundOverlay": {
+   "labels": [
+    "Photo Overlay"
+   ],
+   "panes": [
+    "images"
+   ],
+   "type": "combobox",
+   "options": "BACKGROUND_OVERLAY_OPTIONS",
+   "help": "Tint layered over the background image so headings and copy stay readable. Only paints when a background image is set.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "backgroundOverlayColor": {
+   "labels": [
+    "Overlay Color"
+   ],
+   "panes": [
+    "images"
+   ],
+   "type": "color",
+   "options": null,
+   "help": "Leave empty to tint with the block's own background, or a deep navy when that is light. The opacity applies to the Custom overlay; the other recipes carry their own.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "carouselInterval": {
+   "labels": [
+    "Auto-advance"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "combobox",
+   "options": "CAROUSEL_INTERVAL_OPTIONS",
+   "help": "How long each slide holds. Auto-advance pauses on hover, stops while the block is off screen, and stops entirely for visitors who prefer reduced motion. Arrows, dots and swipe always work.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "galleryLayout": {
+   "labels": [
+    "Layout"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "combobox",
+   "options": "GALLERY_LAYOUT_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "imageCaption": {
+   "labels": [
+    "Caption Style"
+   ],
+   "panes": [
+    "picture"
+   ],
+   "type": "combobox",
+   "options": "IMAGE_CAPTION_OPTIONS",
+   "help": "Where the image's title and description render, or whether they render at all.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "backgroundEffect": {
+   "labels": [
+    "Photo Motion"
+   ],
+   "panes": [
+    "images"
+   ],
+   "type": "combobox",
+   "options": "BACKGROUND_EFFECT_OPTIONS",
+   "help": "Movement applied to the background image. Both effects play in the builder and on the site, and stop for visitors who prefer reduced motion.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "backgroundParallaxSpeed": {
+   "labels": [
+    "Drift Speed"
+   ],
+   "panes": [
+    "images"
+   ],
+   "type": "combobox",
+   "options": "PARALLAX_SPEED_OPTIONS",
+   "help": "How far the photo lags the page as the block scrolls past.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "contentPosition": {
+   "labels": [
+    "Content Position"
+   ],
+   "panes": [
+    "images"
+   ],
+   "type": "combobox",
+   "options": "CONTENT_POSITION_OPTIONS",
+   "help": "Where the copy sits in the block's vertical space. Only has an effect once a Block Height is set.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "blockHeight": {
+   "labels": [
+    "Block Height"
+   ],
+   "panes": [
+    "images"
+   ],
+   "type": "combobox",
+   "options": "BLOCK_HEIGHT_OPTIONS",
+   "help": "Minimum height for image-led blocks. Content taller than the preset grows the block rather than being cut off.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "backgroundTexture": {
+   "labels": [
+    "Texture"
+   ],
+   "panes": [
+    "styles"
+   ],
+   "type": "combobox",
+   "options": "TEXTURE_STYLE_OPTIONS",
+   "help": "Faint pattern layered over the background, whatever the background is.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "statsTreatment": {
+   "labels": [
+    "Stats Treatment"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "combobox",
+   "options": "STATS_TREATMENT_OPTIONS",
+   "help": "One named layout for the row. Blocks saved with the old layout knobs open on the matching treatment and keep rendering until a new one is picked.",
+   "sources": [
+    "editor.js"
+   ]
+  },
+  "entrance": {
+   "labels": [
+    "Entrance"
+   ],
+   "panes": [
+    "motion"
+   ],
+   "type": "combobox",
+   "options": "ENTRANCE_STYLE_OPTIONS",
+   "help": "Plays once as the block scrolls into view, never on revisit. Keep one entrance style per page.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "hoverStyle": {
+   "labels": [
+    "Hover"
+   ],
+   "panes": [
+    "motion"
+   ],
+   "type": "combobox",
+   "options": "HOVER_STYLE_OPTIONS",
+   "help": "Pointer feedback for the block's items. Use it only when they actually link somewhere.",
+   "sources": [
+    "editor.js"
+   ]
+  },
+  "headerPlacement": {
+   "labels": [
+    "Heading Position"
+   ],
+   "panes": [
+    "layout"
+   ],
+   "type": "combobox",
+   "options": "HEADER_PLACEMENT_OPTIONS",
+   "help": "Across the top runs the heading the full width, with the body and the media side by side under it.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "buttonPlacement": {
+   "labels": [
+    "Button Placement"
+   ],
+   "panes": [
+    "layout"
+   ],
+   "type": "combobox",
+   "options": "BUTTON_PLACEMENT_OPTIONS",
+   "help": "With the heading keeps the buttons above the two columns. Under the copy ends the copy's column with them.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "factsDisplay": {
+   "labels": [
+    "Display"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "combobox",
+   "options": "FACTS_DISPLAY_OPTIONS",
+   "help": "Rows is the At-a-glance card. Bars reads each value as a percentage.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "heroMedia": {
+   "labels": [
+    "Media"
+   ],
+   "panes": [
+    "media"
+   ],
+   "type": "combobox",
+   "options": "HERO_MEDIA_OPTIONS",
+   "help": "What sits beside the copy: the image, a Facts panel, a Timeline, Bullets, or nothing.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "timelineOrientation": {
+   "labels": [
+    "Orientation"
+   ],
+   "panes": [
+    "items"
+   ],
+   "type": "combobox",
+   "options": "TIMELINE_ORIENTATION_OPTIONS",
+   "help": "Horizontal is the cycle stepper; vertical is the process journey.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "cardLayout": {
+   "labels": [
+    "Card Layout"
+   ],
+   "panes": [
+    "cardStyle"
+   ],
+   "type": "combobox",
+   "options": "CARD_LAYOUT_OPTIONS",
+   "help": "Inline puts the icon beside the title for compact chips.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "verticalAlign": {
+   "labels": [
+    "Vertical Alignment"
+   ],
+   "panes": [
+    "layout"
+   ],
+   "type": "combobox",
+   "options": "VERTICAL_ALIGN_OPTIONS",
+   "help": "How the two columns align against each other: start, center, end, or stretch to fill the row.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "splitRatio": {
+   "labels": [
+    "Column Ratio"
+   ],
+   "panes": [
+    "layout"
+   ],
+   "type": "combobox",
+   "options": "SPLIT_RATIO_OPTIONS",
+   "help": "Balance of the two columns in any side-by-side arrangement.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "showcaseItems": {
+   "labels": [
+    "Item Display"
+   ],
+   "panes": [
+    "items",
+    "bullets"
+   ],
+   "type": "combobox",
+   "options": "SHOWCASE_ITEM_OPTIONS",
+   "help": "Cards renders each item as its own small panel instead of a ticked bullet.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "cardMedia": {
+   "labels": [
+    "Card Media"
+   ],
+   "panes": [
+    "cardStyle"
+   ],
+   "type": "combobox",
+   "options": "CARD_MEDIA_OPTIONS",
+   "help": "How an item's Icon Image URL renders. Cover ignores the icon backdrop.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "iconStyle": {
+   "labels": [
+    "Icon Style"
+   ],
+   "panes": [
+    "items",
+    "cardStyle"
+   ],
+   "type": "combobox",
+   "options": "ICON_STYLE_OPTIONS",
+   "help": "Backdrop behind each item icon, tinted with the brand color. Circle renders solid brand with a white glyph.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "iconSize": {
+   "labels": [
+    "Icon Size"
+   ],
+   "panes": [
+    "items",
+    "cardStyle"
+   ],
+   "type": "combobox",
+   "options": "ICON_SIZE_OPTIONS",
+   "help": "Small suits checklist rows; Large is the feature-icon default.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "imageFit": {
+   "labels": [
+    "Image Fit"
+   ],
+   "panes": [
+    "media",
+    "picture",
+    "images"
+   ],
+   "type": "combobox",
+   "options": "IMAGE_FIT_OPTIONS",
+   "help": "Fill crops the image to the space it sits in. Fit keeps the whole image and may leave room around it.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "imageBleed": {
+   "labels": [
+    "Image Bleed"
+   ],
+   "panes": [
+    "media",
+    "picture",
+    "images"
+   ],
+   "type": "combobox",
+   "options": "IMAGE_BLEED_OPTIONS",
+   "help": "Lets artwork run past the section padding.",
+   "sources": [
+    "editor.js",
+    "editor.html"
+   ]
+  },
+  "headingStyle": {
+   "labels": [
+    "Heading Style"
+   ],
+   "panes": [
+    "heading"
+   ],
+   "type": "",
+   "options": "HEADING_STYLE_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "headingAlign": {
+   "labels": [
+    "Heading Alignment"
+   ],
+   "panes": [
+    "heading"
+   ],
+   "type": "",
+   "options": "ALIGN_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "bodyAlign": {
+   "labels": [
+    "Alignment",
+    "Card Alignment"
+   ],
+   "panes": [
+    "body",
+    "items",
+    "cardStyle"
+   ],
+   "type": "",
+   "options": "ALIGN_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "badgeAlign": {
+   "labels": [
+    "Badge Alignment"
+   ],
+   "panes": [
+    "badges"
+   ],
+   "type": "",
+   "options": "ALIGN_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "badgePosition": {
+   "labels": [
+    "Badge Position"
+   ],
+   "panes": [
+    "badges"
+   ],
+   "type": "",
+   "options": [
+    "bottom",
+    "top"
+   ],
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "imageStyle": {
+   "labels": [
+    "Image Style"
+   ],
+   "panes": [
+    "media",
+    "picture",
+    "images"
+   ],
+   "type": "",
+   "options": "IMAGE_STYLE_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "imageAlt": {
+   "labels": [
+    "Image Alt Text"
+   ],
+   "panes": [
+    "media",
+    "picture",
+    "images"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "countUp": {
+   "labels": [],
+   "panes": [
+    "items",
+    "stats"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "columns": {
+   "labels": [
+    "Columns"
+   ],
+   "panes": [
+    "items",
+    "cardStyle"
+   ],
+   "type": "",
+   "options": "COLUMN_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "cardStyle": {
+   "labels": [
+    "Card Style"
+   ],
+   "panes": [
+    "bullets",
+    "cardStyle"
+   ],
+   "type": "",
+   "options": "SURFACE_STYLE_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "footnoteAlign": {
+   "labels": [
+    "Footnote Alignment"
+   ],
+   "panes": [
+    "footnote"
+   ],
+   "type": "",
+   "options": "ALIGN_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "heroLayout": {
+   "labels": [
+    "Button Placement"
+   ],
+   "panes": [
+    "layout"
+   ],
+   "type": "",
+   "options": [
+    "stacked",
+    "band"
+   ],
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "copyWidth": {
+   "labels": [
+    "Copy Width"
+   ],
+   "panes": [
+    "layout"
+   ],
+   "type": "",
+   "options": [
+    "full",
+    "column"
+   ],
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "arrangement": {
+   "labels": [
+    "Arrangement"
+   ],
+   "panes": [
+    "layout"
+   ],
+   "type": "",
+   "options": "ARRANGEMENT_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "buttonAlign": {
+   "labels": [
+    "Button Alignment"
+   ],
+   "panes": [
+    "buttons"
+   ],
+   "type": "",
+   "options": "ALIGN_OPTIONS",
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "borderTop": {
+   "labels": [
+    "Top"
+   ],
+   "panes": [
+    "border"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "borderLeft": {
+   "labels": [
+    "Left"
+   ],
+   "panes": [
+    "border"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "borderRight": {
+   "labels": [
+    "Right"
+   ],
+   "panes": [
+    "border"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "borderBottom": {
+   "labels": [
+    "Bottom"
+   ],
+   "panes": [
+    "border"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "borderWidth": {
+   "labels": [
+    "Border Width (px)"
+   ],
+   "panes": [
+    "border"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "attachToPrevious": {
+   "labels": [],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "overlapTop": {
+   "labels": [
+    "Top"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "overlapBottom": {
+   "labels": [
+    "Bottom"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  },
+  "overlapMargin": {
+   "labels": [
+    "Overlap Amount (px)"
+   ],
+   "panes": [
+    "spacing"
+   ],
+   "type": "",
+   "options": null,
+   "help": "",
+   "sources": [
+    "editor.html"
+   ]
+  }
+ },
+ "rendererKeys": [
+  "accentColor",
+  "accentColorOpacity",
+  "attachToPrevious",
+  "attribution",
+  "attributionDetail",
+  "background",
+  "backgroundAccentColor",
+  "backgroundAccentOpacity",
+  "backgroundEffect",
+  "backgroundGradient",
+  "backgroundImageAsset",
+  "backgroundImageSource",
+  "backgroundImageUrl",
+  "backgroundMidColor",
+  "backgroundMidOpacity",
+  "backgroundOpacity",
+  "backgroundOverlay",
+  "backgroundOverlayColor",
+  "backgroundOverlayOpacity",
+  "backgroundParallaxSpeed",
+  "backgroundTexture",
+  "badgePosition",
+  "badgeText",
+  "badgesGap",
+  "blockHeight",
+  "blockTitle",
+  "blockTitleColor",
+  "blockTitleColorOpacity",
+  "bodyGap",
+  "borderBottom",
+  "borderColor",
+  "borderColorOpacity",
+  "borderLeft",
+  "borderRight",
+  "borderTop",
+  "borderWidth",
+  "brandColor",
+  "brandColorOpacity",
+  "bulletCheckColor",
+  "bulletCheckColorOpacity",
+  "bulletTextColor",
+  "bulletTextColorOpacity",
+  "bulletTitleColor",
+  "bulletTitleColorOpacity",
+  "bullets",
+  "bulletsGap",
+  "bulletsPlacement",
+  "buttonPlacement",
+  "buttonsGap",
+  "cardBackgroundColor",
+  "cardBackgroundOpacity",
+  "cardLayout",
+  "cardStyle",
+  "carouselInterval",
+  "columns",
+  "contentPosition",
+  "copyWidth",
+  "countUp",
+  "deadline",
+  "description",
+  "entrance",
+  "factsDisplay",
+  "footnote",
+  "footnoteAlign",
+  "footnoteColor",
+  "footnoteColorOpacity",
+  "footnoteGap",
+  "footnoteSize",
+  "galleryLayout",
+  "galleryThumbnails",
+  "gradientDrift",
+  "headerGap",
+  "headerPlacement",
+  "heading",
+  "headingAlign",
+  "headingColor",
+  "headingColorOpacity",
+  "headingHighlight",
+  "headingStyle",
+  "heroLayout",
+  "hoverStyle",
+  "iconColor",
+  "iconColorOpacity",
+  "iconSize",
+  "iconStyle",
+  "imageAlt",
+  "imageAsset",
+  "imageBleed",
+  "imageCaption",
+  "imageFit",
+  "imageFloat",
+  "imageSource",
+  "imageStyle",
+  "imageUrl",
+  "itemTextColor",
+  "itemTextColorOpacity",
+  "items",
+  "labelColor",
+  "labelColorOpacity",
+  "labelSize",
+  "opensOn",
+  "overlapBottom",
+  "overlapMargin",
+  "overlapTop",
+  "pillTicker",
+  "pointCards",
+  "progressCurrent",
+  "progressTotal",
+  "reversed",
+  "sectionLabel",
+  "sectionLabelColor",
+  "sectionLabelColorOpacity",
+  "sectionType",
+  "shell",
+  "shineSweep",
+  "showcaseItems",
+  "splitRatio",
+  "statLabelColor",
+  "statLabelColorOpacity",
+  "statValueColor",
+  "statValueColorOpacity",
+  "stats",
+  "statsGap",
+  "statsPlacement",
+  "textColor",
+  "textColorOpacity",
+  "timelineBaseColor",
+  "timelineBaseColorOpacity",
+  "timelineMarkerInk",
+  "timelineMarkerInkOpacity",
+  "timelineOrientation",
+  "valueColor",
+  "valueColorOpacity",
+  "valueSize",
+  "verticalAlign",
+  "width"
+ ],
+ "itemFields": {
+  "buttons": [
+   {
+    "name": "label",
+    "label": "Label",
+    "type": "richtext",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "description",
+    "label": "Subtitle",
+    "type": "text",
+    "options": null,
+    "help": "Small line under the label, rendered by the Panel style."
+   },
+   {
+    "name": "type",
+    "label": "Type",
+    "type": "combobox",
+    "options": "BUTTON_TYPE_OPTIONS",
+    "help": ""
+   },
+   {
+    "name": "url",
+    "label": "URL",
+    "type": "text",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "target",
+    "label": "Opens In",
+    "type": "combobox",
+    "options": "LINK_TARGET_OPTIONS",
+    "help": ""
+   },
+   {
+    "name": "templateId",
+    "label": "Fallback Form Template",
+    "type": "combobox",
+    "options": [],
+    "help": "Used only when the record has no Source Mapping. Leave blank to show the form's own message instead."
+   },
+   {
+    "name": "flowApiName",
+    "label": "Flow",
+    "type": "flow",
+    "options": null,
+    "help": "Active screen flows. A flow with a recordId input receives the record."
+   },
+   {
+    "name": "recordSource",
+    "label": "Record",
+    "type": "record",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "formMode",
+    "label": "Mode",
+    "type": "radio",
+    "options": [
+     "edit",
+     "readOnly"
+    ],
+    "help": "Read Only shows the record with no inputs and no Save."
+   },
+   {
+    "name": "recordField",
+    "label": "Lookup Field",
+    "type": "recordLookup",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "formQualifiedApiName",
+    "label": "Form Component",
+    "type": "formComponent",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "modalWidth",
+    "label": "Modal Size",
+    "type": "combobox",
+    "options": [
+     "small",
+     "medium",
+     "large",
+     "full"
+    ],
+    "help": ""
+   },
+   {
+    "name": "modalHeader",
+    "label": "Modal Title",
+    "type": "text",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "modalSubheader",
+    "label": "Modal Subtitle",
+    "type": "text",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "style",
+    "label": "Style",
+    "type": "combobox",
+    "options": "BUTTON_STYLE_OPTIONS",
+    "help": ""
+   },
+   {
+    "name": "backgroundColor",
+    "label": "Background Color",
+    "type": "color",
+    "options": null,
+    "help": "Overrides the style's fill for this button only."
+   },
+   {
+    "name": "textColor",
+    "label": "Font Color",
+    "type": "color",
+    "options": null,
+    "help": "Overrides the style's text ink for this button only."
+   }
+  ],
+  "badges": [
+   {
+    "name": "title",
+    "label": "Label",
+    "type": "richtext",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "style",
+    "label": "Style",
+    "type": "combobox",
+    "options": "PILL_STYLE_OPTIONS",
+    "help": ""
+   },
+   {
+    "name": "pulse",
+    "label": "Pulse",
+    "type": "checkbox",
+    "options": null,
+    "help": "A soft ring every 2.2 seconds, for urgency badges and live counters. One per page."
+   }
+  ],
+  "tableColumns": [
+   {
+    "name": "label",
+    "label": "Header",
+    "type": "richtext",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "width",
+    "label": "Width",
+    "type": "combobox",
+    "options": "TABLE_WIDTH_OPTIONS",
+    "help": ""
+   },
+   {
+    "name": "align",
+    "label": "Alignment",
+    "type": "combobox",
+    "options": "TABLE_ALIGN_OPTIONS",
+    "help": ""
+   },
+   {
+    "name": "display",
+    "label": "Cell Display",
+    "type": "combobox",
+    "options": "TABLE_DISPLAY_OPTIONS",
+    "help": ""
+   },
+   {
+    "name": "hideOnTablet",
+    "label": "Hide at tablet width",
+    "type": "checkbox",
+    "options": null,
+    "help": "Drops this column below 1024px so the table stays readable."
+   }
+  ],
+  "items": [
+   {
+    "name": "title",
+    "label": "Label",
+    "type": "richtext",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "value",
+    "label": "Value",
+    "type": "richtext",
+    "options": null,
+    "help": "Typed text, a {{Field}} merge field, or both."
+   }
+  ],
+  "stats": [
+   {
+    "name": "title",
+    "label": "Label",
+    "type": "richtext",
+    "options": null,
+    "help": ""
+   },
+   {
+    "name": "value",
+    "label": "Value",
+    "type": "richtext",
+    "options": null,
+    "help": "The figure shown large above its label."
+   }
+  ]
+ },
+ "types": {
+  "hero": {
+   "label": "Hero",
+   "deprecated": false,
+   "features": [
+    "content",
+    "badges",
+    "buttons",
+    "image",
+    "imageAlignment",
+    "heroMedia",
+    "cardBackground",
+    "splitRatio",
+    "motion",
+    "shineSweep",
+    "heroBand",
+    "blockHeight",
+    "headerPlacement",
+    "showcaseItems",
+    "cardStyleWhenShowcaseCards",
+    "showcaseStats",
+    "countUp",
+    "headerGap",
+    "partGaps"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": "Small uppercase eyebrow above the heading."
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Subheading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "blockTitle",
+     "label": "Body Title",
+     "type": "richtext",
+     "group": "body",
+     "help": "Optional title above the body copy. Most useful with Heading Position set to Across the top."
+    },
+    {
+     "name": "description",
+     "label": "Body Copy",
+     "type": "richtext",
+     "group": "body",
+     "help": "Optional paragraph under the body title."
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Fact",
+     "label": "Facts",
+     "max": 6,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Label",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "value",
+       "label": "Value",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      }
+     ],
+     "mediaWhen": {
+      "facts": [
+       {
+        "name": "title",
+        "label": "Label",
+        "type": "richtext",
+        "options": null
+       },
+       {
+        "name": "value",
+        "label": "Value",
+        "type": "richtext",
+        "options": null
+       }
+      ],
+      "timeline": [
+       {
+        "name": "title",
+        "label": "Title",
+        "type": "richtext",
+        "options": null
+       },
+       {
+        "name": "meta",
+        "label": "Detail",
+        "type": "richtext",
+        "options": null
+       },
+       {
+        "name": "state",
+        "label": "State",
+        "type": "combobox",
+        "options": "TIMELINE_STATE_OPTIONS"
+       }
+      ]
+     }
+    },
+    "bullets": {
+     "noun": "Bullet",
+     "label": "Bullets",
+     "max": null,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Title",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "description",
+       "label": "Description",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      }
+     ],
+     "mediaWhen": null
+    },
+    "stats": {
+     "noun": "Stat",
+     "label": "Inline Stats",
+     "max": 5,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Label",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "value",
+       "label": "Value",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "heading": {
+   "label": "Heading",
+   "deprecated": true,
+   "features": [
+    "content",
+    "badges",
+    "buttons",
+    "motion"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Eyebrow",
+     "type": "richtext",
+     "group": "heading",
+     "help": "Small uppercase line above the heading."
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Supporting Copy",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    }
+   ],
+   "collections": {}
+  },
+  "statsBar": {
+   "label": "Stats",
+   "deprecated": false,
+   "features": [
+    "items",
+    "overlap",
+    "statsTreatment",
+    "iconStyle",
+    "cardStyleWhenStatCards",
+    "cardBackgroundWhenStatCards",
+    "motion",
+    "countUp"
+   ],
+   "contentFields": [],
+   "collections": {
+    "items": {
+     "noun": "Stat",
+     "label": "Stats",
+     "max": 5,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Title",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "value",
+       "label": "Value",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "titleColor",
+       "label": "Title Color",
+       "type": "color",
+       "options": null,
+       "help": "Overrides the title ink for this stat only."
+      },
+      {
+       "name": "valueColor",
+       "label": "Value Color",
+       "type": "color",
+       "options": null,
+       "help": "Overrides the value ink for this stat only."
+      },
+      {
+       "name": "titleSize",
+       "label": "Title Size",
+       "type": "combobox",
+       "options": "FONT_SIZE_OPTIONS",
+       "help": "Scales this stat's title relative to the block's body text."
+      },
+      {
+       "name": "valueSize",
+       "label": "Value Size",
+       "type": "combobox",
+       "options": "FONT_SIZE_OPTIONS",
+       "help": "Scales this stat's value relative to the block's body text. Default follows the treatment."
+      },
+      {
+       "name": "iconType",
+       "label": "Icon Source",
+       "type": "radio",
+       "options": [
+        "icon",
+        "image"
+       ],
+       "help": "Show an SLDS icon or a brand image asset."
+      },
+      {
+       "name": "icon",
+       "label": "Icon",
+       "type": "icon",
+       "options": null,
+       "help": "Pick an SLDS icon"
+      },
+      {
+       "name": "iconColor",
+       "label": "Icon Color",
+       "type": "color",
+       "options": null,
+       "help": "Ink for this stat's icon. Plain tints the glyph; Tile and Circle use it as the backdrop with a white glyph over it."
+      },
+      {
+       "name": "iconImage",
+       "label": "Icon Image",
+       "type": "asset",
+       "options": null,
+       "help": "Brand icon artwork asset. Takes precedence over the SLDS icon name."
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "facts": {
+   "label": "Facts",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "buttons",
+    "items",
+    "factsDisplay",
+    "cardStyle",
+    "cardBackground",
+    "motion"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Supporting Copy",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": ""
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Fact",
+     "label": "Facts",
+     "max": 10,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Label",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "value",
+       "label": "Value",
+       "type": "richtext",
+       "options": null,
+       "help": "Rows show it as written. Progress reads the first number as a percentage."
+      },
+      {
+       "name": "labelColor",
+       "label": "Label Color",
+       "type": "color",
+       "options": null,
+       "help": "Overrides the label ink for this fact only."
+      },
+      {
+       "name": "valueColor",
+       "label": "Value Color",
+       "type": "color",
+       "options": null,
+       "help": "Overrides the value ink for this fact only."
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "timeline": {
+   "label": "Timeline",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "buttons",
+    "items",
+    "timelineOrientation",
+    "motion"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": ""
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Milestone",
+     "label": "Milestones",
+     "max": 8,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Title",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "meta",
+       "label": "Detail",
+       "type": "richtext",
+       "options": null,
+       "help": "The date or supporting line under the title."
+      },
+      {
+       "name": "state",
+       "label": "State",
+       "type": "combobox",
+       "options": "TIMELINE_STATE_OPTIONS",
+       "help": ""
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "quote": {
+   "label": "Quote",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "buttons",
+    "motion"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "description",
+     "label": "Quote",
+     "type": "richtext",
+     "group": "body",
+     "help": ""
+    },
+    {
+     "name": "attribution",
+     "label": "Attribution",
+     "type": "richtext",
+     "group": "body",
+     "help": ""
+    },
+    {
+     "name": "attributionDetail",
+     "label": "Attribution Detail",
+     "type": "richtext",
+     "group": "body",
+     "help": "Role or context line, such as \"Executive Director, 2025 grantee\"."
+    }
+   ],
+   "collections": {}
+  },
+  "actionCard": {
+   "label": "Action Card",
+   "deprecated": false,
+   "features": [
+    "content",
+    "buttons",
+    "cardStyle",
+    "cardBackground",
+    "motion"
+   ],
+   "contentFields": [
+    {
+     "name": "heading",
+     "label": "Label",
+     "type": "richtext",
+     "group": "body",
+     "help": "The row label beside the big value, such as \"Closes in\" or \"Seats remaining\"."
+    },
+    {
+     "name": "deadline",
+     "label": "Deadline (date)",
+     "type": "richtext",
+     "group": "body",
+     "help": "A date the card counts down to. Merge fields work, so {{Close_Date__c}} makes it record-driven."
+    },
+    {
+     "name": "opensOn",
+     "label": "Opens (date)",
+     "type": "richtext",
+     "group": "body",
+     "help": "Optional cycle start. With both dates the progress bar tracks the open window."
+    },
+    {
+     "name": "progressCurrent",
+     "label": "Progress Current",
+     "type": "text",
+     "group": "body",
+     "help": "Numeric alternative to the dates: the remaining count, such as seats left."
+    },
+    {
+     "name": "progressTotal",
+     "label": "Progress Total",
+     "type": "text",
+     "group": "body",
+     "help": "The total the current value counts against."
+    },
+    {
+     "name": "footnote",
+     "label": "Microcopy",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "The small line under the buttons, such as \"Save and return any time\"."
+    }
+   ],
+   "collections": {}
+  },
+  "carousel": {
+   "label": "Carousel",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "buttons",
+    "items",
+    "motion",
+    "carouselInterval"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Subheading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Slide",
+     "label": "Slides",
+     "max": null,
+     "fields": [
+      {
+       "name": "iconImage",
+       "label": "Slide Image",
+       "type": "asset",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "imageAlt",
+       "label": "Alt Text",
+       "type": "text",
+       "options": null,
+       "help": "Describe the photo for screen readers."
+      },
+      {
+       "name": "eyebrow",
+       "label": "Eyebrow",
+       "type": "richtext",
+       "options": null,
+       "help": "Small label above the headline."
+      },
+      {
+       "name": "title",
+       "label": "Headline",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "link",
+       "label": "Link",
+       "type": "text",
+       "options": null,
+       "help": "Optional. Makes the whole slide clickable."
+      },
+      {
+       "name": "target",
+       "label": "Opens In",
+       "type": "combobox",
+       "options": "LINK_TARGET_OPTIONS",
+       "help": ""
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "image": {
+   "label": "Image",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "image",
+    "buttons",
+    "motion",
+    "imageCaption",
+    "blockHeight"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": "Doubles as the image caption when Caption Style puts a caption below or over the photo."
+    },
+    {
+     "name": "subheading",
+     "label": "Subheading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    }
+   ],
+   "collections": {}
+  },
+  "gallery": {
+   "label": "Image Gallery",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "buttons",
+    "items",
+    "cardStyle",
+    "cardBackground",
+    "motion",
+    "galleryLayout"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Subheading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the photos."
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Photo",
+     "label": "Photos",
+     "max": null,
+     "fields": [
+      {
+       "name": "image",
+       "label": "Photo",
+       "type": "imageSource",
+       "options": null,
+       "help": "A full URL, resource:Name/path.png, or a merge field such as {{Photo_URL__c}} from the record."
+      },
+      {
+       "name": "imageAlt",
+       "label": "Caption",
+       "type": "text",
+       "options": null,
+       "help": "Shown with the photo, and read to screen readers as its description."
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "cards": {
+   "label": "Cards",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "items",
+    "columns",
+    "cardStyle",
+    "iconStyle",
+    "cardMedia",
+    "cardLayout",
+    "cardBackground",
+    "buttons",
+    "sectionLayout",
+    "splitRatio",
+    "motion",
+    "headingStyle"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Subheading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    },
+    {
+     "name": "description",
+     "label": "Emphasis Line",
+     "type": "richtext",
+     "group": "heading",
+     "help": "Rendered larger, directly under the subheading."
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Card",
+     "label": "Cards",
+     "max": null,
+     "fields": [
+      {
+       "name": "eyebrow",
+       "label": "Eyebrow",
+       "type": "richtext",
+       "options": null,
+       "help": "Small label above the title - use it for roles, before/after labels, or a category."
+      },
+      {
+       "name": "title",
+       "label": "Title",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "description",
+       "label": "Description",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "meta",
+       "label": "Footer Note",
+       "type": "richtext",
+       "options": null,
+       "help": "Small emphasised line below the description."
+      },
+      {
+       "name": "labelColor",
+       "label": "Eyebrow Color",
+       "type": "color",
+       "options": null,
+       "help": "Overrides the eyebrow ink for this card only."
+      },
+      {
+       "name": "valueColor",
+       "label": "Title Color",
+       "type": "color",
+       "options": null,
+       "help": "Overrides the title ink for this card only."
+      },
+      {
+       "name": "link",
+       "label": "Link",
+       "type": "text",
+       "options": null,
+       "help": "Optional. When set, the whole card becomes clickable. The URL is never displayed on the card."
+      },
+      {
+       "name": "target",
+       "label": "Opens In",
+       "type": "combobox",
+       "options": "LINK_TARGET_OPTIONS",
+       "help": ""
+      },
+      {
+       "name": "linkLabel",
+       "label": "Link Label",
+       "type": "richtext",
+       "options": null,
+       "help": "Optional. Renders as a text link at the bottom of the card. Leave blank to keep the link invisible with the whole card clickable."
+      },
+      {
+       "name": "iconType",
+       "label": "Icon Source",
+       "type": "radio",
+       "options": [
+        "icon",
+        "image"
+       ],
+       "help": "Show an SLDS icon or a brand image asset."
+      },
+      {
+       "name": "icon",
+       "label": "Icon",
+       "type": "icon",
+       "options": null,
+       "help": "Pick an SLDS icon"
+      },
+      {
+       "name": "iconColor",
+       "label": "Icon Color",
+       "type": "color",
+       "options": null,
+       "help": "Ink for this card's icon. Plain tints the glyph; Tile and Circle use it as the backdrop with a white glyph over it."
+      },
+      {
+       "name": "iconImage",
+       "label": "Icon Image",
+       "type": "asset",
+       "options": null,
+       "help": "Brand icon artwork asset. Takes precedence over the SLDS icon name."
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "steps": {
+   "label": "Steps",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "items",
+    "buttons",
+    "sectionLayout",
+    "splitRatio",
+    "motion",
+    "stepsList"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Subheading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": ""
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Step",
+     "label": "Steps",
+     "max": null,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Title",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "description",
+       "label": "Description",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "link",
+       "label": "Link URL",
+       "type": "text",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "target",
+       "label": "Opens In",
+       "type": "combobox",
+       "options": "LINK_TARGET_OPTIONS",
+       "help": ""
+      },
+      {
+       "name": "linkLabel",
+       "label": "Link Label",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "pricing": {
+   "label": "Pricing",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "items",
+    "pricingTiers",
+    "columns",
+    "cardBackground",
+    "buttons",
+    "motion"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Subheading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Tier",
+     "label": "Pricing Tiers",
+     "max": 6,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Title",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "value",
+       "label": "Price",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "description",
+       "label": "Description",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "link",
+       "label": "Link URL",
+       "type": "text",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "target",
+       "label": "Opens In",
+       "type": "combobox",
+       "options": "LINK_TARGET_OPTIONS",
+       "help": ""
+      },
+      {
+       "name": "linkLabel",
+       "label": "Link Label",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "features",
+       "label": "Features (one per line)",
+       "type": "textarea",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "featured",
+       "label": "Featured / highlighted tier",
+       "type": "checkbox",
+       "options": null,
+       "help": ""
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "callout": {
+   "label": "Callout",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "buttons",
+    "motion"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Eyebrow",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Statement",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Supporting Copy",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    },
+    {
+     "name": "description",
+     "label": "Emphasis Line",
+     "type": "richtext",
+     "group": "heading",
+     "help": "Rendered larger, directly under the supporting copy."
+    }
+   ],
+   "collections": {}
+  },
+  "table": {
+   "label": "Comparison Table",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "items",
+    "buttons",
+    "tableColumns",
+    "tableColors",
+    "sectionLayout",
+    "splitRatio",
+    "motion"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Eyebrow",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Supporting Copy",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Row",
+     "label": "Rows",
+     "max": null,
+     "fields": [
+      {
+       "name": "featured",
+       "label": "Highlight this row",
+       "type": "checkbox",
+       "options": null,
+       "help": ""
+      }
+     ],
+     "mediaWhen": null
+    },
+    "columns": {
+     "noun": "Column",
+     "label": "Columns",
+     "max": 6,
+     "fields": [
+      {
+       "name": "label",
+       "label": "Header",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "width",
+       "label": "Width",
+       "type": "combobox",
+       "options": "TABLE_WIDTH_OPTIONS",
+       "help": ""
+      },
+      {
+       "name": "align",
+       "label": "Alignment",
+       "type": "combobox",
+       "options": "TABLE_ALIGN_OPTIONS",
+       "help": ""
+      },
+      {
+       "name": "display",
+       "label": "Cell Display",
+       "type": "combobox",
+       "options": "TABLE_DISPLAY_OPTIONS",
+       "help": ""
+      },
+      {
+       "name": "hideOnTablet",
+       "label": "Hide at tablet width",
+       "type": "checkbox",
+       "options": null,
+       "help": "Drops this column below 1024px so the table stays readable."
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "pills": {
+   "label": "Tag Cloud",
+   "deprecated": false,
+   "features": [
+    "content",
+    "headerGap",
+    "badges",
+    "items",
+    "buttons",
+    "sectionLayout",
+    "splitRatio",
+    "motion",
+    "pillTicker"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Eyebrow",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Supporting Copy",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    }
+   ],
+   "collections": {
+    "items": {
+     "noun": "Pill",
+     "label": "Pills",
+     "max": null,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Label",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "style",
+       "label": "Style",
+       "type": "combobox",
+       "options": "PILL_STYLE_OPTIONS",
+       "help": ""
+      },
+      {
+       "name": "link",
+       "label": "Link",
+       "type": "text",
+       "options": null,
+       "help": "Optional. Makes the pill a link, such as a partner's site."
+      },
+      {
+       "name": "target",
+       "label": "Opens In",
+       "type": "combobox",
+       "options": "LINK_TARGET_OPTIONS",
+       "help": ""
+      },
+      {
+       "name": "iconImage",
+       "label": "Logo",
+       "type": "asset",
+       "options": null,
+       "help": "Optional logo shown before the label. With no label, the pill is a logo tile."
+      }
+     ],
+     "mediaWhen": null
+    }
+   }
+  },
+  "cta": {
+   "label": "Call to Action",
+   "deprecated": true,
+   "features": [
+    "content",
+    "badges",
+    "buttons",
+    "image",
+    "imageAlignment",
+    "sectionLayout",
+    "motion",
+    "shineSweep",
+    "blockHeight"
+   ],
+   "contentFields": [
+    {
+     "name": "sectionLabel",
+     "label": "Section Label",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "heading",
+     "label": "Heading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "subheading",
+     "label": "Subheading",
+     "type": "richtext",
+     "group": "heading",
+     "help": ""
+    },
+    {
+     "name": "footnote",
+     "label": "Footnote",
+     "type": "richtext",
+     "group": "footnote",
+     "help": "Small line rendered below the section content."
+    }
+   ],
+   "collections": {}
+  },
+  "recordCard": {
+   "label": "Record Card",
+   "deprecated": false,
+   "features": [
+    "buttons",
+    "cardStyle",
+    "cardBackground",
+    "motion",
+    "recordCard"
+   ],
+   "contentFields": [],
+   "collections": {
+    "items": {
+     "noun": "Row",
+     "label": "Detail Rows",
+     "max": 6,
+     "fields": [
+      {
+       "name": "title",
+       "label": "Label",
+       "type": "richtext",
+       "options": null,
+       "help": ""
+      },
+      {
+       "name": "value",
+       "label": "Value",
+       "type": "richtext",
+       "options": null,
+       "help": "Typed text, a {{Field}} merge field, or both."
+      }
+     ],
+     "mediaWhen": {
+      "mediaTop": [
+       {
+        "name": "title",
+        "label": "Label",
+        "type": "richtext",
+        "options": null
+       },
+       {
+        "name": "value",
+        "label": "Value",
+        "type": "richtext",
+        "options": null
+       }
+      ],
+      "iconLead": [
+       {
+        "name": "title",
+        "label": "Label",
+        "type": "richtext",
+        "options": null
+       },
+       {
+        "name": "value",
+        "label": "Value",
+        "type": "richtext",
+        "options": null
+       }
+      ],
+      "fieldList": [
+       {
+        "name": "title",
+        "label": "Label",
+        "type": "richtext",
+        "options": null
+       },
+       {
+        "name": "value",
+        "label": "Value",
+        "type": "richtext",
+        "options": null
+       }
+      ],
+      "valueSpotlight": [
+       {
+        "name": "title",
+        "label": "Label",
+        "type": "richtext",
+        "options": null
+       },
+       {
+        "name": "value",
+        "label": "Value",
+        "type": "richtext",
+        "options": null
+       }
+      ],
+      "profile": [
+       {
+        "name": "title",
+        "label": "Label",
+        "type": "richtext",
+        "options": null
+       },
+       {
+        "name": "value",
+        "label": "Value",
+        "type": "richtext",
+        "options": null
+       }
+      ]
+     }
+    }
+   }
+  }
+ },
+ "divider": {
+  "title": {
+   "label": "Title",
+   "type": "String",
+   "options": null,
+   "default": null
+  },
+  "subtitle": {
+   "label": "Subtitle",
+   "type": "String",
+   "options": null,
+   "default": null
+  },
+  "iconName": {
+   "label": "Icon Name",
+   "type": "String",
+   "options": null,
+   "default": null
+  },
+  "richText": {
+   "label": "Rich Text",
+   "type": "String",
+   "options": null,
+   "default": null
+  },
+  "displayAsDivider": {
+   "label": "Display as Divider",
+   "type": "Boolean",
+   "options": null,
+   "default": "false"
+  },
+  "dividerStyle": {
+   "label": "Divider Style",
+   "type": "String",
+   "options": [
+    "line",
+    "compact",
+    "centered",
+    "label",
+    "bookmark",
+    "ornament",
+    "pill",
+    "chevron",
+    "double",
+    "icon",
+    "fade",
+    "tag"
+   ],
+   "default": "line"
+  },
+  "topMargin": {
+   "label": "Top Margin",
+   "type": "String",
+   "options": [
+    "slds-m-top_none",
+    "slds-m-top_xxx-small",
+    "slds-m-top_xx-small",
+    "slds-m-top_x-small",
+    "slds-m-top_small",
+    "slds-m-top_medium",
+    "slds-m-top_large",
+    "slds-m-top_x-large",
+    "slds-m-top_xx-large"
+   ],
+   "default": "slds-m-top_none"
+  },
+  "bottomMargin": {
+   "label": "Bottom Margin",
+   "type": "String",
+   "options": [
+    "slds-m-bottom_none",
+    "slds-m-bottom_xxx-small",
+    "slds-m-bottom_xx-small",
+    "slds-m-bottom_x-small",
+    "slds-m-bottom_small",
+    "slds-m-bottom_medium",
+    "slds-m-bottom_large",
+    "slds-m-bottom_x-large",
+    "slds-m-bottom_xx-large"
+   ],
+   "default": "slds-m-bottom_none"
+  },
+  "themeOverrideId": {
+   "label": "Theme Override Name",
+   "type": "String",
+   "options": null,
+   "default": null
+  },
+  "recordId": {
+   "label": "Record Id",
+   "type": "String",
+   "options": null,
+   "default": "{!recordId}"
+  },
+  "properties": {
+   "label": "Configure Properties",
+   "type": "String",
+   "options": null,
+   "default": null
+  }
+ },
+ "recordCard": {
+  "cardTypes": [
+   "mediaTop",
+   "photoOverlay",
+   "dateTile",
+   "progress",
+   "headerBand",
+   "strip",
+   "countdown",
+   "iconLead",
+   "profile",
+   "fieldList",
+   "valueSpotlight"
+  ],
+  "keys": [
+   "avatarType",
+   "backgroundColor",
+   "badge",
+   "badgeStyle",
+   "buttons",
+   "cardType",
+   "cornerTag",
+   "countdownDirection",
+   "countdownEnded",
+   "countdownUnits",
+   "date",
+   "description",
+   "endDate",
+   "eyebrow",
+   "flowApiName",
+   "formMode",
+   "formQualifiedApiName",
+   "icon",
+   "iconStyle",
+   "image",
+   "imageAlt",
+   "imageFrame",
+   "label",
+   "link",
+   "mediaHeight",
+   "meta",
+   "modalHeader",
+   "modalWidth",
+   "overlayStyle",
+   "progressCurrent",
+   "progressTotal",
+   "recordField",
+   "recordSource",
+   "rows",
+   "scrimColor",
+   "stripIcon",
+   "stripTone",
+   "style",
+   "subtitle",
+   "tags",
+   "target",
+   "textColor",
+   "title",
+   "type",
+   "url",
+   "value",
+   "valueSuffix"
+  ],
+  "fields": {
+   "label": {
+    "label": "Label",
+    "type": "richtext",
+    "options": null,
+    "help": ""
+   },
+   "type": {
+    "label": "Type",
+    "type": "combobox",
+    "options": [
+     "url",
+     "flow",
+     "recordForm"
+    ],
+    "help": ""
+   },
+   "url": {
+    "label": "URL",
+    "type": "text",
+    "options": null,
+    "help": ""
+   },
+   "target": {
+    "label": "Opens In",
+    "type": "combobox",
+    "options": [
+     "same",
+     "new"
+    ],
+    "help": ""
+   },
+   "flowApiName": {
+    "label": "Flow",
+    "type": "flow",
+    "options": null,
+    "help": "Active screen flows. A flow with a recordId input receives the record."
+   },
+   "recordSource": {
+    "label": "Record",
+    "type": "record",
+    "options": null,
+    "help": ""
+   },
+   "formMode": {
+    "label": "Mode",
+    "type": "radio",
+    "options": [
+     "edit",
+     "readOnly"
+    ],
+    "help": "Read Only shows the record with no inputs and no Save."
+   },
+   "recordField": {
+    "label": "Lookup Field",
+    "type": "recordLookup",
+    "options": null,
+    "help": ""
+   },
+   "formQualifiedApiName": {
+    "label": "Form Component",
+    "type": "formComponent",
+    "options": null,
+    "help": ""
+   },
+   "modalWidth": {
+    "label": "Modal Size",
+    "type": "combobox",
+    "options": [
+     "small",
+     "medium",
+     "large",
+     "full"
+    ],
+    "help": ""
+   },
+   "modalHeader": {
+    "label": "Modal Title",
+    "type": "text",
+    "options": null,
+    "help": ""
+   },
+   "style": {
+    "label": "Style",
+    "type": "combobox",
+    "options": [
+     "brand",
+     "light",
+     "accent",
+     "outline",
+     "link"
+    ],
+    "help": ""
+   },
+   "backgroundColor": {
+    "label": "Background Color",
+    "type": "color",
+    "options": null,
+    "help": "Overrides the style's fill for this button only."
+   },
+   "textColor": {
+    "label": "Font Color",
+    "type": "color",
+    "options": null,
+    "help": "Overrides the style's text ink for this button only."
+   },
+   "imageAlt": {
+    "label": "Image Alt Text",
+    "type": "text",
+    "options": null,
+    "help": "Read aloud by a screen reader. Leave empty when the photo is decoration."
+   },
+   "image": {
+    "label": "Image Override Field",
+    "type": "text",
+    "options": null,
+    "help": "Optional. When the record holds an image in this field, it is shown in place of the asset. A link, a formula or a rich text field works."
+   },
+   "link": {
+    "label": "Card Link",
+    "type": "text",
+    "options": null,
+    "help": "Optional. When set, the whole card is clickable. The link is never shown on the card."
+   },
+   "title": {
+    "label": "Label",
+    "type": "richtext",
+    "options": null,
+    "help": ""
+   },
+   "value": {
+    "label": "Value",
+    "type": "richtext",
+    "options": null,
+    "help": "Typed text, a {{Field}} merge field, or both."
+   }
+  }
+ },
+ "standard": {
+  "siteforce:starterBody": [
+   "fixedPageWidth",
+   "isPageWidthFixed"
+  ],
+  "forceCommunity:globalSearchInput": [
+   "maxAutoCompleteResults",
+   "searchLabel",
+   "searchObjects"
+  ],
+  "selfService:userProfileMenu": [
+   "accountManagementLabel",
+   "communityBuilderLabel",
+   "communitySetupLabel",
+   "contactSupportLabel",
+   "filterName",
+   "homeLabel",
+   "includeContactSupport",
+   "includeMessages",
+   "loginLabel",
+   "logoutLabel",
+   "myAccountLabel",
+   "showAccountManagement",
+   "showUserSettings",
+   "userSettingsLabel",
+   "viewProfileLabel"
+  ],
+  "forceCommunity:globalNavigation": [
+   "NavigationMenuEditorRefresh",
+   "hideAppLauncher",
+   "hideHomeText"
+  ],
+  "siteforce:themeLayoutStarter": [
+   "fixedPageWidth",
+   "headerBgColor",
+   "isHeaderPinned",
+   "isHeroUnderHeader",
+   "isPageWidthFixed",
+   "showHeader",
+   "showHero"
+  ],
+  "siteforce:sldsOneColLayout": [],
+  "forceCommunity:richTextInline": [
+   "richTextValue"
+  ],
+  "forceCommunity:seoAssistant": [
+   "customHeadTags",
+   "description",
+   "title"
+  ],
+  "forceCommunity:createRecordForm": [
+   "actionApiName",
+   "isMicrobatch"
+  ],
+  "siteforce:dynamicLayout": [],
+  "forceCommunity:section": [
+   "background",
+   "backgroundOverlay",
+   "contentAreaWidth",
+   "sectionConfig",
+   "sectionHeight"
+  ],
+  "forceCommunity:recordHeadline": [
+   "recordId"
+  ],
+  "forceCommunity:recordHomeTabs": [
+   "detailsTabLabel",
+   "discussionsTabLabel",
+   "recordId",
+   "relatedTabLabel",
+   "showLegacyActivityComposer",
+   "tab1Type",
+   "tab2Type",
+   "tab3Type",
+   "tab4Type",
+   "timelineTabLabel"
+  ],
+  "forceCommunity:objectHome": [
+   "enableInlineEdit",
+   "filterName",
+   "layout",
+   "pageSize",
+   "scope",
+   "showActionBar",
+   "showChartsPanel",
+   "showDisplay",
+   "showFilterPanel",
+   "showImageIcon",
+   "showManualRefreshButton",
+   "showObjectName",
+   "showPinnedList",
+   "showSearchBar"
+  ],
+  "forceCommunity:relatedList": [
+   "customTitle",
+   "parentRecordId",
+   "relatedListName",
+   "showBreadCrumbs",
+   "showCustomTitle",
+   "showManualRefreshButton",
+   "showRowNumbers"
+  ],
+  "forceCommunity:search": [
+   "scopes",
+   "searchResultFiltering",
+   "searchTerm",
+   "showTopResults"
+  ],
+  "forceCommunity:htmlBlock": [
+   "richTextValue"
+  ],
+  "forceCommunity:autoRefresh": [],
+  "siteforce:serviceBody": [
+   "IsDefaultHeaderHidden",
+   "IsDefaultNotificationsHidden",
+   "fixedPageWidth",
+   "isPageWidthFixed"
+  ],
+  "forceCommunity:searchBox": [
+   "continueLabel",
+   "contineActionLabel",
+   "disableCrossObjectRelevance",
+   "enableAutocomplete",
+   "maxNumberOfResults",
+   "placeholder",
+   "questionResultsFirst",
+   "showContinueAction",
+   "showDetails",
+   "showTopics",
+   "signInActionLabel",
+   "crossObjectTypeaheadApiNames"
+  ],
+  "forceCommunity:multiLevelNavigation": [
+   "NavigationMenuEditorRefresh",
+   "hideAppLauncher",
+   "menuAlignment"
+  ],
+  "forceCommunity:tabset": [
+   "tabsetConfig"
+  ],
+  "forceCommunity:languagePicker": [],
+  "community_byo:scopedHeaderAndFooter": [
+   "hideThemeFooter",
+   "showThemeFooterAtBottom",
+   "stickyThemeHeader"
+  ],
+  "community_layout:section": [
+   "backgroundImageConfig",
+   "backgroundImageOverlay",
+   "componentSpacerSize",
+   "dxpStyle",
+   "layoutDirectionDesktop",
+   "layoutDirectionMobile",
+   "layoutDirectionTablet",
+   "maxContentWidth",
+   "sectionColumnGutterWidth",
+   "sectionConfig",
+   "sectionMinHeight",
+   "sectionVerticalAlign"
+  ],
+  "community_layout:simpleThemeLayout": [],
+  "community_layout:sldsFlexibleLayout": [],
+  "dxp_content_layout:siteLogo": [
+   "alignment",
+   "dxpStyle",
+   "imageInfo",
+   "imageInfoMobile",
+   "logoWidth"
+  ],
+  "community_login:checkEmail": [
+   "checkEmailMessage",
+   "dxpStyle",
+   "returnButtonLabel",
+   "titleLabel"
+  ],
+  "community_builder:seoAssistant": [
+   "customHeadTags",
+   "description",
+   "dxpStyle",
+   "pageTitle",
+   "recordId"
+  ],
+  "community_builder:richTextEditor": [
+   "imageInfos",
+   "richTextValue",
+   "dxpStyle"
+  ],
+  "dxp_layout:tabs": [
+   "activeTabBorderHighlightWeight",
+   "activeTabTextEmphasis",
+   "activeTabTextStyle",
+   "borderColor",
+   "borderRadius",
+   "borderWeight",
+   "enableOverflowMenu",
+   "imageFit",
+   "imagePosition",
+   "overflowIconColor",
+   "overflowIconStyle",
+   "overflowMenuLabel",
+   "tabAlignment",
+   "tabBorderColor",
+   "tabBorderRadius",
+   "tabBorderWeight",
+   "tabHoverBorderHighlightWeight",
+   "tabLayout",
+   "tabPadding",
+   "tabTextStyle",
+   "width",
+   "dxpStyle",
+   "tabsetConfig"
+  ],
+  "community_builder:htmlEditor": [
+   "richTextValue",
+   "dxpStyle",
+   "imageInfos"
+  ],
+  "dxp_search:searchInput": [
+   "dxpStyle"
+  ],
+  "dxp_base:languageSelector": [
+   "dxpStyle"
+  ],
+  "community_login:forgotPassword": [
+   "cancelButtonLabel",
+   "checkEmailUrl",
+   "dxpStyle",
+   "instructionsLabel",
+   "submitButtonLabel",
+   "titleLabel",
+   "usernameLabel"
+  ],
+  "community_login:loginForm": [
+   "dxpStyle",
+   "forgotPasswordLabel",
+   "forgotPasswordUrl",
+   "loginButtonLabel",
+   "passwordLabel",
+   "selfRegisterLabel",
+   "selfRegisterUrl",
+   "startUrl",
+   "usernameLabel"
+  ],
+  "community_login:employeeLoginLink": [
+   "dxpStyle",
+   "employeeLoginLinkLabel"
+  ],
+  "community_login:selfRegister": [
+   "cancelLinkLabel",
+   "confirmPasswordLabel",
+   "dxpStyle",
+   "emailLabel",
+   "firstnameLabel",
+   "includePasswordField",
+   "lastnameLabel",
+   "passwordLabel",
+   "regConfirmUrl",
+   "submitButtonLabel"
+  ]
+ },
+ "packageClasses": [
+  "about",
+  "about-description",
+  "about-name",
+  "about-tag",
+  "about-tags",
+  "accordion-section",
+  "accordionDark",
+  "accordionDisabled",
+  "action",
+  "action-buttons",
+  "action-card",
+  "action-head",
+  "action-label",
+  "action-track",
+  "action-value",
+  "actions",
+  "actions-grid",
+  "addressPadding",
+  "addressPadding_form-section",
+  "adjust-help-icon",
+  "adjustLineHeight",
+  "adjustMargin",
+  "advanced-accordion",
+  "advanced-control-row",
+  "advanced-field",
+  "advanced-header",
+  "advanced-heading",
+  "align-center",
+  "align-edge",
+  "align-edge-left",
+  "align-edge-right",
+  "align-left",
+  "align-right",
+  "aria-describedby",
+  "aria-expanded",
+  "aria-hidden",
+  "aria-invalid",
+  "aria-labelledby",
+  "aria-selected",
+  "asset_file",
+  "attestation-card",
+  "attestation-input",
+  "attestation-radius",
+  "attestation-surface",
+  "attestation-target-size",
+  "attestation-text",
+  "attestationRichTextInput",
+  "back-icon",
+  "background-color",
+  "background-image",
+  "background-position",
+  "background-repeat",
+  "background-size",
+  "badge-conditional",
+  "badge-done",
+  "badge-in-progress",
+  "badge-layout",
+  "badge-list",
+  "badge-list_alone",
+  "badge-list_top",
+  "badge-locked",
+  "badge-optional",
+  "badge-remove",
+  "badge-requires-correction",
+  "badge-text",
+  "banner-decor",
+  "banner_image",
+  "basic-slider-controls",
+  "beforeAfterInput",
+  "bg-kenburns",
+  "bg-parallax",
+  "bleed-bottom",
+  "bleed-edge",
+  "block-row",
+  "block-table",
+  "body",
+  "body-align",
+  "body-align-center",
+  "body-align-left",
+  "body-align-right",
+  "boolean-value-control",
+  "border-bottom",
+  "border-color",
+  "border-filled",
+  "border-left",
+  "border-radius",
+  "border-right",
+  "border-top",
+  "border-top-left-radius",
+  "border-width",
+  "bottom-right",
+  "bottom-toolbar",
+  "bottomRadius",
+  "box",
+  "box-shadow",
+  "boxPadding",
+  "boxPadding_addressPadding",
+  "boxPadding_sub-section",
+  "boxPadding_top",
+  "brand-outline",
+  "breadcrumb-nav",
+  "btn",
+  "btn-accent",
+  "btn-brand",
+  "btn-lg",
+  "btn-light",
+  "btn-link",
+  "btn-outline",
+  "btn-panel",
+  "btn-sub",
+  "btn-tier",
+  "builder-body",
+  "builder-toolbar",
+  "builder-toolbar-settings",
+  "builder-toolbar-title",
+  "builderTab",
+  "button-brand-color-background",
+  "button-brand-color-border",
+  "button-col",
+  "button-font-size",
+  "button-height",
+  "button-outline-brand-color-border",
+  "button-radius",
+  "button-shadow-focus",
+  "button-text-color",
+  "buttons-form-width",
+  "buttons-layout",
+  "c-combo-box",
+  "c-display-illustration-art",
+  "c-display-image",
+  "c-flow-data-table",
+  "c-flow-form",
+  "c-flow-form-field",
+  "c-flow-form-field-address",
+  "c-flow-form-field-label",
+  "c-flow-form-likert-matrix",
+  "c-flow-form-radio-checkbox",
+  "c-flow-form-repeat",
+  "c-flow-form-rich-text-input",
+  "c-flow-pagination",
+  "c-form-builder",
+  "c-form-builder-section",
+  "c-form-component-configurator",
+  "c-form-component-editor",
+  "c-form-component-preview-selector",
+  "c-form-graphql-query-request",
+  "c-form-style-editor",
+  "c-form-style-field",
+  "c-form-survey-question",
+  "c-form-template",
+  "c-form-template-results",
+  "c-form-template-section",
+  "c-form-template-stages",
+  "c-lightning-record-form",
+  "c-lwc-section-renderer",
+  "c-stripe-payment-form",
+  "cUnite_HideLabel",
+  "calculatedDataTable",
+  "calendar-border-color",
+  "calendar-border-width",
+  "calendar-day-size",
+  "calendar-font-size",
+  "calendar-layout",
+  "calendar-wrapper",
+  "calendarPill",
+  "calendarPillAction",
+  "callout-statement",
+  "caption",
+  "caption_top",
+  "caption_under",
+  "card",
+  "card-banner",
+  "card-base",
+  "card-body",
+  "card-cell",
+  "card-cover",
+  "card-cta",
+  "card-desc",
+  "card-eyebrow",
+  "card-eyebrow_above",
+  "card-grid",
+  "card-heading",
+  "card-icon",
+  "card-icon-art",
+  "card-link-overlay",
+  "card-meta",
+  "card-section",
+  "card_active",
+  "card_locked",
+  "card_surrounding",
+  "cards-banner",
+  "cards-inline",
+  "carousel",
+  "carousel-arrow",
+  "carousel-arrow_next",
+  "carousel-arrow_prev",
+  "carousel-copy",
+  "carousel-dot",
+  "carousel-dots",
+  "carousel-eyebrow",
+  "carousel-overlay",
+  "carousel-overlay-off",
+  "carousel-photo",
+  "carousel-scrim",
+  "carousel-slide",
+  "carousel-title",
+  "carousel-viewport",
+  "carousel_transform",
+  "cell-emphasis",
+  "cell-lead",
+  "cell-stacked",
+  "checkbox-border-color",
+  "checkbox-color-background-checked",
+  "checkbox-color-border-checked",
+  "checkbox-color-border-focus",
+  "checkbox-option-text",
+  "checkbox-radius",
+  "checkbox-shadow-focus",
+  "checkbox-surface",
+  "chosen",
+  "chosen-box",
+  "chosen-name",
+  "chosen-row",
+  "chosen_clearable",
+  "circle",
+  "circle_arrow",
+  "circle_close",
+  "circle_next",
+  "circle_prev",
+  "classic-frame__header",
+  "classic-frame__header_above",
+  "clear-signature",
+  "close",
+  "code-block",
+  "col-4",
+  "col-5",
+  "col-6",
+  "col-7",
+  "col-8",
+  "color-controls",
+  "color-danger",
+  "color-footer",
+  "color-footer-border",
+  "color-group",
+  "color-group-heading",
+  "color-heading",
+  "color-headings",
+  "color-mix",
+  "color-primary-active",
+  "color-primary-hover",
+  "color-text",
+  "cols-1",
+  "cols-2",
+  "cols-3",
+  "cols-4",
+  "cols-5",
+  "cols-6",
+  "cols-auto",
+  "combined-header",
+  "combobox-container",
+  "combobox-end",
+  "compact-toggle",
+  "component-width-div",
+  "configuration_editor_generic_type_mapping_changed",
+  "configuration_editor_input_value_changed",
+  "configuration_editor_input_value_deleted",
+  "container",
+  "container-border-width",
+  "container-box",
+  "content",
+  "content-bottom",
+  "content-stretch",
+  "content-top",
+  "control-row",
+  "conversion_status",
+  "correction-details",
+  "count",
+  "count-chip",
+  "count-final",
+  "count-live",
+  "count-number",
+  "counter",
+  "crumb-field",
+  "css",
+  "cta",
+  "cta-buttons",
+  "cta-content",
+  "cta-head-row",
+  "cta-inner",
+  "cta-media",
+  "current-badge",
+  "custom-flow-modal-button",
+  "custom-flow-sheet",
+  "customBackdrop",
+  "customConditionInput",
+  "customField",
+  "data-file-type",
+  "data-ftk-cpe-radio",
+  "data-ftk-rich-text",
+  "data-index",
+  "dataTableHeader",
+  "date-local",
+  "date-picker-wrapper",
+  "dateFormat",
+  "dateSelectors",
+  "dateTypeInput",
+  "datetime-local",
+  "daysInput",
+  "dc",
+  "default",
+  "delete-action",
+  "destructive-text",
+  "dimension-controls",
+  "disabled",
+  "disabledSelector",
+  "divider",
+  "divider-chevron",
+  "divider-chip",
+  "divider-dot",
+  "divider-dot_center",
+  "divider-double",
+  "divider-double__bottom",
+  "divider-double__top",
+  "divider-icon",
+  "divider-icon_contrast",
+  "divider-label",
+  "divider-label_above",
+  "divider-label_center-above",
+  "divider-ornament",
+  "divider-ornament__label",
+  "divider-pill",
+  "divider-row",
+  "divider-row_center",
+  "divider-rule",
+  "divider-rule-color",
+  "divider-rule_block",
+  "divider-rule_fade",
+  "divider-rule_soft",
+  "divider-rule_tucked",
+  "divider-subtitle",
+  "divider-subtitle-color",
+  "divider-subtitle_center",
+  "divider-subtitle_indent-bookmark",
+  "divider-subtitle_indent-icon",
+  "divider-subtitle_indent-tag",
+  "divider-tag",
+  "divider-tag__dot",
+  "divider-tag__title",
+  "divider-tag__title_dark",
+  "divider-tag_bookmark",
+  "divider-tag_round",
+  "dns-prefetch",
+  "docked-buttons-info-dialog",
+  "docked-footer_org-styles",
+  "draft-saved",
+  "draft-saved-dot",
+  "drag-handle",
+  "drop-target",
+  "editor-accordion",
+  "editor-body",
+  "editor-grid",
+  "editor-header",
+  "editor-heading",
+  "editor-intro",
+  "email_template",
+  "emphasis",
+  "empty",
+  "empty-actions",
+  "enter-blur",
+  "enter-cascade",
+  "enter-rise",
+  "enter-wipe",
+  "enter-zoom",
+  "entered",
+  "facts-bar-fill",
+  "facts-bar-head",
+  "facts-bar-track",
+  "facts-body",
+  "facts-card",
+  "facts-label",
+  "facts-legend",
+  "facts-legend-item",
+  "facts-list",
+  "facts-plain",
+  "facts-row",
+  "facts-segment",
+  "facts-segment-track",
+  "facts-stacked",
+  "facts-swatch",
+  "facts-value",
+  "featured",
+  "field",
+  "field-control",
+  "field-list",
+  "field-option",
+  "field-selector",
+  "fieldDifferences",
+  "fieldLabel",
+  "fieldOption",
+  "fieldSectionAccordion",
+  "fieldSelector",
+  "fieldValue",
+  "file-card-shadow",
+  "file-upload-options",
+  "first-time",
+  "fix-help-text",
+  "fixedFooter",
+  "flex-end",
+  "flex-grow",
+  "flex-start",
+  "flow-FINISHED",
+  "flow-body",
+  "flow-body_hidden",
+  "flow-container",
+  "flow-form-adjust-width",
+  "flow-form-affix",
+  "flow-form-affix-row",
+  "flow-form-bounded-control",
+  "flow-form-buttons",
+  "flow-form-dock-spacer",
+  "flow-form-docked-buttons",
+  "flow-form-field-inline-label",
+  "flow-form-field_read-only",
+  "flow-form-grow-item",
+  "flow-form-help-below-field",
+  "flow-form-help-below-label",
+  "flow-form-image-preview",
+  "flow-form-image-preview__image",
+  "flow-form-image-upload",
+  "flow-form-lone-button-menu",
+  "flow-form-review-section_has-error",
+  "flow-theme-wrapper",
+  "flow-tool-kit-grow-none",
+  "flowDatePicker",
+  "flowDiv",
+  "flowForm",
+  "flowForm-Indicator-Active-Pointer",
+  "flowForm-Indicator-Current",
+  "flowForm-box-vertical-margin",
+  "flowForm-img",
+  "flowForm-progress-indicator",
+  "flowForm-selected-badge",
+  "flowForm-selected-badge-icon",
+  "flowFormRepeater",
+  "flowFormRepeater_item-padding",
+  "flowFormRepeater_under-header",
+  "flowFormTable",
+  "flowForm_Address_Field",
+  "flowForm_Address_Field_Bottom",
+  "flowForm_Basic_Checkbox",
+  "flowForm_sub-section",
+  "flowForm_under-header",
+  "flowToolKitLogoFooter",
+  "folder",
+  "folder-name",
+  "folder-row",
+  "font-family",
+  "font-family-heading",
+  "font-size",
+  "font-size-heading",
+  "font-size-label",
+  "font-weight",
+  "font-weight-heading",
+  "footer-actions",
+  "footer-buttons",
+  "footer-text",
+  "footnote-row",
+  "form-card-border-color",
+  "form-card-radius",
+  "form-card-shadow",
+  "form-card-shadow-hover",
+  "form-card-surface",
+  "form-compare-box",
+  "form-component-preview",
+  "form-component-selector",
+  "form-edit-header",
+  "form-field-review-text-wrap",
+  "form-header-indicator_base",
+  "form-picker",
+  "form-picker-name",
+  "form-scope",
+  "form-scroller",
+  "form-template-buttons",
+  "form-template-container",
+  "form-template-overflow-hidden",
+  "form-template-page-body",
+  "form-template-review-block",
+  "form-template-save-progress-buttons",
+  "form-vertical-indicator",
+  "formBuilderAccordions",
+  "formBuilderCondition",
+  "formRecordMergeCompare",
+  "formRecordMergeCompareTableRow",
+  "formSelector",
+  "formatting-header",
+  "frame-header",
+  "frame-header_above",
+  "frame-header_spread",
+  "ftk-anim",
+  "ftk-attestation-size-override",
+  "ftk-band-divider",
+  "ftk-banner",
+  "ftk-banner-body",
+  "ftk-banner-frame",
+  "ftk-banner-host_bleed",
+  "ftk-banner-image",
+  "ftk-banner-logo",
+  "ftk-banner-logo-image",
+  "ftk-banner-logo_circle",
+  "ftk-banner-logo_square",
+  "ftk-banner-media",
+  "ftk-banner-subtitle",
+  "ftk-banner-tag",
+  "ftk-banner-tags",
+  "ftk-banner-title",
+  "ftk-banner_compact",
+  "ftk-banner_has-image",
+  "ftk-banner_has-logo",
+  "ftk-banner_large",
+  "ftk-banner_medium",
+  "ftk-banner_no-image",
+  "ftk-banner_overlay",
+  "ftk-banner_split",
+  "ftk-border-scale-override",
+  "ftk-brand-band",
+  "ftk-brand-link",
+  "ftk-brand-logo",
+  "ftk-brand-question",
+  "ftk-button-font-override",
+  "ftk-button-height-override",
+  "ftk-button-radius-override",
+  "ftk-card",
+  "ftk-choice",
+  "ftk-choice-error",
+  "ftk-content-body",
+  "ftk-content-footer",
+  "ftk-content-header",
+  "ftk-control-font-override",
+  "ftk-control-scale-override",
+  "ftk-dot",
+  "ftk-dot_off",
+  "ftk-dot_on",
+  "ftk-dot_scheduled",
+  "ftk-embed",
+  "ftk-eyebrow",
+  "ftk-field-row",
+  "ftk-field-spacing-default",
+  "ftk-flow-complete",
+  "ftk-font-scale-override",
+  "ftk-heading-actions",
+  "ftk-heading-layout",
+  "ftk-heading-leading",
+  "ftk-heading-subtitle",
+  "ftk-heading-text",
+  "ftk-help",
+  "ftk-icon-actions",
+  "ftk-icon-size-override",
+  "ftk-icon-tile",
+  "ftk-inline-rich-text",
+  "ftk-input-height-override",
+  "ftk-joined-padding-override",
+  "ftk-label",
+  "ftk-label-size-default",
+  "ftk-label-text",
+  "ftk-mapping-row",
+  "ftk-mapping-scroll",
+  "ftk-modal-full",
+  "ftk-native-input",
+  "ftk-nav-card",
+  "ftk-note",
+  "ftk-note_dirty",
+  "ftk-note_saved",
+  "ftk-option",
+  "ftk-option-description",
+  "ftk-option-description-below-field",
+  "ftk-option-description_checkbox",
+  "ftk-option-description_radio",
+  "ftk-option-help",
+  "ftk-option-text",
+  "ftk-pill",
+  "ftk-placeholder-color-override",
+  "ftk-print",
+  "ftk-readonly-value",
+  "ftk-refresh",
+  "ftk-resize",
+  "ftk-review-empty",
+  "ftk-rich-text-content",
+  "ftk-rich-text-placeholder",
+  "ftk-rule",
+  "ftk-scale-field",
+  "ftk-section-description",
+  "ftk-stage-body",
+  "ftk-stage-muted",
+  "ftk-stage-page-title",
+  "ftk-stage-small",
+  "ftk-stage-title",
+  "ftk-state",
+  "ftk-status-label",
+  "ftk-style-color-field",
+  "ftk-style-scope",
+  "ftk-survey-block",
+  "ftk-template-header",
+  "ftk-template-link",
+  "ftk-template-style-host",
+  "ftk-toggle-inline",
+  "ftk-toggle-input-height",
+  "ftk-trailing-icon",
+  "ftk-value-block-label",
+  "ftk-value-form",
+  "ftk-window-bar",
+  "full-height",
+  "fullDateTime",
+  "fullDateTimeFormat",
+  "full_width_modal",
+  "full_width_modal_flow",
+  "gallery-head",
+  "gallery-surface",
+  "gallery_narrow",
+  "gallery_wide",
+  "generated-code-column",
+  "glyph-large",
+  "glyph-medium",
+  "glyph-small",
+  "glyph-x-small",
+  "glyph-xx-small",
+  "gradient-drift",
+  "grid",
+  "grid-cell",
+  "grid-joined",
+  "grid-template-columns",
+  "grow-fits",
+  "has-bg-effect",
+  "has-block-height",
+  "has-cover",
+  "has-entrance",
+  "has-error",
+  "has-open-stage",
+  "has-overlap",
+  "header-adjust-padding",
+  "header-adjust-padding_table",
+  "header-container",
+  "header-copy",
+  "header-icon-item",
+  "header-icon-item_pull",
+  "header-padding-block",
+  "header-padding-left",
+  "header-padding-right",
+  "header-radius",
+  "header-row",
+  "header-shadow",
+  "header-subtitle",
+  "header-subtitle-color",
+  "header-title-color",
+  "heading-background",
+  "heading-border-color",
+  "heading-border-width",
+  "heading-highlight",
+  "heading-letter-spacing",
+  "heading-text-transform",
+  "height-transition",
+  "help-color",
+  "help-font-size",
+  "helpText",
+  "hero",
+  "hero-badge",
+  "hero-band-actions",
+  "hero-bullets",
+  "hero-buttons",
+  "hero-buttons_above",
+  "hero-column-copy",
+  "hero-content",
+  "hero-content_body",
+  "hero-eyebrow-size",
+  "hero-facts",
+  "hero-footer-size",
+  "hero-header",
+  "hero-header__eyebrow",
+  "hero-header__footer",
+  "hero-header__icon",
+  "hero-header__kicker",
+  "hero-header__lead",
+  "hero-header__pill",
+  "hero-header__tags",
+  "hero-header__tags_above",
+  "hero-header__title",
+  "hero-image",
+  "hero-inner",
+  "hero-kicker-size",
+  "hero-lead-gap",
+  "hero-lead-size",
+  "hero-line-gap",
+  "hero-max-width",
+  "hero-media-item",
+  "hero-quote",
+  "hero-stat-strip",
+  "hero-tag-size",
+  "hero-title-size",
+  "hide-tablet",
+  "highlight-rule",
+  "horizontal-input-field-padding",
+  "hover-lift",
+  "hover-ring",
+  "hover-tilt",
+  "hover-tint",
+  "hover-trace",
+  "html",
+  "icon-action-check",
+  "icon-art",
+  "icon-button-size",
+  "icon-circle",
+  "icon-pane",
+  "icon-tile",
+  "iconButtonPicklist",
+  "image-fit-fit",
+  "image-float",
+  "image-mascot",
+  "image-padded",
+  "image-tile",
+  "image-tile-caption",
+  "image-tile-caption_overlay",
+  "image-tile-copy",
+  "image-tile-photo",
+  "image-tile-title",
+  "image_asset",
+  "import-panel",
+  "in-progress",
+  "indicator-error-icon",
+  "indicator-icon-complete",
+  "indicator-icon-current",
+  "indicator-icon-in-progress",
+  "indicator-icon-locked",
+  "indicator-icon-warning",
+  "indicator-marker-complete",
+  "indicator-marker-current",
+  "indicator-status-marker",
+  "info",
+  "input-border-color",
+  "input-color-border-focus",
+  "input-header",
+  "input-height",
+  "input-padding-inline",
+  "input-placeholder-color",
+  "input-radius",
+  "input-shadow-focus",
+  "input-surface",
+  "input-variables-title",
+  "input_group_end",
+  "input_group_start",
+  "install-step",
+  "install-steps",
+  "is-checked",
+  "is-cond-hidden",
+  "is-current",
+  "is-disabled",
+  "is-expandable",
+  "is-loaded",
+  "is-locked",
+  "is-not-selected",
+  "is-on",
+  "is-open",
+  "is-revealed",
+  "is-selectable",
+  "is-selected",
+  "item-label",
+  "item-list",
+  "item-row",
+  "joined-buttons-stretch",
+  "joined-choice-padding-inline",
+  "joined-choice-radius",
+  "js",
+  "label-gap",
+  "label-hidden",
+  "label-inline",
+  "label-stacked",
+  "large-flow-record-form-padding",
+  "layout-split",
+  "left-input-field-padding",
+  "letter-spacing",
+  "lightning-button",
+  "lightning-flow",
+  "lightning-input",
+  "lightning-input-address",
+  "lightning-input-field",
+  "lightning-input-rich-text",
+  "lightning-layout-item",
+  "lightning-radio-group",
+  "lightning-record-edit-form",
+  "lightning-record-form-dynamic-display",
+  "lightning-tab",
+  "lightning-tree-grid",
+  "likert-cell",
+  "likert-cell-bordered",
+  "likert-cell-readonly",
+  "likert-cell-selected",
+  "likert-dot",
+  "likert-dot-inner",
+  "likert-dot-selected",
+  "likert-has-help",
+  "likert-header",
+  "likert-header-cell",
+  "likert-help-tip",
+  "likert-help-tip-below",
+  "likert-label-column",
+  "likert-matrix",
+  "likert-partial-pill",
+  "likert-radio",
+  "likert-required",
+  "likert-row",
+  "likert-row-error",
+  "likert-row-error-text",
+  "likert-row-help",
+  "likert-row-interactive",
+  "likert-row-label",
+  "likert-row-text",
+  "likert-row-wrapper",
+  "likert-row-zebra",
+  "likert-stack-group",
+  "likert-stack-label",
+  "likert-total",
+  "likert-total-meta",
+  "likert-total-number",
+  "likert-total-partial",
+  "likert-total-score",
+  "line-height",
+  "linear-gradient",
+  "live-label_hover",
+  "live-label_rest",
+  "loading-region",
+  "long-text-clamp",
+  "margin-bottom",
+  "margin-left",
+  "margin-top",
+  "masonry",
+  "masonry_columns-1",
+  "masonry_columns-2",
+  "matrix-border-color",
+  "matrix-card-radius",
+  "matrix-choice-border-color",
+  "matrix-choice-border-width",
+  "matrix-choice-surface",
+  "matrix-divider-color",
+  "matrix-radius",
+  "matrix-secondary-color",
+  "matrix-secondary-font-size",
+  "matrix-shade",
+  "max-content",
+  "max-height",
+  "max-width",
+  "media-align-center",
+  "media-align-end",
+  "media-align-start",
+  "media-bleed",
+  "media-fill",
+  "media-first",
+  "media-fit-fit",
+  "media-last",
+  "menu",
+  "menu-caret",
+  "menu-caret_bare",
+  "menu-dropdown",
+  "menu-item-description",
+  "menu-item-text",
+  "menu-trigger",
+  "menu-trigger_bare",
+  "merge-api",
+  "merge-label",
+  "merge-list",
+  "merge-option",
+  "merge-picker",
+  "merge-toggle",
+  "message-card",
+  "message-card__body",
+  "message-card__icon",
+  "message-card_error",
+  "message-card_info",
+  "message-card_success",
+  "message-card_warning",
+  "meta",
+  "meta-pill",
+  "meta-pill_error",
+  "meta-pill_substeps",
+  "microcopy",
+  "min-height",
+  "minMaxDateSelector",
+  "modal-body",
+  "modal-fields",
+  "modal-focus-sentinel",
+  "modal-group",
+  "modal-heading-01",
+  "modal-section",
+  "modal-surface",
+  "modal-transition",
+  "more",
+  "more-count",
+  "more-hint",
+  "mosaic",
+  "mosaic-lead",
+  "mosaic_count-1",
+  "mosaic_count-2",
+  "mosaic_count-3",
+  "mosaic_count-4",
+  "motion-loops",
+  "name-bar",
+  "nested-buttons",
+  "new-name",
+  "next",
+  "no-form-configured",
+  "no-form-found",
+  "no-image",
+  "no-repeat",
+  "noWrap",
+  "nullable_fields",
+  "number-slider",
+  "number-stepper",
+  "number-stepper-input",
+  "object-card",
+  "object-card-row",
+  "offset-input",
+  "older-overrides",
+  "older-row",
+  "opacity-heading",
+  "operator",
+  "org",
+  "outlined-section__body",
+  "overlap-group",
+  "overrideFontColor",
+  "overrides-accordion",
+  "padding-bottom",
+  "padding-left",
+  "padding-top",
+  "page-header",
+  "page-header-meta",
+  "page-header-preview",
+  "page-header-title",
+  "page-header_spread",
+  "page-text",
+  "pane",
+  "pane-back",
+  "pane-hint",
+  "pane-title",
+  "panel-region",
+  "panes",
+  "parallax",
+  "parentFormCMP",
+  "path-scroller",
+  "payment_intent",
+  "percent-fixed",
+  "photo",
+  "pill",
+  "pill-accent",
+  "pill-brand",
+  "pill-cloud",
+  "pill-cloud_ticker",
+  "pill-echo",
+  "pill-icon",
+  "pill-link",
+  "pill-logo",
+  "pill-logo-only",
+  "pill-neutral",
+  "pill-outline",
+  "pill-pulse",
+  "pill-track",
+  "pillIconColor",
+  "pill_answered",
+  "pill_required",
+  "pills",
+  "plainTextInput",
+  "point-cards",
+  "popout-box",
+  "postal_code",
+  "preset-custom-mobile",
+  "preset-custom-shrink",
+  "preset-item-full",
+  "preset-radio-wide",
+  "prevent-y-scroll",
+  "preview",
+  "preview-add-fields",
+  "preview-add-fields-icon",
+  "preview-chrome",
+  "preview-crop",
+  "preview-live-toggle",
+  "preview-outline",
+  "preview-panel",
+  "preview-resize",
+  "preview-resize-grip",
+  "preview-stage",
+  "preview-tag",
+  "preview-tray",
+  "previous-results",
+  "pricing-card",
+  "pricing-cards",
+  "pricing-desc",
+  "pricing-features",
+  "pricing-price",
+  "pricing-tier",
+  "progress-card",
+  "progress-ring",
+  "progress-ring-fill",
+  "progress-ring-track",
+  "psc-action-card",
+  "psc-action-card_on",
+  "psc-badge",
+  "psc-badge_displaytext",
+  "psc-badge_fieldset",
+  "psc-badge_flow",
+  "psc-badge_lightningwebcomponent",
+  "psc-badge_repeater",
+  "psc-badge_table",
+  "psc-content",
+  "psc-footer",
+  "psc-intro",
+  "psc-modal-body",
+  "psc-nav",
+  "psc-nav__dot",
+  "psc-nav__icon",
+  "psc-nav__label",
+  "psc-ov-card",
+  "psc-ov-card_set",
+  "psc-ov-grid",
+  "psc-ov-hero",
+  "psc-ov-hero__icon",
+  "psc-ov-summary",
+  "psc-panel",
+  "ql-cursor",
+  "question",
+  "question_enabled",
+  "question_section",
+  "quick-actions-panel",
+  "quick-asterisk",
+  "quick-separator",
+  "quick-toggle",
+  "quick-toggle_readonly",
+  "quick-toggle_required",
+  "quote-attribution",
+  "quote-detail",
+  "quote-inner",
+  "quote-name",
+  "quote-row",
+  "quote-text",
+  "radial-gradient",
+  "rail",
+  "rc",
+  "rc-avatar",
+  "rc-avatar-circle",
+  "rc-avatar-image",
+  "rc-avatar-tile",
+  "rc-badge-group",
+  "rc-band",
+  "rc-band-label",
+  "rc-band-tag",
+  "rc-bar-fill",
+  "rc-bar-track",
+  "rc-body",
+  "rc-button",
+  "rc-button-accent",
+  "rc-button-brand",
+  "rc-button-light",
+  "rc-button-link",
+  "rc-button-outline",
+  "rc-buttons",
+  "rc-centered",
+  "rc-countdown",
+  "rc-countdown-body",
+  "rc-countdown-ended",
+  "rc-countdown-label",
+  "rc-countdown-tile",
+  "rc-countdown-value",
+  "rc-date-day",
+  "rc-date-month",
+  "rc-date-tile",
+  "rc-date-tile_on-media",
+  "rc-date-weekday",
+  "rc-dateTile",
+  "rc-description",
+  "rc-empty",
+  "rc-empty-text",
+  "rc-eyebrow",
+  "rc-footer",
+  "rc-footer-fill",
+  "rc-footer-split",
+  "rc-footer-value",
+  "rc-framed",
+  "rc-has-media",
+  "rc-header-row",
+  "rc-header-tag",
+  "rc-heading",
+  "rc-lead",
+  "rc-link-overlay",
+  "rc-media",
+  "rc-media-badge",
+  "rc-media-image",
+  "rc-media-placeholder",
+  "rc-media-tag",
+  "rc-note",
+  "rc-overlay-buttons",
+  "rc-overlay-copy",
+  "rc-overlay-eyebrow",
+  "rc-overlay-footer",
+  "rc-overlay-footer-left",
+  "rc-overlay-footer-right",
+  "rc-overlay-image",
+  "rc-overlay-subtitle",
+  "rc-overlay-suffix",
+  "rc-overlay-title",
+  "rc-overlay-value",
+  "rc-photoOverlay",
+  "rc-pill",
+  "rc-pill-accent",
+  "rc-pill-brand",
+  "rc-pill-neutral",
+  "rc-pill-outline",
+  "rc-price",
+  "rc-progress",
+  "rc-progress-current",
+  "rc-progress-percent",
+  "rc-progress-row",
+  "rc-progress-total",
+  "rc-progress-values",
+  "rc-row",
+  "rc-row-label",
+  "rc-row-value",
+  "rc-rows",
+  "rc-rows-grid",
+  "rc-rows-inline",
+  "rc-rows-stats",
+  "rc-scrim",
+  "rc-select-button",
+  "rc-strip-band",
+  "rc-strip-band_error",
+  "rc-strip-band_success",
+  "rc-strip-band_warning",
+  "rc-strip-buttons",
+  "rc-strip-copy",
+  "rc-strip-icon",
+  "rc-strip-image",
+  "rc-strip-subtitle",
+  "rc-strip-title",
+  "rc-subtitle",
+  "rc-surface",
+  "rc-surface-elevated",
+  "rc-surface-outlined",
+  "rc-tags",
+  "rc-title",
+  "rc-title-row",
+  "rc-value",
+  "rc-value-row",
+  "rc-value-suffix",
+  "read-only-border-color",
+  "read-only-border-width",
+  "read-only-radius",
+  "record-card",
+  "record-card-empty",
+  "record-card-section",
+  "record-card-surface",
+  "record-carousel-panel",
+  "record-carousel-panel_outgoing",
+  "record-carousel-panel_pending",
+  "record-carousel-panels",
+  "record-panel",
+  "record-results",
+  "record-tab",
+  "region-label",
+  "related-record-form-shown",
+  "relative-toggle",
+  "remove",
+  "remove-bottom-margin",
+  "remove-icon",
+  "repeater-content",
+  "repeater-divider",
+  "repeater-spinner",
+  "requires-correction",
+  "results-actions",
+  "results-frame",
+  "resume-button-absolute",
+  "resume-link-btn",
+  "review_screen",
+  "rich-label-column",
+  "rich-text-custom-flow-button",
+  "rich-text-show-text-toggle",
+  "richtext-radius",
+  "row",
+  "row-chevron",
+  "row-icon",
+  "row-summary",
+  "row-text",
+  "row-title",
+  "save-absolute",
+  "search",
+  "search-row",
+  "section",
+  "section-accordion",
+  "section-border-color",
+  "section-border-width",
+  "section-buttons",
+  "section-chrome",
+  "section-classic",
+  "section-dark",
+  "section-footnote",
+  "section-frame",
+  "section-frame__band",
+  "section-frame_card",
+  "section-frame_rides-header",
+  "section-frame_shadow",
+  "section-header",
+  "section-header-gap",
+  "section-header_classic",
+  "section-header_spread",
+  "section-host",
+  "section-inner",
+  "section-label",
+  "section-outer-gutter",
+  "section-outline",
+  "section-outline_busy",
+  "section-padding-bottom",
+  "section-padding-left",
+  "section-padding-right",
+  "section-padding-top",
+  "section-radius",
+  "section-shadow",
+  "section-spread",
+  "section-surface",
+  "section-textured",
+  "sectionAccordion",
+  "sectionFieldAccordion",
+  "section_theme_overflow",
+  "selected",
+  "selected-date-label",
+  "selected-times",
+  "selectors-wrapper",
+  "separated-button",
+  "separated-button-item",
+  "separated-button-option",
+  "separated-choice-height",
+  "separated-choice-line-height",
+  "separated-choice-padding-block",
+  "separated-choice-padding-inline",
+  "separated-choice-radius",
+  "setting-menu",
+  "settings-title",
+  "shade",
+  "shadow",
+  "shine-sweep",
+  "showcase-buttons",
+  "showcase-card",
+  "showcase-cards",
+  "showcase-content",
+  "showcase-description",
+  "showcase-image",
+  "showcase-list",
+  "showcase-title",
+  "signature-image",
+  "signature-line",
+  "signature-x",
+  "signature_pad",
+  "signature_pad_canvas",
+  "signature_pad_flexbox",
+  "site-design-block-cpe",
+  "size_1-of",
+  "size_1-of-1",
+  "size_1-of-10",
+  "size_1-of-11",
+  "size_1-of-12",
+  "size_1-of-2",
+  "size_1-of-3",
+  "size_1-of-4",
+  "size_1-of-5",
+  "size_1-of-6",
+  "size_1-of-7",
+  "size_1-of-8",
+  "size_1-of-9",
+  "skeleton",
+  "skeleton-border_bottom",
+  "skeleton-box",
+  "skeleton-heading",
+  "skeleton-icon",
+  "skeleton-label",
+  "skeleton-sub-heading",
+  "slds-align-middle",
+  "slds-align_absolute-center",
+  "slds-assistive-text",
+  "slds-avatar",
+  "slds-backdrop",
+  "slds-backdrop_open",
+  "slds-badge",
+  "slds-badge_inverse",
+  "slds-badge_lightest",
+  "slds-border_bottom",
+  "slds-border_left",
+  "slds-border_right",
+  "slds-border_top",
+  "slds-box",
+  "slds-box_border",
+  "slds-box_x-small",
+  "slds-builder-header",
+  "slds-builder-header__item",
+  "slds-builder-header__item-label",
+  "slds-button",
+  "slds-button-group",
+  "slds-button__icon",
+  "slds-button_brand",
+  "slds-button_icon",
+  "slds-button_icon-inverse",
+  "slds-button_neutral",
+  "slds-carousel",
+  "slds-carousel__autoplay",
+  "slds-carousel__indicator",
+  "slds-carousel__indicators",
+  "slds-checkbox",
+  "slds-col",
+  "slds-col_bump-left",
+  "slds-combobox",
+  "slds-combobox-addon_end",
+  "slds-combobox-addon_middle",
+  "slds-combobox-addon_start",
+  "slds-combobox-group",
+  "slds-combobox__form-element",
+  "slds-combobox__input",
+  "slds-combobox_container",
+  "slds-combobox_object-switcher",
+  "slds-container-fluid",
+  "slds-container_fluid",
+  "slds-current-color",
+  "slds-datepicker",
+  "slds-datepicker__filter",
+  "slds-datepicker__filter_month",
+  "slds-datepicker__month",
+  "slds-day",
+  "slds-docked-form-footer",
+  "slds-dropdown",
+  "slds-dropdown-trigger",
+  "slds-dropdown-trigger_click",
+  "slds-dropdown__header",
+  "slds-dropdown__item",
+  "slds-dropdown__list",
+  "slds-dropdown_fluid",
+  "slds-dropdown_length-with-icon-5",
+  "slds-expression",
+  "slds-expression__buttons",
+  "slds-expression__legend",
+  "slds-expression__list",
+  "slds-expression__options",
+  "slds-expression__row",
+  "slds-fade-in-open",
+  "slds-file",
+  "slds-file__text",
+  "slds-file__title",
+  "slds-file__title_card",
+  "slds-file_card",
+  "slds-filters",
+  "slds-form-element",
+  "slds-form-element__addon",
+  "slds-form-element__control",
+  "slds-form-element__help",
+  "slds-form-element__icon",
+  "slds-form-element__label",
+  "slds-form-element__legend",
+  "slds-form-element_stacked",
+  "slds-grid",
+  "slds-grid_align-center",
+  "slds-grid_align-end",
+  "slds-grid_align-spread",
+  "slds-grid_vertical",
+  "slds-grid_vertical-align-center",
+  "slds-grid_vertical-align-end",
+  "slds-grow",
+  "slds-gutters",
+  "slds-gutters_x-small",
+  "slds-gutters_xx-small",
+  "slds-has-error",
+  "slds-has-flexi-truncate",
+  "slds-has-focus",
+  "slds-has-title",
+  "slds-hide",
+  "slds-hyphenate",
+  "slds-icon-action-check",
+  "slds-icon-text-default",
+  "slds-icon-utility-anchor",
+  "slds-icon-utility-builder",
+  "slds-icon-utility-check",
+  "slds-icon-utility-down",
+  "slds-icon-utility-error",
+  "slds-icon-utility-success",
+  "slds-icon-utility-user",
+  "slds-icon_container",
+  "slds-illustration",
+  "slds-illustration__fill-primary",
+  "slds-illustration__fill-secondary",
+  "slds-illustration__header",
+  "slds-illustration__stroke-primary",
+  "slds-illustration__stroke-secondary",
+  "slds-illustration__svg",
+  "slds-illustration_large",
+  "slds-illustration_small",
+  "slds-input",
+  "slds-input__icon",
+  "slds-input__icon_left",
+  "slds-input__icon_right",
+  "slds-input_faux",
+  "slds-is-absolute",
+  "slds-is-fixed",
+  "slds-is-open",
+  "slds-is-relative",
+  "slds-is-selected",
+  "slds-item_detail",
+  "slds-item_label",
+  "slds-large-size_1-of-10",
+  "slds-large-size_1-of-11",
+  "slds-large-size_1-of-4",
+  "slds-large-size_1-of-9",
+  "slds-line-height_reset",
+  "slds-list_dotted",
+  "slds-list_horizontal",
+  "slds-listbox",
+  "slds-listbox__item",
+  "slds-listbox__option",
+  "slds-listbox__option-header",
+  "slds-listbox__option-icon",
+  "slds-listbox__option-meta",
+  "slds-listbox__option-meta_entity",
+  "slds-listbox__option-text",
+  "slds-listbox__option-text_entity",
+  "slds-listbox__option_plain",
+  "slds-listbox_vertical",
+  "slds-m-bottom",
+  "slds-m-bottom_large",
+  "slds-m-bottom_medium",
+  "slds-m-bottom_none",
+  "slds-m-bottom_small",
+  "slds-m-bottom_x-large",
+  "slds-m-bottom_x-small",
+  "slds-m-bottom_xx-large",
+  "slds-m-bottom_xx-small",
+  "slds-m-bottom_xxx-small",
+  "slds-m-horizontal",
+  "slds-m-horizontal_medium",
+  "slds-m-horizontal_small",
+  "slds-m-horizontal_x-small",
+  "slds-m-horizontal_xx-small",
+  "slds-m-left_large",
+  "slds-m-left_medium",
+  "slds-m-left_small",
+  "slds-m-left_x-small",
+  "slds-m-left_xx-small",
+  "slds-m-right_large",
+  "slds-m-right_medium",
+  "slds-m-right_small",
+  "slds-m-right_x-large",
+  "slds-m-right_x-small",
+  "slds-m-right_xx-small",
+  "slds-m-right_xxx-small",
+  "slds-m-top",
+  "slds-m-top_large",
+  "slds-m-top_medium",
+  "slds-m-top_none",
+  "slds-m-top_small",
+  "slds-m-top_x-large",
+  "slds-m-top_x-small",
+  "slds-m-top_xx-large",
+  "slds-m-top_xx-small",
+  "slds-m-top_xxx-small",
+  "slds-m-vertical_large",
+  "slds-m-vertical_medium",
+  "slds-m-vertical_none",
+  "slds-m-vertical_small",
+  "slds-m-vertical_x-small",
+  "slds-m-vertical_xx-small",
+  "slds-m-vertical_xxx-small",
+  "slds-media",
+  "slds-media__body",
+  "slds-media__figure",
+  "slds-media__figure_reverse",
+  "slds-media_center",
+  "slds-media_small",
+  "slds-medium-size_1-of-10",
+  "slds-medium-size_1-of-11",
+  "slds-medium-size_1-of-9",
+  "slds-modal",
+  "slds-modal__close",
+  "slds-modal__container",
+  "slds-modal__content",
+  "slds-modal__footer",
+  "slds-modal__header",
+  "slds-modal__title",
+  "slds-modal_large",
+  "slds-modal_medium",
+  "slds-nav-vertical",
+  "slds-nav-vertical__action",
+  "slds-nav-vertical__item",
+  "slds-nav-vertical__section",
+  "slds-nav-vertical__title",
+  "slds-notify",
+  "slds-notify_alert",
+  "slds-nubbin",
+  "slds-nubbin_bottom-left",
+  "slds-nubbin_bottom-right",
+  "slds-nubbin_top-left",
+  "slds-nubbin_top-right",
+  "slds-p-around_large",
+  "slds-p-around_medium",
+  "slds-p-around_none",
+  "slds-p-around_small",
+  "slds-p-around_x-large",
+  "slds-p-around_x-small",
+  "slds-p-around_xx-small",
+  "slds-p-bottom_large",
+  "slds-p-bottom_medium",
+  "slds-p-bottom_none",
+  "slds-p-bottom_small",
+  "slds-p-bottom_x-large",
+  "slds-p-bottom_x-small",
+  "slds-p-bottom_xx-large",
+  "slds-p-bottom_xx-small",
+  "slds-p-bottom_xxx-small",
+  "slds-p-horizontal",
+  "slds-p-horizontal_large",
+  "slds-p-horizontal_medium",
+  "slds-p-horizontal_none",
+  "slds-p-horizontal_small",
+  "slds-p-horizontal_x-large",
+  "slds-p-horizontal_x-small",
+  "slds-p-horizontal_xx-large",
+  "slds-p-horizontal_xx-small",
+  "slds-p-horizontal_xxx-small",
+  "slds-p-left_large",
+  "slds-p-left_medium",
+  "slds-p-left_none",
+  "slds-p-left_small",
+  "slds-p-left_x-large",
+  "slds-p-left_x-small",
+  "slds-p-left_xx-large",
+  "slds-p-left_xx-small",
+  "slds-p-left_xxx-small",
+  "slds-p-right_large",
+  "slds-p-right_medium",
+  "slds-p-right_none",
+  "slds-p-right_small",
+  "slds-p-right_x-large",
+  "slds-p-right_x-small",
+  "slds-p-right_xx-large",
+  "slds-p-right_xx-small",
+  "slds-p-right_xxx-small",
+  "slds-p-top_large",
+  "slds-p-top_medium",
+  "slds-p-top_none",
+  "slds-p-top_small",
+  "slds-p-top_x-large",
+  "slds-p-top_x-small",
+  "slds-p-top_xx-large",
+  "slds-p-top_xx-small",
+  "slds-p-top_xxx-small",
+  "slds-p-vertical",
+  "slds-p-vertical_large",
+  "slds-p-vertical_medium",
+  "slds-p-vertical_small",
+  "slds-p-vertical_x-large",
+  "slds-p-vertical_x-small",
+  "slds-p-vertical_xx-small",
+  "slds-page-header__title",
+  "slds-panel",
+  "slds-panel__body",
+  "slds-panel__close",
+  "slds-panel__header",
+  "slds-panel__header-actions",
+  "slds-panel__header-title",
+  "slds-panel_docked",
+  "slds-panel_docked-right",
+  "slds-panel_drawer",
+  "slds-pill__icon_container",
+  "slds-pill__label",
+  "slds-pill__remove",
+  "slds-popover",
+  "slds-popover__body",
+  "slds-popover_tooltip",
+  "slds-progress",
+  "slds-progress-bar",
+  "slds-progress-bar__value",
+  "slds-progress-bar__value_success",
+  "slds-progress-bar_circular",
+  "slds-progress__item_content",
+  "slds-progress__list",
+  "slds-progress__marker",
+  "slds-progress__marker_icon",
+  "slds-progress_vertical",
+  "slds-radio",
+  "slds-radio__label",
+  "slds-radio_button",
+  "slds-radio_button-group",
+  "slds-radio_button__label",
+  "slds-radio_faux",
+  "slds-required",
+  "slds-scoped-notification",
+  "slds-scoped-notification_light",
+  "slds-scrollable_y",
+  "slds-show",
+  "slds-show_small",
+  "slds-shrink",
+  "slds-size",
+  "slds-size_1-of-1",
+  "slds-size_1-of-10",
+  "slds-size_1-of-11",
+  "slds-size_1-of-12",
+  "slds-size_1-of-2",
+  "slds-size_1-of-3",
+  "slds-size_1-of-4",
+  "slds-size_1-of-9",
+  "slds-size_10-of-12",
+  "slds-size_11-of-12",
+  "slds-size_2-of-12",
+  "slds-size_2-of-3",
+  "slds-size_3-of-12",
+  "slds-size_3-of-4",
+  "slds-size_4-of-12",
+  "slds-size_5-of-12",
+  "slds-size_medium",
+  "slds-slds-container_fluid",
+  "slds-split-view",
+  "slds-split-view__toggle-button",
+  "slds-split-view_container",
+  "slds-table_col-bordered",
+  "slds-table_striped",
+  "slds-tabs_default",
+  "slds-tabs_default__link",
+  "slds-tabs_default__nav",
+  "slds-text-align_center",
+  "slds-text-align_left",
+  "slds-text-align_right",
+  "slds-text-body_medium",
+  "slds-text-body_regular",
+  "slds-text-body_small",
+  "slds-text-color_default",
+  "slds-text-color_error",
+  "slds-text-color_inverse",
+  "slds-text-color_weak",
+  "slds-text-heading_large",
+  "slds-text-heading_medium",
+  "slds-text-heading_small",
+  "slds-text-heading_x-small",
+  "slds-text-longform",
+  "slds-text-title",
+  "slds-text-title_bold",
+  "slds-text-title_caps",
+  "slds-theme_alt-inverse",
+  "slds-theme_default",
+  "slds-theme_error",
+  "slds-theme_info",
+  "slds-theme_inverse",
+  "slds-theme_offline",
+  "slds-theme_shade",
+  "slds-theme_success",
+  "slds-theme_warning",
+  "slds-tree",
+  "slds-tree__item",
+  "slds-tree_container",
+  "slds-truncate",
+  "slds-visual-picker",
+  "slds-visual-picker__figure",
+  "slds-visual-picker__icon",
+  "slds-visual-picker__text",
+  "slds-visual-picker__text-check",
+  "slds-wrap",
+  "slider-thumb-color-foreground",
+  "slider-thumb-color-foreground-focus",
+  "slider-thumb-shadow-focus",
+  "spinner-content",
+  "spinner-holder",
+  "spinner-overlay",
+  "spinner-text",
+  "split-lead",
+  "stack-narrow",
+  "stacked",
+  "stage",
+  "stage-action-button",
+  "stage-actions",
+  "stage-badge",
+  "stage-body",
+  "stage-chev",
+  "stage-header",
+  "stage-item",
+  "stage-meta",
+  "stage-row",
+  "stage-row_narrow",
+  "stage-title",
+  "stages-card",
+  "stages-container",
+  "stages-container_narrow",
+  "stages-list",
+  "standalone",
+  "stat-card",
+  "stat-icon",
+  "stat-inline",
+  "stat-label",
+  "stat-label-first",
+  "stat-number",
+  "stat-plain",
+  "stat-spread",
+  "stat-strip",
+  "stat-strip-label",
+  "stat-strip-value",
+  "stat-text",
+  "stats",
+  "stats-inner",
+  "status-circle",
+  "status-done",
+  "status-in-progress",
+  "status-in-progress-active",
+  "status-locked",
+  "status-number",
+  "status-optional",
+  "status-requires-correction",
+  "status-todo",
+  "stencil-hidden",
+  "stencil-visible",
+  "step-number",
+  "strip",
+  "strip-arrow",
+  "strip-arrows",
+  "strip-foot",
+  "style_sheet",
+  "sub-modal-active",
+  "subheading",
+  "substep-row",
+  "substep-title",
+  "substeps-list",
+  "surface-attached",
+  "surface-attached-below",
+  "surface-clean",
+  "surface-deep",
+  "surface-elevated",
+  "surface-flat",
+  "surface-ghost",
+  "surface-glow",
+  "surface-gradient",
+  "surface-inset",
+  "surface-joined",
+  "surface-outlined",
+  "surface-siderule",
+  "surface-topbar",
+  "survey-border-color",
+  "survey-border-width",
+  "survey-button",
+  "survey-button-dot",
+  "survey-button-dot-inner",
+  "survey-button-label",
+  "survey-button-option",
+  "survey-height",
+  "survey-padding-block",
+  "survey-padding-inline",
+  "survey-radius",
+  "survey-surface",
+  "survey-veil",
+  "survey-veiled",
+  "swipe-hint",
+  "table-badge",
+  "table-cell",
+  "table-head",
+  "table-row",
+  "table-shade",
+  "table-shadow",
+  "table-surface",
+  "test",
+  "text-align",
+  "text-controls",
+  "text-heading_medium",
+  "text-transform",
+  "textAreaCount",
+  "textarea-border-color",
+  "textarea-color-border-focus",
+  "textarea-padding-block",
+  "textarea-padding-inline",
+  "textarea-radius",
+  "textarea-shadow-focus",
+  "textarea-skeleton",
+  "textarea-surface",
+  "theme-section-padding",
+  "theme-section-padding_form-section",
+  "theme-section-padding_under-header",
+  "thumb",
+  "tile",
+  "tile-copy",
+  "tile_image",
+  "time-pill",
+  "time-selector-wrapper",
+  "timeFormat",
+  "time_zone",
+  "time_zone_name",
+  "title",
+  "title-on-border",
+  "title-on-border__body",
+  "title-on-border__icon-clearance",
+  "title-on-border__legend",
+  "title-on-border__legend-icon",
+  "title-on-border__legend-rule",
+  "title-on-border__legend_with-icon",
+  "title-on-border__subtitle",
+  "title-on-border__wrap",
+  "title-on-border_no-subtitle",
+  "title-on-border_shadow",
+  "tl-current",
+  "tl-done",
+  "tl-fill",
+  "tl-horizontal",
+  "tl-meta",
+  "tl-meta-warning",
+  "tl-node",
+  "tl-stop",
+  "tl-stops",
+  "tl-title",
+  "tl-track",
+  "tl-upcoming",
+  "tl-vbody",
+  "tl-vcol",
+  "tl-vertical",
+  "tl-vrail",
+  "tl-vrow",
+  "tl-warning",
+  "toggle-icon",
+  "toggle-inputs",
+  "toolbar",
+  "top",
+  "top-actions",
+  "top-center",
+  "topRadius",
+  "transfer-actions",
+  "tree-actions",
+  "tree-add-link",
+  "tree-container",
+  "tree-container_chrome",
+  "tree-container_chrome-field",
+  "tree-container_fields-only",
+  "tree-content",
+  "tree-insert-menu",
+  "tree-label",
+  "tree-label-wrap",
+  "tree-pipe",
+  "tree-pipe_readonly",
+  "tree-pipe_required",
+  "tree-row",
+  "tree-row_divider",
+  "tree-row_level-1",
+  "tree-row_level-2",
+  "tree-spacer",
+  "tree-type",
+  "tree-type-pipe",
+  "type-card",
+  "type-header",
+  "type-label",
+  "type-selector",
+  "ui-widget",
+  "uiInput",
+  "uiInput--default",
+  "uiInput--radio",
+  "uiInputRadio",
+  "uiLabel",
+  "uiOutputText",
+  "unit-suffix",
+  "utm_campaign",
+  "utm_content",
+  "utm_medium",
+  "utm_source",
+  "utm_term",
+  "validation-summary",
+  "variant-compact",
+  "variant-cta",
+  "variant-hero",
+  "variant-statement",
+  "view-all",
+  "view-all-link",
+  "view-all-row",
+  "view-all_floating",
+  "viewer",
+  "viewer-frame",
+  "viewer-window",
+  "visibility-collapsed",
+  "visibility-reveal",
+  "visual-choice-border-color",
+  "visual-choice-border-width",
+  "visual-choice-radius",
+  "visual-choice-surface",
+  "visual-date-picker",
+  "visual-picker",
+  "visual-picker__body",
+  "visual-picker__figure",
+  "visual-picker__icon",
+  "visual-picker__text",
+  "visual-picker__text-check",
+  "visual-picker_card",
+  "visual-picker_large",
+  "visual-picker_medium",
+  "visual-picker_small",
+  "visual-picker_vertical",
+  "vp-caption",
+  "vp-card",
+  "vp-description",
+  "vp-figure",
+  "vp-figure-hoverable",
+  "vp-grid",
+  "vp-icon",
+  "vp-image",
+  "vp-label-overlay",
+  "vp-media",
+  "vp-option",
+  "w3",
+  "wide-unit",
+  "width-full",
+  "width-inset",
+  "widthSelector",
+  "window",
+  "window_inline",
+  "x-large",
+  "x-small",
+  "xx-large",
+  "xx-small",
+  "xxx-small",
+  "xxx-xxx-xxxx",
+  "z-index"
+ ]
+}

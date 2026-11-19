@@ -6,7 +6,7 @@ The design as data, at `_forms/<slug>/plan.json`. It uses real Salesforce API na
 
 You write the design part. form-design's `draw_plan.py` writes the rule-decided part (marked *written by the run* below) and reports every value it changes. A value you set on purpose that the run would otherwise change goes in `keep`.
 
-In the plugin repository (not installed with the plugin), a complete, invented three-page example is `tests/skills/form-design/fixtures/three-page-application/plan.json`; a converted two-page form with its `ir.json` is `tests/skills/form-design/fixtures/converted-two-page/`; an anonymous one-page survey is `tests/skills/form-design/fixtures/survey-one-page/plan.json`.
+Copy the shape of the example below: it is invented, and it travels with this page. For contributors, in the plugin repository only (not installed with the plugin, so no skill can open these paths), a complete, invented three-page example is `tests/skills/form-design/fixtures/three-page-application/plan.json`; a converted two-page form with its `ir.json` is `tests/skills/form-design/fixtures/converted-two-page/`; an anonymous one-page survey is `tests/skills/form-design/fixtures/survey-one-page/plan.json`.
 
 ```json
 {
@@ -121,6 +121,8 @@ In the plugin repository (not installed with the plugin), a complete, invented t
 |---|---|
 | `object`, `field` | Full API names: `Form_Submission__c` (build-template adds the namespace), packaged fields as `FlowToolKit__Contact1_First_Name__c`, the org's own as `Grade__c` |
 | `new_field` | `true` for a proposed new field (listed in `questions`, status `verify`) |
+| `required_change` | On a field whose `required` differs from the source's (`ir.json` `fields[].required`): the person's confirmed answer and reason in a few words ("the person keeps it optional: some volunteers never give it"). Until answered, a question in `questions` names the source id |
+| `sensitive` | `{category, answer}` on a field form-migrate marked sensitive (`ir.json` `fields[].sensitive`). `answer`: `not collected` (the field goes to `dropped` instead), `encrypted` (an encrypted field only the people who need it can read, kept out of emails, PDFs and prefill) or `ordinary`; until answered, a question in `questions` names the source id |
 | `control` / `variant` | Exactly as the design system README writes them: TextInput, FormattedInput (`email`, `phone`, `url`), Picklist (`standard`, `radio`, `radiobuttons`, `separatedbuttons`, `surveybuttons`, `visualpicker` ...), MultiPicklist, Checkbox (`attestation` for a consent), NumberInput (`currency`), TextArea, DateInput, Address (variant `Address` is the row that draws the component: the compound field, or `Id` for an address kept in separate fields. It needs all five parts after it, variants `Street`, `City`, `State`, `PostalCode` and `Country`, each on its field, which are not drawn on their own: without them the package draws no address or one blank box. The row's `required` is what the form enforces on every part (Flow Tool Kit never reads a part's own flag), so the row is required exactly when a part is. draw_plan.py adds the parts of a standard address field such as `MailingAddress`; build-template builds an address in a section of other fields as its own address section), Repeater, SignaturePad, ImageUpload (one photo), FileUpload (documents), Lookup |
 | `widths` | Columns at large, medium, small |
 | `options` | Stored values as strings, or `{"label", "value"}`. `option_descriptions`: `{value: explanation}`, only when the source supplies the words |

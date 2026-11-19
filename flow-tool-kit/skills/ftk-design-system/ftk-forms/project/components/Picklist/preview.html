@@ -1,0 +1,30 @@
+<!-- @dsCard group="Fields" height=1600 subtitle="lightning-combobox · flowFormRadioCheckbox · path · visual picker" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Picklist preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var types = ['Individual', 'Household', 'Organization', 'Foundation'];
+  var sizes = ['1 to 5', '6 to 20', '21 to 50', '51 or more'];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('standard · lightning-combobox, open: the selected option carries a brand check', h('div', { style: { minHeight: 196 } }, h(F.Picklist, { label: 'Donor type', options: types, defaultValue: 'Household', required: true, open: true }))),
+    h('div', { style: { display: 'grid', gap: 8, alignContent: 'start' } },
+      Demo('standard · placeholder "Select an Option"', h(F.Picklist, { label: 'Donor type', options: types, required: true })),
+      Demo('standard · error', h(F.Picklist, { label: 'Donor type', options: types, required: true, error: 'Complete this field.' }))),
+    Demo('radio · flowFormRadioCheckbox, columns none (wraps at content width)', h(F.Picklist, { label: 'Preferred contact', variant: 'radio', options: ['Email', 'Phone', 'Text message', 'Mail'], defaultValue: 'Email', required: true })),
+    Demo('separatedbuttons: selected is a brand fill, others brand text', h(F.Picklist, { label: 'Household size', variant: 'separatedbuttons', options: sizes, defaultValue: '6 to 20' })),
+    Demo('surveybuttons: full-width cards, selected on brand-soft', h('div', { style: { maxWidth: 520 } }, h(F.Picklist, { label: 'How did you hear about us?', variant: 'surveybuttons', options: ['A friend or neighbor', 'Social media', 'A community event'], defaultValue: 'Social media' })), true),
+    Demo('radiobuttons · joined lightning-radio-group: brand text, selected brand fill', h(F.Picklist, { label: 'Frequency', variant: 'radiobuttons', options: ['One time', 'Monthly', 'Quarterly', 'Yearly'], defaultValue: 'Monthly' })),
+    Demo('iconbuttons · lightning-helptext per option: hover an icon for its label; filled to the choice in iconSelectorColor__c (#ffd602)', h('div', { style: { paddingTop: 8 } }, h(F.Picklist, { label: 'How was the event?', variant: 'iconbuttons', options: ['Poor', 'Fair', 'Good', 'Very good', 'Excellent'], defaultValue: 'Very good' }))),
+    Demo('pathbuttons · slds-path: complete, current, incomplete', h(F.Picklist, { label: 'Application stage', variant: 'pathbuttons', options: ['Submitted', 'In review', 'Interview', 'Decision'], defaultValue: 'In review' }), true),
+    Demo('visualpicker · flowFormVisualPicker: icon only; hover a card to fade the icon and show its label. Selected is brand on a 10% tint', h(F.Picklist, { label: 'Program area', variant: 'visualpicker', columns: 4, defaultValue: 'Housing', options: [{ label: 'Housing', value: 'Housing', icon: 'utility:home' }, { label: 'Food access', value: 'Food access', icon: 'utility:food_and_drink' }, { label: 'Education', value: 'Education', icon: 'utility:knowledge_base' }, { label: 'Workforce', value: 'Workforce', icon: 'utility:case' }] }), true),
+    Demo('separatedbuttons, 5 columns, with prepend__c / append__c as the scale ends', h(F.Picklist, { label: 'How likely are you to recommend us?', variant: 'separatedbuttons', columns: 5, options: ['1', '2', '3', '4', '5'], prepend: 'Not likely', append: 'Very likely' })),
+    Demo('separatedbuttons · picklistColumnsSize__c = grow', h(F.Picklist, { label: 'Preferred contact', variant: 'separatedbuttons', columns: 'grow', options: ['Email', 'Phone', 'Text message'] }))
+  ));
+</script>
+</body>
+</html>

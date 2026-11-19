@@ -1,0 +1,21 @@
+<!-- @dsCard group="Template" height=2480 width=900 subtitle="Payment_Required__c · FlowToolKit Stripe Connector · StripePaymentForm page with Stripe's Payment Element" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>PaymentStep preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(520px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-cap{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 8px}.pv-page{padding:16px 28px;border:1px solid var(--border-subtle);border-radius:8px;background:#fff}.pv-two{display:grid;grid-template-columns:1fr 1fr;gap:20px}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, cap, child) { return h('div', { className: 'pv-item', tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), h('div', { className: 'pv-cap' }, cap), h('div', { className: 'pv-page' }, child)); }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('The payment page after the last form page: the Stripe Connector’s StripePaymentForm page in an iframe. "Payment details" header (Settings | Hide Header off), Stripe’s Payment Element in tabs layout inside an slds-box, then a full-width SLDS brand Pay Now button. Tabs come from the account’s payment method configuration', '1 · One-time payment (default settings)', h(F.PaymentStep, {})),
+    Demo('enableAddress adds Billing info (Stripe Address Element, billing mode) at 7 of 12 on the left; enableLink adds Contact info (Link Authentication Element). Either one shows the "Payment" heading. mode subscription labels the button Confirm Subscription', '2 · Billing info and Link · subscription', h(F.PaymentStep, { enableAddress: true, enableLink: true, mode: 'subscription' })),
+    h('div', { className: 'pv-two' },
+      Demo('Settings | Display Express Checkout: the Express Checkout Element replaces the form; one-click wallet buttons only. Button Type donate', '3 · Express Checkout · Button Type donate', h(F.PaymentStep, { expressCheckout: true, expressCheckoutButtonType: 'donate' })),
+      Demo('A declined card: Stripe’s message in the page’s error alert above the form. Setup mode labels the button Save Card. With only one payment method enabled the Payment Element shows no tabs', '4 · Card declined · setup mode', h(F.PaymentStep, { hideHeader: true, mode: 'setup', tabs: ['card'], paymentMessage: 'Your card was declined.' }))),
+    Demo('Stripe cannot load, or the Stripe Connector is not installed: formTemplate shows Payment Unavailable instead', '5 · Payment Unavailable', h(F.PaymentStep, { error: 'Payment is not available right now. Please try again later.' }))
+  ));
+</script>
+</body>
+</html>

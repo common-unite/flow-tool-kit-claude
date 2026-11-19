@@ -1,0 +1,48 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Cover</title>
+<style>
+  html, body { margin: 0; background: var(--surface); }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--surface); font-family: var(--font-sans); }
+  .cover svg { position: absolute; inset: 0; }
+  .brand { fill: var(--brand); }
+  .brand-active { fill: var(--brand-active); }
+  .navy { fill: var(--tooltip); }
+  .tint { fill: var(--brand-tint); }
+  .muted { fill: var(--surface-muted); }
+  .r-md { rx: var(--radius-medium); }
+  .name { position: absolute; left: 40px; bottom: 40px; max-width: 440px; }
+  .mark { position: absolute; left: 40px; top: 32px; display: flex; align-items: center; justify-content: center; width: 88px; height: 64px; border-radius: 12px; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .mark img { display: block; width: 64px; height: auto; }
+  .name h1 { margin: 0; font-size: 56px; line-height: .95; font-weight: 700; letter-spacing: -0.01em; color: var(--text); }
+  .name p { margin: 12px 0 0; font-size: 14px; line-height: 1.4; color: var(--label); }
+</style></head>
+<body>
+<div class="cover">
+  <svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+    <!-- blocks: brand 480x128 slab (top-right bleed), tooltip navy 162x144 slab (bottom bleed), brand-active, brand-tint and surface-muted as field tiles
+         arrangement: one slab with satellites right of x=480, a flush 12-column grid (30px columns, space-x-small gaps)
+         pattern: geometric, modular, dense UI, chosen because FlowToolKit lays every field on a 12-column grid, so the tiles are fields spanning 7+5, 4+4+4, 8, 6+2 columns
+         steps and radii: control-height 32px rows, space-x-small 8px gaps, space-medium 16px row gaps, radius-medium 4px corners -->
+    <rect class="brand" x="480" y="0" width="480" height="128"/>
+    <rect class="brand-active r-md" x="496" y="24" width="258" height="32"/>
+    <rect class="brand-active r-md" x="762" y="24" width="182" height="32"/>
+    <rect class="brand-active r-md" x="496" y="72" width="144" height="32"/>
+    <rect class="brand-active r-md" x="648" y="72" width="144" height="32"/>
+    <rect class="brand-active r-md" x="800" y="72" width="144" height="32"/>
+    <rect class="navy" x="480" y="144" width="160" height="144"/>
+    <rect class="tint r-md" x="648" y="144" width="296" height="32"/>
+    <rect class="muted r-md" x="648" y="192" width="144" height="32"/>
+    <rect class="brand r-md" x="800" y="192" width="144" height="32"/>
+    <rect class="tint r-md" x="648" y="240" width="220" height="32"/>
+    <rect class="muted r-md" x="876" y="240" width="68" height="32"/>
+  </svg>
+  <div class="mark"><img src="../../assets/Logos/FlowToolKit_Gray.png" alt="Flow Tool Kit"></div>
+  <div class="name">
+    <h1>FlowToolKit<br>Forms</h1>
+    <p>Flow Tool Kit form fields, drawn for designing in Claude.</p>
+  </div>
+</div>
+</body>
+</html>

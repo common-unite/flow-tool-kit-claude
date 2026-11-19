@@ -1,6 +1,6 @@
 # What the build reads from plan.json, and what it writes
 
-form-design's `references/plan-format.md` defines `plan.json`. This page lists what build-template does with each part, and the few keys only this skill reads. Keys it does not know are ignored.
+`_shared/standards/plan-format.md` (form-design's contract) defines `plan.json`. This page lists what build-template does with each part, and the few keys only this skill reads. Keys it does not know are ignored.
 
 ## Plan to records
 

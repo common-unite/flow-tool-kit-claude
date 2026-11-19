@@ -1,6 +1,6 @@
 ---
 name: build-form-component
-description: Use when a Flow Tool Kit Form Component has to be chosen, designed or written: a reusable block of questions or display content such as contact details, the fields of one household member (which a Repeater section repeats), a table, a survey or Likert grid, a consent or a header, including every shared, extended or metadata component build-template hands over from plan.json. Builds all three shapes (a metadata component, a record component, or JSON fixed to one section, flow or page) and recommends which, with the reason, before asking. Also when someone asks to make a section reusable, extend an existing component, choose between metadata, record and JSON, map a Contact or Account form to Form Submission with Form Template Mapping, or write component JSON or custom metadata for a form.
+description: Not a front door: when ftk-start has not run in this conversation, load ftk-start first and let it route here. Use when a Flow Tool Kit Form Component has to be chosen, designed or written: a reusable block of questions or display content such as contact details, the fields of one household member (which a Repeater section repeats), a table, a survey or Likert grid, a consent or a header, including every shared, extended or metadata component build-template hands over from plan.json. Builds all three shapes (a metadata component, a record component, or JSON fixed to one section, flow or page) and recommends which, with the reason. Also for "can we build a form component?", "make this a reusable block", extending an existing component ("add a County field to our address component"), Form Template Mapping for a Contact or Account form, or component JSON or custom metadata for a form.
 ---
 
 # Build Form Component
@@ -38,7 +38,7 @@ It is all or nothing. Rerunning it with the same API name changes the component 
    - **Update the shared component** is a different action, never offered as the default and never assumed from "extend": the original itself changes, in place, and so does every template and form that uses it. Offer it only when the change belongs to everyone who uses the component, in its own question that lists every template and component it would reach (the catalog's "used in" lists): *"Update the shared Household Contact in place? It would change Volunteer Sign-up, Garden Plot Application and the Family Profile component."* No answer means no update. A packaged component can never be updated.
 4. **The shape, recommended and asked, never decided silently** (next section). Reuse and update keep the component's own shape; extend and new need the person's answer.
 5. **The source of truth.** The section in `plan.json` (fields, controls, widths, options, conditions, `form_template_mapping`), or form-migrate's `ir.json` when there is no plan. Never re-read the original source form: the plan is what the reviewer saw.
-6. **The standards.** [Component shapes](_shared/standards/component-shapes.md), [mapping preference](_shared/standards/mapping-preference.md), [documentation](_shared/standards/documentation.md), [naming](_shared/standards/naming.md), [form-type rules](_shared/standards/form-type-rules.md) and [house rules](_shared/standards/form-house-rules.md). The worked example is [_shared/examples/form-3-page-release/](_shared/examples/form-3-page-release/).
+6. **The standards.** [Component shapes](_shared/standards/component-shapes.md), [mapping preference](_shared/standards/mapping-preference.md), [documentation and naming](_shared/standards/documentation.md), [form-type rules and house rules](_shared/standards/form-type-rules.md). The worked example is [_shared/examples/form-3-page-release/](_shared/examples/form-3-page-release/).
 
 ## The boundary, the edition, the shape and the JSON
 
@@ -46,7 +46,7 @@ Before authoring any component, read [references/boundary-shape-and-json.md](ref
 
 ## Checking, traps and common mistakes
 
-Before writing a component to the project or the org, and when one misbehaves, read [references/check-traps-and-mistakes.md](references/check-traps-and-mistakes.md) (Check, write, verify, Traps, Common mistakes).
+Before writing a component to the project or the org, and when one misbehaves, read [references/check-traps-and-mistakes.md](references/check-traps-and-mistakes.md) (Check, write, verify, What a reviewed design can promise, Traps, Common mistakes).
 
 ## Done when
 

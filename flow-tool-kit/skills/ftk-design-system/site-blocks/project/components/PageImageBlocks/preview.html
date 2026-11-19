@@ -1,0 +1,76 @@
+<!-- @dsCard group="Page examples" height=120 subtitle="image blocks: photo, gallery and image settings on real content" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Demo page image-blocks: Image blocks: photo, gallery and image settings on real content */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "hero", "width": "full", "background": "#032D60", "brandColor": "#53B95B", "sectionLabel": "Our Mission", "heading": "A garden that feeds the people who tend it.", "subheading": "Plots, classes and fresh food, run by neighbors, for neighbors.", "headingAlign": "left", "bodyAlign": "left", "buttonAlign": "left", "buttons": [{"label": "Learn more", "url": "#", "style": "accent"}], "backgroundImageSource": "asset", "backgroundImageAsset": "FlowToolKit__Background_Volunteer_Build_Day", "backgroundOverlay": "bottom", "backgroundEffect": "parallax", "backgroundParallaxSpeed": "0.25", "blockHeight": "tall", "contentPosition": "bottom", "entrance": "rise"}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"backgroundGradient": "off", "headingAlign": "left", "footnoteAlign": "center", "imageFit": "natural", "sectionType": "hero", "background": "#032D60", "brandColor": "#53B95B", "sectionLabel": "Who We Serve", "blockTitle": "Small teams doing outsized work.", "description": "Most of our clients run on two to ten staff. The org chart is short, the mission is not, and the technology has to hold.", "bodyAlign": "left", "buttonAlign": "left", "buttons": [{"label": "Meet our clients", "url": "#", "style": "accent"}], "splitRatio": "even", "imageStyle": "clean", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Tree_Planting_Autumn", "imageAlt": "Volunteers planting saplings in an autumn woodland", "entrance": "cascade", "shell": "section", "headerPlacement": "above", "buttonPlacement": "copy", "statsPlacement": "copy", "bulletsPlacement": "copy", "reversed": true}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "statsBar", "width": "full", "background": "#032D60", "accentColor": "#8EE39A", "statsTreatment": "row", "countUp": true, "backgroundImageSource": "asset", "backgroundImageAsset": "FlowToolKit__Background_Farmland_Aerial", "backgroundOverlay": "tint", "blockHeight": "band", "items": [{"value": "120+", "title": "nonprofits served"}, {"value": "90%+", "title": "of clients renew"}, {"value": "170+", "title": "free how-to videos"}, {"value": "10 min", "title": "to your first form"}]}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "quote", "width": "full", "background": "#032D60", "brandColor": "#F4BE45", "description": "They didn't just fix our Salesforce. They made it so our two-person team could actually keep it running.", "attribution": "Executive Director, Community Trust", "attributionDetail": "12 fewer admin hours per week", "backgroundImageSource": "asset", "backgroundImageAsset": "FlowToolKit__Background_Shoreline_Cleanup_Sunset", "backgroundOverlay": "tint", "backgroundEffect": "parallax", "backgroundParallaxSpeed": "0.4", "blockHeight": "standard", "entrance": "zoom"}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "callout", "headingAlign": "left", "bodyAlign": "left", "sectionLabel": "What We Do", "heading": "Three ways in.", "subheading": "Plots, classes, and everything we share before anyone pays us."}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#2E844A", "imageCaption": "below", "hoverStyle": "lift", "heading": "Garden workshops", "subheading": "Weekend classes, seed swaps, and a season-long growing course.", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Volunteer_Team_Talking", "imageAlt": "Volunteers talking at a distribution table", "imageStyle": "elevated"})),
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#2E844A", "imageCaption": "below", "hoverStyle": "lift", "heading": "Flow Tool Kit", "subheading": "Every form your nonprofit needs, built on Salesforce Flow.", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Forest_Sunbeams", "imageAlt": "Sunlight through the forest canopy", "imageStyle": "elevated"})),
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#2E844A", "imageCaption": "below", "hoverStyle": "lift", "heading": "Free resources", "subheading": "170+ videos and weekly office hours, before anyone pays us.", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Solar_Panel_Install", "imageAlt": "Technician installing rooftop solar panels", "imageStyle": "elevated"}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "callout", "headingAlign": "left", "bodyAlign": "left", "sectionLabel": "Get Involved", "heading": "Coming up this season."}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#53B95B", "imageCaption": "overlay", "hoverStyle": "lift", "heading": "Arbor Day planting", "subheading": "Sat, Oct 3 · 40 volunteers needed", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Tree_Planting_Autumn", "imageAlt": "Volunteers planting saplings", "imageStyle": "elevated"})),
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#53B95B", "imageCaption": "overlay", "hoverStyle": "lift", "heading": "Coastal cleanup day", "subheading": "Sun, Oct 11 · all ages", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Shoreline_Cleanup_Sunset", "imageAlt": "Volunteer bagging litter at the shoreline", "imageStyle": "elevated"})),
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#53B95B", "imageCaption": "overlay", "hoverStyle": "lift", "heading": "Fall gala and auction", "subheading": "Fri, Nov 6 · tickets open", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Mountain_Meadow_Sunset", "imageAlt": "Sunrise over the valley", "imageStyle": "elevated"}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "callout", "headingAlign": "left", "bodyAlign": "left", "sectionLabel": "Programs", "heading": "Where our volunteers spend a Saturday."}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#53B95B", "imageCaption": "overlay", "hoverStyle": "tint", "heading": "Senior delivery", "subheading": "Weekly grocery routes to 120 homebound neighbors.", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Volunteer_Team_Talking", "imageAlt": "Volunteers talking at a distribution table", "imageStyle": "elevated"})),
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#53B95B", "imageCaption": "overlay", "hoverStyle": "tint", "heading": "Trail building", "subheading": "Monthly builds maintaining 14 miles of county trail.", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Bamboo_Forest_Joy", "imageAlt": "Sunlight through a bamboo grove", "imageStyle": "elevated"})),
+      h(SB.Column, {"columnWidth": "4"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#53B95B", "imageCaption": "overlay", "hoverStyle": "tint", "heading": "Recycling center", "subheading": "Saturday sorting shifts, no experience needed.", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Solar_Panel_Install", "imageAlt": "Technician installing rooftop solar panels", "imageStyle": "elevated"}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "callout", "headingAlign": "left", "bodyAlign": "left", "sectionLabel": "Upcoming Shifts", "heading": "Four shifts still need people.", "footnote": "Shift list pulls straight from your Volunteer records."}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, {"columnWidth": "6"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#2E844A", "imageCaption": "below", "hoverStyle": "lift", "heading": "Park cleanup crew", "subheading": "Sat, Sept 12 · 9 am · Riverside Park · 6 spots left", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Forest_Sunbeams", "imageAlt": "Morning light through the trees", "imageStyle": "elevated"})),
+      h(SB.Column, {"columnWidth": "6"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#2E844A", "imageCaption": "below", "hoverStyle": "lift", "heading": "Gala parking support", "subheading": "Fri, Nov 6 · 4 pm · Eastside Center · 4 spots left", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Volunteer_Team_Tables", "imageAlt": "Volunteer team sorting donation boxes", "imageStyle": "elevated"}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, {"columnWidth": "6"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#2E844A", "imageCaption": "below", "hoverStyle": "lift", "heading": "Gala teardown team", "subheading": "Fri, Nov 6 · 10 pm · Eastside Center · 8 spots left", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Volunteer_Team_Talking", "imageAlt": "Volunteers talking before a shift", "imageStyle": "elevated"})),
+      h(SB.Column, {"columnWidth": "6"},
+        h(SB.Block, {"sectionType": "image", "brandColor": "#2E844A", "imageCaption": "below", "hoverStyle": "lift", "heading": "Trail day hike-in", "subheading": "Sat, Sept 26 · 8 am · Miller Ridge trailhead · carpool", "imageSource": "asset", "imageAsset": "FlowToolKit__Background_Volunteer_Build_Day", "imageAlt": "Crew setting up before an event", "imageStyle": "elevated"}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "hero", "width": "full", "background": "#032D60", "brandColor": "#53B95B", "heading": "Summer of Service", "subheading": "Five thousand neighbors reached between June and September.", "headingAlign": "left", "bodyAlign": "left", "badgePosition": "top", "badges": [{"title": "Summer of Service · 2026", "style": "accent"}], "backgroundImageSource": "asset", "backgroundImageAsset": "FlowToolKit__Background_Bamboo_Forest_Joy", "backgroundOverlay": "tint", "backgroundEffect": "kenburns", "blockHeight": "standard", "contentPosition": "bottom"}))),
+    h(SB.Section, {"background": "background: rgba(0,0,0,0)", "sectionHeight": 300, "contentAreaWidth": 100},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "carousel", "width": "full", "brandColor": "#53B95B", "carouselInterval": "5", "items": [{"iconImage": "FlowToolKit__Background_Volunteer_Team_Tables", "imageAlt": "Volunteer team sorting donation boxes", "eyebrow": "Programs", "title": "Pathways: sixteen weeks to a first offer", "link": "#"}, {"iconImage": "FlowToolKit__Background_Forest_Sunbeams", "imageAlt": "Sunlight through the forest canopy", "eyebrow": "Volunteer", "title": "Summer of Service: 5,000 neighbors by September", "link": "#"}, {"iconImage": "FlowToolKit__Background_Mountain_Meadow_Sunset", "imageAlt": "Sunrise over the valley", "eyebrow": "Funding", "title": "Community Resilience Fund: applications open", "link": "#"}]})))));
+</script>
+</body>
+</html>

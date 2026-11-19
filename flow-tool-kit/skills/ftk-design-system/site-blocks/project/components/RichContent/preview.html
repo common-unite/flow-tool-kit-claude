@@ -1,0 +1,17 @@
+<!-- @dsCard group="Standard components" height=120 subtitle="forceCommunity:richTextInline" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Formatted text as the site theme styles it: headings, a paragraph with a link, a list */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 },
+      h(SB.Column, { columnWidth: '8' }, h(SB.RichContent, { richTextValue: '<h1>About the program</h1><p>Riverside Volunteers pairs neighbors with the food pantry, the shoreline cleanup and the after-school garden. <a href="/volunteer">See open shifts</a>.</p><h2>Who can join</h2><ul><li>Anyone 14 and up; under 18 with a guardian form</li><li>Groups of five to twenty on Saturdays</li></ul>' })),
+      h(SB.Column, { columnWidth: '4' }, h(SB.RichContent, { richTextValue: '<h3>Questions?</h3><p>Email <a href="mailto:volunteer@example.org">volunteer@example.org</a> or call (555) 555-0193.</p>' })))));
+</script>
+</body>
+</html>

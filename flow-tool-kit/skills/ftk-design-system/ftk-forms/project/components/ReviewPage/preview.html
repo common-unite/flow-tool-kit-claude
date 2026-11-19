@@ -1,0 +1,26 @@
+<!-- @dsCard group="Layout" height=1150 width=900 subtitle="formTemplate review page · flowFormReview · flowFormFieldReview" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ReviewPage preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-label{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 6px}.pv-frame{position:relative;border:1px dashed var(--border);border-radius:8px;overflow:hidden;background:var(--ftk-color-background,var(--surface))}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, cap) { return h('div', { className: 'pv-item', tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), h('div', { className: 'pv-label' }, cap), child); }
+  var pages = [
+    { label: 'About you', sections: [{ title: 'Contact information', fields: [
+      { label: 'First name', value: 'Maria' }, { label: 'Last name', value: 'Lopez' }, { label: 'Email', type: 'email', value: 'maria@example.org' },
+      { label: 'Phone', type: 'tel', value: '(555) 555-0142' }, { label: 'Date of birth', type: 'date', value: '1988-04-12' }, { label: 'Preferred contact', value: '' }] }] },
+    { label: 'Household', sections: [
+      { title: 'Household', invalid: true, fields: [{ label: 'Household size', type: 'double', value: 4 }, { label: 'Do you rent your home?', type: 'boolean', value: true }, { label: 'Support needed', type: 'multipicklist', value: 'Rent help;Utilities;Food' }] },
+      { title: 'Income', fields: [{ label: 'Monthly rent', type: 'currency', value: 1250 }, { label: 'Share of income spent on rent', type: 'percent', value: 42 }, { label: 'Next appointment', type: 'datetime', value: '2026-11-03T14:00' }, { label: 'Documents', type: 'fileupload', value: ['paystub-october.pdf', 'lease.pdf'] }] }] }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('Review page · Review_Page_Label__c and subtitle, then each page label and its sections with an Edit link; each answer is a flowFormFieldReview row, label 4 and value 8 of 12 on desktop. The Household section failed validation on submit', h('div', null,
+      h(F.ReviewPage, { title: 'Review', subtitle: 'Check your answers before you submit. Select Edit to change a section.', pages: pages }),
+      h('div', { style: { padding: '0 16px' } }, h(F.Navigation, { position: 'Standard', alignment: 'spread', backLabel: 'Documents', lastPage: true, submitLabel: 'Submit Application' }))), '1 · Review page before submit'),
+    Demo('Read Only (disableAll), as on a submitted form: the same review page, every section link reads View and there are no buttons', h(F.ReviewPage, { title: 'Review', subtitle: 'Your submitted answers.', readOnly: true, pages: [pages[0]] }), '2 · Read only (submitted) · links read View')
+  ));
+</script>
+</body>
+</html>

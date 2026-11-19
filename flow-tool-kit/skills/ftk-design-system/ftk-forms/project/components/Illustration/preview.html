@@ -1,0 +1,30 @@
+<!-- @dsCard group="Content" height=1994 subtitle="displayIllustration · 23 scenes" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Illustration preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var useState = React.useState;
+  function Browser() {
+    var t = useState('No Content');
+    return h('div', null,
+      h('div', { style: { display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 8 } }, F.ILLUSTRATION_TYPES.map(function (x) {
+        return h('button', { key: x, type: 'button', onClick: function () { t[1](x); }, 'aria-pressed': t[0] === x ? 'true' : 'false',
+          style: { height: 28, padding: '0 10px', borderRadius: 999, border: '1px solid var(--border)', background: t[0] === x ? 'var(--brand)' : 'var(--surface)', color: t[0] === x ? 'var(--on-brand)' : 'var(--label)', font: 'inherit', fontSize: 12, cursor: 'pointer' } }, x);
+      })),
+      h(F.Illustration, { type: t[0], size: 'small', title: t[0], subtitle: 'Pick a scene above to see it in place.' }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('type Approval · size small · title and rich-text subtitle', h(F.Illustration, { type: 'Approval', title: 'Application received', subtitle: '<p>Thank you. We will email you within five business days.</p>' })), // partner-clean: allow R4
+    Demo('type No Access · size small', h(F.Illustration, { type: 'No Access', title: 'This form is closed', subtitle: 'Applications for this round ended March 7.' })),
+    Demo('type Camping · size large', h(F.Illustration, { type: 'Camping', size: 'large', title: 'Nothing here yet', subtitle: 'Add a program to get started.' }), true),
+    Demo('type Spinner: lightning-spinner brand (full screen in the package, boxed here)', h(F.Illustration, { type: 'Spinner', title: 'Submitting your application', subtitle: 'This takes a few seconds.' })),
+    Demo('all 23 types (click to switch)', h(Browser))
+  ));
+</script>
+</body>
+</html>

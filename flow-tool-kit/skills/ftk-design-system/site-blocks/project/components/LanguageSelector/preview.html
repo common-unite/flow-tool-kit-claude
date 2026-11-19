@@ -1,0 +1,17 @@
+<!-- @dsCard group="Standard components" height=120 subtitle="forceCommunity:languagePicker" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* The site language picker in a narrow column; it shows only when the site has more than one language */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 },
+      h(SB.Column, { columnWidth: '9' }, h(SB.RichContent, { richTextValue: '<p>This site is available in English and Spanish.</p>' })),
+      h(SB.Column, { columnWidth: '3' }, h(SB.LanguageSelector, { languages: ['English (US)', 'Spanish'] })))));
+</script>
+</body>
+</html>

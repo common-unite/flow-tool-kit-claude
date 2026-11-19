@@ -1,0 +1,28 @@
+<!-- @dsCard group="Sections" height=880 width=900 subtitle="widthLarge · widthMedium · widthSmall" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Column preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-frame{box-sizing:border-box;min-width:0;max-width:100%;border:1px dashed var(--border);border-radius:4px;padding:4px 0}.pv-frame .pv-item{margin:-6px -6px;padding:6px}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  function Span(name, l, m, s, child) {
+    return h(F.Column, { large: l, medium: m, small: s }, Demo(name + ' · large ' + l + ' · medium ' + m + ' · small ' + s + ' (of 12)', child));
+  }
+  function Form(width, cap) {
+    return h('div', null, h('div', { style: { font: '700 11px/1.4 var(--font-sans)', letterSpacing: '.06em', textTransform: 'uppercase', color: 'var(--label)', margin: '0 0 6px' } }, cap), h('div', { className: 'pv-frame', style: { width: width } },
+      h(F.Section, { title: 'Contact and demographics' },
+        Span('First name', 5, 5, 12, h(F.TextInput, { label: 'First name', required: true })),
+        Span('Last name', 7, 7, 12, h(F.TextInput, { label: 'Last name', required: true })),
+        Span('Email', 7, 7, 12, h(F.FormattedInput, { type: 'email', label: 'Email', placeholder: 'name@example.org' })),
+        Span('Phone', 5, 5, 12, h(F.FormattedInput, { type: 'phone', label: 'Mobile phone', phoneMask: '(xxx) xxx-xxxx' })),
+        Span('Date of birth', 4, 4, 6, h(F.DateInput, { label: 'Date of birth' })),
+        Span('Household size', 4, 4, 6, h(F.NumberInput, { label: 'Household size', variant: 'stepper', defaultValue: 1, min: 1 })),
+        Span('Preferred language', 4, 4, 12, h(F.Picklist, { label: 'Preferred language', options: ['English', 'Spanish', 'Vietnamese', 'Somali', 'Other'] })))));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' }, Form('100%', 'Desktop · first name 5, last name 7'), Form('340px', 'Phone width (340px) · small = 12, every field stacks')));
+</script>
+</body>
+</html>

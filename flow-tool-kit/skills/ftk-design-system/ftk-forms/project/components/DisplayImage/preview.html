@@ -1,0 +1,28 @@
+<!-- @dsCard group="Content" height=1420 subtitle="displayImage" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>DisplayImage preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-cap{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 6px}.pv-scroll{height:300px;overflow-y:auto;border:1px solid var(--border-subtle);border-radius:8px;background:var(--surface)}.pv-filler{padding:16px 20px;font:14px/1.5 var(--font-sans);color:var(--text)}.pv-filler p{margin:6px 0 0}.pv-filler:last-child{padding-bottom:220px}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  /* Packaged background photos (Content Assets); the file name is the asset API name */
+  function asset(name) { return '../../assets/Backgrounds/' + name + '.jpg'; }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('displayImage · full width, imageStyle height:200px', h(F.DisplayImage, { src: asset('Background_Mountain_Meadow_Sunset'), alt: 'A mountain meadow at sunset', imageStyle: 'height:200px' })),
+    Demo('Rich text overlay · View as Rich Text (viewAsPlainText__c false): the section rich text sits centred over the image with 1rem padding. Colours come from the rich text editor. overlayHexColor #032d60 at 0.55', h(F.DisplayImage, { src: asset('Background_Volunteer_Build_Day'), alt: '', imageStyle: 'height:220px', overlayHexColor: '#032d60', overlayOpacity: 0.55, customRichText: '<h2 style="font-size:28px;color:#ffffff;text-align:center">Better at Home</h2><p style="color:#ffffff;text-align:center">Helping seniors stay independent in their own homes.</p>' })),
+    Demo('Parallax (imageParallax__c): the picture is a fixed background, so the page scrolls over it. Scroll inside the frame to see it. Rich text overlay on top', h('div', null,
+      h('div', { className: 'pv-cap' }, 'Scroll inside the frame'),
+      h('div', { className: 'pv-scroll' },
+        h('div', { className: 'pv-filler' }, h('b', null, 'Step 2 of 4'), h('p', null, 'Tell us about the plot you would like and how you plan to use it this season.')),
+        h(F.DisplayImage, { src: asset('Background_Tree_Planting_Autumn'), alt: 'Volunteers planting trees in autumn', parallax: true, imageStyle: 'min-height:200px', overlayHexColor: '#032d60', overlayOpacity: 0.4, customRichText: '<h2 style="font-size:24px;color:#ffffff;text-align:center">Grow with your neighbors</h2>' }),
+        h('div', { className: 'pv-filler' }, h('p', null, 'Plots are assigned in the order applications arrive. Returning gardeners keep their plot if they apply by March 1.'), h('p', null, 'Shared tools, water and compost are included with every plot.'), h('p', null, 'Workdays run the first Saturday of each month from April to October.'))))),
+    Demo('HTML overlay · View as Plain Text (viewAsPlainText__c true): the HTML fills the whole image and lays itself out, here a left-aligned block at the bottom with a tag. overlayHexColor #000000 at 0.35', h(F.DisplayImage, { src: asset('Background_Farmland_Aerial'), alt: '', imageStyle: 'height:240px', overlayHexColor: '#000000', overlayOpacity: 0.35, overlayMode: 'html',
+      customRichText: '<div style="height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 28px;color:#ffffff"><span style="align-self:flex-start;background:#ffffff;color:#032d60;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;margin-bottom:10px">Applications open</span><h2 style="font-size:30px;color:#ffffff">Community Garden Grants</h2><p style="font-size:16px;max-width:460px">Up to $5,000 for neighborhood groups growing food together.</p></div>' })),
+    Demo('No overlay color: the tint is the brand · overlayOpacity 0.35 · bottomMargin slds-m-bottom_large', h(F.DisplayImage, { src: asset('Background_Green_Leaves_Banner'), alt: '', imageStyle: 'height:160px; object-position:center bottom', overlayOpacity: 0.35, bottomMargin: 'slds-m-bottom_large' }))
+  ));
+</script>
+</body>
+</html>

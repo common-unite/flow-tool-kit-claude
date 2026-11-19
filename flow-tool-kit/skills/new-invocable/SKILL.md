@@ -30,7 +30,7 @@ Read on demand, beside this file:
 - [references/labels-and-descriptions.md](references/labels-and-descriptions.md): what the admin sees in Flow Builder and how to write it; class, method and variable names.
 - [references/testing.md](references/testing.md): the tests to write, the bulk test, test data that survives any org, the numbers to report.
 - [examples/account-giving-summary/](examples/account-giving-summary/): a finished action (Get Account Giving Summary) with its seam and its mock-only tests.
-- Plugin standards: `_shared/standards/documentation.md` (section 1, the writing shape for every description), `_shared/standards/naming.md`, `_shared/standards/project-config.md`.
+- Plugin standards: `_shared/standards/documentation.md` (section 1, the writing shape for every description; section 6, Naming), `_shared/standards/project-config.md`.
 
 ## 1. Look for one that exists
 

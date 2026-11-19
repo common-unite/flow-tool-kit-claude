@@ -1,6 +1,6 @@
 ---
 name: build-template
-description: Use when a Flow Tool Kit (FTK) form design (form-design's plan.json) needs to become a working draft Form Template in a Salesforce org, or when a review changes the plan and the draft must be rebuilt. Also when someone asks to build, rebuild or seed a Form Template from a plan, or to check a built template against its plan. Runs after form-design, usually from ftk-start.
+description: Not a front door: when ftk-start has not run in this conversation, load ftk-start first and let it route here. Use when a Flow Tool Kit (FTK) form design (form-design's plan.json) needs to become a working draft Form Template in a Salesforce org, or when a review changes the plan and the draft must be rebuilt: "the design is approved, build it in the sandbox", "rebuild the draft template", "check the template still matches its design", or seeding a Form Template from a plan. Runs after form-design.
 ---
 
 # Build Template
@@ -25,7 +25,7 @@ Python 3 standard library only. Run the scripts by their path in this skill fold
 
 ## Before you build
 
-1. **The plan** comes from form-design, normalized (`draw_plan.py` has run, so `form_type`, `styleTokens` and the template's switches are written) and reviewed. Its format is form-design's `references/plan-format.md`; the keys this skill reads, and the few it adds, are in [references/plan-keys.md](references/plan-keys.md).
+1. **The plan** comes from form-design, normalized (`draw_plan.py` has run, so `form_type`, `styleTokens` and the template's switches are written) and reviewed. Its format is [_shared/standards/plan-format.md](_shared/standards/plan-format.md); the keys this skill reads, and the few it adds, are in [references/plan-keys.md](references/plan-keys.md).
 2. **The project config** `flow-tool-kit.json` (ftk-start writes it) gives the org's **edition**, **audiences** and **brand kit** choice. The build finds it beside the plan or in a folder above it. Without it the build says so and assumes the paid edition with no brand kit.
 3. **New fields** (metadata mode; records mode leaves them out and names them as a follow-up). If the plan proposes fields (`new_field: true`, listed in its questions and answered), create them first, after org-catalog's `name-check` says each name is free:
    ```bash

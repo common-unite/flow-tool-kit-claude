@@ -14,15 +14,51 @@
     "Submit_Button_Label__c": "Submit Registration",
     "Confirmation_Page_Message__c": "<p>Thank you, {{Contact1_First_Name__c}}. Your registration for Riverside Community Garden's growing workshops is in, and your signed release is saved with it.</p><p>These workshops are how neighbors learn to grow food together, and knowing who is coming lets us plan seeds, tools and space for everyone.</p><p>Within [two business days] we will email {{Contact1_Email__c}} with your workshop date, what to bring and where to meet. Questions in the meantime? Write to [program contact] and we will help.</p>",
     "Offline_Message__c": "<p>Registration for the growing workshops is closed right now.</p><p>To hear when the next session opens, write to [program contact].</p>",
-    "Template_Footer_Text__c": ""
+    "Template_Footer_Text__c": "",
+    "Send_Save_Progress_Email__c": false,
+    "Attach_PDF_Confirmation__c": false,
+    "Button_Alignment__c": "spread",
+    "Hide_Stage_Indicator__c": false,
+    "Email_Template_Name_Confirmation__c": "Community_Program_Registration_Confirmation",
+    "Send_Confirmation__c": true,
+    "Recipients_Confirmation_Email__c": "Email",
+    "banner": {"layout": "overlay", "placement": "singleCardHeader", "height": "small", "title": "Community Program Registration"}
   },
   "banner": {"shape": "overlay", "subtitle": "Free growing workshops for neighbors", "tags": ["About 5 to 7 minutes"]},
   "style": {"from": "Flow Tool Kit default style (no brand kit chosen)"},
   "components": [
-    {"key": "your_details", "decision": "form-only", "object": "Form_Submission__c", "reason": "no catalog: no org connected"},
-    {"key": "demographics", "decision": "form-only", "object": "Form_Submission__c", "reason": "no catalog: no org connected"},
-    {"key": "organization", "decision": "form-only", "object": "Form_Submission__c", "reason": "no catalog: no org connected"},
-    {"key": "release", "decision": "form-only", "object": "Form_Submission__c", "reason": "no catalog: no org connected"}
+    {
+      "key": "your_details",
+      "decision": "form-only",
+      "object": "Form_Submission__c",
+      "reason": "no catalog",
+      "shape": "json",
+      "shape_asked": {"recommended": "json", "why": "no org catalog to reuse from, and these questions belong to this form", "question": "Keep the Contact Information questions as JSON on this form's section (recommended), or make a record component other forms can reuse?", "answer": "json"}
+    },
+    {
+      "key": "demographics",
+      "decision": "form-only",
+      "object": "Form_Submission__c",
+      "reason": "no catalog",
+      "shape": "json",
+      "shape_asked": {"recommended": "json", "why": "no org catalog to reuse from, and these questions belong to this form", "question": "Keep the About You questions as JSON on this form's section (recommended), or make a record component other forms can reuse?", "answer": "json"}
+    },
+    {
+      "key": "organization",
+      "decision": "form-only",
+      "object": "Form_Submission__c",
+      "reason": "no catalog",
+      "shape": "json",
+      "shape_asked": {"recommended": "json", "why": "no org catalog to reuse from, and these questions belong to this form", "question": "Keep the Your Organization questions as JSON on this form's section (recommended), or make a record component other forms can reuse?", "answer": "json"}
+    },
+    {
+      "key": "release",
+      "decision": "form-only",
+      "object": "Form_Submission__c",
+      "reason": "no catalog",
+      "shape": "json",
+      "shape_asked": {"recommended": "json", "why": "no org catalog to reuse from, and these questions belong to this form", "question": "Keep the Release questions as JSON on this form's section (recommended), or make a record component other forms can reuse?", "answer": "json"}
+    }
   ],
   "pages": [
     {
@@ -38,52 +74,191 @@
     {
       "Page_Label__c": "Your Details",
       "Description__c": "Tell us how to reach you, a little about yourself, and the organization you are with, if any. We use your contact details only for this program, and every demographic question can be skipped.",
-      "Estimated_Time__c": 3,
+      "Estimated_Time__c": 2,
       "Button_Label__c": "Continue",
       "condition": null,
       "sections": [
-        {"Header_Title__c": "Contact Information", "Header_Subtitle__c": "How we reach you about your workshop.", "Header_Icon_Name__c": "standard:contact", "Section_Frame__c": "box", "Header_Style__c": "outlined", "component": "your_details",
-         "fields": [
-           {"source_id": "first_name", "label": "First Name", "object": "Form_Submission__c", "field": "Contact1_First_Name__c", "control": "TextInput", "variant": "standard", "widths": [5, 6, 12], "required": true, "placement": "submission: packaged Contact 1 block; the Contact conversion reads it", "status": "supported", "condition": null},
-           {"source_id": "last_name", "label": "Last Name", "object": "Form_Submission__c", "field": "Contact1_Last_Name__c", "control": "TextInput", "variant": "standard", "widths": [7, 6, 12], "required": true, "placement": "submission: packaged Contact 1 block", "status": "supported", "condition": null},
-           {"source_id": "email", "label": "Email", "object": "Form_Submission__c", "field": "Contact1_Email__c", "control": "FormattedInput", "variant": "email", "widths": [7, 12, 12], "required": true, "placement": "submission: packaged Contact 1 block", "status": "supported", "condition": null},
-           {"source_id": "phone", "label": "Phone", "object": "Form_Submission__c", "field": "Contact1_Phone__c", "control": "FormattedInput", "variant": "tel", "widths": [5, 12, 12], "required": false, "placement": "submission: packaged Contact 1 block", "status": "supported", "condition": null},
-           {"source_id": "mailing_address", "label": "Mailing Address", "object": "Form_Submission__c", "field": "Id", "control": "Address", "variant": "Address", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text fields, one Address component (the row binds to Id; its five parts bind the fields)", "status": "supported", "condition": null},
-           {"label": "Street", "object": "Form_Submission__c", "field": "Mailing_Street__c", "control": "Address", "variant": "Street", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null},
-           {"label": "City", "object": "Form_Submission__c", "field": "Mailing_City__c", "control": "Address", "variant": "City", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null},
-           {"label": "State/Province", "object": "Form_Submission__c", "field": "Mailing_State_Province__c", "control": "Address", "variant": "State", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null},
-           {"label": "Zip/Postal Code", "object": "Form_Submission__c", "field": "Mailing_Postal_Code__c", "control": "Address", "variant": "PostalCode", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null},
-           {"label": "Country", "object": "Form_Submission__c", "field": "Mailing_Country__c", "control": "Address", "variant": "Country", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null}
-         ]},
-        {"Header_Title__c": "About You", "Header_Subtitle__c": "Optional questions that help us reach every neighbor.", "Header_Icon_Name__c": "standard:people", "Section_Frame__c": "box", "Header_Style__c": "outlined", "component": "demographics",
-         "fields": [
-           {"source_id": "age_range", "label": "Age Range", "object": "Form_Submission__c", "field": "Age_Range__c", "control": "Picklist", "variant": "separatedbuttons", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged demographic field", "status": "supported", "condition": null},
-           {"source_id": "gender", "label": "Gender", "object": "Form_Submission__c", "field": "Contact1_Gender__c", "control": "Picklist", "variant": "standard", "widths": [6, 6, 12], "required": false, "placement": "submission: packaged Contact 1 block", "status": "supported", "condition": null},
-           {"source_id": "race_ethnicity", "label": "Race & Ethnicity", "object": "Form_Submission__c", "field": "Contact1_Race_Ethnicity_Multiselect__c", "control": "MultiPicklist", "variant": "multiselectcheckbox", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged Contact 1 block", "status": "supported", "condition": null}
-         ]},
-        {"Header_Title__c": "Your Organization", "Header_Subtitle__c": "Leave this blank if you are registering on your own.", "Header_Icon_Name__c": "standard:account", "Section_Frame__c": "box", "Header_Style__c": "outlined", "component": "organization",
-         "fields": [
-           {"source_id": "organization_name", "label": "Organization Name", "object": "Form_Submission__c", "field": "Company__c", "control": "TextInput", "variant": "standard", "widths": [8, 12, 12], "required": false, "placement": "submission: packaged organization block; the Account conversion reads it", "status": "supported", "condition": null},
-           {"source_id": "organization_phone", "label": "Organization Phone", "object": "Form_Submission__c", "field": "Company_Phone__c", "control": "FormattedInput", "variant": "tel", "widths": [4, 6, 12], "required": false, "placement": "submission: packaged organization block", "status": "supported", "condition": null},
-           {"source_id": "organization_website", "label": "Organization Website", "object": "Form_Submission__c", "field": "Website__c", "control": "FormattedInput", "variant": "url", "widths": [8, 6, 12], "required": false, "placement": "submission: packaged field", "status": "supported", "condition": null}
-         ]}
+        {
+          "Header_Title__c": "Contact Information",
+          "Header_Subtitle__c": "How we reach you about your workshop.",
+          "Header_Icon_Name__c": "utility:user",
+          "Section_Frame__c": "box",
+          "Header_Style__c": "outlined",
+          "component": "your_details",
+          "fields": [
+            {
+              "source_id": "first_name",
+              "label": "First Name",
+              "object": "Form_Submission__c",
+              "field": "Contact1_First_Name__c",
+              "control": "TextInput",
+              "variant": "standard",
+              "widths": [5, 6, 12],
+              "required": true,
+              "placement": "submission: packaged Contact 1 block; the Contact conversion reads it",
+              "status": "supported",
+              "condition": null
+            },
+            {"source_id": "last_name", "label": "Last Name", "object": "Form_Submission__c", "field": "Contact1_Last_Name__c", "control": "TextInput", "variant": "standard", "widths": [7, 6, 12], "required": true, "placement": "submission: packaged Contact 1 block", "status": "supported", "condition": null},
+            {"source_id": "email", "label": "Email", "object": "Form_Submission__c", "field": "Contact1_Email__c", "control": "FormattedInput", "variant": "email", "widths": [7, 12, 12], "required": true, "placement": "submission: packaged Contact 1 block", "status": "supported", "condition": null},
+            {"source_id": "phone", "label": "Phone", "object": "Form_Submission__c", "field": "Contact1_Phone__c", "control": "FormattedInput", "variant": "phone", "widths": [5, 12, 12], "required": false, "placement": "submission: packaged Contact 1 block", "status": "supported", "condition": null},
+            {
+              "source_id": "mailing_address",
+              "label": "Mailing Address",
+              "object": "Form_Submission__c",
+              "field": "Id",
+              "control": "Address",
+              "variant": "Address",
+              "widths": [12, 12, 12],
+              "required": false,
+              "placement": "submission: packaged mailing text fields, one Address component (the row binds to Id; its five parts bind the fields)",
+              "status": "supported",
+              "condition": null
+            },
+            {"label": "Street", "object": "Form_Submission__c", "field": "Mailing_Street__c", "control": "Address", "variant": "Street", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null},
+            {"label": "City", "object": "Form_Submission__c", "field": "Mailing_City__c", "control": "Address", "variant": "City", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null},
+            {"label": "State/Province", "object": "Form_Submission__c", "field": "Mailing_State_Province__c", "control": "Address", "variant": "State", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null},
+            {"label": "Zip/Postal Code", "object": "Form_Submission__c", "field": "Mailing_Postal_Code__c", "control": "Address", "variant": "PostalCode", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null},
+            {"label": "Country", "object": "Form_Submission__c", "field": "Mailing_Country__c", "control": "Address", "variant": "Country", "widths": [12, 12, 12], "required": false, "placement": "submission: packaged mailing text field, a part of the Address component", "status": "supported", "condition": null}
+          ],
+          "Title__c": "Contact Information",
+          "Top_Margin__c": "slds-m-top_xx-large",
+          "Bottom_Margin__c": "slds-m-bottom_none"
+        },
+        {
+          "Header_Title__c": "About You",
+          "Header_Subtitle__c": "Optional questions that help us reach every neighbor.",
+          "Header_Icon_Name__c": "utility:people",
+          "Section_Frame__c": "box",
+          "Header_Style__c": "outlined",
+          "component": "demographics",
+          "fields": [
+            {
+              "source_id": "age_range",
+              "label": "Age Range",
+              "object": "Form_Submission__c",
+              "field": "Age_Range__c",
+              "control": "Picklist",
+              "variant": "separatedbuttons",
+              "widths": [12, 12, 12],
+              "required": false,
+              "placement": "submission: packaged demographic field",
+              "status": "supported",
+              "condition": null,
+              "options": ["Under 18", "18-24", "25-34", "35-44", "45-54", "55-64", "65 or Older", "Prefer Not to Answer"]
+            },
+            {
+              "source_id": "gender",
+              "label": "Gender",
+              "object": "Form_Submission__c",
+              "field": "Contact1_Gender__c",
+              "control": "Picklist",
+              "variant": "standard",
+              "widths": [6, 6, 12],
+              "required": false,
+              "placement": "submission: packaged Contact 1 block",
+              "status": "supported",
+              "condition": null,
+              "options": ["Male", "Female", "Non-binary", "Prefer to self-describe", "Prefer not to say"]
+            },
+            {
+              "source_id": "race_ethnicity",
+              "label": "Race & Ethnicity",
+              "object": "Form_Submission__c",
+              "field": "Contact1_Race_Ethnicity_Multiselect__c",
+              "control": "MultiPicklist",
+              "variant": "multiselectcheckbox",
+              "widths": [12, 12, 12],
+              "required": false,
+              "placement": "submission: packaged Contact 1 block",
+              "status": "supported",
+              "condition": null,
+              "options": ["White", "Black or African American", "American Indian or Alaska Native", "Asian", "Native Hawaiian or Other Pacific Islander", "Hispanic", "Other", "Prefer not to say"]
+            }
+          ],
+          "Title__c": "About You",
+          "Top_Margin__c": "slds-m-top_xx-large",
+          "Bottom_Margin__c": "slds-m-bottom_none"
+        },
+        {
+          "Header_Title__c": "Your Organization",
+          "Header_Subtitle__c": "Leave this blank if you are registering on your own.",
+          "Header_Icon_Name__c": "utility:company",
+          "Section_Frame__c": "box",
+          "Header_Style__c": "outlined",
+          "component": "organization",
+          "fields": [
+            {
+              "source_id": "organization_name",
+              "label": "Organization Name",
+              "object": "Form_Submission__c",
+              "field": "Company__c",
+              "control": "TextInput",
+              "variant": "standard",
+              "widths": [8, 12, 12],
+              "required": false,
+              "placement": "submission: packaged organization block; the Account conversion reads it",
+              "status": "supported",
+              "condition": null
+            },
+            {"source_id": "organization_phone", "label": "Organization Phone", "object": "Form_Submission__c", "field": "Company_Phone__c", "control": "FormattedInput", "variant": "phone", "widths": [4, 6, 12], "required": false, "placement": "submission: packaged organization block", "status": "supported", "condition": null},
+            {"source_id": "organization_website", "label": "Organization Website", "object": "Form_Submission__c", "field": "Website__c", "control": "FormattedInput", "variant": "url", "widths": [8, 6, 12], "required": false, "placement": "submission: packaged field", "status": "supported", "condition": null}
+          ],
+          "Title__c": "Your Organization",
+          "Top_Margin__c": "slds-m-top_xx-large",
+          "Bottom_Margin__c": "slds-m-bottom_none"
+        }
       ]
     },
     {
       "Page_Label__c": "Release and Signature",
       "Description__c": "Read the program release, then agree to it and sign. Your signature, printed name and date are saved with your registration.",
-      "Estimated_Time__c": 2,
+      "Estimated_Time__c": 1,
       "Button_Label__c": "Continue",
       "condition": null,
       "Details__c": "<p>[Release text: the program's participation and photo release, word for word.]</p>",
       "sections": [
-        {"Header_Title__c": "Release", "Header_Subtitle__c": "Confirm you have read and agree to the release above.", "Header_Icon_Name__c": "standard:contract", "Section_Frame__c": "box", "Header_Style__c": "outlined", "component": "release",
-         "fields": [
-           {"source_id": "i_have_read_and_agree_to_the_release_above", "label": "I have read and agree to the release above", "object": "Form_Submission__c", "field": "Agree_Consent__c", "control": "Checkbox", "variant": "attestation", "widths": [12, 12, 12], "required": true, "placement": "submission: packaged consent field", "status": "supported", "condition": null},
-           {"source_id": "signature", "label": "Signature", "object": "Form_Submission__c", "field": "Electronic_Signature__c", "control": "SignaturePad", "variant": "signaturePad", "widths": [12, 12, 12], "required": true, "placement": "submission: packaged electronic signature field", "status": "supported", "condition": null},
-           {"source_id": "printed_name", "label": "Printed Name", "object": "Form_Submission__c", "field": "Electronic_Signature_Print__c", "control": "TextInput", "variant": "standard", "widths": [8, 8, 12], "required": true, "placement": "submission: packaged electronic signature block", "status": "supported", "condition": null},
-           {"source_id": "date", "label": "Date", "object": "Form_Submission__c", "field": "Electronic_Signature_Date__c", "control": "DateInput", "variant": "date", "widths": [4, 4, 12], "required": true, "placement": "submission: packaged electronic signature block", "status": "supported", "condition": null}
-         ]}
+        {
+          "Header_Title__c": "Release",
+          "Header_Subtitle__c": "Confirm you have read and agree to the release above.",
+          "Header_Icon_Name__c": "utility:contract",
+          "Section_Frame__c": "box",
+          "Header_Style__c": "outlined",
+          "component": "release",
+          "fields": [
+            {
+              "source_id": "i_have_read_and_agree_to_the_release_above",
+              "label": "I have read and agree to the release above",
+              "object": "Form_Submission__c",
+              "field": "Agree_Consent__c",
+              "control": "Checkbox",
+              "variant": "attestation",
+              "widths": [12, 12, 12],
+              "required": true,
+              "placement": "submission: packaged consent field",
+              "status": "supported",
+              "condition": null
+            },
+            {"source_id": "signature", "label": "Signature", "object": "Form_Submission__c", "field": "Electronic_Signature__c", "control": "SignaturePad", "variant": "signaturePad", "widths": [12, 12, 12], "required": true, "placement": "submission: packaged electronic signature field", "status": "supported", "condition": null},
+            {
+              "source_id": "printed_name",
+              "label": "Printed Name",
+              "object": "Form_Submission__c",
+              "field": "Electronic_Signature_Print__c",
+              "control": "TextInput",
+              "variant": "standard",
+              "widths": [8, 8, 12],
+              "required": true,
+              "placement": "submission: packaged electronic signature block",
+              "status": "supported",
+              "condition": null
+            },
+            {"source_id": "date", "label": "Date", "object": "Form_Submission__c", "field": "Electronic_Signature_Date__c", "control": "DateInput", "variant": "date", "widths": [4, 4, 12], "required": true, "placement": "submission: packaged electronic signature block", "status": "supported", "condition": null}
+          ],
+          "Title__c": "Release",
+          "Top_Margin__c": "slds-m-top_xx-large",
+          "Bottom_Margin__c": "slds-m-bottom_none"
+        }
       ]
     }
   ],
@@ -98,5 +273,32 @@
     {"what": "Form-type rules row 5: three short pages, base indicator, stages off, docked buttons", "why": "Three pages, not an application or grant, counted at about 6 minutes"},
     {"what": "The information page is kept, labelled About the Program, button Get Started, visible to respondents only", "why": "The brief asks for it; it carries real program information"},
     {"what": "Every target is a packaged Form Submission field", "why": "No org connected; packaged fields exist in every Flow Tool Kit org, so the plan builds unchanged"}
-  ]
+  ],
+  "emails": {
+    "confirmation": {
+      "name": "Community_Program_Registration_Confirmation",
+      "subject": "You are registered, {{FlowToolKit__Contact1_First_Name__c}}",
+      "heading": "Thank you for registering",
+      "body": ["Thank you, {{FlowToolKit__Contact1_First_Name__c}}. Your registration for the growing workshops is in, and your signed release is saved with it.", "Within [two business days] we will email your workshop date, what to bring and where to meet. Questions? Write to [program contact]."]
+    }
+  },
+  "styleTokens": {
+    "--ftk-color-primary": "#0b5cab",
+    "--ftk-color-label": "#353535",
+    "--ftk-color-text": "#181818",
+    "--ftk-radius-medium": "8px",
+    "--ftk-font-family": "Arial, Helvetica, sans-serif",
+    "--ftk-color-border": "#8A8A8A",
+    "--ftk-border-scale": "1.5",
+    "--ftk-font-scale": "1.5",
+    "--ftk-spacing-scale": "1.25",
+    "--ftk-control-scale": "1.5",
+    "--ftk-font-family-heading": "Arial, Helvetica, sans-serif",
+    "--ftk-line-height": "1.875",
+    "--ftk-section-border-color": "#0b5cab",
+    "--ftk-section-border-width": "2px",
+    "--ftk-header-title-color": "#0b5cab",
+    "--ftk-header-subtitle-color": "#353535"
+  },
+  "rich_text_scale": 1.5
 }

@@ -1,7 +1,7 @@
 {
   "name": "flow-tool-kit",
   "displayName": "Flow Tool Kit",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Turn any form you already have into a working Salesforce form, and build interfaces, Experience Cloud sites and advanced Flow screens with Flow Tool Kit.",
   "author": {
     "name": "Common-Unite"

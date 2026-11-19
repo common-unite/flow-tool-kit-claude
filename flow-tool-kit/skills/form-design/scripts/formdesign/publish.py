@@ -5,11 +5,11 @@ from the person's own copy of the design system (its link is in flow-tool-kit.js
 
 - Claude Code copies them server side from that artifact ({"artifact": <link>, "path": ...} in the files map), up to 255
   files a call;
-- chat cannot copy server side, so the files are written from the full kit (the release zip ftk-start unpacks), at most 16
+- chat cannot copy server side, so the files are written from the kit the plugin ships (its ftk-design-system skill), at most 16
   files a call.
 
 When the account has no Design type, review.html is one self-contained page with the same components, built from the
-full kit (React, bundle.js, bundle.css and only the icons the boards use).
+kit (React, bundle.js, bundle.css and only the icons the boards use).
 """
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ from datetime import datetime, timezone
 from . import boards, nodes
 
 DS_NAMESPACE = "ftk"
-# Canvas path -> path inside the design system (the full kit's project/ tree, as ftk-start installs it)
+# Canvas path -> path inside the design system (the kit's project/ tree, as ftk-start installs it)
 DS_FILES = {
     "project/ds/ftk/components/bundle.css": "project/components/bundle.css",
     "project/ds/ftk/components/bundle.js": "project/components/bundle.js",
@@ -238,7 +238,7 @@ def write_canvas(design: pathlib.Path, all_boards: list, groups: list, style: di
 def publish_batches(design: pathlib.Path, written: list, stale: list, mode: str, ds: dict, kit: pathlib.Path | None) -> dict:
     """design/publish-batches.json: the publish as `files` maps (root design/), in order, each within the mode's per-call limit.
 
-    code: the design system copied server side from the person's own artifact. chat: its files written from the full kit,
+    code: the design system copied server side from the person's own artifact. chat: its files written from the kit,
     copied first into design/project/ds/ftk/. canvas.json goes in the last batch, so the canvas opens on a complete set."""
     entries = [(f"project/{name}", f"project/{name}") for name in written]
     if mode == "code":
@@ -248,7 +248,7 @@ def publish_batches(design: pathlib.Path, written: list, stale: list, mode: str,
         entries += [(path, {"artifact": ds["url"], "path": src}) for path, src in DS_FILES.items()]
     else:
         if not kit:
-            raise SystemExit("chat publishing writes the design system files from the full kit, and it was not found; get it with ftk-start's design system step (`ds_install.py fetch` in Claude Code, or `ds_install.py unpack --zip` on the attached release zip in chat), or pass --kit")
+            raise SystemExit("chat publishing writes the design system files from the kit, and it was not found: it ships in the plugin's ftk-design-system skill, so install the whole Flow Tool Kit plugin, or pass --kit")
         for path, src in DS_FILES.items():
             target = design / path
             target.parent.mkdir(parents=True, exist_ok=True)

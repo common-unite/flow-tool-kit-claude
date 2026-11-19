@@ -1,0 +1,27 @@
+<!-- @dsCard group="Examples" height=120 subtitle="a record under a parent: one application to the fund" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* An application under the Community Resilience Fund: the application form beside its status and the fund it belongs to, then what happens next */
+  var site = { layout: 'customerService', logo: 'FlowToolKit__FlowToolKit_Gray', siteName: 'Riverside Community Fund', navItems: ['Home', 'Funding', 'Programs', 'Apply', 'Contact'], currentNav: 3,
+    footer: '<p style="text-align: center;">Riverside Community Fund · 100 Riverside Plaza · grants@riverside.example.org</p>' };
+  var brand = { brandColor: '#2e844a', accentColor: '#F4BE45' };
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, site,
+      h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+        h(SB.Hero, Object.assign({ headingAlign: 'left', bodyAlign: 'left', background: '#032D60', backgroundGradient: 'diagonal', sectionLabel: 'Application APP-0142', heading: 'Valley Food Share: letter of interest', subheading: 'Community Resilience Fund · started Aug 4 · last saved yesterday' }, brand)))),
+      h(SB.Section, { sectionHeight: 32 },
+        h(SB.Column, { columnWidth: '8' }, h(SB.FormSlot, { form: 'Grant Application', kind: 'Form Template', component: 'FormTemplate', description: 'Organization, project, budget and certification pages in Stages Mode', height: 520 })),
+        h(SB.Column, { columnWidth: '4' },
+          h(SB.Facts, Object.assign({ factsDisplay: 'stacked', heading: 'Status', headingAlign: 'left', items: [{ title: 'Stage', value: 'Letter of interest' }, { title: 'Pages done', value: '3 of 7' }, { title: 'Due', value: 'Sept 30' }] }, brand)),
+          h(SB.RecordCard, Object.assign({ cardType: 'headerBand', eyebrow: 'Applying to', title: 'Community Resilience Fund', subtitle: '$25,000 to $75,000 · two years', buttons: [{ label: 'View fund', url: '/funding/community-resilience', style: 'link' }] }, brand)))),
+      h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+        h(SB.Steps, Object.assign({ sectionLabel: 'After you submit', heading: 'What happens next', items: [{ title: 'We read it', description: 'A program officer reads every letter within two weeks.' }, { title: 'We talk', description: 'If it fits, we call to plan the full proposal together.' }, { title: 'We decide', description: 'Decisions come within 60 days of the deadline.' }] }, brand))))));
+</script>
+</body>
+</html>

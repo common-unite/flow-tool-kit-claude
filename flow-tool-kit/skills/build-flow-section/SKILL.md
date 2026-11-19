@@ -29,7 +29,7 @@ Read on demand, beside this file:
 - [references/pitfalls.md](references/pitfalls.md): the traps, each with its symptom and fix.
 - [references/spec-format.md](references/spec-format.md): the section spec `scripts/flowsection.py` reads.
 - [examples/README.md](examples/README.md): four worked examples (a household contact picker, a two-step section, a custom LWC inside a section, packaged screen components inside a section).
-- Plugin standards: `_shared/standards/documentation.md` (section 2 is the flow standard: names, elements, descriptions), `_shared/standards/naming.md`, `_shared/standards/project-config.md`. Where this skill and a standard disagree, the standard wins, except where this page says the contract needs otherwise and why.
+- Plugin standards: `_shared/standards/documentation.md` (section 2 is the flow standard: names, elements, descriptions; section 6, Naming), `_shared/standards/project-config.md`. Where this skill and a standard disagree, the standard wins, except where this page says the contract needs otherwise and why.
 
 ## 1. Start from what exists
 

@@ -22,7 +22,7 @@ A Form Submission field holds an answer until the conversion copies it to its re
    - a single-select question with **its own options** (household size bands, program track, shirt size): a new picklist field with exactly those values. The scale families cannot take arbitrary options (below);
    - a multi-select question: there is no generic multi-select slot, so a form's own multi-selects (programs of interest, days available) get their own fields.
 
-New fields follow [_shared/standards/naming.md](../_shared/standards/naming.md) (mirror the target field's name; shape it like its target) and carry a description from the moment they are created ([_shared/standards/documentation.md](../_shared/standards/documentation.md), section 4: a description always; inline help only when a respondent needs it, in their words).
+New fields follow [_shared/standards/documentation.md](../_shared/standards/documentation.md), section 6, Naming (mirror the target field's name; shape it like its target), and carry a description from the moment they are created ([_shared/standards/documentation.md](../_shared/standards/documentation.md), section 4: a description always; inline help only when a respondent needs it, in their words).
 
 ## How one field serves many forms
 

@@ -1,6 +1,6 @@
 ---
 name: build-repeater
-description: Use when a Flow Tool Kit Repeater has to be built or changed, on a Form Template page section or as a Form (Repeater) component on a screen flow, after repeating-data chose a Repeater or when someone asks for one directly ("let people add up to four household members", "make this section repeat"). Sets the minimum and maximum rows, the New, Clone and Delete actions and their labels, row spacing and the divider, the Pre-fill Template, the Section Tag a prefill flow fills, the conversion setting and the header, checks them against the package's property list, and writes them into plan.json, onto an existing section, or as the flow screen component.
+description: Not a front door: when ftk-start has not run in this conversation, load ftk-start first and let it route here. Use when a Flow Tool Kit Repeater has to be built or changed, on a Form Template page section or as a Form (Repeater) component on a screen flow, after repeating-data chose a Repeater or when someone asks for one directly ("let people add up to four household members", "make this section repeat"). Sets the minimum and maximum rows, the New, Clone and Delete actions and their labels, row spacing and the divider, the Pre-fill Template, the Section Tag a prefill flow fills, the conversion setting and the header, checks them against the package's property list, and writes them into plan.json, onto an existing section, or as the flow screen component.
 ---
 
 # Build Repeater
@@ -12,7 +12,7 @@ A **Repeater is not a component.** It is a Form Template page section type, and 
 Read first, beside this file:
 - [_shared/standards/repeating-rows.md](_shared/standards/repeating-rows.md): the rules both build skills follow (shape of the row component, rows in their own section, minimum and maximum, labels, prefill, deleted rows, conversion) and the spec's common keys.
 - [references/properties.md](references/properties.md): every page section field and every flow screen property a Repeater uses, what it does and when to set it.
-- Plugin standards: [_shared/standards/documentation.md](_shared/standards/documentation.md), [_shared/standards/naming.md](_shared/standards/naming.md), [_shared/standards/component-shapes.md](_shared/standards/component-shapes.md), [_shared/standards/project-config.md](_shared/standards/project-config.md).
+- Plugin standards: [_shared/standards/documentation.md](_shared/standards/documentation.md) (section 6 is Naming), [_shared/standards/component-shapes.md](_shared/standards/component-shapes.md), [_shared/standards/project-config.md](_shared/standards/project-config.md).
 
 ## Where it runs
 

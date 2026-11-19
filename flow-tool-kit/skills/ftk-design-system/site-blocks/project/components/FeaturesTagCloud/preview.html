@@ -1,0 +1,18 @@
+<!-- @dsCard group="Features" height=120 subtitle="tag cloud" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  SB.previewAt(1280);
+  /* Showcase home page chapter: Tag cloud */
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null,
+    h(SB.Section, {"sectionHeight": 32},
+      h(SB.Column, null,
+        h(SB.Block, {"sectionType": "pills", "heading": "Every pill style", "subheading": "Hero badges render through the same vocabulary.", "paddingTop": "medium", "paddingBottom": "medium", "items": [{"title": "Neutral", "style": "neutral"}, {"title": "Brand", "style": "brand"}, {"title": "Accent", "style": "accent"}, {"title": "Outline", "style": "outline"}], "headingAlign": "left", "bodyAlign": "left"})))));
+</script>
+</body>
+</html>

@@ -48,7 +48,6 @@ from xml.sax.saxutils import escape
 NS = "FlowToolKit__"
 STAR = "*__"
 HERE = pathlib.Path(__file__).resolve().parent
-SKILLS = HERE.parent.parent
 PROMOTE_AT = 2  # templates: a section on two or more templates is worth one shared component
 MAX_AGE_HOURS = 24
 SHAPES = ("record", "metadata")
@@ -324,9 +323,30 @@ def signature(qs):
 
 # ---- grouping: org-catalog's finding -----------------------------------------------------------------------------------
 
+def sibling(name, marker):
+    """The scripts folder of another skill of this plugin that holds marker, whether its folder is <name> or
+    <plugin name>:<name> (_shared/lib/siblings.py), or None when it is not installed."""
+    if str(HERE.parent / "_shared" / "lib") not in sys.path:
+        sys.path.insert(0, str(HERE.parent / "_shared" / "lib"))
+    try:
+        import siblings
+    except ImportError:
+        return None
+    try:
+        return pathlib.Path(siblings.find(str(HERE.parent), name, subdir="scripts", markers=[marker]))
+    except siblings.NotFound:
+        return None
+
+
 def load_org_catalog(path=None):
-    """org-catalog's scripts (its repeated-sections finding and section measure), from the skill beside this one."""
-    folder = pathlib.Path(path) if path else SKILLS / "org-catalog" / "scripts"
+    """org-catalog's scripts (its repeated-sections finding and section measure), from the org-catalog skill of this
+    plugin (its folder is org-catalog or <plugin name>:org-catalog; _shared/lib/siblings.py finds either)."""
+    if path:
+        folder = pathlib.Path(path)
+    else:
+        folder = sibling("org-catalog", "ocbuild.py")
+        if folder is None:  # no org-catalog (chat): the catalog's own groups are used
+            return None
     if not (folder / "ocbuild.py").is_file():
         return None
     if str(folder) not in sys.path:
@@ -744,8 +764,9 @@ def print_plan(conversion, out=None):
 
 def load_component_module(path=None):
     """build-form-component's scripts/component.py: it copies and renames a design, checks it and writes metadata."""
-    candidate = pathlib.Path(path) if path else SKILLS / "build-form-component" / "scripts" / "component.py"
-    if not candidate.is_file():
+    folder = None if path else sibling("build-form-component", "component.py")
+    candidate = pathlib.Path(path) if path else (folder / "component.py" if folder else None)
+    if candidate is None or not candidate.is_file():
         raise ConsolidateError("build-form-component's scripts/component.py was not found beside this skill. It writes the "
                                "shared component; install the whole Flow Tool Kit plugin, or pass --component-py <path>.")
     spec = importlib.util.spec_from_file_location("ftk_component", candidate)

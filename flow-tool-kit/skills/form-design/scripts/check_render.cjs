@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Headless render check of design/review.html: node check_render.cjs <design folder> [--write-heights] (usage: references/publishing.md).
+// Headless render check of design/review.html: node check_render.cjs <design folder> [--write-heights] (usage: references/drawing.md, Publishing the canvas).
 const fs = require("fs");
 const os = require("os");
 const path = require("path");

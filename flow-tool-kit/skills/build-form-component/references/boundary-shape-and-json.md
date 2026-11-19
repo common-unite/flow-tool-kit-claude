@@ -80,7 +80,7 @@ Pick the control by the option set's size and label length, not by habit:
 | A filtered lookup | `referenceFieldOverrideType__c: recordpicker` with `recordPickerConfig__c` |
 | Friendlier wording or a short explanation per option | `picklistOptionSettings__c` (label, description, score, icon per stored value) and `picklistDescriptionDisplay__c` |
 
-When one page mixes single-selects, make them all `surveybuttons`. The house rules ([_shared/standards/form-house-rules.md](../_shared/standards/form-house-rules.md)) and [references/presentation-decisions.md](presentation-decisions.md) set widths, option columns and Boolean shapes.
+When one page mixes single-selects, make them all `surveybuttons`. The house rules (in [_shared/standards/form-type-rules.md](../_shared/standards/form-type-rules.md)) and [references/presentation-decisions.md](presentation-decisions.md) set widths, option columns and Boolean shapes.
 
 ### Labels and descriptions people can read
 

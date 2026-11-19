@@ -1,0 +1,37 @@
+<!-- @dsCard group="Sections" height=2600 width=900 subtitle="bannerSection · Banner__c" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Banner preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}.pv-label{font:600 12px/1.4 var(--font-sans);color:var(--label);margin:0 0 6px;text-transform:uppercase;letter-spacing:.06em}.pv-note{font:13px/1.5 var(--font-sans);color:var(--text);margin:6px 0 0}.pv-card{background:var(--surface);border-radius:var(--radius-medium);box-shadow:0 2px 6px rgba(0,0,0,.12);overflow:hidden}.pv-card-body{padding:0 2.5rem 20px}.pv-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.pv-steps{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px}.pv-step{background:var(--surface);border-radius:var(--radius-medium);box-shadow:0 2px 6px rgba(0,0,0,.12);padding:14px;font:600 13px/1.5 var(--font-sans)}@media (max-width:560px){.pv-row,.pv-steps{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  var photo = '../../assets/Backgrounds/Background_Volunteer_Build_Day.jpg';
+  var logo = '../../assets/Logos/FlowToolKit_Gray.png';
+  var base = { image: photo, imageAlt: 'Volunteers building raised garden beds', logo: logo, logoAlt: 'Flow Tool Kit', tags: '2027 season; About 10 minutes', title: '<p>Become a Member</p>', subtitle: '<p>Household membership application, priced by household income.</p>' };
+  function Block(label, note, child) { return h('div', null, h('p', { className: 'pv-label' }, label), child, note ? h('p', { className: 'pv-note' }, note) : null); }
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Block('Single-page form · layout compact · placement singleCardHeader', 'The recommended banner for a one-page form: it is the top of the form card, with square bottom corners and the fields lined up with its text.',
+      h('div', { className: 'pv-card' }, h(F.Banner, Object.assign({}, base, { layout: 'compact', placement: 'singleCardHeader' })),
+        h('div', { className: 'pv-card-body' }, h(F.TextInput, { label: 'First name', required: true, value: 'Rosa' })))),
+    Block('Multi-page form with the vertical page indicator · layout overlay, height small · placement header', 'Short, so the first step sits right under it. The scrim is the main brand color, with one or two tags.',
+      h('div', { className: 'pv-stack', style: { gap: 12 } }, h(F.Banner, Object.assign({}, base, { layout: 'overlay', placement: 'header', scrimColor: '#2b3a1f', tags: 'About 10 minutes' })),
+        h('div', { className: 'pv-steps' }, h('div', { className: 'pv-step' }, '1  Household', h('br'), '2  Contact', h('br'), '3  Garden'), h('div', { className: 'pv-step' }, 'Household and income')))),
+    Block('Layout split · a very simple title', 'Offered, never the default. The same height as Overlay at every size.',
+      h(F.Banner, Object.assign({}, base, { layout: 'split', placement: 'header', tags: '', subtitle: '' }))),
+    Block('Height small, medium, large · Overlay', 'Small follows its text; Medium is 240px and Large 340px, for a form that features its photo.',
+      h('div', { className: 'pv-stack', style: { gap: 12 } }, ['small', 'medium', 'large'].map(function (s) { return h(F.Banner, Object.assign({ key: s }, base, { height: s, placement: 'header', title: '<p>Height ' + s + '</p>' })); }))),
+    Block('logoShape square, circle, none · tagColor', 'None keeps the logo and drops its white card. A dark tag color turns the pill text white.',
+      h('div', { className: 'pv-row' },
+        h(F.Banner, Object.assign({}, base, { logoShape: 'square', placement: 'header', subtitle: '', title: '<p>Square</p>' })),
+        h(F.Banner, Object.assign),
+        h(F.Banner, Object.assign({}, base, { logoShape: 'none', placement: 'header', subtitle: '', title: '<p>None</p>', tagColor: '#f0c040' })))),
+    Block('No image · backgroundColor', 'Without a photo the banner shows the background color, or the brand.',
+      h(F.Banner, Object.assign)),
+    Block('paddingTop large, paddingBottom medium, paddingHorizontal large', 'Section padding adds space inside the banner, around its text. Margin moves the whole banner.',
+      h(F.Banner, Object.assign({}, base, { placement: 'header', paddingTop: 'slds-p-top_large', paddingBottom: 'slds-p-bottom_medium', paddingHorizontal: 'slds-p-horizontal_large' })))
+  ));
+</script>
+</body>
+</html>

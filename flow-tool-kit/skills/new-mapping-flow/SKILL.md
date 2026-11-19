@@ -20,7 +20,7 @@ Read on demand, beside this file:
 - [references/traps.md](references/traps.md): the Flow Builder round-trip traps, the Automated Process user, namespaces, record types and duplicate rules, and the fixes a cloned flow must carry forward after an upgrade.
 - [references/form-template-discovery.md](references/form-template-discovery.md): draft a field map from a built Form Template when no mapping document exists.
 - `scripts/wiring_check.py`: checks a new flow's Conversion Map Flow values (value = the flow's API name) and the template and section settings that select them (Step 6, in references/build-deploy-and-prefill.md).
-- Plugin standards: `_shared/standards/mapping-preference.md`, `_shared/standards/documentation.md` (section 2, Flows: names, elements and descriptions), `_shared/standards/naming.md`, `_shared/standards/plan-format.md`, `_shared/standards/catalog-format.md`, `_shared/standards/project-config.md`. Where this skill and a standard disagree, the standard wins.
+- Plugin standards: `_shared/standards/mapping-preference.md`, `_shared/standards/documentation.md` (section 2, Flows: names, elements and descriptions; section 6, Naming), `_shared/standards/plan-format.md`, `_shared/standards/catalog-format.md`, `_shared/standards/project-config.md`. Where this skill and a standard disagree, the standard wins.
 
 ## Step 0: Start from what exists
 

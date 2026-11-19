@@ -22,10 +22,10 @@ is how this package rots.
 ## Where a new source goes
 
 ```
-scripts/formmigrate/sources/<platform>/
-    __init__.py     what the platform gives up, and what it does not
+scripts/formmigrate/sources/<platform>/      no __init__.py: a namespace package, imported as formmigrate.sources.<platform>
     parser.py       source file -> a model  (skip if the export is already JSON)
-    adapter.py      model -> IR, via ir.new_document() and ir.finalize()
+    adapter.py      model -> IR, via ir.new_document() and ir.finalize(); its docstring opens with
+                    what the platform gives up, and what it does not
 references/sources/<platform>.md    how to obtain the export; what to check
 ```
 
@@ -152,7 +152,7 @@ grep -oE 'data-condition="[^"]+"' form.html | wc -l     # 25, the real count
 ## Registering it
 
 1. Add the module under `sources/<platform>/`.
-2. Note it in `sources/__init__.py` and the package docstring.
+2. Note it in `sources/__init__.py` and in the docstring at the top of its `adapter.py`.
 3. Write `references/sources/<platform>.md`: how to obtain the export, what it
    does and does not carry, and the source-specific sanity checks.
 4. Add a row to the source table in `SKILL.md`, and a test with an invented

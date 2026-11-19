@@ -1,0 +1,19 @@
+<!-- @dsCard group="Shared parts" height=120 subtitle="buttons" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Buttons preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* Every button Style, on a light block and on a dark one */
+  var buttons = [{ label: 'Brand', url: '#', style: 'brand' }, { label: 'Accent', url: '#', style: 'accent' }, { label: 'Outline', url: '#', style: 'outline' }, { label: 'Light', url: '#', style: 'light' }, { label: 'Link', url: '#', style: 'link' }];
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+      h(SB.Buttons, { buttons: buttons, buttonAlign: 'left', brandColor: '#53B95B', accentColor: '#F4BE45' }),
+      h(SB.Buttons, { buttons: buttons, buttonAlign: 'left', brandColor: '#53B95B', accentColor: '#F4BE45', background: '#032D60' }),
+      h(SB.Buttons, { buttons: [{ label: 'Apply for a grant', description: 'Two-year operating support', url: '#', style: 'panel' }, { label: 'Volunteer', description: 'Saturday shifts', url: '#', style: 'panel' }], brandColor: '#53B95B' })))));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Blocks" height=120 subtitle="every block's shared settings" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Block preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* The Background, Border and Spacing panes every block shares, on one Callout: plain, gradient with texture, photo with scrim, inset band */
+  var copy = { heading: 'Bring your whole crew.', description: 'Groups of five to twenty can book a Saturday shift together.', headingAlign: 'left', bodyAlign: 'left', buttons: [{ label: 'Book a group shift', url: '#', style: 'brand' }], brandColor: '#53B95B' };
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null,
+      h(SB.Callout, Object.assign({}, copy, { background: '#EEF1F4' })),
+      h(SB.Callout, Object.assign({}, copy, { background: '#032D60', backgroundGradient: 'diagonal', backgroundTexture: 'dots' })),
+      h(SB.Callout, Object.assign({}, copy, { backgroundImageSource: 'asset', backgroundImageAsset: 'FlowToolKit__Background_Volunteer_Team_Talking', backgroundOverlay: 'side' })),
+      h(SB.Callout, Object.assign({}, copy, { background: '#2e844a', width: 'inset', borderTop: true, borderWidth: 4 }))))));
+</script>
+</body>
+</html>

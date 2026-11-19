@@ -1,5 +1,5 @@
 """Build catalog.json from the rows in raw.json. Pure: no org access, so the same code runs after the Salesforce CLI
-or after a connector in chat. The format is references/catalog-format.md.
+or after a connector in chat. The format is _shared/standards/catalog-format.md.
 """
 from __future__ import annotations
 
@@ -448,11 +448,27 @@ def link_places(raw, index, problems, warnings):
         for unreadable in entry.get("unreadable") or []:
             warnings.append(f"{words}: could not read {unreadable}")
         summary[kind] = {"read": True, "files": entry.get("files", 0), "places": linked}
+        for short in entry.get("short") or []:
+            # A retrieve that lists more files than reach the folder is a partial read, never a quiet one
+            summary[kind].setdefault("short", []).append(short)
+            warnings.append(f"{words}: the {short['type']} retrieve listed {short['listed']} files but only {short['arrived']} arrived, "
+                            f"so used_in may miss {words} that name a form. Run collect again with no other retrieve against this "
+                            f"org at the same time")
     missing = [PLACE_KINDS[k] for k in PLACE_KINDS if not summary[k]["read"]]
-    summary["complete"] = not missing
-    summary["note"] = None if not missing else (
-        f"Not read: {', '.join(missing)}. used_in lists Form Templates, components and only the kinds of place that were read, "
-        f"so it is not every place a component is used. Name what was not read before changing a shared component in place.")
+    partial = []
+    for k in PLACE_KINDS:
+        counts = ", ".join(f"{s['arrived']} of {s['listed']}" for s in summary[k].get("short") or [])
+        if counts:
+            partial.append(f"{PLACE_KINDS[k]} ({counts} files)")
+    summary["complete"] = not missing and not partial
+    notes = []
+    if missing:
+        notes.append(f"Not read: {', '.join(missing)}.")
+    if partial:
+        notes.append(f"Read in part: {', '.join(partial)}.")
+    summary["note"] = None if not notes else (
+        " ".join(notes) + " used_in lists Form Templates, components and only the places that were read, "
+        "so it is not every place a component is used. Name what was not read before changing a shared component in place.")
     for place in dynamic:
         warnings.append(f"{place['label']} ({place['role']}, {place['where']}): {place['via']} takes its form from {place['variable']}, "
                         f"chosen at run time, so it cannot be tied to one component")

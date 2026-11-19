@@ -1,0 +1,27 @@
+<!-- @dsCard group="Sections" height=1530 width=900 subtitle="flowFormLikertMatrix · Likert Matrix section" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>LikertMatrix preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var agree = ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree'];
+  var rows = [
+    { label: 'I feel connected to my neighbors', required: true },
+    { label: 'I know where to get help with home repairs', required: true, helpText: 'Repairs like a leaky faucet or a broken step.' },
+    { label: 'Getting groceries is easy for me' },
+    { label: 'I have someone to call in an emergency', helpText: 'A friend, family member or neighbor.', helpTextDisplay: 'Below Label' }
+  ];
+  var number = [{ label: 'Never', value: 0 }, { label: 'Rarely', value: 1 }, { label: 'Sometimes', value: 2, help: 'A few times a month' }, { label: 'Often', value: 3 }, { label: 'Always', value: 4 }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('grid · Likert_Mode__c Picklist: columns are the first field\'s picklist values; zebra rows, brand dot and 12% tint when chosen', h(F.LikertMatrix, { label: 'Community connection', scale: agree, rows: rows, defaultValues: { row0: 'Agree', row2: 'Neutral' } })),
+    Demo('grid · Likert_Mode__c Number with Show_Total_Score__c: the total sums the scale values; Partial until every row is answered', h(F.LikertMatrix, { label: 'Isolation check', mode: 'Number', scale: number, showTotal: true, rows: [{ label: 'I feel lonely' }, { label: 'I miss having people around' }, { label: 'I feel left out' }], defaultValues: { row0: 1, row1: 3 } })),
+    Demo('grid · after Next with required rows unanswered (reportValidity): only required, unanswered rows turn pink with the 3px error bar and "Please select an answer to continue." (Likert_Row_Error) under them; the answered required row and the optional row stay plain. Answering a row clears its error', h(F.LikertMatrix, { scale: agree, rows: [rows[0], { label: 'I feel safe walking in my neighborhood', required: true }, rows[1], rows[2]], showErrors: true, defaultValues: { row1: 'Agree' } })),
+    Demo('MOBILE version (stacked): on a phone (FORM_FACTOR Small), or in a column under 480px, each row becomes its own survey-button question. Desktop always shows the grid', h('div', { style: { maxWidth: 420 } }, h(F.LikertMatrix, { scale: ['Not at all', 'A little', 'A lot'], layout: 'stacked', rows: [{ label: 'How much does cost keep you from activities?', required: true }, { label: 'How much does transportation?' }], defaultValues: { row0: 'A little' } })))
+  ));
+</script>
+</body>
+</html>

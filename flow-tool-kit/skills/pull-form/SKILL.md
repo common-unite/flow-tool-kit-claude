@@ -66,11 +66,13 @@ A value that only looks like a record Id outside a field reference is reported a
 
 ## Check what landed
 
-Run build-form-component's checker (its skill folder sits beside this one) on the folder the files went to. It checks every form in that folder; read the lines for this form's records:
+Run build-form-component's checker on the folder the files went to. build-form-component is another skill of this plugin; its folder sits beside this one, named `build-form-component` or `<plugin name>:build-form-component` depending on where the plugin is installed, and `_shared/lib/siblings.py` prints whichever it is. From this skill's folder:
 
 ```bash
-python3 ../build-form-component/scripts/component.py check <destination folder> [--catalog <catalog.json>]
+python3 "$(python3 _shared/lib/siblings.py build-form-component --subdir scripts)/component.py" check <destination folder> [--catalog <catalog.json>]
 ```
+
+It checks every form in that folder; read the lines for this form's records.
 
 With the catalog of the org the form is going to (run org-catalog against that org first), it also reports every field the form uses that the other org lacks, which is the usual reason a moved form renders with questions missing.
 

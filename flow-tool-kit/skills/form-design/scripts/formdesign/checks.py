@@ -89,7 +89,9 @@ def respondent_text(plan: dict):
                     yield f"pages[{p}].sections[{s}] field {field.get('label', '')!r}.{key}", field.get(key) or ""
 
 
-def check(plan: dict, base=None, project: dict | None = None) -> tuple[list[str], list[str]]:
+def check(plan: dict, base=None, project: dict | None = None, types=None) -> tuple[list[str], list[str]]:
+    """types: the kit's index.d.ts (kittypes.KitTypes). A control the kit does not have is then reported by kittypes,
+    with the closest name, instead of here."""
     errors, warnings = [], []
     template = plan.get("template") or {}
     long_form = planrules.is_long(plan)
@@ -161,7 +163,7 @@ def check(plan: dict, base=None, project: dict | None = None) -> tuple[list[str]
             if section.get("Component_Type__c") == "Lightning Web Component" and not section.get("lwcComponentName__c"):
                 errors.append(f"{sw}: a custom LWC section needs lwcComponentName__c (the component build-custom-lwc builds)")
             for field in fields:
-                errors += field_problems(f"{sw}, field {field.get('label', '')!r}", field)
+                errors += field_problems(f"{sw}, field {field.get('label', '')!r}", field, types)
             for kind, run in planrules.addressparts.groups(fields):
                 if kind == "address":  # the package draws an address only with its row and all five parts
                     errors += planrules.addressparts.group_problems(run, sw)
@@ -391,10 +393,11 @@ def update_problems(where: str, comp: dict) -> list[str]:
     return problems
 
 
-def field_problems(where: str, field: dict) -> list[str]:
+def field_problems(where: str, field: dict, types=None) -> list[str]:
     problems = []
     control = field.get("control")
-    if control not in CONTROLS and field.get("status") != "gap":
+    unknown_to_kit = types is not None and control not in types.components
+    if control not in CONTROLS and field.get("status") != "gap" and not unknown_to_kit:
         problems.append(f"{where}: control {control!r} is not a design system control ({', '.join(sorted(CONTROLS))}); mark it gap")
     widths = field.get("widths")
     if not planrules.is_address_part(field) and not (isinstance(widths, list) and len(widths) == 3 and all(isinstance(w, int) and 1 <= w <= 12 for w in widths)):

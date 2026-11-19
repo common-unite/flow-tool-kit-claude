@@ -20,7 +20,7 @@ assets) and pages/<urlName>.json (references/page-json.md). Writes, under <site>
 
 --mode code (Claude Code): the design system's code and tokens are copied server side from the person's own Site Blocks
 design system (its link is design_systems.site_blocks.url in flow-tool-kit.json). --mode chat: chat cannot copy between
-artifacts, so those files are written from the full kit (the release zip ftk-start unpacks) into design/project/ds/sb/ and sent 16 to a call. Images are
+artifacts, so those files are written from the kit the plugin ships (its ftk-design-system skill) into design/project/ds/sb/ and sent 16 to a call. Images are
 never copied: the canvas serves an image only as an upload to it.
 
 Components are mounted as <x-import component-from-global-scope="SB.Section">, nested, each one's props from renderVals()
@@ -43,13 +43,16 @@ from datetime import datetime, timezone
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import htmlcheck  # noqa: E402
+sys.path.insert(0, str(HERE.parent / "_shared" / "lib"))
+import siblings  # noqa: E402
 
 NS = "sb"  # the folder the design system is installed in on the canvas: project/ds/sb/
 DESKTOP, PHONE = 1280, 390
 BAR = 40  # the page bar above each page artboard
 CAP = 8000  # the tallest artboard the Design canvas takes
-# The full kit is a release asset, not part of the plugin: ftk-start unpacks it here (ds_install.py fetch or unpack)
-DEFAULT_KIT = pathlib.Path(os.environ.get("FTK_DESIGN_SYSTEMS_DIR") or "~/.flow-tool-kit/design-systems").expanduser() / "site-blocks"
+# The kits ship in the plugin's ftk-design-system skill; FTK_SITE_BLOCKS_KIT (the site-blocks folder) or
+# FTK_DESIGN_SYSTEMS_DIR (the folder holding site-blocks/ and ftk-forms/) points at another copy
+KITS_ENV = "FTK_DESIGN_SYSTEMS_DIR"
 CONFIG_NAME = "flow-tool-kit.json"
 NOW = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 BATCH = {"code": 255, "chat": 16}
@@ -104,14 +107,23 @@ class Kit:
         return None
 
 
+def default_kit(skill_dir=HERE.parent):
+    """site-blocks/ in the ftk-design-system skill beside this one (ftk-design-system/ or <plugin>:ftk-design-system/)"""
+    try:
+        return pathlib.Path(siblings.find(str(skill_dir), "ftk-design-system", markers=["site-blocks/project"],
+                                          env=KITS_ENV)) / "site-blocks"
+    except siblings.NotFound as missing:
+        raise SiteError(f"Site Blocks kit not found. {missing}")
+
+
 def find_kit(arg=None):
-    root = pathlib.Path(arg or os.environ.get("FTK_SITE_BLOCKS_KIT") or DEFAULT_KIT).expanduser()
+    root = pathlib.Path(arg or os.environ.get("FTK_SITE_BLOCKS_KIT") or default_kit()).expanduser()
     kit = Kit(root)
     missing = [p for p in ["tokens.json"] + DS_FILES + REACT_FILES if not kit.file(p)]
     if missing:
-        raise SiteError(f"Site Blocks kit not found or incomplete at {root} (missing {', '.join(missing)}). The full kit is a release "
-                        "asset: get it with ftk-start's design system step (`ds_install.py fetch` in Claude Code, or "
-                        "`ds_install.py unpack --zip` on the attached release zip in chat), or pass --kit to use another copy.")
+        raise SiteError(f"Site Blocks kit not found or incomplete at {root} (missing {', '.join(missing)}). The kits ship in "
+                        "the plugin's ftk-design-system skill: install the whole Flow Tool Kit plugin, or pass --kit to use "
+                        "another copy.")
     schema_file = root / "tools/schema.json"
     if schema_file.exists():
         schema = json.loads(schema_file.read_text())
@@ -810,7 +822,7 @@ def asset_resolver(site, kit):
 
     def url(name):
         """An image's url on the canvas: its upload. Not uploaded yet, a package image names its kit path, which the canvas does not
-        serve: the generator lists it in uploads.json and check_site_review.cjs fails it"""
+        serve: the generator lists it in uploads.json and site_review.cjs site fails it"""
         if str(name).startswith(("/_blob/", "http")):
             return name
         bare = re.sub(r"^FlowToolKit__", "", str(name))
@@ -909,14 +921,14 @@ def record_blobs(site_dir, returned):
 
 
 def measure(kit, renders, out):
-    """Render every artboard's tree with the kit's bundle at its width (measure_site_review.cjs): heights, console errors, broken images"""
+    """Render every artboard's tree with the kit's bundle at its width (site_review.cjs measure): heights, console errors, broken images"""
     node = shutil.which("node")
     if not node:
         return None, "node not found"
     job = out / "measure.json"
     job.write_text(json.dumps({"roots": [str(r) for r in kit.roots], "boards": renders}))
     try:
-        proc = subprocess.run([node, str(HERE / "measure_site_review.cjs"), str(job), str(out / "heights.json")],
+        proc = subprocess.run([node, str(HERE / "site_review.cjs"), "measure", str(job), str(out / "heights.json")],
                               capture_output=True, text=True, timeout=600)
     except subprocess.TimeoutExpired:
         return None, "the render took over ten minutes"
@@ -966,7 +978,7 @@ def publish_batches(design, files, stale, mode, ds_url, kit, lwr):
     """design/publish-batches.json: the publish as `files` maps (root design/), in order, each within the mode's per-call limit.
 
     code: the design system's code and tokens copied server side from the person's own Site Blocks artifact. chat: written from
-    the full kit into design/project/ds/sb/ first. canvas.json goes in the last batch, so the canvas opens on a complete set.
+    the kit into design/project/ds/sb/ first. canvas.json goes in the last batch, so the canvas opens on a complete set.
     Images are never in a batch: they are uploads (uploads.json). Returns None when code mode has no design system link."""
     entries = [(f, f) for f in files]
     ds = DS_FILES + ([LWR_CSS] if lwr else []) + ["tokens.json"]
@@ -1245,8 +1257,8 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--site", default=".", help="the site folder (_site/<slug>) holding site.json and pages/")
     parser.add_argument("--mode", choices=("code", "chat"), default="code",
-                        help="code: Claude Code copies the design system server side; chat: files from the full kit, 16 a call")
-    parser.add_argument("--kit", help="the full Site Blocks kit (default: where ftk-start unpacks it, ~/.flow-tool-kit/design-systems/site-blocks)")
+                        help="code: Claude Code copies the design system server side; chat: files from the bundled kit, 16 a call")
+    parser.add_argument("--kit", help="the Site Blocks kit folder (default: site-blocks/ in the plugin's ftk-design-system skill)")
     parser.add_argument("--config", help=f"the project config (default: {CONFIG_NAME} in the site folder or a folder above it)")
     parser.add_argument("--no-measure", action="store_true", help="estimate heights instead of rendering each artboard here")
     parser.add_argument("--record-blobs", metavar="JSON", help="a file or inline JSON object mapping each design/uploads.json name or file to the "

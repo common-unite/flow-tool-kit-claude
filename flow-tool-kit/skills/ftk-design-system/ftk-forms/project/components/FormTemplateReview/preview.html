@@ -1,0 +1,112 @@
+<!-- @dsCard group="Template" height=2715 width=1100 subtitle="formTemplate · Continue to Review and the review page · Grant Application | Demo template" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FormTemplateReview preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:1100px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(520px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-cap{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 10px}.pv-page{background:#f3f3f3;border-radius:12px;padding:16px}.pv-states{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}.pv-state-cap{font:600 12px/1.4 var(--font-sans);color:var(--label);margin:0 0 6px}
+.pv .ftk-rt-content h2{margin:0 0 .5rem;font-size:1.25rem;line-height:1.3}.pv .ftk-rt-content p{margin:0 0 .75rem}.pv .ftk-rt-content p:last-child,.pv .ftk-rt-content ul:last-child{margin-bottom:0}.pv .ftk-rt-content ul{margin:0 0 .75rem;padding-left:1.25rem}.pv .ftk-rt-content li{margin:0 0 .25rem}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, cap, child) { return h('div', { className: 'pv-item', tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), h('div', { className: 'pv-cap' }, cap), child); }
+  /* The Grant Application | Demo template's Form Style: Brand #52b552, labels and text #032d60, Borders #042d60 at 50%, Corner radius 20px, Input size 130%, Text size 110%, Field spacing 200%, Label weight 600, Horizontal padding 10px */
+  var style = { brand: '#52b552', fieldLabels: '#032d60', inputText: '#032d60', borders: '#042d60', bordersOpacity: 50, inputBackground: '#f7f7f7', cornerRadius: 20, inputSize: 130, textSize: 110, fieldSpacing: 200, labelWeight: 600, paddingInline: 10 };
+  /* Header form (FormQualifiedApiName_Header__c): a Banner section, the house default for a Stages Mode or multi-page template: Overlay, Small, placement header, the scrim in the brand, one tag. The photo stands in for the Banner's Background Image */
+  var banner = '../../assets/Backgrounds/Background_Volunteer_Team_Tables.jpg';
+  function Header() {
+    return h(F.Banner, { layout: 'overlay', height: 'small', placement: 'header', image: banner, imageAlt: 'Volunteers working together', logo: '../../assets/Logos/FlowToolKit_Gray.png', logoAlt: 'Flow Tool Kit', scrimColor: '#2f6f2f', scrimOpacity: 85, title: '<p>Grant Application | Demo</p>', subtitle: '<p>Funding programs that strengthen our communities. Applications are open for the FY26 cycle.</p>', tags: 'FY26 cycle; About 30 minutes' });
+  }
+  var stageRows = [
+    { title: 'Grant Information', description: 'Read about this grant opportunity. What it funds and requirements', status: 'optional', time: 3, startLabel: 'Get Started' },
+    { title: 'Organization Info', description: 'Tell us about your organization: legal name, EIN, mission, primary contact. Auto-filled from your Salesforce account where possible.', status: 'todo', time: 4, meta: { fields: 19, completedFields: 0 } },
+    { title: 'Project Details', description: 'Outline what you are proposing: goals, beneficiaries, methodology, expected timeline. This is the heart of the application.', status: 'todo', time: 12, meta: { fields: 11, completedFields: 0 } },
+    { title: 'Eligibility Verification', description: 'Confirm 501(c)(3) status and that your service area is within the funding region.', status: 'todo', time: 3, meta: { fields: 7, completedFields: 0 } },
+    { title: 'Budget Details', status: 'todo', startLabel: 'Get Started' },
+    { title: 'Supporting Documents', description: 'Upload 990, board roster, audited financials, and any letters of support. Files up to 25MB each.', status: 'optional', time: 6, startLabel: 'Add Documents' },
+    { title: 'Certification', description: 'Final read-through, certification, and electronic signature. You will receive a confirmation email and a copy of your submission.', status: 'todo', time: 2 }
+  ];
+  var pages = stageRows.map(function (s) { return s.title; });
+  function DividerSection(title, subtitle, icon, children) { return h(F.Section, { title: title, subtitle: subtitle, icon: icon, headerDisplay: 'Divider', dividerStyle: 'compact' }, children); }
+  function Col(l, m, s, child) { return h(F.Column, { large: l, medium: m, small: s }, child); }
+  function OrgInfo() {
+    return [
+      DividerSection('Legal Information', 'Legal entity name, EIN, and 501(c)(3) determination letter date.', null, [
+        Col(12, 12, 12, h(F.TextInput, { key: 'a', label: 'Legal entity name', required: true })),
+        Col(6, 6, 12, h(F.TextInput, { key: 'b', label: 'EIN (Tax ID)', required: true, placeholder: '12-3456789' })),
+        Col(6, 6, 12, h(F.DateInput, { key: 'c', label: '501(c)(3) determination date' })),
+        Col(6, 6, 12, h(F.Picklist, { key: 'd', label: 'Primary field of work', placeholder: 'Select...', options: ['Arts and culture', 'Education', 'Environment', 'Health', 'Human services'] })),
+        Col(6, 6, 12, h(F.NumberInput, { key: 'e', label: 'Paid staff (FTE)', variant: 'stepper', min: 0 })),
+        Col(6, 6, 12, h(F.NumberInput, { key: 'f', label: 'Annual operating budget', format: 'currency' })),
+        Col(6, 6, 12, h(F.FormattedInput, { key: 'g', type: 'url', label: 'Website' })),
+        Col(12, 12, 12, h(F.Checkbox, { key: 'h', label: 'Applying through a fiscal sponsor?' }))
+      ]),
+      DividerSection('Primary contact', 'The person we should reach with questions about this application.', null, [
+        Col(5, 5, 12, h(F.TextInput, { key: 'a', label: 'First Name', required: true })),
+        Col(7, 7, 12, h(F.TextInput, { key: 'b', label: 'Last Name', required: true })),
+        Col(12, 12, 12, h(F.TextInput, { key: 'c', label: 'Role or title' })),
+        Col(6, 6, 12, h(F.FormattedInput, { key: 'd', type: 'email', label: 'Email', required: true })),
+        Col(6, 6, 12, h(F.FormattedInput, { key: 'e', type: 'phone', label: 'Phone' })),
+        Col(12, 12, 12, h(F.Picklist, { key: 'f', label: 'Preferred Contact Method', variant: 'visualpicker', columns: 4, options: [{ label: 'Email', value: 'Email', icon: 'utility:email' }, { label: 'Phone', value: 'Phone', icon: 'utility:call' }, { label: 'Text Message', value: 'Text Message', icon: 'utility:sms' }, { label: 'Mail', value: 'Mail', icon: 'utility:send' }] })),
+        Col(12, 12, 12, h(F.Picklist, { key: 'g', label: 'Best Time to Contact', variant: 'surveybuttons', options: ['Morning', 'Afternoon', 'Evening'] }))
+      ])
+    ];
+  }
+  function Wrap(child) { return h(F.FormStyle, style, h('div', { className: 'pv-page' }, child)); }
+  function Field(key, l, m, el) { return h(F.Column, { key: key, large: l, medium: m, small: 12 }, el); }
+  /* Stage statuses as the template stores them on Form_Submission_Stage__c */
+  var doneBefore = function (n) { return pages.slice(0, n); };
+  function ProjectDetails() {
+    return [
+      DividerSection('About the project', 'What you want to do with this grant, in plain words.', null, [
+        Field('a', 12, 12, h(F.TextInput, { label: 'Project title', required: true })),
+        Field('b', 12, 12, h(F.TextArea, { label: 'Project summary', required: true, maxLength: 1000, helpText: 'Two or three sentences a reviewer could read aloud.', helpTextDisplay: 'Below Label' })),
+        Field('c', 6, 6, h(F.DateInput, { label: 'Project start date', required: true })),
+        Field('d', 6, 6, h(F.DateInput, { label: 'Project end date', required: true })),
+        Field('e', 12, 12, h(F.MultiPicklist, { label: 'Focus areas', variant: 'multiselectcheckbox', columns: 3, options: ['Food access', 'Housing', 'Youth programs', 'Health', 'Job training', 'Arts and culture'], defaultValue: ['Food access'] }))
+      ]),
+      DividerSection('Who it serves', 'Your best estimate is fine.', null, [
+        Field('a', 6, 6, h(F.NumberInput, { label: 'People served each year', variant: 'stepper', min: 0 })),
+        Field('b', 6, 6, h(F.Picklist, { label: 'Main age group', placeholder: 'Select...', options: ['Children', 'Youth', 'Adults', 'Older adults', 'All ages'] })),
+        Field('c', 12, 12, h(F.TextArea, { label: 'How will you measure success?', maxLength: 1000 })),
+        Field('d', 6, 6, h(F.Picklist, { label: 'Service area', variant: 'separatedbuttons', options: ['City', 'County', 'Region'] })),
+        Field('e', 6, 6, h(F.Checkbox, { label: 'This is a new program' }))
+      ])
+    ];
+  }
+  function SupportingDocs() {
+    return [
+      DividerSection('Required documents', 'PDF, Word or image files, up to 25MB each.', null, [
+        Field('a', 12, 12, h(F.FileUpload, { label: 'Most recent Form 990', required: true, acceptedFormats: '.pdf', defaultValue: [{ name: 'Form-990-2025.pdf', mimeType: 'application/pdf' }] })),
+        Field('b', 12, 12, h(F.FileUpload, { label: 'Board roster', required: true, acceptedFormats: '.pdf;.docx' })),
+        Field('c', 12, 12, h(F.FileUpload, { label: 'Audited financial statements', acceptedFormats: '.pdf' })),
+        Field('d', 12, 12, h(F.FileUpload, { label: 'Letters of support', multiple: true, max: 5, acceptedFormats: '.pdf;.docx;.png;.jpg', helpText: 'Up to five letters.', helpTextDisplay: 'Below Label' })),
+        Field('e', 12, 12, h(F.TextArea, { label: 'Anything else we should know about these documents?' }))
+      ])
+    ];
+  }
+  var reviewPages = [
+    { label: 'Organization Info', sections: [
+      { title: 'Legal Information', fields: [{ label: 'Legal entity name', value: 'Riverside Community Garden Alliance' }, { label: 'EIN (Tax ID)', value: '12-3456789' }, { label: '501(c)(3) determination date', type: 'date', value: '2014-06-02' }, { label: 'Primary field of work', value: 'Environment' }, { label: 'Annual operating budget', type: 'currency', value: 412000 }] },
+      { title: 'Primary contact', fields: [{ label: 'First Name', value: 'Maria' }, { label: 'Last Name', value: 'Lopez' }, { label: 'Email', type: 'email', value: 'maria@example.org' }, { label: 'Phone', type: 'tel', value: '(555) 555-0142' }, { label: 'Preferred Contact Method', value: 'Email' }] }] },
+    { label: 'Project Details', sections: [
+      { title: 'About the project', fields: [{ label: 'Project title', value: 'Twelve new neighborhood plots' }, { label: 'Project start date', type: 'date', value: '2027-03-01' }, { label: 'Project end date', type: 'date', value: '2027-11-30' }, { label: 'Focus areas', type: 'multipicklist', value: 'Food access;Youth programs' }] },
+      { title: 'Who it serves', invalid: true, fields: [{ label: 'People served each year', type: 'double', value: 180 }, { label: 'Main age group', value: '' }, { label: 'This is a new program', type: 'boolean', value: true }] }] },
+    { label: 'Supporting Documents', sections: [
+      { title: 'Required documents', fields: [{ label: 'Most recent Form 990', type: 'fileupload', value: ['Form-990-2025.pdf'] }, { label: 'Board roster', type: 'fileupload', value: ['board-roster.pdf'] }, { label: 'Letters of support', type: 'fileupload', value: ['letter-food-bank.pdf', 'letter-school.pdf'] }] }] }
+  ];
+  var withReview = pages.concat(['Review']);
+  var allDone = stageRows.map(function (s) { return Object.assign({}, s, { status: 'done' }, s.meta ? { meta: { fields: s.meta.fields, completedFields: s.meta.fields } } : {}); });
+  var stepBar = function (last) { return { buttons: [
+    { label: 'Return', variant: 'brand-outline', iconName: 'utility:back', iconPosition: 'left' },
+    { label: 'Save Progress', variant: 'brand-outline', iconName: 'utility:save', iconPosition: 'right' },
+    last ? { label: 'Submit Application', variant: 'brand', iconName: 'utility:save', iconPosition: 'right' } : { label: 'Mark Complete', variant: 'brand', iconName: 'utility:check', iconPosition: 'right' }] }; };
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('Every required stage done: the overview adds Continue to Review (Review_Page_Button_Label__c, default label Stages_Continue_To_Review, utility:forward) beside Save Progress', 'Stages Mode · overview, ready for review', Wrap(
+      h(F.FormTemplate, { stagesMode: true, view: 'overview', header: Header(), stageRows: allDone, buttonsPosition: 'Docked', buttonAlignment: 'center', navigation: { buttons: [{ label: 'Save Progress', variant: 'brand-outline', iconName: 'utility:save', iconPosition: 'right' }, { label: 'Continue to Review', variant: 'brand', iconName: 'utility:forward', iconPosition: 'right' }] } }))),
+    Demo('Enable_Review_Screen__c: the review page is the last step (added to the indicator, never clickable). Review_Page_Label__c and Review_Page_Subtitle__c, then each page and section with Edit; a section that failed validation is flagged. Its button is the true submit: Submit_Button_Label__c with utility:save', 'Stages Mode · Review page', Wrap(
+      h(F.FormTemplate, { stagesMode: true, view: 'step', header: Header(), stages: withReview, currentStage: 'Review', completeStages: pages, stageIndicator: { type: 'vertical' }, buttonsPosition: 'Docked', buttonAlignment: 'center', navigation: stepBar(true) },
+        h(F.ReviewPage, { title: 'Review your application', subtitle: 'Check your answers before you submit. Select Edit to change a section.', pages: reviewPages }))))
+  ));
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Fields" height=1000 subtitle="Flow screen only · flowFormLookup custom search · enableCustomLookup__c" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>LookupSearchTable preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var cols = [{ field: 'name', label: 'Organization' }, { field: 'city', label: 'City' }, { field: 'type', label: 'Type' }];
+  var rows = [{ name: 'Eastside Seniors Society', city: 'Vancouver', type: 'Nonprofit' }, { name: 'Harbour Neighbourhood House', city: 'Victoria', type: 'Community centre' }, { name: 'Valley Peer Network', city: 'Kelowna', type: 'Nonprofit' }];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('FLOW SCREEN ONLY · customLookupHeader__c and customLookupSubheader__c over a single-select table: Filter Records, New (allowNew), radio selection; Save shows once a row is picked', h(F.LookupSearchTable, { header: 'Find your organization', subheader: 'Search by name, then choose one.', columns: cols, rows: rows, allowNew: true, newButtonLabel: 'New Organization', selectedIndex: 1 }), true),
+    Demo('FLOW SCREEN ONLY · nothing selected yet: only Cancel in the footer', h(F.LookupSearchTable, { header: 'Choose a program', columns: [{ field: 'name', label: 'Program' }, { field: 'seats', label: 'Seats left', type: 'number' }], rows: [{ name: 'After-school tutoring', seats: 4 }, { name: 'Summer camp', seats: 12 }] }), true)
+  ));
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- @dsCard group="Page layout" height=120 subtitle="Form (Header), Display as Divider" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Divider preview</title><style>body{margin:0;background:#ffffff}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var h = React.createElement, SB = window.SB;
+  /* Form (Header) placed in a column with Display as Divider on, in each of its twelve Divider Styles */
+  var styles = ['line', 'compact', 'centered', 'label', 'bookmark', 'ornament', 'pill', 'chevron', 'double', 'icon', 'fade', 'tag'];
+  SB.previewAt(1280);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(SB.Page, null, h(SB.Section, { sectionHeight: 32 }, h(SB.Column, null, styles.map(function (style) {
+      return h(SB.Divider, { key: style, dividerStyle: style, title: 'Program details', subtitle: 'Divider Style: ' + style, iconName: 'utility:knowledge_base', bottomMargin: 'slds-m-bottom_medium' });
+    })))));
+</script>
+</body>
+</html>

@@ -1,13 +1,13 @@
 ---
 name: form-design
-description: Use when a Flow Tool Kit form needs designing or redesigning before it is built, after form-migrate has read a source (FormAssembly, Google Forms, a PDF, a web page or an existing Form Template) or ftk-start's brief mode has turned a description into a form. Also when someone asks for a form mockup, a design review, a field audit or a handoff plan in the FlowToolKit Forms design system, or when a review changes a design that must be redrawn.
+description: Designs a Flow Tool Kit (FTK) form before it is built: plan.json and a review canvas in the FlowToolKit Forms design system. Runs after form-migrate has read a source (FormAssembly, Google Forms, a PDF, a web page or an existing Form Template) or ftk-start's brief mode has turned a description into a form. Use for "mock up the registration form before we build anything", "what would this application look like", a design review, a handoff plan, or a review that changes a design to redraw. For a new form, when ftk-start has not run in this conversation, run it first; it reads the org and hands the form here.
 ---
 
 # Form Design
 
 Turns what a source form asks (form-migrate's `ir.json`, or brief mode's) and what the person needs into two things that always agree:
 
-1. **`plan.json`**, the design as data: pages, sections, components, every field with its control, widths, copy and Salesforce target, the template settings and the emails. build-template builds from it without interpretation. Format: [references/plan-format.md](references/plan-format.md).
+1. **`plan.json`**, the design as data: pages, sections, components, every field with its control, widths, copy and Salesforce target, the template settings and the emails. build-template builds from it without interpretation. Format: [_shared/standards/plan-format.md](_shared/standards/plan-format.md), the contract every reading skill shares.
 2. **One review canvas**, a Design artifact drawn with the real FlowToolKit Forms components: an artboard per page and state, the confirmation messages, the emails and a field audit. Plus `field-audit.csv` beside the plan for the admin.
 
 **Requirement: the Design feature on the person's claude.ai account.** Whatever Claude plan they are on, the review canvas is a Design artifact, so the person needs Design turned on for their claude.ai account (in an organization, an admin may have to enable it) to see the design and comment on it. Without it the build still runs from `plan.json`, but there is no visual canvas review, only the plain fallback page described under Where it runs. Say this at the start, before drawing.
@@ -37,7 +37,7 @@ While deciding the form type, layout, components and copy, read [references/deci
 python3 scripts/draw_plan.py _forms/<slug>/plan.json [more plans] [--mode chat]
 ```
 
-It normalizes each plan (counted times, the row's settings, Continue buttons, section spacing, Style Editor tokens, rich text scaled to the Text size), checks it, and only then draws. Every error names its fix; correct `plan.json` and run again. Output and publishing: [references/publishing.md](references/publishing.md). What the canvas shows and why: [references/canvas.md](references/canvas.md). The checks: [references/checks.md](references/checks.md).
+It normalizes each plan (counted times, the row's settings, Continue buttons, section spacing, Style Editor tokens, rich text scaled to the Text size), checks it (including the colours' contrast and every control and prop against the kit's `index.d.ts`), and only then draws. Every error names its fix; correct `plan.json` and run again. What the canvas shows and why, the checks, and output and publishing: [references/drawing.md](references/drawing.md).
 
 Start the canvas from the **Design** artifact type with the person's FlowToolKit Forms design system (the type's own instructions arrive with the create result), then publish the batches the run wrote. The canvas folder lives in the project beside `plan.json` (`_forms/<slug>/design/`), never in a temporary folder: anything a person reviews is a file in their project plus the canvas.
 

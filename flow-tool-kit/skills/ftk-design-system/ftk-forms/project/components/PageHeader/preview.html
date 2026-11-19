@@ -1,0 +1,22 @@
+<!-- @dsCard group="Template" height=1730 subtitle="Form_Template_Page__c header · c-header" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>PageHeader preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-frame{border:1px solid var(--border);border-radius:var(--radius-frame);overflow:hidden;position:relative;padding:16px 20px 20px;background:var(--surface)}.pv-cap{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 8px}.pv-page-body{margin-top:12px;display:grid;gap:8px}.pv-line{height:10px;border-radius:5px;background:var(--surface-muted)}.pv-line.short{width:60%}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide, cap) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), h('div', { className: 'pv-cap' }, cap || ''), h('div', { className: 'pv-frame' }, child, h('div', { className: 'pv-page-body', 'aria-hidden': 'true' }, h('div', { className: 'pv-line' }), h('div', { className: 'pv-line short' })))); }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-stack' },
+    Demo('classic · title, subtitle and icon: c-header sizes the icon large (48px) when there is a subtitle', h(F.PageHeader, { title: 'Household', subtitle: 'Step 2 of 4', icon: 'utility:home' }), false, 'Classic · title, subtitle and icon'),
+    Demo('classic · title and icon, no subtitle: the icon drops to small (24px)', h(F.PageHeader, { title: 'Household', icon: 'utility:home' }), false, 'Classic · title only'),
+    Demo('classicSpread with Header_Text__c (info)', h(F.PageHeader, { headerStyle: 'classicSpread', title: 'Documents', subtitle: 'Upload what you have', icon: 'utility:file', text: 'You can come back to this step later.', textVariant: 'info' }), false, 'Classic Spread · with header text'),
+    Demo('hero · the eyebrow icon is x-small (16px) beside the subtitle; kicker, lead, tags belowLead', h(F.PageHeader, { headerStyle: 'hero', subtitle: 'Garden membership', icon: 'utility:edit_form', kicker: 'Spring 2026', title: 'Grow with us', lead: 'Tell us about your garden plot and your household.', tags: 'About 10 minutes; Free', tagsPosition: 'belowLead' }), false, 'Hero · tags below the lead'),
+    Demo('hero · tags aboveTitle', h(F.PageHeader, { headerStyle: 'hero', kicker: 'Spring 2026', title: 'Grow with us', tags: ['New members'], tagsPosition: 'aboveTitle' }), false, 'Hero · tags above the title'),
+    Demo('bannerImage · NEEDS A BUILD CHANGE (stored, not drawn by the package yet)', h(F.PageHeader, { title: 'Grow with us', subtitle: 'Garden membership', bannerImage: '../../assets/Backgrounds/Background_Green_Leaves_Banner.jpg' }), false, 'Banner image · needs a build change')
+  ));
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- @dsCard group="Fields" height=1850 subtitle="flowFormFieldAddress · lightning-input-address" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Address preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var countries = [{ label: 'United States', value: 'US' }, { label: 'Canada', value: 'CA' }];
+  var provinces = { US: [{ label: 'Kansas', value: 'KS' }, { label: 'Missouri', value: 'MO' }], CA: [{ label: 'British Columbia', value: 'BC' }, { label: 'Ontario', value: 'ON' }] };
+  var suggestions = [
+    { label: '100 Riverside Rd', sublabel: 'Riverside 00501, United States', address: { street: '100 Riverside Rd', city: 'Riverside', province: 'MO', postalCode: '00501', country: 'US' } },
+    { label: '100 Riverside Plaza', sublabel: 'Riverside 00501, United States', address: { street: '100 Riverside Plaza', city: 'Riverside', province: 'MO', postalCode: '00501', country: 'US' } }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('State and Country picklists on · address lookup open: Country moves to the top, Zip runs full width', h('div', { style: { minHeight: 330 } }, h(F.Address, { label: 'Mailing address', countries: countries, provinces: provinces, suggestions: suggestions, searchValue: '3000 Gill', open: true, defaultValue: { country: 'US' }, required: { street: true, city: true, postalCode: true } }))),
+    Demo('State and Country picklists on · no country chosen yet: the State/Province field stays hidden', h(F.Address, { label: 'Mailing address', countries: countries, provinces: provinces })),
+    Demo('State and Country picklists on · filled: State/Province lists the chosen country\u2019s states', h(F.Address, { label: 'Home address', countries: countries, provinces: provinces, defaultValue: { street: '42 Maple Street', city: 'Riverside', province: 'MO', postalCode: '00501', country: 'US' } })),
+    Demo('Picklists off (stock Salesforce address): free-text State/Province and Country, City 8 + State 4, Zip 8 + Country 4', h(F.Address, { label: 'Site address', defaultValue: { street: '42 Maple Street', city: 'Riverside', province: 'MO', postalCode: '00501', country: 'United States' } })),
+    Demo('Read only: formatted address with static map', h(F.Address, { label: 'Billing address', readOnly: true, defaultValue: { street: '42 Maple Street', city: 'Riverside', province: 'MO', postalCode: '00501', country: 'United States' } }))
+  ));
+</script>
+</body>
+</html>

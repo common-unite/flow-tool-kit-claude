@@ -1,0 +1,23 @@
+<!-- @dsCard group="Layout" height=1100 subtitle="formStageIndicator · Stage_Indicator_Type__c base · path · vertical · footer" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>StageIndicator preview</title><style>body{margin:0;background:var(--ftk-color-background,var(--surface))}.pv{padding:24px 28px 32px;font-family:var(--font-sans);box-sizing:border-box;width:100%;max-width:900px}.pv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px 24px}.pv-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.pv-wide{grid-column:1/-1}.pv-item{position:relative;min-width:0;padding:12px;margin:0 -12px;border-radius:var(--radius-medium);outline:none;transition:background-color .12s ease}.pv-item:hover,.pv-item:focus-within{background:color-mix(in srgb,var(--surface-muted) 55%,var(--surface))}.pv-item:focus-visible{box-shadow:var(--focus-ring)}.pv-name{position:absolute;right:8px;top:-10px;z-index:40;max-width:min(420px,80%);padding:4px 8px;border-radius:var(--radius-medium);background:var(--tooltip);color:var(--on-brand);font:12px/1.4 var(--font-sans);opacity:0;transform:translateY(2px);transition:opacity .12s ease,transform .12s ease;pointer-events:none}.pv-item:hover>.pv-name,.pv-item:focus-visible>.pv-name{opacity:1;transform:none}.pv-item:has(.ftk-iconbutton-tip,.ftk-tooltip)>.pv-name{opacity:0}@media (max-width:560px){.pv-grid{grid-template-columns:minmax(0,1fr)}}.pv-label{font:700 11px/1.4 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--label);margin:0 0 6px}.pv-frame{position:relative;border:1px dashed var(--border);border-radius:8px;overflow:hidden;background:var(--ftk-color-background,var(--surface))}</style></head>
+<body>
+<div id="root"></div>
+<script>
+  var F = window.FTK, h = React.createElement;
+  F.syncPreviewStyle();
+  function Demo(name, child, wide) { return h('div', { className: 'pv-item' + (wide ? ' pv-wide' : ''), tabIndex: 0 }, h('span', { className: 'pv-name', role: 'tooltip' }, name), child); }
+  var pages = ['About you', 'Household', 'Income', 'Documents', 'Review'];
+  ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'pv pv-grid' },
+    Demo('base · lightning-progress-indicator: completed pages get a brand check, the current page a brand ring; hover a marker for its page label', h('div', { style: { paddingTop: 28 } }, h(F.StageIndicator, { type: 'base', stages: pages, current: 'Income' })), true),
+    Demo('base · has error: the current page has invalid fields', h('div', { style: { paddingTop: 28 } }, h(F.StageIndicator, { type: 'base', stages: pages, current: 'Income', hasError: true })), true),
+    Demo('path · chevrons: complete, current, incomplete; the package hides it on phones', h(F.StageIndicator, { type: 'path', stages: pages, current: 'Income' }), true),
+    Demo('vertical · linear pages: completed pages show the success icon, the current page a brand ring', h(F.StageIndicator, { type: 'vertical', stages: pages, current: 'Income' })),
+    Demo('vertical · Stages Mode markers from stage status: edit (current), check, clock, warning, lock', h(F.StageIndicator, { type: 'vertical', current: 'Income', stageSteps: [{ label: 'About you', status: 'done' }, { label: 'Household', status: 'requires-correction' }, { label: 'Income', status: 'in-progress' }, { label: 'Documents', status: 'in-progress' }, { label: 'Review', status: 'locked' }] })),
+    Demo('footer base · shaded variant, drawn inside the docked button bar', h('div', { className: 'pv-frame' }, h(F.Navigation, { position: 'Footer', alignment: 'spread', backLabel: 'Household', nextLabel: 'Continue' }, h('div', { style: { paddingTop: 24 } }, h(F.StageIndicator, { type: 'footer base', stages: pages, current: 'Income' })))), true),
+    Demo('hidden · Hide_Stage_Indicator__c draws nothing (empty below)', h('div', { style: { minHeight: 24, border: '1px dashed var(--border)' } }, h(F.StageIndicator, { hidden: true, stages: pages, current: 'Income' })))
+  ));
+</script>
+</body>
+</html>
