@@ -1,0 +1,73 @@
+// The Volunteer Profile form from Form Builder, kept with the component. To change the form, export it again and rerun record_page_form.py write.
+const FORM = {
+    "QualifiedApiName": "Volunteer_Profile",
+    "Label": "Volunteer Profile",
+    "*__ObjectApiName__c": "Contact",
+    "*__type__c": "form",
+    "*__Active__c": true,
+    "*__CategoryTag__c": "Component(s)",
+    "*__Description__c": "A volunteer's contact details and notes for the volunteer coordinator, kept on the Contact.",
+    "*__Version__c": 0,
+    "*__VersionId__c": "Volunteer_Profile_v0",
+    "*__Delete__c": false,
+    "*__sections__r": [
+        {
+            "*__fields__r": [
+                {
+                    "QualifiedApiName": "Volunteer_Profile_Email",
+                    "*__widthMedium__c": "6",
+                    "*__widthLarge__c": "6",
+                    "*__required__c": true,
+                    "*__position__c": 1,
+                    "*__fieldName__c": "Email"
+                },
+                {
+                    "QualifiedApiName": "Volunteer_Profile_MobilePhone",
+                    "*__widthMedium__c": "6",
+                    "*__widthLarge__c": "6",
+                    "*__position__c": 2,
+                    "*__fieldName__c": "MobilePhone"
+                }
+            ],
+            "QualifiedApiName": "Volunteer_Profile_Reach",
+            "sectionVerticalPadding": "slds-container_fluid slds-p-horizontal_none slds-p-top_none slds-p-bottom_none",
+            "sectionMarginClass": "slds-is-relative slds-m-top_none slds-m-bottom_none ",
+            "showRichText": false,
+            "richTextClass": "slds-container_fluid slds-p-horizontal_x-small",
+            "isInputSection": true,
+            "*__title__c": "How to reach you",
+            "*__sectionType__c": "inputSection",
+            "*__position__c": 1
+        },
+        {
+            "*__fields__r": [
+                {
+                    "QualifiedApiName": "Volunteer_Profile_Title",
+                    "*__customLabel__c": "Occupation",
+                    "*__widthMedium__c": "6",
+                    "*__widthLarge__c": "6",
+                    "*__position__c": 1,
+                    "*__fieldName__c": "Title"
+                },
+                {
+                    "QualifiedApiName": "Volunteer_Profile_Description",
+                    "*__customLabel__c": "Notes for the volunteer coordinator",
+                    "*__position__c": 2,
+                    "*__fieldName__c": "Description"
+                }
+            ],
+            "QualifiedApiName": "Volunteer_Profile_About",
+            "sectionVerticalPadding": "slds-container_fluid slds-p-horizontal_none slds-p-top_none slds-p-bottom_none",
+            "sectionMarginClass": "slds-is-relative slds-m-top_none slds-m-bottom_none ",
+            "showRichText": false,
+            "richTextClass": "slds-container_fluid slds-p-horizontal_x-small",
+            "isInputSection": true,
+            "*__title__c": "About you",
+            "*__sectionType__c": "inputSection",
+            "*__position__c": 2
+        }
+    ],
+    "*__conditionalLogic__r": []
+};
+
+export default JSON.stringify(FORM);

@@ -1,0 +1,66 @@
+# Nonprofit managed-package and Nonprofit Cloud objects, one API name per line.
+# A best-effort list for the outside probe; the names a given org actually has
+# depend on which packages are installed.
+
+# NPSP (npsp / npe / npo namespaces)
+npe01__OppPayment__c
+npo02__Household__c
+npe03__Recurring_Donation__c
+npe03__Custom_Field_Mapping__c
+npe4__Relationship__c
+npe5__Affiliation__c
+npsp__General_Accounting_Unit__c
+npsp__Allocation__c
+npsp__Address__c
+npsp__Batch__c
+npsp__DataImport__c
+npsp__DataImportBatch__c
+npsp__Level__c
+npsp__Engagement_Plan__c
+npsp__Engagement_Plan_Template__c
+npsp__Engagement_Plan_Task__c
+npsp__Partial_Soft_Credit__c
+npsp__Account_Soft_Credit__c
+npsp__Trigger_Handler__c
+npsp__Error__c
+
+# Outbound Funds (outfunds namespace)
+outfunds__Funding_Program__c
+outfunds__Funding_Request__c
+outfunds__Funding_Request_Role__c
+outfunds__Disbursement__c
+outfunds__Requirement__c
+outfunds__Funding_Award__c
+outfunds__Budget__c
+
+# Program Management Module (pmdm namespace)
+pmdm__Program__c
+pmdm__ProgramCohort__c
+pmdm__ProgramEngagement__c
+pmdm__Service__c
+pmdm__ServiceDelivery__c
+pmdm__ServiceSchedule__c
+pmdm__ServiceSession__c
+pmdm__ServiceParticipant__c
+
+# Nonprofit Cloud standard objects (no namespace)
+Program
+ProgramEnrollment
+ProgramCohort
+Benefit
+BenefitAssignment
+BenefitDisbursement
+BenefitSchedule
+BenefitSession
+Goal
+GoalAssignment
+GoalDefinition
+Referral
+ActionPlan
+GiftTransaction
+GiftTransactionDesignation
+GiftCommitment
+GiftCommitmentSchedule
+GiftDefaultDesignation
+GiftDesignation
+PartyRelationshipGroup

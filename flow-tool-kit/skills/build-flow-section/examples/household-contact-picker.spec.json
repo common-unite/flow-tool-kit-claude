@@ -1,0 +1,45 @@
+{
+  "api_name": "Form_Section_Household_Contact_Picker",
+  "label": "Form Section | Household Contact Picker",
+  "description": "Lets a signed-in member pick which person in their household is the primary contact for this application. Lists the Contacts on the household Account the form already knows, and hands the chosen Contact back as Contact 1 on the Form Submission, so the conversion updates that person instead of creating a new one. Runs in a Form Template page section (Component Type Flow). Change the list by editing Household Contacts Choices; the section never writes records itself.",
+  "audiences": [
+    "portal"
+  ],
+  "buttons": "page",
+  "save_progress": true,
+  "screens": [
+    {
+      "name": "Choose_Primary_Contact",
+      "label": "Choose Primary Contact",
+      "description": "Shows the household's Contacts and asks who the primary contact is. Continue stays on the screen, with a message under the question, until someone is picked; Back always leaves, because the answer is asked for on the forward path instead of being required in Flow.",
+      "picks": [
+        {
+          "name": "Household_Contacts",
+          "label": "Who is the primary contact for this application?",
+          "help": "Pick the person we should call or email about it.",
+          "object": "Contact",
+          "display_field": "Name",
+          "value_field": "Id",
+          "sort_field": "LastName",
+          "filters": [
+            {
+              "field": "AccountId",
+              "reference": "record.FlowToolKit__Account__c"
+            }
+          ],
+          "control": "RadioButtons",
+          "description": "The Contacts on the household Account already on the Form Submission, by last name. A portal user sees only the Contacts the sharing model lets them read."
+        }
+      ]
+    }
+  ],
+  "sets": [
+    {
+      "field": "FlowToolKit__Contact_1__c",
+      "value": "Household_Contacts",
+      "review_label": "Primary contact",
+      "review_object": "Contact",
+      "review_field": "Name"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <description>Shows the Volunteer Profile form on Contact record pages. A volunteer's contact details and notes for the volunteer coordinator, kept on the Contact.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Volunteer Profile</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Contact</object>
+            </objects>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" type="String" label="Record Id" default="{!recordId}" description="The Contact record the form shows. Keep {!recordId} on Aura and LWR sites; {!Route.recordId} also works on LWR."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

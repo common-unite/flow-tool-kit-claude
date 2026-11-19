@@ -1,0 +1,12 @@
+# What a reviewed design can promise
+
+A reviewer settles a design on form-design's canvas. The canvas is drawn with the real FlowToolKit Forms design system that ships with this plugin, from `plan.json`. That review is only worth something if the component built afterwards delivers the same thing. These rules keep the two together.
+
+1. **One source for both.** The canvas and the component are built from the same `plan.json`. A change goes into the plan, the canvas is redrawn, and the component is rebuilt from the plan. Never translate a screenshot or the drawing back into settings, and never invent a field mapping to make a design look complete.
+2. **The canvas promises only what the package has.** Every control and variant on the canvas is one the design system names, and form-design marks each field `supported`, `verify` or `gap`. Build `supported` fields as drawn. A `verify` field needs its check in the org before you call it built. A `gap` is not built as if it works: it stays in the plan's `gaps` until a Flow Section, a custom LWC or a package change covers it.
+3. **Translate one way.** Plan fields become package keys through the one table in [authoring-cookbook.md](authoring-cookbook.md), Part 4. A second translation is how a canvas and a build drift apart: a hidden label that loses its screen-reader text, consent wording that lands in 255-character help text under the card.
+4. **Evidence belongs to one revision and one org.** A preview checked against an earlier plan, another org or another package version says nothing about this one. Re-check after any change to the plan, the component or the org's package version.
+5. **Readiness comes from what is left open.** A component is not ready while any mapping is unresolved, a control or composition is unsupported, a behavior or integration is a gap, or a check is stale. A partial catalog match or a stand-in for a real service blocks a "ready" claim; design work can continue meanwhile.
+6. **The walk is the proof.** Built means the template's **Preview Form** walk passed against the plan: every field and option word for word, every required marker, every rule both ways, values saved on the Form Submission, at desktop and phone width, and as a guest for a public form. A page that looks right in a local preview is not proof the package draws it the same way.
+
+When a check cannot be run (no org connected, no browser), say which one and why; never mark a design ready without it.

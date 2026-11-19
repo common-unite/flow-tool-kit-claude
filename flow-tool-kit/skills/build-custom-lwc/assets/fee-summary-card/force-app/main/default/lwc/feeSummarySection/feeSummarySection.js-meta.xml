@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <description>Shows the garden plot fee as the person answers, under the form a Flow Tool Kit page section names, and saves the total to Plot Fee. Place it in a page section with Component Type Lightning Web Component and LWC Component Name c:feeSummarySection, or in a Form Component section of type Lightning Web Component.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Fee Summary Section</masterLabel>
+</LightningComponentBundle>

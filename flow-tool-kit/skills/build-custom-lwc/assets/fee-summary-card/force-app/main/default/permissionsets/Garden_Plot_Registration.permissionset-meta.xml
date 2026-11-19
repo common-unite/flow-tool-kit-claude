@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Edit access to the Garden Plot Registration answers on Form Submission, which the fee summary reads and writes. Everyone who fills in or reviews the form needs these grants, including the site guest user for a public form; in an org with its own permission sets, add them to the sets the admin names instead.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FlowToolKit__Form_Submission__c.Number_Of_Plots__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FlowToolKit__Form_Submission__c.Plot_Fee__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FlowToolKit__Form_Submission__c.Plot_Size__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FlowToolKit__Form_Submission__c.Senior_Or_Student__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Garden Plot Registration</label>
+</PermissionSet>

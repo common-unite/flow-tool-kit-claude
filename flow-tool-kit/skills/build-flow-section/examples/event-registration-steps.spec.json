@@ -1,0 +1,22 @@
+{
+  "api_name": "Form_Section_Event_Registration_Steps",
+  "label": "Form Section | Event Registration Steps",
+  "description": "Walks a registrant through two steps inside one page section: their own details, then the guests they are bringing. The section's own buttons drive the page, so Back steps between the two screens and Save Progress saves in place without leaving the step. Hands back the registrant's answers and the guest rows; the form saves them and the conversion creates the records. To change the questions, edit the Attendee Details and Guest Details form components, not this flow.",
+  "audiences": ["guest"],
+  "buttons": "flow",
+  "save_progress": true,
+  "screens": [
+    {
+      "name": "Attendee_Details",
+      "label": "Attendee Details",
+      "description": "The registrant's own details, from the Attendee Details form component. Save Progress saves them without leaving the screen.",
+      "form": "Attendee_Details"
+    },
+    {
+      "name": "Guests",
+      "label": "Guests",
+      "description": "One row per guest, from the Guest Details form component. Rows start from the section's Prefill Template and are tagged with this section so they come back to it.",
+      "rows": "Guest_Details"
+    }
+  ]
+}

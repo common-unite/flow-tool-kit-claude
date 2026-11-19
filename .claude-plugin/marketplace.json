@@ -1,0 +1,14 @@
+{
+  "name": "common-unite",
+  "description": "Common-Unite plugins for building on Flow Tool Kit",
+  "owner": {
+    "name": "Common-Unite"
+  },
+  "plugins": [
+    {
+      "name": "flow-tool-kit",
+      "source": "./flow-tool-kit",
+      "description": "Turn any form you already have into a working Salesforce form, and build interfaces, Experience Cloud sites and advanced Flow screens with Flow Tool Kit."
+    }
+  ]
+}

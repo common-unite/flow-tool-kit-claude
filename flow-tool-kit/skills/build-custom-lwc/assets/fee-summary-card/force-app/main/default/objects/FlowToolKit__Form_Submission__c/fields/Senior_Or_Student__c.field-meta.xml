@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Senior_Or_Student__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when the member says they qualify for the senior or student rate. Halves the plot fee in the fee summary; the garden office confirms eligibility.</description>
+    <externalId>false</externalId>
+    <label>I qualify for the senior or student rate</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

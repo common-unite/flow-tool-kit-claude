@@ -1,0 +1,311 @@
+{
+ "_note": "The Site Blocks block types and the narrowest column each numbered design holds up in, read from the Flow Tool Kit package's block configuration. build_site_review.py uses the design system's own tools/schema.json and tools/column_limits.json instead when the kit ships them.",
+ "types": {
+  "hero": {
+   "label": "Hero",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "blockTitle",
+    "description",
+    "footnote"
+   ],
+   "collections": [
+    "bullets",
+    "items",
+    "stats"
+   ]
+  },
+  "heading": {
+   "label": "Heading",
+   "deprecated": true,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": []
+  },
+  "statsBar": {
+   "label": "Stats",
+   "deprecated": false,
+   "contentFields": [],
+   "collections": [
+    "items"
+   ]
+  },
+  "facts": {
+   "label": "Facts",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": [
+    "items"
+   ]
+  },
+  "timeline": {
+   "label": "Timeline",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "footnote"
+   ],
+   "collections": [
+    "items"
+   ]
+  },
+  "quote": {
+   "label": "Quote",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "description",
+    "attribution",
+    "attributionDetail"
+   ],
+   "collections": []
+  },
+  "actionCard": {
+   "label": "Action Card",
+   "deprecated": false,
+   "contentFields": [
+    "heading",
+    "deadline",
+    "opensOn",
+    "progressCurrent",
+    "progressTotal",
+    "footnote"
+   ],
+   "collections": []
+  },
+  "carousel": {
+   "label": "Carousel",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading"
+   ],
+   "collections": [
+    "items"
+   ]
+  },
+  "image": {
+   "label": "Image",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": []
+  },
+  "gallery": {
+   "label": "Image Gallery",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": [
+    "items"
+   ]
+  },
+  "cards": {
+   "label": "Cards",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote",
+    "description"
+   ],
+   "collections": [
+    "items"
+   ]
+  },
+  "steps": {
+   "label": "Steps",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": [
+    "items"
+   ]
+  },
+  "pricing": {
+   "label": "Pricing",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": [
+    "items"
+   ]
+  },
+  "callout": {
+   "label": "Callout",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote",
+    "description"
+   ],
+   "collections": []
+  },
+  "table": {
+   "label": "Comparison Table",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": [
+    "columns",
+    "items"
+   ]
+  },
+  "pills": {
+   "label": "Tag Cloud",
+   "deprecated": false,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": [
+    "items"
+   ]
+  },
+  "cta": {
+   "label": "Call to Action",
+   "deprecated": true,
+   "contentFields": [
+    "sectionLabel",
+    "heading",
+    "subheading",
+    "footnote"
+   ],
+   "collections": []
+  },
+  "recordCard": {
+   "label": "Record Card",
+   "deprecated": false,
+   "contentFields": [],
+   "collections": [
+    "items"
+   ]
+  }
+ },
+ "columnLimits": {
+  "Callout": [
+   {
+    "designs": [
+     "02",
+     "04",
+     "05"
+    ],
+    "narrowest": "1 of 3"
+   }
+  ],
+  "Cards": [
+   {
+    "designs": [
+     "04",
+     "06"
+    ],
+    "narrowest": "1 of 3"
+   }
+  ],
+  "Carousel": [
+   {
+    "designs": [
+     "06"
+    ],
+    "narrowest": "1 of 3"
+   }
+  ],
+  "Facts": [
+   {
+    "designs": [
+     "04"
+    ],
+    "narrowest": "1 of 3"
+   }
+  ],
+  "Hero": [
+   {
+    "designs": [
+     "03",
+     "21",
+     "23"
+    ],
+    "narrowest": "1 of 3"
+   },
+   {
+    "designs": [
+     "05",
+     "07",
+     "08",
+     "10",
+     "12",
+     "13",
+     "14"
+    ],
+    "narrowest": "1 of 3"
+   }
+  ],
+  "Pills": [
+   {
+    "designs": [
+     "06"
+    ],
+    "narrowest": "1 of 3"
+   }
+  ],
+  "Pricing": [
+   {
+    "designs": "all",
+    "narrowest": "1 of 3"
+   },
+   {
+    "designs": [
+     "06"
+    ],
+    "narrowest": "1 of 3"
+   }
+  ],
+  "Table": [
+   {
+    "designs": [
+     "05"
+    ],
+    "narrowest": "1 of 3"
+   }
+  ]
+ }
+}

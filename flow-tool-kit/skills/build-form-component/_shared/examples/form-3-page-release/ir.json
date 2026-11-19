@@ -1,0 +1,386 @@
+{
+  "schema_version": "2.0",
+  "source": {
+    "platform": "brief",
+    "form_id": "",
+    "form_name": "Community Program Registration",
+    "source_url": "",
+    "connector_id": "",
+    "coverage": {
+      "structure": "hand_authored",
+      "fields": "hand_authored",
+      "options": "hand_authored",
+      "validation": "hand_authored",
+      "conditions": "none_exist",
+      "connector": "none_exist",
+      "images": "not_captured",
+      "custom_scripts": "none_exist"
+    },
+    "captured_by": "brief",
+    "captured_on": ""
+  },
+  "form": {
+    "form_id": "",
+    "connector_id": "",
+    "section_paths": [
+      "About the Program",
+      "Your Details",
+      "Release and Signature"
+    ],
+    "content_blocks": [
+      {
+        "section": "About the Program",
+        "title": "",
+        "text": "Riverside Community Garden runs free growing workshops for neighbors of every experience level. This registration tells us who is coming, which organization you are with, and confirms you have read the program release. It takes about six minutes."
+      },
+      {
+        "section": "Release and Signature",
+        "title": "",
+        "text": "[Release text: the program's participation and photo release, word for word.]"
+      }
+    ]
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "section_path": "Your Details",
+      "input_type": "text",
+      "tag": "input",
+      "required": true,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "section_path": "Your Details",
+      "input_type": "text",
+      "tag": "input",
+      "required": true,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "section_path": "Your Details",
+      "input_type": "email",
+      "tag": "input",
+      "required": true,
+      "validation": [
+        "email"
+      ],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "section_path": "Your Details",
+      "input_type": "tel",
+      "tag": "input",
+      "required": false,
+      "validation": [
+        "phone"
+      ],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "mailing_address",
+      "label": "Mailing Address",
+      "section_path": "Your Details",
+      "input_type": "text",
+      "tag": "input",
+      "required": false,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "age_range",
+      "label": "Age Range",
+      "section_path": "Your Details",
+      "input_type": "choice-group",
+      "tag": "input",
+      "required": false,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [
+        {
+          "id": "age_range::Under 18",
+          "label": "Under 18"
+        },
+        {
+          "id": "age_range::18-24",
+          "label": "18-24"
+        },
+        {
+          "id": "age_range::25-34",
+          "label": "25-34"
+        },
+        {
+          "id": "age_range::35-44",
+          "label": "35-44"
+        },
+        {
+          "id": "age_range::45-54",
+          "label": "45-54"
+        },
+        {
+          "id": "age_range::55-64",
+          "label": "55-64"
+        },
+        {
+          "id": "age_range::65 or Older",
+          "label": "65 or Older"
+        },
+        {
+          "id": "age_range::Prefer Not to Answer",
+          "label": "Prefer Not to Answer"
+        }
+      ],
+      "help_text": ""
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "section_path": "Your Details",
+      "input_type": "select",
+      "tag": "input",
+      "required": false,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [
+        {
+          "id": "gender::Male",
+          "label": "Male"
+        },
+        {
+          "id": "gender::Female",
+          "label": "Female"
+        },
+        {
+          "id": "gender::Non-binary",
+          "label": "Non-binary"
+        },
+        {
+          "id": "gender::Prefer to self-describe",
+          "label": "Prefer to self-describe"
+        },
+        {
+          "id": "gender::Prefer not to say",
+          "label": "Prefer not to say"
+        }
+      ],
+      "help_text": ""
+    },
+    {
+      "id": "race_ethnicity",
+      "label": "Race & Ethnicity",
+      "section_path": "Your Details",
+      "input_type": "choice-group",
+      "tag": "input",
+      "required": false,
+      "validation": [
+        "checkbox"
+      ],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [
+        {
+          "id": "race_ethnicity::White",
+          "label": "White"
+        },
+        {
+          "id": "race_ethnicity::Black or African American",
+          "label": "Black or African American"
+        },
+        {
+          "id": "race_ethnicity::American Indian or Alaska Native",
+          "label": "American Indian or Alaska Native"
+        },
+        {
+          "id": "race_ethnicity::Asian",
+          "label": "Asian"
+        },
+        {
+          "id": "race_ethnicity::Native Hawaiian or Other Pacific Islander",
+          "label": "Native Hawaiian or Other Pacific Islander"
+        },
+        {
+          "id": "race_ethnicity::Hispanic",
+          "label": "Hispanic"
+        },
+        {
+          "id": "race_ethnicity::Other",
+          "label": "Other"
+        },
+        {
+          "id": "race_ethnicity::Prefer not to say",
+          "label": "Prefer not to say"
+        }
+      ],
+      "help_text": ""
+    },
+    {
+      "id": "organization_name",
+      "label": "Organization Name",
+      "section_path": "Your Details",
+      "input_type": "text",
+      "tag": "input",
+      "required": false,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "organization_phone",
+      "label": "Organization Phone",
+      "section_path": "Your Details",
+      "input_type": "tel",
+      "tag": "input",
+      "required": false,
+      "validation": [
+        "phone"
+      ],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "organization_website",
+      "label": "Organization Website",
+      "section_path": "Your Details",
+      "input_type": "url",
+      "tag": "input",
+      "required": false,
+      "validation": [
+        "url"
+      ],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "i_have_read_and_agree_to_the_release_above",
+      "label": "I have read and agree to the release above",
+      "section_path": "Release and Signature",
+      "input_type": "checkbox",
+      "tag": "input",
+      "required": true,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "signature",
+      "label": "Signature",
+      "section_path": "Release and Signature",
+      "input_type": "textarea",
+      "tag": "input",
+      "required": true,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "printed_name",
+      "label": "Printed Name",
+      "section_path": "Release and Signature",
+      "input_type": "text",
+      "tag": "input",
+      "required": true,
+      "validation": [],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    },
+    {
+      "id": "date",
+      "label": "Date",
+      "section_path": "Release and Signature",
+      "input_type": "date",
+      "tag": "input",
+      "required": true,
+      "validation": [
+        "date"
+      ],
+      "default_value": null,
+      "present_in_rendered_form": true,
+      "options": [],
+      "help_text": ""
+    }
+  ],
+  "structure": [
+    {
+      "id": "About the Program",
+      "tag": "page",
+      "layout": [],
+      "parent_id": null,
+      "has_condition": false
+    },
+    {
+      "id": "Your Details",
+      "tag": "page",
+      "layout": [],
+      "parent_id": null,
+      "has_condition": false
+    },
+    {
+      "id": "Release and Signature",
+      "tag": "page",
+      "layout": [],
+      "parent_id": null,
+      "has_condition": false
+    }
+  ],
+  "conditions": [],
+  "dependent_picklists": [],
+  "connector": {
+    "nodes": [],
+    "options": {},
+    "declared_target_fields": [],
+    "branches": []
+  },
+  "images": [],
+  "custom_scripts": [],
+  "findings": [
+    {
+      "source": "capture",
+      "message": "mailing_address: Address block: the Address component on the mailing text fields."
+    },
+    {
+      "source": "capture",
+      "message": "signature: Electronic signature: drawn with the signature pad."
+    },
+    {
+      "source": "contract",
+      "message": "coverage.images is not_captured - an acknowledged hole. Anything downstream reading it is reading an absence, not a fact."
+    }
+  ]
+}

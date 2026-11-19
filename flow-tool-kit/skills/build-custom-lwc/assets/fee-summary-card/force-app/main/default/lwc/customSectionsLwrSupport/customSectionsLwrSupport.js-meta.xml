@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <description>Renders nothing. Place it in the Theme Footer of every LWR site that shows a form with a custom section component, beside FlowToolKit LWR Support, then publish the site. It makes the site include the custom section components, which the form loads only by name. Add an import line here for each new custom section component.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Custom Sections LWR Support</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+</LightningComponentBundle>

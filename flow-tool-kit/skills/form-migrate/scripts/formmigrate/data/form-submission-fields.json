@@ -1,0 +1,2736 @@
+{
+ "_comment": "Packaged Form Submission fields, read from the Flow Tool Kit package source. A fallback for planning with no org: every name is marked verify, because an installed version can differ.",
+ "generated_from": "Flow Tool Kit package source, 2026-11",
+ "fields": [
+  {
+   "name": "FlowToolKit__Accessibility_Detail__c",
+   "label": "Accessibility Detail",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Accessibility_Needs__c",
+   "label": "Accessibility Needs",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Account__c",
+   "label": "Account",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Age_Range__c",
+   "label": "Age Range",
+   "type": "Picklist",
+   "picklistValues": [
+    "Under 18",
+    "18-24",
+    "25-34",
+    "35-44",
+    "45-54",
+    "55-64",
+    "65 or Older",
+    "Prefer Not to Answer"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agree_Consent__c",
+   "label": "Agree/Consent",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_10__c",
+   "label": "Agreement Question 10",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_1__c",
+   "label": "Agreement Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_2__c",
+   "label": "Agreement Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_3__c",
+   "label": "Agreement Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_4__c",
+   "label": "Agreement Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_5__c",
+   "label": "Agreement Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_6__c",
+   "label": "Agreement Question 6",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_7__c",
+   "label": "Agreement Question 7",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_8__c",
+   "label": "Agreement Question 8",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Question_9__c",
+   "label": "Agreement Question 9",
+   "type": "Picklist",
+   "picklistValues": [
+    "Strongly Disagree",
+    "Disagree",
+    "Neither Agree nor Disagree",
+    "Agree",
+    "Strongly Agree"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Agreement_Text__c",
+   "label": "Agreement Text",
+   "type": "Html"
+  },
+  {
+   "name": "FlowToolKit__Amount__c",
+   "label": "Amount",
+   "type": "Currency"
+  },
+  {
+   "name": "FlowToolKit__Annual_Revenue__c",
+   "label": "Annual Revenue",
+   "type": "Currency"
+  },
+  {
+   "name": "FlowToolKit__Anonymous__c",
+   "label": "Anonymous",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Best_Time_To_Contact__c",
+   "label": "Best Time to Contact",
+   "type": "Picklist",
+   "picklistValues": [
+    "Morning",
+    "Afternoon",
+    "Evening",
+    "Anytime"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Boolean_Question_1__c",
+   "label": "Boolean Question 1",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Boolean_Question_2__c",
+   "label": "Boolean Question 2",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Boolean_Question_3__c",
+   "label": "Boolean Question 3",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Boolean_Question_4__c",
+   "label": "Boolean Question 4",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Boolean_Question_5__c",
+   "label": "Boolean Question 5",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__CampaignId__c",
+   "label": "CampaignId",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Campaign_Member_Status__c",
+   "label": "Campaign Member Status",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Campaign__c",
+   "label": "Campaign",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Case__c",
+   "label": "Case",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Change_Question_1__c",
+   "label": "Change Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Much Worse",
+    "Somewhat Worse",
+    "About the Same",
+    "Somewhat Better",
+    "Much Better"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Change_Question_2__c",
+   "label": "Change Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Much Worse",
+    "Somewhat Worse",
+    "About the Same",
+    "Somewhat Better",
+    "Much Better"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Change_Question_3__c",
+   "label": "Change Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Much Worse",
+    "Somewhat Worse",
+    "About the Same",
+    "Somewhat Better",
+    "Much Better"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Change_Question_4__c",
+   "label": "Change Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Much Worse",
+    "Somewhat Worse",
+    "About the Same",
+    "Somewhat Better",
+    "Much Better"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Change_Question_5__c",
+   "label": "Change Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Much Worse",
+    "Somewhat Worse",
+    "About the Same",
+    "Somewhat Better",
+    "Much Better"
+   ]
+  },
+  {
+   "name": "FlowToolKit__City__c",
+   "label": "City",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Company_Email__c",
+   "label": "Email",
+   "type": "Email"
+  },
+  {
+   "name": "FlowToolKit__Company_Phone__c",
+   "label": "Phone",
+   "type": "Phone"
+  },
+  {
+   "name": "FlowToolKit__Company__c",
+   "label": "Company",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_10__c",
+   "label": "Confidence Question 10",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_1__c",
+   "label": "Confidence Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_2__c",
+   "label": "Confidence Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_3__c",
+   "label": "Confidence Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_4__c",
+   "label": "Confidence Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_5__c",
+   "label": "Confidence Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_6__c",
+   "label": "Confidence Question 6",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_7__c",
+   "label": "Confidence Question 7",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_8__c",
+   "label": "Confidence Question 8",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Confidence_Question_9__c",
+   "label": "Confidence Question 9",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Confident",
+    "Slightly Confident",
+    "Moderately Confident",
+    "Very Confident",
+    "Extremely Confident"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact1_Age_Calculated__c",
+   "label": "Age",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Birthdate__c",
+   "label": "Birthdate",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__Contact1_DoNotCall__c",
+   "label": "Do Not Call",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Email_Type__c",
+   "label": "Email Type",
+   "type": "Picklist",
+   "picklistValues": [
+    "Work",
+    "Personal",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact1_Email__c",
+   "label": "Email",
+   "type": "Email"
+  },
+  {
+   "name": "FlowToolKit__Contact1_First_Name__c",
+   "label": "First Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Gender_Other__c",
+   "label": "Gender (Self-Described)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Gender__c",
+   "label": "Gender",
+   "type": "Picklist",
+   "picklistValues": [
+    "Male",
+    "Female",
+    "Non-binary",
+    "Prefer to self-describe",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact1_HasOptedOutOfEmail__c",
+   "label": "Email Opt Out",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Hispanic__c",
+   "label": "Hispanic or Latino",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Last_Name__c",
+   "label": "Last Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Middle_Name__c",
+   "label": "Contact 1 Middle Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact1_MobilePhone__c",
+   "label": "Mobile",
+   "type": "Phone"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Other_Race__c",
+   "label": "Other",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Phone_Type__c",
+   "label": "Phone Type",
+   "type": "Picklist",
+   "picklistValues": [
+    "Work",
+    "Mobile",
+    "Home",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact1_Phone__c",
+   "label": "Phone",
+   "type": "Phone"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Preferred_Language_Other__c",
+   "label": "Preferred Language (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Preferred_Language__c",
+   "label": "Preferred Language",
+   "type": "Picklist",
+   "picklistValues": [
+    "en",
+    "es",
+    "fr",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "ja",
+    "zh",
+    "ar",
+    "ko",
+    "hi",
+    "nl",
+    "sv",
+    "no",
+    "da",
+    "fi",
+    "pl",
+    "tr",
+    "he",
+    "cs",
+    "el",
+    "hu",
+    "th",
+    "vi",
+    "uk",
+    "ro",
+    "bg",
+    "id",
+    "ms",
+    "tl",
+    "fa",
+    "ur",
+    "ta",
+    "te",
+    "mr",
+    "bn",
+    "gu",
+    "pa",
+    "kn",
+    "ml",
+    "sw",
+    "zu",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact1_Primary_Contact__c",
+   "label": "Primary Contact",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Profile_Photo__c",
+   "label": "Profile Photo",
+   "type": "Html"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Pronouns_Other__c",
+   "label": "Pronouns (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Pronouns__c",
+   "label": "Contact 1 Pronouns",
+   "type": "Picklist",
+   "picklistValues": [
+    "She/Her",
+    "He/Him",
+    "They/Them",
+    "Other",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact1_Race_Ethnicity_Multiselect__c",
+   "label": "Race &amp; Ethnicity",
+   "type": "MultiselectPicklist",
+   "picklistValues": [
+    "White",
+    "Black or African American",
+    "American Indian or Alaska Native",
+    "Asian",
+    "Native Hawaiian or Other Pacific Islander",
+    "Hispanic",
+    "Other",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact1_Salutation_Other__c",
+   "label": "Salutation (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact1_Salutation__c",
+   "label": "Contact 1 Salutation",
+   "type": "Picklist",
+   "picklistValues": [
+    "Mr.",
+    "Ms.",
+    "Mrs.",
+    "Dr.",
+    "Prof.",
+    "Mx.",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact1_Title__c",
+   "label": "Title",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Age_Calculated__c",
+   "label": "Age",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Birthdate__c",
+   "label": "Birthdate",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__Contact2_DoNotCall__c",
+   "label": "Do Not Call",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Email_Type__c",
+   "label": "Email Type",
+   "type": "Picklist",
+   "picklistValues": [
+    "Work",
+    "Personal",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact2_Email__c",
+   "label": "Email",
+   "type": "Email"
+  },
+  {
+   "name": "FlowToolKit__Contact2_First_Name__c",
+   "label": "First Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Gender_Other__c",
+   "label": "Gender (Self-Described)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Gender__c",
+   "label": "Gender",
+   "type": "Picklist",
+   "picklistValues": [
+    "Male",
+    "Female",
+    "Non-binary",
+    "Prefer to self-describe",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact2_HasOptedOutOfEmail__c",
+   "label": "Email Opt Out",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Hispanic__c",
+   "label": "Hispanic or Latino",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Last_Name__c",
+   "label": "Last Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Middle_Name__c",
+   "label": "Contact 2 Middle Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_MobilePhone__c",
+   "label": "Mobile",
+   "type": "Phone"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Other_Race__c",
+   "label": "Other",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Phone_Type__c",
+   "label": "Phone Type",
+   "type": "Picklist",
+   "picklistValues": [
+    "Work",
+    "Mobile",
+    "Home",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact2_Phone__c",
+   "label": "Phone",
+   "type": "Phone"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Preferred_Language_Other__c",
+   "label": "Preferred Language (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Preferred_Language__c",
+   "label": "Preferred Language",
+   "type": "Picklist",
+   "picklistValues": [
+    "en",
+    "es",
+    "fr",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "ja",
+    "zh",
+    "ar",
+    "ko",
+    "hi",
+    "nl",
+    "sv",
+    "no",
+    "da",
+    "fi",
+    "pl",
+    "tr",
+    "he",
+    "cs",
+    "el",
+    "hu",
+    "th",
+    "vi",
+    "uk",
+    "ro",
+    "bg",
+    "id",
+    "ms",
+    "tl",
+    "fa",
+    "ur",
+    "ta",
+    "te",
+    "mr",
+    "bn",
+    "gu",
+    "pa",
+    "kn",
+    "ml",
+    "sw",
+    "zu",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact2_Primary_Contact__c",
+   "label": "Primary Contact",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Profile_Photo__c",
+   "label": "Profile Photo",
+   "type": "Html"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Pronouns_Other__c",
+   "label": "Pronouns (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Pronouns__c",
+   "label": "Contact 2 Pronouns",
+   "type": "Picklist",
+   "picklistValues": [
+    "She/Her",
+    "He/Him",
+    "They/Them",
+    "Other",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact2_Race_Ethnicity_Multiselect__c",
+   "label": "Race &amp; Ethnicity",
+   "type": "MultiselectPicklist",
+   "picklistValues": [
+    "White",
+    "Black or African American",
+    "American Indian or Alaska Native",
+    "Asian",
+    "Native Hawaiian or Other Pacific Islander",
+    "Hispanic",
+    "Other",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact2_Relationship_Other__c",
+   "label": "Relationship (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Relationship_to_Contact1__c",
+   "label": "Relationship",
+   "type": "Picklist",
+   "picklistValues": [
+    "Mother",
+    "Father",
+    "Stepparent",
+    "Legal Guardian",
+    "Foster Parent",
+    "Grandparent",
+    "Spouse or Partner",
+    "Sibling",
+    "Child",
+    "Friend",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact2_Salutation_Other__c",
+   "label": "Salutation (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact2_Salutation__c",
+   "label": "Contact 2 Salutation",
+   "type": "Picklist",
+   "picklistValues": [
+    "Mr.",
+    "Ms.",
+    "Mrs.",
+    "Dr.",
+    "Prof.",
+    "Mx.",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Contact2_Title__c",
+   "label": "Title",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Contact_1__c",
+   "label": "Contact (Primary)",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Contact_2__c",
+   "label": "Contact (Alternate)",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Dispatch_Counts__c",
+   "label": "Conversion Dispatch Counts",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Log__c",
+   "label": "Conversion Log",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_Account__c",
+   "label": "Conversion Status (Account)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_CampaignMember_1__c",
+   "label": "Conversion Status (CampaignMember 1)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_CampaignMember_2__c",
+   "label": "Conversion Status (CampaignMember 2)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_Case__c",
+   "label": "Conversion Status (Case)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_Contact_1__c",
+   "label": "Conversion Status (Contact 1)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_Contact_2__c",
+   "label": "Conversion Status (Contact 2)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_Lead_1__c",
+   "label": "Conversion Status (Lead 1)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_Lead_2__c",
+   "label": "Conversion Status (Lead 2)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_Opportunity__c",
+   "label": "Conversion Status (Opportunity)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status_Order__c",
+   "label": "Conversion Status (Order)",
+   "type": "Picklist"
+  },
+  {
+   "name": "FlowToolKit__Conversion_Status__c",
+   "label": "Conversion Status",
+   "type": "Picklist",
+   "picklistValues": [
+    "Ready",
+    "In Progress",
+    "Error",
+    "Bypassed",
+    "Complete"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Country__c",
+   "label": "Country",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Date_Question_1__c",
+   "label": "Date Question 1",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__Date_Question_2__c",
+   "label": "Date Question 2",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__Date_Question_3__c",
+   "label": "Date Question 3",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__Date_Time__c",
+   "label": "Date &amp; Time",
+   "type": "DateTime"
+  },
+  {
+   "name": "FlowToolKit__Date__c",
+   "label": "Date",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__Description__c",
+   "label": "Description",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Dietary_Restrictions_Other__c",
+   "label": "Dietary Restrictions (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Dietary_Restrictions__c",
+   "label": "Dietary Restrictions",
+   "type": "MultiselectPicklist",
+   "picklistValues": [
+    "None",
+    "Vegetarian",
+    "Vegan",
+    "Gluten-Free",
+    "Dairy-Free",
+    "Nut Allergy",
+    "Shellfish Allergy",
+    "Kosher",
+    "Halal",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Disability_Status__c",
+   "label": "Disability Status",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_10__c",
+   "label": "Ease Question 10",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_1__c",
+   "label": "Ease Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_2__c",
+   "label": "Ease Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_3__c",
+   "label": "Ease Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_4__c",
+   "label": "Ease Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_5__c",
+   "label": "Ease Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_6__c",
+   "label": "Ease Question 6",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_7__c",
+   "label": "Ease Question 7",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_8__c",
+   "label": "Ease Question 8",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Ease_Question_9__c",
+   "label": "Ease Question 9",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Difficult",
+    "Difficult",
+    "Neither Easy nor Difficult",
+    "Easy",
+    "Very Easy"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Education_Level_Other__c",
+   "label": "Education Level (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Education_Level__c",
+   "label": "Education Level",
+   "type": "Picklist",
+   "picklistValues": [
+    "Some High School",
+    "High School Diploma or GED",
+    "Some College",
+    "Associate Degree",
+    "Bachelor Degree",
+    "Graduate Degree",
+    "Other",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Electronic_Signature_Date__c",
+   "label": "Electronic Signature Date",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__Electronic_Signature_Print__c",
+   "label": "Electronic Signature (Print Name)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Electronic_Signature__c",
+   "label": "Electronic Signature",
+   "type": "Html"
+  },
+  {
+   "name": "FlowToolKit__Email__c",
+   "label": "Email",
+   "type": "Email"
+  },
+  {
+   "name": "FlowToolKit__Employment_Status_Other__c",
+   "label": "Employment Status (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Employment_Status__c",
+   "label": "Employment Status",
+   "type": "Picklist",
+   "picklistValues": [
+    "Employed Full-Time",
+    "Employed Part-Time",
+    "Self-Employed",
+    "Unemployed",
+    "Student",
+    "Retired",
+    "Unable to Work",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__End_Date_Time__c",
+   "label": "End Date &amp; Time",
+   "type": "DateTime"
+  },
+  {
+   "name": "FlowToolKit__End_Date__c",
+   "label": "End Date",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__End_Time__c",
+   "label": "End Time",
+   "type": "Time"
+  },
+  {
+   "name": "FlowToolKit__Expectations_Question_1__c",
+   "label": "Expectations Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Far Below Expectations",
+    "Below Expectations",
+    "Met Expectations",
+    "Above Expectations",
+    "Far Above Expectations"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Expectations_Question_2__c",
+   "label": "Expectations Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Far Below Expectations",
+    "Below Expectations",
+    "Met Expectations",
+    "Above Expectations",
+    "Far Above Expectations"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Expectations_Question_3__c",
+   "label": "Expectations Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Far Below Expectations",
+    "Below Expectations",
+    "Met Expectations",
+    "Above Expectations",
+    "Far Above Expectations"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Expectations_Question_4__c",
+   "label": "Expectations Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Far Below Expectations",
+    "Below Expectations",
+    "Met Expectations",
+    "Above Expectations",
+    "Far Above Expectations"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Expectations_Question_5__c",
+   "label": "Expectations Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Far Below Expectations",
+    "Below Expectations",
+    "Met Expectations",
+    "Above Expectations",
+    "Far Above Expectations"
+   ]
+  },
+  {
+   "name": "FlowToolKit__ExternalId__c",
+   "label": "ExternalId",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Familiarity_Question_1__c",
+   "label": "Familiarity Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Familiar",
+    "Slightly Familiar",
+    "Moderately Familiar",
+    "Very Familiar",
+    "Extremely Familiar"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Familiarity_Question_2__c",
+   "label": "Familiarity Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Familiar",
+    "Slightly Familiar",
+    "Moderately Familiar",
+    "Very Familiar",
+    "Extremely Familiar"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Familiarity_Question_3__c",
+   "label": "Familiarity Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Familiar",
+    "Slightly Familiar",
+    "Moderately Familiar",
+    "Very Familiar",
+    "Extremely Familiar"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Familiarity_Question_4__c",
+   "label": "Familiarity Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Familiar",
+    "Slightly Familiar",
+    "Moderately Familiar",
+    "Very Familiar",
+    "Extremely Familiar"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Familiarity_Question_5__c",
+   "label": "Familiarity Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Familiar",
+    "Slightly Familiar",
+    "Moderately Familiar",
+    "Very Familiar",
+    "Extremely Familiar"
+   ]
+  },
+  {
+   "name": "FlowToolKit__File_Upload_1__c",
+   "label": "File Upload (1)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__File_Upload_2__c",
+   "label": "File Upload (2)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__File_Upload_3__c",
+   "label": "File Upload (3)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__File_Upload_4__c",
+   "label": "File Upload (4)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__File_Upload_5__c",
+   "label": "File Upload (5)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__FormQualifiedApiName__c",
+   "label": "FormQualifiedApiName",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Form_Template__c",
+   "label": "Form Template",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Frequency_Question_1__c",
+   "label": "Frequency Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Never",
+    "Rarely",
+    "Sometimes",
+    "Often",
+    "Always"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Frequency_Question_2__c",
+   "label": "Frequency Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Never",
+    "Rarely",
+    "Sometimes",
+    "Often",
+    "Always"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Frequency_Question_3__c",
+   "label": "Frequency Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Never",
+    "Rarely",
+    "Sometimes",
+    "Often",
+    "Always"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Frequency_Question_4__c",
+   "label": "Frequency Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Never",
+    "Rarely",
+    "Sometimes",
+    "Often",
+    "Always"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Frequency_Question_5__c",
+   "label": "Frequency Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Never",
+    "Rarely",
+    "Sometimes",
+    "Often",
+    "Always"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Household_Income__c",
+   "label": "Household Income",
+   "type": "Currency"
+  },
+  {
+   "name": "FlowToolKit__Household_Size__c",
+   "label": "Household Size",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Housing_Status_Other__c",
+   "label": "Housing Status (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Housing_Status__c",
+   "label": "Housing Status",
+   "type": "Picklist",
+   "picklistValues": [
+    "Own",
+    "Rent",
+    "Living with Family or Friends",
+    "Transitional Housing",
+    "Unhoused",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__How_Did_You_Hear_Other__c",
+   "label": "How Did You Hear (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__How_Did_You_Hear__c",
+   "label": "How Did You Hear About Us",
+   "type": "Picklist",
+   "picklistValues": [
+    "Search Engine",
+    "Social Media",
+    "Friend or Family",
+    "Colleague",
+    "Event",
+    "Advertisement",
+    "Email",
+    "News Article",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Image__c",
+   "label": "Image",
+   "type": "Html"
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_10__c",
+   "label": "Importance Question 10",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_1__c",
+   "label": "Importance Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_2__c",
+   "label": "Importance Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_3__c",
+   "label": "Importance Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_4__c",
+   "label": "Importance Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_5__c",
+   "label": "Importance Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_6__c",
+   "label": "Importance Question 6",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_7__c",
+   "label": "Importance Question 7",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_8__c",
+   "label": "Importance Question 8",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Importance_Question_9__c",
+   "label": "Importance Question 9",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Important",
+    "Slightly Important",
+    "Moderately Important",
+    "Very Important",
+    "Extremely Important"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Income_Range__c",
+   "label": "Income Range",
+   "type": "Picklist",
+   "picklistValues": [
+    "Under $25,000",
+    "$25,000-$49,999",
+    "$50,000-$74,999",
+    "$75,000-$99,999",
+    "$100,000-$149,999",
+    "$150,000 or more",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Industry_Other__c",
+   "label": "Industry (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Industry__c",
+   "label": "Industry",
+   "type": "Picklist",
+   "picklistValues": [
+    "Agriculture",
+    "Apparel",
+    "Banking",
+    "Biotechnology",
+    "Chemicals",
+    "Communications",
+    "Construction",
+    "Consulting",
+    "Education",
+    "Electronics",
+    "Energy",
+    "Engineering",
+    "Entertainment",
+    "Environmental",
+    "Finance",
+    "Food &amp; Beverage",
+    "Government",
+    "Healthcare",
+    "Hospitality",
+    "Insurance",
+    "Machinery",
+    "Manufacturing",
+    "Media",
+    "Not For Profit",
+    "Recreation",
+    "Retail",
+    "Shipping",
+    "Technology",
+    "Telecommunications",
+    "Transportation",
+    "Utilities",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Internal_Additional_Data__c",
+   "label": "Additional Data",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Internal_Answers_PDF_Id__c",
+   "label": "Answers PDF Id",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_Confirmation_Last_Sent__c",
+   "label": "Confirmation Last Sent",
+   "type": "DateTime"
+  },
+  {
+   "name": "FlowToolKit__Internal_Conversion_Batch_Id__c",
+   "label": "Internal Conversion Batch Id",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_Data_Conversion_Tag_s__c",
+   "label": "Data Conversion Tag(s)",
+   "type": "MultiselectPicklist"
+  },
+  {
+   "name": "FlowToolKit__Internal_Description__c",
+   "label": "Internal Description",
+   "type": "TextArea"
+  },
+  {
+   "name": "FlowToolKit__Internal_Flow_InterviewGuid__c",
+   "label": "Flow InterviewGuid",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_Form_Start_Date_Time__c",
+   "label": "Form Start Date Time",
+   "type": "DateTime"
+  },
+  {
+   "name": "FlowToolKit__Internal_Is_Related_Record__c",
+   "label": "Is Related Record",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Internal_LastSavedPageId__c",
+   "label": "LastSavedPageId",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_PageId__c",
+   "label": "PageId",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_Parent_Link__c",
+   "label": "Parent Template/Submission",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_Resume_Link__c",
+   "label": "Save Progress Resume Link",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_SectionId__c",
+   "label": "SectionId",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_Send_Resume_Link__c",
+   "label": "Send Resume Link",
+   "type": "DateTime"
+  },
+  {
+   "name": "FlowToolKit__Internal_Submission_Number__c",
+   "label": "Submission Number",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Internal_Unique_Token__c",
+   "label": "Unique Token",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__IsPrefillTemplate__c",
+   "label": "Is Pre-fill Template",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Last_Saved_Date__c",
+   "label": "Last Saved Date",
+   "type": "DateTime"
+  },
+  {
+   "name": "FlowToolKit__Lead_1__c",
+   "label": "Lead (Primary)",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Lead_2__c",
+   "label": "Lead (Alternate)",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Liability_Waiver_Agreement__c",
+   "label": "Liability Waiver Agreement",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_10__c",
+   "label": "Likelihood Question 10",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_1__c",
+   "label": "Likelihood Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_2__c",
+   "label": "Likelihood Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_3__c",
+   "label": "Likelihood Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_4__c",
+   "label": "Likelihood Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_5__c",
+   "label": "Likelihood Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_6__c",
+   "label": "Likelihood Question 6",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_7__c",
+   "label": "Likelihood Question 7",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_8__c",
+   "label": "Likelihood Question 8",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Likelihood_Question_9__c",
+   "label": "Likelihood Question 9",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Unlikely",
+    "Unlikely",
+    "Neither Likely nor Unlikely",
+    "Likely",
+    "Very Likely"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Long_Text_Question_1__c",
+   "label": "Long Text Question (1)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Long_Text_Question_2__c",
+   "label": "Long Text Question (2)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Long_Text_Question_3__c",
+   "label": "Long Text Question (3)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Long_Text_Question_4__c",
+   "label": "Long Text Question (4)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Long_Text_Question_5__c",
+   "label": "Long Text Question (5)",
+   "type": "LongTextArea"
+  },
+  {
+   "name": "FlowToolKit__Mailing_City__c",
+   "label": "Mailing City",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Mailing_Country__c",
+   "label": "Mailing Country",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Mailing_Postal_Code__c",
+   "label": "Mailing Postal Code",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Mailing_Same_As_Physical__c",
+   "label": "Mailing Same as Physical",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Mailing_State_Province__c",
+   "label": "Mailing State/Province",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Mailing_Street__c",
+   "label": "Mailing Street",
+   "type": "TextArea"
+  },
+  {
+   "name": "FlowToolKit__Marital_Status_Other__c",
+   "label": "Marital Status (Other)",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Marital_Status__c",
+   "label": "Marital Status",
+   "type": "Picklist",
+   "picklistValues": [
+    "Single",
+    "Married",
+    "Domestic Partnership",
+    "Divorced",
+    "Widowed",
+    "Separated",
+    "Other",
+    "Prefer not to say"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Name__c",
+   "label": "Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Newsletter_Opt_In__c",
+   "label": "Newsletter Opt-In",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Number_Question_1__c",
+   "label": "Number Question 1",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Number_Question_2__c",
+   "label": "Number Question 2",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Number_Question_3__c",
+   "label": "Number Question 3",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Number_Question_4__c",
+   "label": "Number Question 4",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Number_Question_5__c",
+   "label": "Number Question 5",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Number_of_Employees__c",
+   "label": "Number of Employees",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Number_of_Guests__c",
+   "label": "Number of Guests",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Occupation__c",
+   "label": "Occupation",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Opportunity__c",
+   "label": "Opportunity",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Origin__c",
+   "label": "Origin",
+   "type": "Picklist",
+   "picklistValues": [
+    "Phone",
+    "Email",
+    "Web"
+   ]
+  },
+  {
+   "name": "FlowToolKit__ParentFormSubmissionId__c",
+   "label": "ParentFormSubmissionId",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Parent_Form_Submission__c",
+   "label": "Parent Form Submission",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Percent_1__c",
+   "label": "Percent",
+   "type": "Percent"
+  },
+  {
+   "name": "FlowToolKit__Percent_2__c",
+   "label": "Percent",
+   "type": "Percent"
+  },
+  {
+   "name": "FlowToolKit__Percent_3__c",
+   "label": "Percent",
+   "type": "Percent"
+  },
+  {
+   "name": "FlowToolKit__Photo_Video_Consent__c",
+   "label": "Photo/Video Consent",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Postal_Code__c",
+   "label": "Postal Code",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Preferred_Contact_Method__c",
+   "label": "Preferred Contact Method",
+   "type": "Picklist",
+   "picklistValues": [
+    "Email",
+    "Phone",
+    "Text Message",
+    "Mail"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Preferred_Days__c",
+   "label": "Preferred Days",
+   "type": "MultiselectPicklist",
+   "picklistValues": [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Preferred_Times__c",
+   "label": "Preferred Times",
+   "type": "MultiselectPicklist",
+   "picklistValues": [
+    "Early Morning",
+    "Morning",
+    "Afternoon",
+    "Evening"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Priority__c",
+   "label": "Priority",
+   "type": "Picklist",
+   "picklistValues": [
+    "High",
+    "Medium",
+    "Low"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Product__c",
+   "label": "Product",
+   "type": "Lookup"
+  },
+  {
+   "name": "FlowToolKit__Quantity__c",
+   "label": "Quantity",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Rating_1__c",
+   "label": "Rating 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Rating_2__c",
+   "label": "Rating 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Rating_3__c",
+   "label": "Rating 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Rating_4__c",
+   "label": "Rating 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Rating_5__c",
+   "label": "Rating 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Reason__c",
+   "label": "Reason",
+   "type": "Picklist",
+   "picklistValues": [
+    "Installation",
+    "Equipment Complexity",
+    "Performance",
+    "Breakdown",
+    "Equipment Design",
+    "Feedback",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Referral_Name__c",
+   "label": "Referral Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Satisfaction_Question_1__c",
+   "label": "Satisfaction Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Dissatisfied",
+    "Dissatisfied",
+    "Neutral",
+    "Satisfied",
+    "Very Satisfied"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Satisfaction_Question_2__c",
+   "label": "Satisfaction Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Dissatisfied",
+    "Dissatisfied",
+    "Neutral",
+    "Satisfied",
+    "Very Satisfied"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Satisfaction_Question_3__c",
+   "label": "Satisfaction Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Dissatisfied",
+    "Dissatisfied",
+    "Neutral",
+    "Satisfied",
+    "Very Satisfied"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Satisfaction_Question_4__c",
+   "label": "Satisfaction Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Dissatisfied",
+    "Dissatisfied",
+    "Neutral",
+    "Satisfied",
+    "Very Satisfied"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Satisfaction_Question_5__c",
+   "label": "Satisfaction Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Very Dissatisfied",
+    "Dissatisfied",
+    "Neutral",
+    "Satisfied",
+    "Very Satisfied"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Scale_Question_1__c",
+   "label": "Scale Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Scale_Question_2__c",
+   "label": "Scale Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Scale_Question_3__c",
+   "label": "Scale Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Shirt_Size__c",
+   "label": "Shirt Size",
+   "type": "Picklist",
+   "picklistValues": [
+    "Youth S",
+    "Youth M",
+    "Youth L",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Source_Id__c",
+   "label": "Source Id",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Source_Text_1__c",
+   "label": "Source Text 1",
+   "type": "Html"
+  },
+  {
+   "name": "FlowToolKit__Source_Text_2__c",
+   "label": "Source Text 2",
+   "type": "Html"
+  },
+  {
+   "name": "FlowToolKit__Source_Text_3__c",
+   "label": "Source Text 3",
+   "type": "Html"
+  },
+  {
+   "name": "FlowToolKit__Stage_Status__c",
+   "label": "Stage/Status",
+   "type": "Picklist",
+   "picklistValues": [
+    "New",
+    "Working",
+    "Escalated",
+    "Closed",
+    "Prospecting",
+    "Qualification",
+    "Needs Analysis",
+    "Value Proposition",
+    "Id. Decision Makers",
+    "Perception Analysis",
+    "Proposal/Price Quote",
+    "Negotiation/Review",
+    "Closed Won",
+    "Closed Lost"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Start_Date_Time__c",
+   "label": "Start Date &amp; Time",
+   "type": "DateTime"
+  },
+  {
+   "name": "FlowToolKit__Start_Date__c",
+   "label": "Start Date",
+   "type": "Date"
+  },
+  {
+   "name": "FlowToolKit__Start_Time__c",
+   "label": "Start Time",
+   "type": "Time"
+  },
+  {
+   "name": "FlowToolKit__State_Province__c",
+   "label": "State/Province",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Status__c",
+   "label": "Status",
+   "type": "Picklist",
+   "picklistValues": [
+    "Draft",
+    "Saved",
+    "Pending Payment",
+    "Submitted"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Street__c",
+   "label": "Street",
+   "type": "TextArea"
+  },
+  {
+   "name": "FlowToolKit__Subject__c",
+   "label": "Subject",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Submission_Date__c",
+   "label": "Submission Date",
+   "type": "DateTime"
+  },
+  {
+   "name": "FlowToolKit__Submitted_By__c",
+   "label": "Submitted By",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Tag_Internal__c",
+   "label": "Tag/Name",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_10__c",
+   "label": "Text Question 10",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_1__c",
+   "label": "Text Question 1",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_2__c",
+   "label": "Text Question 2",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_3__c",
+   "label": "Text Question 3",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_4__c",
+   "label": "Text Question 4",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_5__c",
+   "label": "Text Question 5",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_6__c",
+   "label": "Text Question 6",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_7__c",
+   "label": "Text Question 7",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_8__c",
+   "label": "Text Question 8",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Text_Question_9__c",
+   "label": "Text Question 9",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Total_Amount__c",
+   "label": "Total Amount",
+   "type": "Currency"
+  },
+  {
+   "name": "FlowToolKit__Total_Score_1__c",
+   "label": "Total Score 1",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Total_Score_2__c",
+   "label": "Total Score 2",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Total_Score_3__c",
+   "label": "Total Score 3",
+   "type": "Number"
+  },
+  {
+   "name": "FlowToolKit__Type__c",
+   "label": "Type",
+   "type": "Picklist",
+   "picklistValues": [
+    "Mechanical",
+    "Electrical",
+    "Electronic",
+    "Structural",
+    "Other"
+   ]
+  },
+  {
+   "name": "FlowToolKit__UniqueId__c",
+   "label": "Unique Id",
+   "type": "Text"
+  },
+  {
+   "name": "FlowToolKit__Url_Question_1__c",
+   "label": "URL Question 1",
+   "type": "Url"
+  },
+  {
+   "name": "FlowToolKit__Url_Question_2__c",
+   "label": "URL Question 2",
+   "type": "Url"
+  },
+  {
+   "name": "FlowToolKit__Usefulness_Question_1__c",
+   "label": "Usefulness Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Useful",
+    "Slightly Useful",
+    "Moderately Useful",
+    "Very Useful",
+    "Extremely Useful"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Usefulness_Question_2__c",
+   "label": "Usefulness Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Useful",
+    "Slightly Useful",
+    "Moderately Useful",
+    "Very Useful",
+    "Extremely Useful"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Usefulness_Question_3__c",
+   "label": "Usefulness Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Useful",
+    "Slightly Useful",
+    "Moderately Useful",
+    "Very Useful",
+    "Extremely Useful"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Usefulness_Question_4__c",
+   "label": "Usefulness Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Useful",
+    "Slightly Useful",
+    "Moderately Useful",
+    "Very Useful",
+    "Extremely Useful"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Usefulness_Question_5__c",
+   "label": "Usefulness Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Not at all Useful",
+    "Slightly Useful",
+    "Moderately Useful",
+    "Very Useful",
+    "Extremely Useful"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Veteran_Status__c",
+   "label": "Veteran Status",
+   "type": "Checkbox"
+  },
+  {
+   "name": "FlowToolKit__Website__c",
+   "label": "Website",
+   "type": "Url"
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_10__c",
+   "label": "Yes/No Question 10",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_1__c",
+   "label": "Yes/No Question 1",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_2__c",
+   "label": "Yes/No Question 2",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_3__c",
+   "label": "Yes/No Question 3",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_4__c",
+   "label": "Yes/No Question 4",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_5__c",
+   "label": "Yes/No Question 5",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_6__c",
+   "label": "Yes/No Question 6",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_7__c",
+   "label": "Yes/No Question 7",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_8__c",
+   "label": "Yes/No Question 8",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  },
+  {
+   "name": "FlowToolKit__Yes_No_Question_9__c",
+   "label": "Yes/No Question 9",
+   "type": "Picklist",
+   "picklistValues": [
+    "Yes",
+    "No",
+    "Not Sure",
+    "Not Applicable"
+   ]
+  }
+ ]
+}

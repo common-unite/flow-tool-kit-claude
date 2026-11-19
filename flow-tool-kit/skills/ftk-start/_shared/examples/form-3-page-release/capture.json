@@ -1,0 +1,39 @@
+{
+  "platform": "brief",
+  "form_name": "Community Program Registration",
+  "captured_by": "brief",
+  "coverage": {"conditions": "none_exist"},
+  "pages": [
+    {
+      "name": "About the Program",
+      "intro": "Riverside Community Garden runs free growing workshops for neighbors of every experience level. This registration tells us who is coming, which organization you are with, and confirms you have read the program release. It takes about six minutes.",
+      "fields": []
+    },
+    {
+      "name": "Your Details",
+      "fields": [
+        {"label": "First Name", "type": "text", "required": true},
+        {"label": "Last Name", "type": "text", "required": true},
+        {"label": "Email", "type": "email", "required": true},
+        {"label": "Phone", "type": "phone"},
+        {"label": "Mailing Address", "type": "text", "note": "Address block: the Address component on the mailing text fields."},
+        {"label": "Age Range", "type": "radio", "options": ["Under 18", "18-24", "25-34", "35-44", "45-54", "55-64", "65 or Older", "Prefer Not to Answer"]},
+        {"label": "Gender", "type": "dropdown", "options": ["Male", "Female", "Non-binary", "Prefer to self-describe", "Prefer not to say"]},
+        {"label": "Race & Ethnicity", "type": "checkboxes", "options": ["White", "Black or African American", "American Indian or Alaska Native", "Asian", "Native Hawaiian or Other Pacific Islander", "Hispanic", "Other", "Prefer not to say"]},
+        {"label": "Organization Name", "type": "text"},
+        {"label": "Organization Phone", "type": "phone"},
+        {"label": "Organization Website", "type": "url"}
+      ]
+    },
+    {
+      "name": "Release and Signature",
+      "intro": "[Release text: the program's participation and photo release, word for word.]",
+      "fields": [
+        {"label": "I have read and agree to the release above", "type": "boolean", "required": true},
+        {"label": "Signature", "type": "textarea", "required": true, "note": "Electronic signature: drawn with the signature pad."},
+        {"label": "Printed Name", "type": "text", "required": true},
+        {"label": "Date", "type": "date", "required": true}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<template>
+    <template lwc:if={hasSectionForm}>
+        <FlowToolKit-flow-form
+                is-extension
+                data-section-form
+                form-j-s-o-n={sectionFormConfig}
+                form-qualified-api-name={sectionFormName}
+                object={objectApiName}
+                record={formRecord}
+                transformation-record={derivedValues}
+                review={review}
+                disable-all={disableAll}
+                onrecordchange={handleFormRecordChange}>
+        </FlowToolKit-flow-form>
+    </template>
+
+    <section class="fee-card" aria-live="polite">
+        <h3 class="fee-card__title">{label.title}</h3>
+        <template lwc:if={isPriced}>
+            <dl class="fee-card__lines">
+                <div class="fee-card__line">
+                    <dt class="fee-card__label">{plotsLine}</dt>
+                    <dd class="fee-card__value">
+                        <lightning-formatted-number value={fee.subtotal} format-style="currency" currency-code={currencyCode}></lightning-formatted-number>
+                    </dd>
+                </div>
+                <div class="fee-card__line" lwc:if={hasDiscount}>
+                    <dt class="fee-card__label">{label.concession}</dt>
+                    <dd class="fee-card__value">
+                        <lightning-formatted-number value={negativeDiscount} format-style="currency" currency-code={currencyCode}></lightning-formatted-number>
+                    </dd>
+                </div>
+                <div class="fee-card__line fee-card__line_total">
+                    <dt class="fee-card__label">{label.total}</dt>
+                    <dd class="fee-card__amount" data-total>
+                        <lightning-formatted-number value={fee.total} format-style="currency" currency-code={currencyCode}></lightning-formatted-number>
+                    </dd>
+                </div>
+            </dl>
+        </template>
+        <p lwc:elseif={isUnpriced} class="fee-card__note fee-card__note_error" data-message>{unpricedMessage}</p>
+        <p lwc:else class="fee-card__note" data-message>{label.incomplete}</p>
+    </section>
+</template>

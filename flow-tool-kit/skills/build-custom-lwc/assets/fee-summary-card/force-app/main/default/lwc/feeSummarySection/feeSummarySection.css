@@ -1,0 +1,67 @@
+/* Every value reads a Flow Tool Kit Form Style setting with the package's own fallback, so the card follows the template's styles and still looks right where none are set. */
+:host {
+    display: block;
+}
+
+.fee-card {
+    margin-top: calc(0.75rem * var(--ftk-layout-spacing-scale, 1));
+    padding: var(--ftk-section-padding, calc(0.75rem * var(--ftk-layout-spacing-scale, 1)));
+    border: var(--ftk-section-border-width, var(--ftk-border-width, calc(1px * var(--ftk-border-scale, 1)))) solid var(--ftk-section-border-color, var(--ftk-color-border, var(--borderColor, #dddbda)));
+    border-radius: var(--ftk-section-radius, var(--ftk-radius-medium, calc(5px * var(--ftk-radius-scale, 1))));
+    background: var(--ftk-section-surface, var(--ftk-color-surface, #ffffff));
+    box-shadow: var(--ftk-section-shadow, none);
+    color: var(--ftk-color-text, inherit);
+    font-family: var(--ftk-font-family, inherit);
+}
+
+.fee-card__title {
+    margin: 0 0 0.5rem;
+    font-family: var(--ftk-font-family-heading, var(--ftk-font-family, inherit));
+    font-size: var(--ftk-font-size-heading, 1rem);
+    font-weight: var(--ftk-font-weight-heading, 700);
+    color: var(--ftk-header-title-color, inherit);
+}
+
+.fee-card__lines {
+    margin: 0;
+}
+
+.fee-card__line {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.25rem 0;
+}
+
+.fee-card__line_total {
+    margin-top: 0.25rem;
+    padding-top: 0.5rem;
+    border-top: var(--ftk-border-width, 1px) solid var(--ftk-color-border-muted, var(--ftk-color-border, #e5e5e5));
+}
+
+.fee-card__label {
+    color: var(--ftk-color-label, inherit);
+    font-size: var(--ftk-font-size-label, 0.8125rem);
+    font-weight: var(--ftk-font-weight-label, 400);
+}
+
+.fee-card__value {
+    margin: 0;
+}
+
+.fee-card__amount {
+    margin: 0;
+    color: var(--ftk-color-primary, #0176d3);
+    font-size: var(--ftk-font-size-heading, 1.25rem);
+    font-weight: var(--ftk-font-weight-heading, 700);
+}
+
+.fee-card__note {
+    margin: 0;
+    color: var(--ftk-help-color, var(--ftk-color-text-muted, #5c5c5c));
+    font-size: var(--ftk-help-font-size, 0.8125rem);
+}
+
+.fee-card__note_error {
+    color: var(--ftk-color-danger, #ba0517);
+}

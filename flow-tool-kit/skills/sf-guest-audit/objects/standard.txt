@@ -1,0 +1,76 @@
+# Standard Salesforce objects most relevant to guest exposure, one API name per line.
+# The outside probe tries each one as an anonymous guest. '#' starts a comment; edit freely.
+# A custom object not listed here is still found when it appears in the site's markup.
+
+# People and CRM core
+Account
+Contact
+Lead
+Individual
+User
+UserRole
+Group
+Case
+CaseComment
+Opportunity
+OpportunityContactRole
+OpportunityLineItem
+Contract
+ContractContactRole
+Order
+OrderItem
+Quote
+QuoteLineItem
+Asset
+Entitlement
+
+# Marketing
+Campaign
+CampaignMember
+CampaignMemberStatus
+
+# Contact points and privacy (Individual model)
+ContactPointAddress
+ContactPointEmail
+ContactPointPhone
+ContactPointConsent
+AuthorizationForm
+AuthorizationFormConsent
+PartyConsent
+
+# Activity
+Task
+Event
+EmailMessage
+Note
+ContentNote
+
+# Files and documents
+Attachment
+Document
+ContentDocument
+ContentVersion
+ContentDocumentLink
+ContentWorkspace
+
+# Products and price
+Product2
+Pricebook2
+PricebookEntry
+
+# Knowledge, self-service, community
+Knowledge__kav
+Solution
+Idea
+Question
+FeedItem
+FeedComment
+Topic
+CollaborationGroup
+CollaborationGroupMember
+
+# Surveys
+Survey
+SurveyResponse
+SurveyInvitation
+SurveySubject

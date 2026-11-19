@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plot_Size__c</fullName>
+    <description>The plot size a member registers for on the Garden Plot Registration form. Sets the per-plot rate in the fee summary: Small, Standard or Raised Bed.</description>
+    <externalId>false</externalId>
+    <label>Plot size</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Small</fullName>
+                <default>false</default>
+                <label>Small</label>
+            </value>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Raised Bed</fullName>
+                <default>false</default>
+                <label>Raised Bed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

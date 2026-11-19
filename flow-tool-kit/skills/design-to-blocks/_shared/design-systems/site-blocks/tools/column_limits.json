@@ -1,0 +1,162 @@
+{
+ "ActionCard": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\nEvery Action Card design holds up in 1 of 4 and at phone width.",
+  "rows": []
+ },
+ "Callout": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\n| Design | Narrowest column | Why |\n| --- | --- | --- |\n| Callout 02, Callout 04, Callout 05 | 1 of 3 | In 1 of 4 the large heading runs to four or more lines and the button crowds the bottom edge. |",
+  "rows": [
+   {
+    "designs": [
+     "02",
+     "04",
+     "05"
+    ],
+    "narrowest": "1 of 3",
+    "why": "In 1 of 4 the large heading runs to four or more lines and the button crowds the bottom edge."
+   }
+  ]
+ },
+ "Cards": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\n| Design | Narrowest column | Why |\n| --- | --- | --- |\n| Cards 04, Cards 06 | 1 of 3 | The centered display heading breaks inside words in 1 of 4 (\"progra / m\", \"nonpro / fit\"). |",
+  "rows": [
+   {
+    "designs": [
+     "04",
+     "06"
+    ],
+    "narrowest": "1 of 3",
+    "why": "The centered display heading breaks inside words in 1 of 4 (\"progra / m\", \"nonpro / fit\")."
+   }
+  ]
+ },
+ "Carousel": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\n| Design | Narrowest column | Why |\n| --- | --- | --- |\n| Carousel 06 | 1 of 3 | The centered display heading breaks inside words in 1 of 4 and at phone width (\"somethin / g\"). On a phone page use a shorter heading or another design. |",
+  "rows": [
+   {
+    "designs": [
+     "06"
+    ],
+    "narrowest": "1 of 3",
+    "why": "The centered display heading breaks inside words in 1 of 4 and at phone width (\"somethin / g\"). On a phone page use a shorter heading or another design."
+   }
+  ],
+  "phoneWeak": [
+   "06"
+  ]
+ },
+ "Facts": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\n| Design | Narrowest column | Why |\n| --- | --- | --- |\n| Facts 04 | 1 of 3 | In 1 of 4 the label and value rows stack and long values wrap. |",
+  "rows": [
+   {
+    "designs": [
+     "04"
+    ],
+    "narrowest": "1 of 3",
+    "why": "In 1 of 4 the label and value rows stack and long values wrap."
+   }
+  ]
+ },
+ "Gallery": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\nEvery Image Gallery design holds up in 1 of 4 and at phone width.",
+  "rows": []
+ },
+ "Hero": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\n| Design | Narrowest column | Why |\n| --- | --- | --- |\n| Hero 03, Hero 21, Hero 23 | 1 of 3 | The inline stats squeeze into three narrow columns in 1 of 4; numbers and labels break (\"100 / %\", \"Multi- / step\"). |\n| Hero 05, Hero 07, Hero 08, Hero 10, Hero 12, Hero 13, Hero 14 | 1 of 3 | The facts or checklist panel stacks label over value in 1 of 4, the outline button wraps, and photo text loses contrast in the narrow crop. |",
+  "rows": [
+   {
+    "designs": [
+     "03",
+     "21",
+     "23"
+    ],
+    "narrowest": "1 of 3",
+    "why": "The inline stats squeeze into three narrow columns in 1 of 4; numbers and labels break (\"100 / %\", \"Multi- / step\")."
+   },
+   {
+    "designs": [
+     "05",
+     "07",
+     "08",
+     "10",
+     "12",
+     "13",
+     "14"
+    ],
+    "narrowest": "1 of 3",
+    "why": "The facts or checklist panel stacks label over value in 1 of 4, the outline button wraps, and photo text loses contrast in the narrow crop."
+   }
+  ]
+ },
+ "Image": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\nEvery Image design holds up in 1 of 4 and at phone width.",
+  "rows": []
+ },
+ "Pills": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\n| Design | Narrowest column | Why |\n| --- | --- | --- |\n| Tag Cloud 06 | 1 of 3 | The centered display heading breaks inside a word in 1 of 4 and at phone width (\"Neighb / orhood / s\"). On a phone page use a shorter heading or another design. |",
+  "rows": [
+   {
+    "designs": [
+     "06"
+    ],
+    "narrowest": "1 of 3",
+    "why": "The centered display heading breaks inside a word in 1 of 4 and at phone width (\"Neighb / orhood / s\"). On a phone page use a shorter heading or another design."
+   }
+  ],
+  "phoneWeak": [
+   "06"
+  ]
+ },
+ "Pricing": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\n| Design | Narrowest column | Why |\n| --- | --- | --- |\n| All | 1 of 3 | Never in a 1 of 4 column: the tiers stack, prices wrap (\"$20 / / month\") and the heading breaks inside words. Prefer full width or 1 of 2; in 1 of 3 tiers stack one under another. |\n| Pricing 06 | 1 of 3 | Also breaks \"application.\" at phone width; shorten the heading for phone-heavy pages. |",
+  "rows": [
+   {
+    "designs": "all",
+    "narrowest": "1 of 3",
+    "why": "Never in a 1 of 4 column: the tiers stack, prices wrap (\"$20 / / month\") and the heading breaks inside words. Prefer full width or 1 of 2; in 1 of 3 tiers stack one under another."
+   },
+   {
+    "designs": [
+     "06"
+    ],
+    "narrowest": "1 of 3",
+    "why": "Also breaks \"application.\" at phone width; shorten the heading for phone-heavy pages."
+   }
+  ],
+  "phoneWeak": [
+   "06"
+  ]
+ },
+ "Quote": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\nEvery Quote design holds up in 1 of 4 and at phone width.",
+  "rows": []
+ },
+ "RecordCard": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\nEvery Record Card design holds up in 1 of 4 and at phone width.",
+  "rows": []
+ },
+ "StatsBar": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\nEvery Stats design holds up in 1 of 4 and at phone width.",
+  "rows": []
+ },
+ "Steps": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\nEvery Steps design holds up in 1 of 4 and at phone width.",
+  "rows": []
+ },
+ "Table": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\n| Design | Narrowest column | Why |\n| --- | --- | --- |\n| Comparison Table 05 | 1 of 3 | The centered display heading breaks inside a word in 1 of 4 (\"include / d\"). |",
+  "rows": [
+   {
+    "designs": [
+     "05"
+    ],
+    "narrowest": "1 of 3",
+    "why": "The centered display heading breaks inside a word in 1 of 4 (\"include / d\")."
+   }
+  ]
+ },
+ "Timeline": {
+  "markdown": "Checked by rendering every design in a 1 of 2 (6), 1 of 3 (4) and 1 of 4 (3) Section column on a 1280px page, and at phone width (390px). A 1 of 4 column is about 300px wide. Designs not listed here hold up at every width. The narrower-columns and phone rows of this card only show designs that are allowed there.\n\nEvery Timeline design holds up in 1 of 4 and at phone width.",
+  "rows": []
+ }
+}

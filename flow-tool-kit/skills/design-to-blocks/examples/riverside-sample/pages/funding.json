@@ -1,0 +1,643 @@
+{
+  "title": "Funding",
+  "currentNav": 1,
+  "_design": {
+    "notes": [
+      "Listing pattern (ExampleListingPage) raised to the house defaults: photo hero with the full range, the funds high, one parallax photo band, a closing band.",
+      "s03b-split is the page's one HTML Editor: static markup, no script, colours from the palette with the site's brand token first."
+    ],
+    "states": [
+      {
+        "id": "empty",
+        "title": "No funds open",
+        "emptyRepeaters": true
+      }
+    ],
+    "contentToCollect": [
+      "Each fund's photo, two facts and closing date (the Funding records)",
+      "A grantee quote with permission to publish, and a photo of their work"
+    ]
+  },
+  "sections": [
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "hero",
+                "width": "full",
+                "background": "$navy",
+                "brandColor": "$accent",
+                "accentColor": "$accent",
+                "countUp": true,
+                "sectionLabel": "Riverside Community Fund",
+                "headingAlign": "left",
+                "bodyAlign": "left",
+                "buttonAlign": "left",
+                "badgePosition": "top",
+                "badges": [
+                  {
+                    "title": "4 funds open",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "2027 cycle",
+                    "style": "outline"
+                  },
+                  {
+                    "title": "First deadline Sept 30",
+                    "style": "neutral",
+                    "pulse": true
+                  }
+                ],
+                "heading": "Unrestricted grants for the groups that keep the valley running",
+                "subheading": "Four funds take applications this year, from two-year operating grants to rapid help when the van breaks down. Answer five questions and we will point you to the fund that fits before you write a word.",
+                "stats": [
+                  {
+                    "value": "$1.8M",
+                    "title": "awarded in 2025"
+                  },
+                  {
+                    "value": "64",
+                    "title": "organizations funded"
+                  },
+                  {
+                    "value": "67%",
+                    "title": "first-time grantees"
+                  }
+                ],
+                "buttons": [
+                  {
+                    "label": "Find your fund",
+                    "url": "#funds",
+                    "style": "accent"
+                  },
+                  {
+                    "label": "Check eligibility",
+                    "url": "/apply/eligibility",
+                    "style": "outline"
+                  }
+                ],
+                "reversed": true,
+                "splitRatio": "left",
+                "imageSource": "asset",
+                "imageAsset": "FlowToolKit__Background_Volunteer_Build_Day",
+                "imageAlt": "Grantee volunteers framing a community building",
+                "imageStyle": "elevated",
+                "imageFit": "fill",
+                "backgroundImageSource": "asset",
+                "backgroundImageAsset": "FlowToolKit__Background_Volunteer_Team_Tables",
+                "backgroundOverlay": "side",
+                "backgroundEffect": "kenburns",
+                "blockHeight": "tall",
+                "contentPosition": "center",
+                "entrance": "rise"
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s01-opening",
+        "job": "Say what is open and prove it",
+        "designCard": "Hero 21"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "8",
+          "items": [
+            {
+              "kind": "divider",
+              "attributes": {
+                "displayAsDivider": true,
+                "dividerStyle": "icon",
+                "title": "Open now",
+                "subtitle": "Every fund taking applications this cycle, soonest deadline first",
+                "iconName": "utility:moneybag"
+              }
+            },
+            {
+              "kind": "repeater",
+              "object": "Funding_Opportunity__c",
+              "cardType": "mediaTop",
+              "columns": 2,
+              "pageSize": 6,
+              "card": {
+                "eyebrow": "{{Category__c}}",
+                "title": "{{Name}}",
+                "subtitle": "{{Award_Range__c}}",
+                "badge": "{{Deadline_Label__c}}",
+                "imageSource": "url",
+                "imageUrl": "{{Photo__c}}",
+                "items": [
+                  {
+                    "title": "Who",
+                    "value": "{{Who_Can_Apply__c}}"
+                  },
+                  {
+                    "title": "Decision",
+                    "value": "{{Decision_Time__c}}"
+                  }
+                ],
+                "buttons": [
+                  {
+                    "label": "View fund",
+                    "url": "/funding/{{Id}}",
+                    "style": "link"
+                  }
+                ]
+              },
+              "filter": {
+                "conditionType": "AND",
+                "conditions": [
+                  {
+                    "position": 1,
+                    "fieldApiName": "Status__c",
+                    "operator": "eq",
+                    "value": "Open"
+                  }
+                ]
+              },
+              "sortField": "Close_Date__c",
+              "sortDirection": "ASC",
+              "emptyMessage": "No funds are taking applications right now. The next cycle opens in January.",
+              "_design": {
+                "sampleRecords": [
+                  {
+                    "eyebrow": "General operating",
+                    "title": "Community Resilience Fund",
+                    "subtitle": "$25,000 to $75,000 · two years",
+                    "badge": "Closes Sept 30",
+                    "imageSource": "asset",
+                    "imageAsset": "FlowToolKit__Background_Volunteer_Team_Talking",
+                    "items": [
+                      {
+                        "title": "Who",
+                        "value": "Nonprofits in the valley"
+                      },
+                      {
+                        "title": "Decision",
+                        "value": "Within 60 days"
+                      }
+                    ],
+                    "buttons": [
+                      {
+                        "label": "View fund",
+                        "url": "/funding/community-resilience",
+                        "style": "link"
+                      }
+                    ]
+                  },
+                  {
+                    "eyebrow": "Capital",
+                    "title": "Green Spaces Grant",
+                    "subtitle": "Up to $40,000 · one year",
+                    "badge": "Rolling",
+                    "imageSource": "asset",
+                    "imageAsset": "FlowToolKit__Background_Tree_Planting_Autumn",
+                    "items": [
+                      {
+                        "title": "Who",
+                        "value": "Gardens, parks, school yards"
+                      },
+                      {
+                        "title": "Decision",
+                        "value": "Quarterly"
+                      }
+                    ],
+                    "buttons": [
+                      {
+                        "label": "View fund",
+                        "url": "/funding/green-spaces",
+                        "style": "link"
+                      }
+                    ]
+                  },
+                  {
+                    "eyebrow": "Youth",
+                    "title": "After-School Futures",
+                    "subtitle": "$10,000 to $20,000 · one year",
+                    "badge": "Opens Jan 15",
+                    "imageSource": "asset",
+                    "imageAsset": "FlowToolKit__Background_Bamboo_Forest_Joy",
+                    "items": [
+                      {
+                        "title": "Who",
+                        "value": "Programs for grades 3 to 8"
+                      },
+                      {
+                        "title": "Decision",
+                        "value": "By March 30"
+                      }
+                    ],
+                    "buttons": [
+                      {
+                        "label": "View fund",
+                        "url": "/funding/after-school",
+                        "style": "link"
+                      }
+                    ]
+                  },
+                  {
+                    "eyebrow": "Emergency",
+                    "title": "Rapid Response Fund",
+                    "subtitle": "Up to $5,000 · decided in a week",
+                    "badge": "Always open",
+                    "imageSource": "asset",
+                    "imageAsset": "FlowToolKit__Background_Solar_Panel_Install",
+                    "items": [
+                      {
+                        "title": "Who",
+                        "value": "Groups meeting an urgent need"
+                      },
+                      {
+                        "title": "Decision",
+                        "value": "Within 7 days"
+                      }
+                    ],
+                    "buttons": [
+                      {
+                        "label": "View fund",
+                        "url": "/funding/rapid-response",
+                        "style": "link"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "width": "4",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "actionCard",
+                "background": "$navy",
+                "backgroundGradient": "spotlight",
+                "brandColor": "$accent",
+                "cardStyle": "deep",
+                "heading": "Next deadline closes in",
+                "deadline": "2027-09-30",
+                "buttons": [
+                  {
+                    "label": "Start an application",
+                    "url": "/apply/community-resilience",
+                    "style": "brand"
+                  }
+                ],
+                "footnote": "Drafts save as you go"
+              }
+            },
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "facts",
+                "brandColor": "$brand",
+                "factsDisplay": "stacked",
+                "heading": "At a glance",
+                "items": [
+                  {
+                    "title": "Pool this year",
+                    "value": "$2.4 million"
+                  },
+                  {
+                    "title": "Awards",
+                    "value": "$5k to $75k"
+                  },
+                  {
+                    "title": "Who can apply",
+                    "value": "Nonprofits and fiscally sponsored groups"
+                  },
+                  {
+                    "title": "Office hours",
+                    "value": "Tuesdays, 10 am to noon"
+                  }
+                ],
+                "footnote": "Talk to a program officer before you apply"
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s02-funds",
+        "job": "The open funds, with the next deadline beside them",
+        "designCard": "Record Card 01 + Action Card 05"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "pills",
+                "background": "$mist",
+                "brandColor": "$brand",
+                "accentColor": "$accent",
+                "arrangement": "split",
+                "headingAlign": "left",
+                "sectionLabel": "Eligible costs",
+                "heading": "Spend it where it helps most.",
+                "subheading": "Unrestricted means unrestricted. These are the costs grantees reported most often last year.",
+                "items": [
+                  {
+                    "title": "Staff salaries",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "Rent and utilities",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "Vans and fuel",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "Software",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "Training",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "Equipment",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "Childcare for volunteers",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "Interpreters",
+                    "style": "accent"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s03-priorities",
+        "job": "What the money can pay for",
+        "designCard": "Tag Cloud 05"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "htmlEditor",
+              "richTextValue": "<div style=\"max-width: 960px; margin: 0 auto; padding: 48px 16px;\"><h2 style=\"margin: 0 0 8px; font-size: 2rem; line-height: 1.2;\">Where last year's grants went</h2><p style=\"margin: 0 0 24px; max-width: 640px;\">Grantees told us how they spent every dollar. Most of it paid the people doing the work. [CONFIRM: the split from last year's grant reports]</p><div role=\"img\" aria-label=\"Staff 48 percent, Programs 27 percent, Rent and utilities 15 percent, Equipment 10 percent\" style=\"display: flex; height: 32px; max-width: 100%; border-radius: 8px; overflow: hidden;\"><div style=\"flex: 48; background: var(--dxp-g-brand, #2e844a);\"></div><div style=\"flex: 27; background: #032D60;\"></div><div style=\"flex: 15; background: #F4BE45;\"></div><div style=\"flex: 10; background: #EEF1F4;\"></div></div><div style=\"display: flex; flex-wrap: wrap; gap: 8px 32px; margin: 16px 0 0;\"><span style=\"display: inline-flex; align-items: center; gap: 8px;\"><span aria-hidden=\"true\" style=\"display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: var(--dxp-g-brand, #2e844a); box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);\"></span>Staff <strong>48%</strong></span><span style=\"display: inline-flex; align-items: center; gap: 8px;\"><span aria-hidden=\"true\" style=\"display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: #032D60; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);\"></span>Programs <strong>27%</strong></span><span style=\"display: inline-flex; align-items: center; gap: 8px;\"><span aria-hidden=\"true\" style=\"display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: #F4BE45; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);\"></span>Rent and utilities <strong>15%</strong></span><span style=\"display: inline-flex; align-items: center; gap: 8px;\"><span aria-hidden=\"true\" style=\"display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: #EEF1F4; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);\"></span>Equipment <strong>10%</strong></span></div></div>",
+              "_design": {
+                "reason": "One segmented bar of the whole budget: the Facts block draws one bar per item and has no single stacked bar."
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s03b-split",
+        "job": "How each grant dollar was spent, at a glance",
+        "designCard": "HTML Editor"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "table",
+                "background": "$navy",
+                "brandColor": "$accent",
+                "sectionLabel": "Compare the funds",
+                "heading": "Which fund is right for you?",
+                "subheading": "Award sizes, how long the money lasts and how fast we decide.",
+                "tableColumns": [
+                  {
+                    "label": "Fund",
+                    "width": "auto",
+                    "align": "left",
+                    "display": "emphasis"
+                  },
+                  {
+                    "label": "Award",
+                    "width": "auto",
+                    "align": "left",
+                    "display": "text"
+                  },
+                  {
+                    "label": "Decision",
+                    "width": "narrow",
+                    "align": "center",
+                    "display": "text"
+                  },
+                  {
+                    "label": "Status",
+                    "width": "narrow",
+                    "align": "right",
+                    "display": "badge"
+                  }
+                ],
+                "items": [
+                  {
+                    "cell1": "Community Resilience",
+                    "cell2": "$25k to $75k, two years",
+                    "cell3": "[CONFIRM: 43 days]",
+                    "cell4": "Open"
+                  },
+                  {
+                    "cell1": "Green Spaces",
+                    "cell2": "Up to $40k, one year",
+                    "cell3": "Quarterly",
+                    "cell4": "Rolling"
+                  },
+                  {
+                    "cell1": "After-School Futures",
+                    "cell2": "$10k to $20k, one year",
+                    "cell3": "By March 30",
+                    "cell4": "Opens Jan 15"
+                  },
+                  {
+                    "cell1": "Rapid Response",
+                    "cell2": "Up to $5k",
+                    "cell3": "7 days",
+                    "cell4": "Always open"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s04-compare",
+        "job": "Which fund fits, side by side",
+        "designCard": "Comparison Table 03"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "quote",
+                "width": "full",
+                "background": "$navy",
+                "brandColor": "$accent",
+                "description": "The fund paid for the boring things that keep our doors open: the rent, the van, the people. That is exactly what we needed.",
+                "attribution": "Maria Lopez",
+                "attributionDetail": "Director, Valley Food Share · 2025 grantee",
+                "backgroundImageSource": "asset",
+                "backgroundImageAsset": "FlowToolKit__Background_Shoreline_Cleanup_Sunset",
+                "backgroundOverlay": "tint",
+                "backgroundEffect": "parallax",
+                "backgroundParallaxSpeed": "0.25",
+                "blockHeight": "standard"
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s05-story",
+        "job": "Let people feel the work",
+        "designCard": "Quote 01"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "steps",
+                "background": "$mist",
+                "backgroundTexture": "crosshatch",
+                "brandColor": "$brand",
+                "arrangement": "split",
+                "headingAlign": "left",
+                "bodyAlign": "left",
+                "sectionLabel": "How it works",
+                "heading": "Three steps, one short form.",
+                "subheading": "Most applicants only fill in the first one. Your answers save as you go.",
+                "items": [
+                  {
+                    "title": "Check eligibility",
+                    "description": "Five questions, two minutes. We tell you which fund fits."
+                  },
+                  {
+                    "title": "Letter of interest",
+                    "description": "About three hours, prefilled from your eligibility answers."
+                  },
+                  {
+                    "title": "Talk with us",
+                    "description": "A 30-minute call with a program officer, then a decision."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s06-how",
+        "job": "How applying works",
+        "designCard": "Steps 04"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "hero",
+                "heroLayout": "band",
+                "background": "$navy",
+                "backgroundGradient": "spotlight",
+                "brandColor": "$accent",
+                "heading": "Not sure yet? Talk to a program officer.",
+                "subheading": "Thirty minutes, no pitch deck, and an honest read on which fund fits.",
+                "buttons": [
+                  {
+                    "label": "Book a call",
+                    "url": "/contact",
+                    "style": "accent"
+                  },
+                  {
+                    "label": "Check eligibility",
+                    "url": "/apply/eligibility",
+                    "style": "outline"
+                  }
+                ],
+                "headingAlign": "left"
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s07-close",
+        "job": "Closing band: apply or ask",
+        "designCard": "Hero 29"
+      }
+    }
+  ]
+}

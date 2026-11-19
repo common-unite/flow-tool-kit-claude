@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plot_Fee__c</fullName>
+    <description>The plot fee shown to the member when they submitted, written by the fee summary on the Garden Plot Registration form from Plot size, How many plots? and the senior or student rate. Calculated in the browser, so recalculate it before charging anything.</description>
+    <externalId>false</externalId>
+    <label>Plot fee</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

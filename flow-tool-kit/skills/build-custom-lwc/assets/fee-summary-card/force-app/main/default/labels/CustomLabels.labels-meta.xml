@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Fee_Summary_Title</fullName>
+        <categories>Fee Summary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fee summary card title</shortDescription>
+        <value>Your plot fee</value>
+    </labels>
+    <labels>
+        <fullName>Fee_Summary_Plots</fullName>
+        <categories>Fee Summary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fee summary line for the plots chosen</shortDescription>
+        <value>{0} x {1} plot</value>
+    </labels>
+    <labels>
+        <fullName>Fee_Summary_Concession</fullName>
+        <categories>Fee Summary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fee summary line for the senior or student discount</shortDescription>
+        <value>Senior or student rate</value>
+    </labels>
+    <labels>
+        <fullName>Fee_Summary_Total</fullName>
+        <categories>Fee Summary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fee summary total line</shortDescription>
+        <value>Total due</value>
+    </labels>
+    <labels>
+        <fullName>Fee_Summary_Incomplete</fullName>
+        <categories>Fee Summary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fee summary message before the plot answers are complete</shortDescription>
+        <value>Choose a plot size and how many plots you want to see your fee.</value>
+    </labels>
+    <labels>
+        <fullName>Fee_Summary_Unpriced</fullName>
+        <categories>Fee Summary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fee summary error for a plot size with no rate</shortDescription>
+        <value>We can't price a {0} plot online yet. Please contact the garden office.</value>
+    </labels>
+</CustomLabels>

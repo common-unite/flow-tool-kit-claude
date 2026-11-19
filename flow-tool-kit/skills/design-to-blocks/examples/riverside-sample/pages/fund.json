@@ -1,0 +1,724 @@
+{
+  "site": "aura",
+  "currentNav": 1,
+  "_design": {
+    "notes": [
+      "Record page pattern (ExampleParentRecordPage, PageFundingOpportunity) raised to the house defaults: tall photo hero with the full range, attached key dates, rich tabs beside the deadline, one parallax photo band."
+    ],
+    "contentToCollect": [
+      "A grantee photo for the hero, with permission to publish",
+      "Last cycle's awards: grantee, amount and one line on what it paid for"
+    ],
+    "states": [
+      {
+        "id": "tab-eligibility",
+        "title": "Eligibility tab open",
+        "section": "s03-detail",
+        "activeTab": "tab2"
+      },
+      {
+        "id": "tab-scoring",
+        "title": "How we score tab open",
+        "section": "s03-detail",
+        "activeTab": "tab3"
+      },
+      {
+        "id": "tab-awards",
+        "title": "Past awards tab open",
+        "section": "s03-detail",
+        "activeTab": "tab4"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "hero",
+                "width": "full",
+                "background": "$navy",
+                "brandColor": "$accent",
+                "accentColor": "$accent",
+                "sectionLabel": "Community Resilience Fund",
+                "heading": "General operating grants for the groups that keep the valley running",
+                "subheading": "Two-year, unrestricted grants of $25,000 to $75,000. We fund the mission, not a line item, and we never ask you to invent a new program to fit our guidelines.",
+                "footnote": "Save and return any time · Two-stage review · Decisions within 60 days of close",
+                "headingAlign": "left",
+                "bodyAlign": "left",
+                "buttonAlign": "left",
+                "badgePosition": "top",
+                "badges": [
+                  {
+                    "title": "Accepting applications",
+                    "style": "accent"
+                  },
+                  {
+                    "title": "2027 cycle",
+                    "style": "outline"
+                  },
+                  {
+                    "title": "Closes Sept 30",
+                    "style": "neutral",
+                    "pulse": true
+                  }
+                ],
+                "buttons": [
+                  {
+                    "label": "Start an application",
+                    "url": "/apply/community-resilience",
+                    "style": "accent"
+                  },
+                  {
+                    "label": "Check your eligibility",
+                    "url": "/apply/eligibility",
+                    "style": "outline"
+                  }
+                ],
+                "heroMedia": "facts",
+                "items": [
+                  {
+                    "title": "Total available",
+                    "value": "$1,200,000"
+                  },
+                  {
+                    "title": "Award range",
+                    "value": "$25,000 to $75,000"
+                  },
+                  {
+                    "title": "Grant term",
+                    "value": "2 years, unrestricted"
+                  },
+                  {
+                    "title": "Expected awards",
+                    "value": "18 to 24"
+                  },
+                  {
+                    "title": "Application time",
+                    "value": "About 3 hours"
+                  }
+                ],
+                "backgroundImageSource": "asset",
+                "backgroundImageAsset": "FlowToolKit__Background_Volunteer_Team_Talking",
+                "backgroundOverlay": "side",
+                "backgroundEffect": "kenburns",
+                "blockHeight": "tall",
+                "contentPosition": "center",
+                "entrance": "rise"
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s01-promise",
+        "job": "The fund's promise, answered in the first screen",
+        "designCard": "Hero 14",
+        "source": "Site Blocks design system: Page Funding Opportunity"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "statsBar",
+                "width": "full",
+                "attachToPrevious": true,
+                "background": "$navy",
+                "accentColor": "$accent",
+                "borderTop": true,
+                "borderWidth": 1,
+                "borderColor": "#FFFFFF",
+                "borderColorOpacity": 14,
+                "statsTreatment": "spread",
+                "iconStyle": "tile",
+                "bodyAlign": "left",
+                "labelSize": "x-small",
+                "valueSize": "x-small",
+                "items": [
+                  {
+                    "title": "Opens",
+                    "value": "July 15",
+                    "iconType": "icon",
+                    "icon": "utility:event"
+                  },
+                  {
+                    "title": "Info session",
+                    "value": "August 12, noon",
+                    "iconType": "icon",
+                    "icon": "utility:video"
+                  },
+                  {
+                    "title": "Applications close",
+                    "value": "September 30, 5 pm",
+                    "iconType": "icon",
+                    "icon": "utility:clock"
+                  },
+                  {
+                    "title": "Decisions",
+                    "value": "By November 30",
+                    "iconType": "icon",
+                    "icon": "utility:check"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s02-dates",
+        "job": "Key dates, joined to the promise",
+        "designCard": "Stats 01"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "8",
+          "items": [
+            {
+              "kind": "tabs",
+              "activeTab": "tab1",
+              "tabs": [
+                {
+                  "tabName": "Overview",
+                  "tabKey": "tab1",
+                  "items": [
+                    {
+                      "kind": "block",
+                      "props": {
+                        "sectionType": "hero",
+                        "brandColor": "$brand",
+                        "sectionLabel": "Why this fund exists",
+                        "headingAlign": "left",
+                        "bodyAlign": "left",
+                        "splitRatio": "right",
+                        "showcaseItems": "cards",
+                        "imageSource": "asset",
+                        "imageAsset": "FlowToolKit__Background_Farmland_Aerial",
+                        "imageAlt": "Valley farmland from the air",
+                        "imageStyle": "clean",
+                        "imageFit": "fill",
+                        "bullets": [
+                          {
+                            "title": "What we fund",
+                            "description": "General operations, staff, direct programs and the equipment that keeps them running."
+                          },
+                          {
+                            "title": "What we do not fund",
+                            "description": "Individuals, capital campaigns over $50k, re-granting or political activity."
+                          },
+                          {
+                            "title": "Reporting that respects your time",
+                            "description": "One conversation and one two-page report a year."
+                          }
+                        ],
+                        "background": "#FFFFFF",
+                        "backgroundGradient": "off",
+                        "reversed": true,
+                        "heading": "Unrestricted money, because you know your mission best.",
+                        "subheading": "Groups spend too much time translating real work into fundable projects. This fund pays for the whole organization: the staff, the rent, the van that breaks down and the program everyone already trusts you to run."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tabName": "Eligibility",
+                  "tabKey": "tab2",
+                  "items": [
+                    {
+                      "kind": "block",
+                      "props": {
+                        "sectionType": "cards",
+                        "brandColor": "$brand",
+                        "bodyAlign": "left",
+                        "columns": "2",
+                        "cardStyle": "outlined",
+                        "hoverStyle": "lift",
+                        "backgroundTexture": "crosshatch",
+                        "background": "$mist",
+                        "heading": "All four must be true",
+                        "headingAlign": "left",
+                        "items": [
+                          {
+                            "eyebrow": "01",
+                            "title": "A nonprofit or fiscally sponsored group",
+                            "description": "Determination letter or sponsorship agreement uploaded with the application."
+                          },
+                          {
+                            "eyebrow": "02",
+                            "title": "Serving the valley",
+                            "description": "Primary service area in Riverside, Ash or Linden county."
+                          },
+                          {
+                            "eyebrow": "03",
+                            "title": "Basic needs in the mission",
+                            "description": "Food, housing, care for elders or kids as a core activity."
+                          },
+                          {
+                            "eyebrow": "04",
+                            "title": "Budget under $2 million",
+                            "description": "Most recent fiscal year operating budget."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "block",
+                      "props": {
+                        "sectionType": "callout",
+                        "background": "$mist",
+                        "brandColor": "$brand",
+                        "heading": "You will need these documents",
+                        "description": "IRS determination letter · most recent Form 990 · current operating budget · board list · one letter of community support",
+                        "headingAlign": "left",
+                        "bodyAlign": "left",
+                        "buttonAlign": "right",
+                        "backgroundTexture": "crosshatch",
+                        "buttons": [
+                          {
+                            "label": "Run the eligibility check",
+                            "url": "/apply/eligibility",
+                            "style": "brand"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tabName": "How we score",
+                  "tabKey": "tab3",
+                  "items": [
+                    {
+                      "kind": "block",
+                      "props": {
+                        "sectionType": "facts",
+                        "background": "$navy",
+                        "backgroundGradient": "off",
+                        "brandColor": "$accent",
+                        "factsDisplay": "bars",
+                        "sectionLabel": "How we score",
+                        "heading": "The actual rubric",
+                        "items": [
+                          {
+                            "title": "Community accountability",
+                            "value": "30%"
+                          },
+                          {
+                            "title": "Depth of need in the service area",
+                            "value": "25%"
+                          },
+                          {
+                            "title": "Track record with the community",
+                            "value": "25%"
+                          },
+                          {
+                            "title": "Plan feasibility",
+                            "value": "20%"
+                          }
+                        ],
+                        "footnote": "Grant-writing polish is deliberately not a criterion."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "tabName": "Past awards",
+                  "tabKey": "tab4",
+                  "items": [
+                    {
+                      "kind": "repeater",
+                      "object": "Funding_Award__c",
+                      "cardType": "valueSpotlight",
+                      "columns": 2,
+                      "pageSize": 4,
+                      "card": {
+                        "eyebrow": "{{Award_Year__c}} grantee",
+                        "title": "{{Grantee_Name__c}}",
+                        "value": "{{Amount_Text__c}}",
+                        "subtitle": "{{Outcome__c}}",
+                        "badge": "{{Focus_Area__c}}"
+                      },
+                      "filter": {
+                        "conditionType": "AND",
+                        "conditions": [
+                          {
+                            "position": 1,
+                            "fieldApiName": "Funding_Opportunity__c",
+                            "operator": "eq",
+                            "value": "{!recordId}"
+                          }
+                        ]
+                      },
+                      "sortField": "Award_Date__c",
+                      "sortDirection": "DESC",
+                      "emptyMessage": "Awards from this fund appear here after its first cycle.",
+                      "_design": {
+                        "sampleRecords": [
+                          {
+                            "eyebrow": "2025 grantee",
+                            "title": "Valley Food Share",
+                            "value": "$75,000",
+                            "subtitle": "Doubled cold storage and added a second weekly distribution",
+                            "badge": "Food"
+                          },
+                          {
+                            "eyebrow": "2025 grantee",
+                            "title": "Comida y Comunidad",
+                            "value": "$50,000",
+                            "subtitle": "Hired its first full-time coordinator",
+                            "badge": "Food"
+                          },
+                          {
+                            "eyebrow": "2025 grantee",
+                            "title": "Linden Elder Network",
+                            "value": "$40,000",
+                            "subtitle": "Kept the ride program running through winter",
+                            "badge": "Elders"
+                          },
+                          {
+                            "eyebrow": "2025 grantee",
+                            "title": "Ash County Kids Club",
+                            "value": "$25,000",
+                            "subtitle": "Paid two after-school staff for a full year",
+                            "badge": "Youth"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "4",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "actionCard",
+                "background": "$navy",
+                "backgroundGradient": "spotlight",
+                "brandColor": "$accent",
+                "cardStyle": "deep",
+                "heading": "Closes in",
+                "opensOn": "2026-11-01",
+                "deadline": "2027-09-30",
+                "buttons": [
+                  {
+                    "label": "Start an application",
+                    "url": "/apply/community-resilience",
+                    "style": "brand"
+                  }
+                ],
+                "footnote": "Save and return any time"
+              }
+            },
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "facts",
+                "brandColor": "$brand",
+                "factsDisplay": "stacked",
+                "heading": "At a glance",
+                "items": [
+                  {
+                    "title": "Pool",
+                    "value": "$1.2 million"
+                  },
+                  {
+                    "title": "Awards",
+                    "value": "$25k to $75k"
+                  },
+                  {
+                    "title": "Term",
+                    "value": "Two years, unrestricted"
+                  },
+                  {
+                    "title": "Program officer",
+                    "value": "Dana Whitfield"
+                  }
+                ],
+                "footnote": "Office hours every Tuesday, 10 am to noon"
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s03-detail",
+        "job": "Everything an applicant reads, beside the deadline",
+        "designCard": "Tabs + Action Card 05"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "quote",
+                "width": "full",
+                "background": "$navy",
+                "brandColor": "$accent",
+                "description": "The letter of interest took an afternoon, the reporting is one honest conversation a year, and the money paid our people. That should not be rare.",
+                "attribution": "Executive Director, Valley Food Share",
+                "attributionDetail": "2025 grantee",
+                "backgroundImageSource": "asset",
+                "backgroundImageAsset": "FlowToolKit__Background_Shoreline_Cleanup_Sunset",
+                "backgroundOverlay": "tint",
+                "backgroundEffect": "parallax",
+                "backgroundParallaxSpeed": "0.4",
+                "blockHeight": "standard",
+                "headingAlign": "left",
+                "bodyAlign": "center"
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s04-story",
+        "job": "A grantee's word, on a photo",
+        "designCard": "Quote 03"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "steps",
+                "background": "$navy",
+                "brandColor": "$accent",
+                "columns": "4",
+                "sectionLabel": "How it works",
+                "heading": "Four steps from interest to award.",
+                "items": [
+                  {
+                    "title": "Check eligibility",
+                    "description": "Five questions, two minutes."
+                  },
+                  {
+                    "title": "Letter of interest",
+                    "description": "About three hours. Saves as you go."
+                  },
+                  {
+                    "title": "Full proposal",
+                    "description": "By invitation: budget detail and a conversation."
+                  },
+                  {
+                    "title": "Decision and award",
+                    "description": "Within 60 days of close; first payment in 30."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s05-process",
+        "job": "From letter to award",
+        "designCard": "Steps 03"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "carousel",
+                "background": "#FFFFFF",
+                "brandColor": "$brand",
+                "carouselInterval": "5",
+                "sectionLabel": "Stories",
+                "heading": "Where the grants went",
+                "items": [
+                  {
+                    "iconImage": "FlowToolKit__Background_Volunteer_Build_Day",
+                    "imageAlt": "Volunteers on a build day",
+                    "eyebrow": "Housing",
+                    "title": "Twelve homes made warm before winter",
+                    "link": "#"
+                  },
+                  {
+                    "iconImage": "FlowToolKit__Background_Green_Leaves_Banner",
+                    "imageAlt": "Green leaves",
+                    "eyebrow": "Food",
+                    "title": "A garden that feeds forty families",
+                    "link": "#"
+                  },
+                  {
+                    "iconImage": "FlowToolKit__Background_Mountain_Meadow_Sunset",
+                    "imageAlt": "A mountain meadow",
+                    "eyebrow": "Elders",
+                    "title": "Rides to the clinic, every week of the year",
+                    "link": "#"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s06-results",
+        "job": "Where the money went",
+        "designCard": "Carousel 05"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "cards",
+                "background": "$mist",
+                "brandColor": "$brand",
+                "arrangement": "split",
+                "sectionLabel": "Questions",
+                "heading": "Questions we get every cycle.",
+                "subheading": "Still unsure? Bring a draft or just a question to office hours.",
+                "headingAlign": "left",
+                "bodyAlign": "left",
+                "columns": "2",
+                "cardStyle": "outlined",
+                "hoverStyle": "lift",
+                "verticalAlign": "start",
+                "footnote": "Program staff answer every question within two working days.",
+                "footnoteAlign": "center",
+                "items": [
+                  {
+                    "title": "We were declined before. Can we apply?",
+                    "description": "Yes. Past decisions do not carry forward.",
+                    "iconType": "icon",
+                    "icon": "utility:refresh"
+                  },
+                  {
+                    "title": "Do current grantees reapply?",
+                    "description": "Not during an active term; year two pays out after the annual conversation.",
+                    "iconType": "icon",
+                    "icon": "utility:date_time"
+                  },
+                  {
+                    "title": "Can a fiscal sponsor apply for us?",
+                    "description": "Yes, with a signed sponsorship agreement.",
+                    "iconType": "icon",
+                    "icon": "utility:people"
+                  },
+                  {
+                    "title": "Who can we talk to first?",
+                    "description": "Program staff hold office hours every Tuesday through September.",
+                    "iconType": "icon",
+                    "icon": "utility:chat"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s07-faq",
+        "job": "Questions we get every cycle",
+        "designCard": "Cards 15"
+      }
+    },
+    {
+      "attributes": {
+        "contentAreaWidth": 100,
+        "sectionHeight": 32
+      },
+      "columns": [
+        {
+          "width": "12",
+          "items": [
+            {
+              "kind": "block",
+              "props": {
+                "sectionType": "hero",
+                "heroLayout": "band",
+                "background": "$navy",
+                "backgroundGradient": "diagonal",
+                "brandColor": "$brand",
+                "shineSweep": true,
+                "heading": "Ready when you are.",
+                "subheading": "Start an application today. It saves as you go, so you can finish any time before September 30.",
+                "buttons": [
+                  {
+                    "label": "Start an application",
+                    "url": "/apply/community-resilience",
+                    "style": "brand"
+                  },
+                  {
+                    "label": "Check eligibility",
+                    "url": "/apply/eligibility",
+                    "style": "outline"
+                  }
+                ],
+                "headingAlign": "left"
+              }
+            }
+          ]
+        }
+      ],
+      "_design": {
+        "id": "s08-close",
+        "job": "Closing ask",
+        "designCard": "Hero 27"
+      }
+    }
+  ]
+}

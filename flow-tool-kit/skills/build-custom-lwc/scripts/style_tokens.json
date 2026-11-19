@@ -1,0 +1,1109 @@
+{
+ "about": "Every Form Style setting Flow Tool Kit sets as a CSS custom property on a Form Template, read from the package's style runtime (release 5.3). These are the only --ftk- names a custom component may read. Values exist only where an admin set them (org Form Style defaults, the template's Style Overrides) or a theme sets them (Brand), so every use needs a fallback.",
+ "theme_variables": {
+  "--borderColor": "Border color of the template's theme, or of the section's own theme inside a themed section.",
+  "--labelColor": "Label color of a section theme, inside that section only."
+ },
+ "private_prefix": "--_ftk-",
+ "tokens": [
+  {
+   "name": "--ftk-spacing-scale",
+   "label": "Field spacing",
+   "category": "Form fields",
+   "kind": "scale",
+   "description": "Scales only the vertical gaps between field rows."
+  },
+  {
+   "name": "--ftk-control-scale",
+   "label": "Input size",
+   "category": "Form fields",
+   "kind": "scale",
+   "description": "Scales inputs, their text, inner padding and icons, choice controls, and buttons together."
+  },
+  {
+   "name": "--ftk-radius-scale",
+   "label": "Corner scale",
+   "category": "Form fields",
+   "kind": "scale",
+   "description": "Scales the rounding of input, button, choice, and card corners."
+  },
+  {
+   "name": "--ftk-font-scale",
+   "label": "Text size",
+   "category": "Text",
+   "kind": "scale",
+   "description": "Scales field labels, help text, headings, stage text, and unformatted rich text. Input text follows Input size."
+  },
+  {
+   "name": "--ftk-font-weight-label",
+   "label": "Label weight",
+   "category": "Form fields",
+   "kind": "font-weight",
+   "description": "Controls how light or bold field labels appear."
+  },
+  {
+   "name": "--ftk-border-scale",
+   "label": "Border thickness",
+   "category": "Form fields",
+   "kind": "scale",
+   "description": "Scales input, textarea, choice, button, and section border thickness."
+  },
+  {
+   "name": "--ftk-section-padding-inline",
+   "label": "Horizontal padding",
+   "category": "Form layout",
+   "kind": "length",
+   "description": "Sets left and right padding inside form sections."
+  },
+  {
+   "name": "--ftk-section-padding-block",
+   "label": "Vertical padding",
+   "category": "Form layout",
+   "kind": "length",
+   "description": "Sets top and bottom padding inside form sections."
+  },
+  {
+   "name": "--ftk-layout-spacing-scale",
+   "label": "Section padding",
+   "category": "Form layout",
+   "kind": "scale",
+   "description": "Scales padding around form sections without changing field gaps or input padding."
+  },
+  {
+   "name": "--ftk-color-primary",
+   "label": "Brand",
+   "category": "Color",
+   "kind": "color",
+   "description": "Primary actions and selected controls; inherits host brand unless explicitly overridden"
+  },
+  {
+   "name": "--ftk-color-option",
+   "label": "Choice text",
+   "category": "Color",
+   "kind": "color",
+   "description": "Text in radio choices, checkboxes, pills, and dropdown options. Selected brand buttons use Brand text."
+  },
+  {
+   "name": "--ftk-color-label",
+   "label": "Field labels",
+   "category": "Color",
+   "kind": "color",
+   "description": "Text above or beside each field, independent of Input text and Choice text."
+  },
+  {
+   "name": "--ftk-color-primary-hover",
+   "label": "Color Primary Hover",
+   "category": "State",
+   "kind": "color",
+   "description": "Primary hover shade; follows primary unless overridden; optional override"
+  },
+  {
+   "name": "--ftk-color-primary-active",
+   "label": "Selected state",
+   "category": "State",
+   "kind": "color",
+   "description": "Primary pressed shade; follows primary unless overridden; optional override"
+  },
+  {
+   "name": "--ftk-color-text",
+   "label": "Input text",
+   "category": "Color",
+   "kind": "color",
+   "description": "Text entered in inputs and textareas. Field labels, choices, and form content keep their own colors."
+  },
+  {
+   "name": "--ftk-color-background",
+   "label": "Form background",
+   "category": "Surfaces",
+   "kind": "color",
+   "description": "Background behind the entire form template. Transparent lets the page background show through."
+  },
+  {
+   "name": "--ftk-font-family",
+   "label": "Font",
+   "category": "Text",
+   "kind": "font-family",
+   "description": "Font for the whole form."
+  },
+  {
+   "name": "--ftk-font-size",
+   "label": "Body and input text size",
+   "category": "Typography",
+   "kind": "font-size",
+   "description": "Sets inherited body and input text size. Native controls may grow to fit larger text. Labels and headings have separate controls."
+  },
+  {
+   "name": "--ftk-line-height",
+   "label": "Text line spacing",
+   "category": "Typography",
+   "kind": "number or length",
+   "description": "Line spacing for body text, rich text and multiline inputs. Headings retain independent spacing."
+  },
+  {
+   "name": "--ftk-focus-ring",
+   "label": "Focus Ring",
+   "category": "State",
+   "kind": "box-shadow",
+   "description": "Visible keyboard focus; optional override"
+  },
+  {
+   "name": "--ftk-color-on-primary",
+   "label": "Brand text",
+   "category": "Color",
+   "kind": "color",
+   "description": "Foreground on selected/primary surfaces"
+  },
+  {
+   "name": "--ftk-color-danger",
+   "label": "Color Danger",
+   "category": "State",
+   "kind": "color",
+   "description": "Color of field errors: the error border, icon and message, the required mark, and the attestation error tint."
+  },
+  {
+   "name": "--ftk-font-size-label",
+   "label": "Field label text size",
+   "category": "Labels and help",
+   "kind": "font-size",
+   "description": "Default label size"
+  },
+  {
+   "name": "--ftk-font-size-heading",
+   "label": "Font Size Heading",
+   "category": "Headers",
+   "kind": "font-size",
+   "description": "Section title size"
+  },
+  {
+   "name": "--ftk-font-weight-heading",
+   "label": "Font Weight Heading",
+   "category": "Headers",
+   "kind": "font-weight",
+   "description": "Section title weight"
+  },
+  {
+   "name": "--ftk-label-gap",
+   "label": "Label-to-control gap",
+   "category": "Labels and help",
+   "kind": "length",
+   "description": "Gap below default field labels"
+  },
+  {
+   "name": "--ftk-field-gap",
+   "label": "Additional field gap",
+   "category": "Spacing",
+   "kind": "length",
+   "description": "Additional field separation"
+  },
+  {
+   "name": "--ftk-heading-background",
+   "label": "Heading Background",
+   "category": "Headers",
+   "kind": "color",
+   "description": "Default header surface"
+  },
+  {
+   "name": "--ftk-heading-border-color",
+   "label": "Heading Border Color",
+   "category": "Headers",
+   "kind": "color",
+   "description": "Default header rule color"
+  },
+  {
+   "name": "--ftk-heading-border-width",
+   "label": "Heading Border Width",
+   "category": "Headers",
+   "kind": "border-width",
+   "description": "Default header rule thickness"
+  },
+  {
+   "name": "--ftk-container-border-width",
+   "label": "Container Border Width",
+   "category": "Shape",
+   "kind": "border-width",
+   "description": "Decorative template framing independent of essential field boundaries"
+  },
+  {
+   "name": "--ftk-font-family-heading",
+   "label": "Font Family Heading",
+   "category": "Headers",
+   "kind": "font-family",
+   "description": "Section-heading typeface independent of body copy"
+  },
+  {
+   "name": "--ftk-heading-letter-spacing",
+   "label": "Heading Letter Spacing",
+   "category": "Headers",
+   "kind": "letter-spacing",
+   "description": "Section-heading tracking"
+  },
+  {
+   "name": "--ftk-heading-text-transform",
+   "label": "Heading Text Transform",
+   "category": "Headers",
+   "kind": "text-transform",
+   "description": "Section-heading case treatment without changing authored text"
+  },
+  {
+   "name": "--ftk-color-footer",
+   "label": "Color Footer",
+   "category": "Color",
+   "kind": "color",
+   "description": "Docked action bar surface"
+  },
+  {
+   "name": "--ftk-color-footer-border",
+   "label": "Color Footer Border",
+   "category": "Color",
+   "kind": "color",
+   "description": "Docked action bar top boundary"
+  },
+  {
+   "name": "--ftk-plain-section-padding-top",
+   "label": "Plain section padding - top",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Plain section padding - top for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-boxed-section-padding-top",
+   "label": "Boxed section padding - top",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Boxed section padding - top for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-plain-section-padding-right",
+   "label": "Plain section padding - right",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Plain section padding - right for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-boxed-section-padding-right",
+   "label": "Boxed section padding - right",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Boxed section padding - right for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-plain-section-padding-bottom",
+   "label": "Plain section padding - bottom",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Plain section padding - bottom for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-boxed-section-padding-bottom",
+   "label": "Boxed section padding - bottom",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Boxed section padding - bottom for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-plain-section-padding-left",
+   "label": "Plain section padding - left",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Plain section padding - left for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-boxed-section-padding-left",
+   "label": "Boxed section padding - left",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Boxed section padding - left for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-section-header-gap",
+   "label": "Gap below section header",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Gap below section header for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-section-radius",
+   "label": "Section corners",
+   "category": "Sections",
+   "kind": "length",
+   "description": "Section corners for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-section-border-width",
+   "label": "Section border width",
+   "category": "Sections",
+   "kind": "border-width",
+   "description": "Section border width for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-section-border-color",
+   "label": "Section border color",
+   "category": "Sections",
+   "kind": "color",
+   "description": "Section border color for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-section-shadow",
+   "label": "Section shadow",
+   "category": "Sections",
+   "kind": "box-shadow",
+   "description": "Section shadow for sections. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-header-shadow",
+   "label": "Header shadow",
+   "category": "Headers",
+   "kind": "box-shadow",
+   "description": "Header shadow for headers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-heading-line-height",
+   "label": "Heading line spacing",
+   "category": "Headers",
+   "kind": "number or length",
+   "description": "Heading line spacing for headers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-header-radius",
+   "label": "Header corners",
+   "category": "Headers",
+   "kind": "length",
+   "description": "Header corners for headers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-header-padding-block",
+   "label": "Header vertical padding",
+   "category": "Headers",
+   "kind": "length",
+   "description": "Header vertical padding for headers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-header-padding-left",
+   "label": "Header left padding",
+   "category": "Headers",
+   "kind": "length",
+   "description": "Header left padding for headers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-header-padding-right",
+   "label": "Header right padding",
+   "category": "Headers",
+   "kind": "length",
+   "description": "Header right padding for headers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-header-title-color",
+   "label": "Header title color",
+   "category": "Headers",
+   "kind": "color",
+   "description": "Title color for section headers. A Form Theme's heading color takes priority, except the packaged Form Default theme."
+  },
+  {
+   "name": "--ftk-header-subtitle-color",
+   "label": "Header subtitle color",
+   "category": "Headers",
+   "kind": "color",
+   "description": "Header subtitle color for headers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-form-card-radius",
+   "label": "Form card corners",
+   "category": "Form card",
+   "kind": "length",
+   "description": "Form card corners for form card. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-form-card-shadow-hover",
+   "label": "Form card hover shadow",
+   "category": "Form card",
+   "kind": "box-shadow",
+   "description": "Form card hover shadow for form card. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-form-card-shadow",
+   "label": "Form card shadow",
+   "category": "Form card",
+   "kind": "box-shadow",
+   "description": "Form card shadow for form card. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-form-card-surface",
+   "label": "Form card background",
+   "category": "Form card",
+   "kind": "color",
+   "description": "Form card background for form card. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-form-card-border-color",
+   "label": "Form card border color",
+   "category": "Form card",
+   "kind": "color",
+   "description": "Form card border color for form card. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-help-font-size",
+   "label": "Help text size",
+   "category": "Labels and help",
+   "kind": "font-size",
+   "description": "Help text size for labels and help. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-help-color",
+   "label": "Help text color",
+   "category": "Labels and help",
+   "kind": "color",
+   "description": "Help text color for labels and help. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-read-only-radius",
+   "label": "Read-only text corners",
+   "category": "Text fields",
+   "kind": "length",
+   "description": "Corners of a read-only text input and of the read-only long-text box. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-read-only-border-width",
+   "label": "Read-only long-text border width",
+   "category": "Text fields",
+   "kind": "border-width",
+   "description": "Border width of the read-only long-text box (a read-only long text with a maximum height). A read-only input keeps the platform's disabled border. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-read-only-border-color",
+   "label": "Read-only long-text border color",
+   "category": "Text fields",
+   "kind": "color",
+   "description": "Border color of the read-only long-text box (a read-only long text with a maximum height). A read-only input keeps the platform's disabled border. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-survey-height",
+   "label": "Survey choice minimum height",
+   "category": "Survey choices",
+   "kind": "length",
+   "description": "Survey choice minimum height for survey choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-survey-radius",
+   "label": "Survey choice corners",
+   "category": "Survey choices",
+   "kind": "length",
+   "description": "Survey choice corners for survey choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-survey-border-width",
+   "label": "Survey choice border width",
+   "category": "Survey choices",
+   "kind": "border-width",
+   "description": "Survey choice border width for survey choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-survey-border-color",
+   "label": "Survey choice border color",
+   "category": "Survey choices",
+   "kind": "color",
+   "description": "Survey choice border color for survey choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-survey-surface",
+   "label": "Survey choice background",
+   "category": "Survey choices",
+   "kind": "color",
+   "description": "Survey choice background for survey choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-survey-padding-inline",
+   "label": "Survey horizontal padding",
+   "category": "Survey choices",
+   "kind": "length",
+   "description": "Survey horizontal padding for survey choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-survey-padding-block",
+   "label": "Survey vertical padding",
+   "category": "Survey choices",
+   "kind": "length",
+   "description": "Survey vertical padding for survey choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-joined-choice-padding-inline",
+   "label": "Joined-choice horizontal padding",
+   "category": "Joined choices",
+   "kind": "length",
+   "description": "Joined-choice horizontal padding for joined choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-joined-choice-radius",
+   "label": "Joined-choice corners",
+   "category": "Joined choices",
+   "kind": "length",
+   "description": "Joined-choice corners for joined choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-separated-choice-height",
+   "label": "Separated-choice minimum height",
+   "category": "Separated choices",
+   "kind": "length",
+   "description": "Separated-choice minimum height for separated choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-separated-choice-radius",
+   "label": "Separated-choice corners",
+   "category": "Separated choices",
+   "kind": "length",
+   "description": "Separated-choice corners for separated choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-separated-choice-line-height",
+   "label": "Separated-choice line spacing",
+   "category": "Separated choices",
+   "kind": "number or length",
+   "description": "Separated-choice line spacing for separated choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-separated-choice-padding-inline",
+   "label": "Separated-choice horizontal padding",
+   "category": "Separated choices",
+   "kind": "length",
+   "description": "Separated-choice horizontal padding for separated choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-separated-choice-padding-block",
+   "label": "Separated-choice vertical padding",
+   "category": "Separated choices",
+   "kind": "length",
+   "description": "Separated-choice vertical padding for separated choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-visual-choice-radius",
+   "label": "Visual-choice corners",
+   "category": "Visual choices",
+   "kind": "length",
+   "description": "Visual-choice corners for visual choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-visual-choice-border-width",
+   "label": "Visual-choice border width",
+   "category": "Visual choices",
+   "kind": "border-width",
+   "description": "Visual-choice border width for visual choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-visual-choice-border-color",
+   "label": "Visual-choice border color",
+   "category": "Visual choices",
+   "kind": "color",
+   "description": "Visual-choice border color for visual choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-visual-choice-surface",
+   "label": "Visual-choice background",
+   "category": "Visual choices",
+   "kind": "color",
+   "description": "Visual-choice background for visual choices. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-radius",
+   "label": "Matrix frame corners",
+   "category": "Matrix",
+   "kind": "length",
+   "description": "Matrix frame corners for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-card-radius",
+   "label": "Matrix card corners",
+   "category": "Matrix",
+   "kind": "length",
+   "description": "Matrix card corners for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-secondary-font-size",
+   "label": "Matrix secondary text size",
+   "category": "Matrix",
+   "kind": "font-size",
+   "description": "Matrix secondary text size for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-secondary-color",
+   "label": "Matrix secondary text color",
+   "category": "Matrix",
+   "kind": "color",
+   "description": "Matrix secondary text color for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-choice-border-width",
+   "label": "Matrix choice border width",
+   "category": "Matrix",
+   "kind": "border-width",
+   "description": "Matrix choice border width for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-choice-surface",
+   "label": "Matrix choice background",
+   "category": "Matrix",
+   "kind": "color",
+   "description": "Matrix choice background for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-shade",
+   "label": "Matrix shaded background",
+   "category": "Matrix",
+   "kind": "color",
+   "description": "Matrix shaded background for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-border-color",
+   "label": "Matrix frame border color",
+   "category": "Matrix",
+   "kind": "color",
+   "description": "Matrix frame border color for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-divider-color",
+   "label": "Matrix divider color",
+   "category": "Matrix",
+   "kind": "color",
+   "description": "Matrix divider color for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-matrix-choice-border-color",
+   "label": "Matrix choice border color",
+   "category": "Matrix",
+   "kind": "color",
+   "description": "Matrix choice border color for matrix. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-attestation-radius",
+   "label": "Attestation corners",
+   "category": "Checkboxes",
+   "kind": "length",
+   "description": "Attestation corners for checkboxes. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-attestation-surface",
+   "label": "Attestation background",
+   "category": "Checkboxes",
+   "kind": "color",
+   "description": "Attestation background for checkboxes. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-attestation-target-size",
+   "label": "Attestation target size (platform limited)",
+   "category": "Checkboxes",
+   "kind": "length",
+   "description": "Attestation target size for checkboxes. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-calendar-day-size",
+   "label": "Calendar day size",
+   "category": "Calendar",
+   "kind": "length",
+   "description": "Calendar day size for calendar. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-calendar-font-size",
+   "label": "Calendar text size",
+   "category": "Calendar",
+   "kind": "font-size",
+   "description": "Calendar text size for calendar. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-calendar-border-width",
+   "label": "Calendar border width",
+   "category": "Calendar",
+   "kind": "border-width",
+   "description": "Calendar border width for calendar. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-calendar-border-color",
+   "label": "Calendar border color",
+   "category": "Calendar",
+   "kind": "color",
+   "description": "Calendar border color for calendar. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-modal-surface",
+   "label": "Modal background",
+   "category": "Modals",
+   "kind": "color",
+   "description": "Modal background for modals. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-table-shadow",
+   "label": "Table shadow",
+   "category": "Tables",
+   "kind": "box-shadow",
+   "description": "Table shadow for tables. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-table-shade",
+   "label": "Table shaded background",
+   "category": "Tables",
+   "kind": "color",
+   "description": "Table shaded background for tables. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-table-surface",
+   "label": "Table background",
+   "category": "Tables",
+   "kind": "color",
+   "description": "Table background for tables. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-divider-subtitle-color",
+   "label": "Divider subtitle color",
+   "category": "Dividers",
+   "kind": "color",
+   "description": "Divider subtitle color for dividers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-divider-rule-color",
+   "label": "Divider rule color",
+   "category": "Dividers",
+   "kind": "color",
+   "description": "Divider rule color for dividers. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-richtext-radius",
+   "label": "Rich-text editor corners",
+   "category": "Text fields",
+   "kind": "length",
+   "description": "Rich-text editor corners for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-button-radius",
+   "label": "Button corners",
+   "category": "Buttons",
+   "kind": "length",
+   "description": "Button corners for buttons. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-input-radius",
+   "label": "Input corners",
+   "category": "Text fields",
+   "kind": "length",
+   "description": "Input corners for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-textarea-radius",
+   "label": "Textarea corners",
+   "category": "Text fields",
+   "kind": "length",
+   "description": "Textarea corners for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-checkbox-radius",
+   "label": "Checkbox corners",
+   "category": "Checkboxes",
+   "kind": "length",
+   "description": "Checkbox corners for checkboxes. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-input-border-color",
+   "label": "Input border color",
+   "category": "Text fields",
+   "kind": "color",
+   "description": "Input border color for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-textarea-border-color",
+   "label": "Textarea border color",
+   "category": "Text fields",
+   "kind": "color",
+   "description": "Textarea border color for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-checkbox-border-color",
+   "label": "Checkbox border color",
+   "category": "Checkboxes",
+   "kind": "color",
+   "description": "Checkbox border color for checkboxes. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-checkbox-surface",
+   "label": "Checkbox background",
+   "category": "Checkboxes",
+   "kind": "color",
+   "description": "Unchecked checkbox fill. Follows Input background; a specific override takes priority."
+  },
+  {
+   "name": "--ftk-input-surface",
+   "label": "Input background",
+   "category": "Text fields",
+   "kind": "color",
+   "description": "Input background for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-textarea-surface",
+   "label": "Textarea background",
+   "category": "Text fields",
+   "kind": "color",
+   "description": "Textarea background for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-input-padding-inline",
+   "label": "Input horizontal padding",
+   "category": "Text fields",
+   "kind": "length",
+   "description": "Input horizontal padding for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-textarea-padding-inline",
+   "label": "Textarea horizontal padding",
+   "category": "Text fields",
+   "kind": "length",
+   "description": "Textarea horizontal padding for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-textarea-padding-block",
+   "label": "Textarea vertical padding",
+   "category": "Text fields",
+   "kind": "length",
+   "description": "Textarea vertical padding for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-input-height",
+   "label": "Input height",
+   "category": "Text fields",
+   "kind": "length",
+   "description": "Input height for text fields. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-button-font-size",
+   "label": "Button text size",
+   "category": "Buttons",
+   "kind": "font-size",
+   "description": "Text size for action buttons, independent of their height and other form text."
+  },
+  {
+   "name": "--ftk-button-height",
+   "label": "Button height",
+   "category": "Buttons",
+   "kind": "length",
+   "description": "Button height for buttons. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-icon-button-size",
+   "label": "Icon button size (platform limited)",
+   "category": "Buttons",
+   "kind": "length",
+   "description": "Icon button size for buttons. Specific overrides take priority over shared controls."
+  },
+  {
+   "name": "--ftk-color-text-muted",
+   "label": "Color Text Muted",
+   "category": "Shared overrides",
+   "kind": "color",
+   "description": "Secondary help foreground"
+  },
+  {
+   "name": "--ftk-color-surface",
+   "label": "Card background",
+   "category": "Shared overrides",
+   "kind": "color",
+   "description": "Background of cards, choice tiles, and panels. Input field background can be changed separately."
+  },
+  {
+   "name": "--ftk-color-border",
+   "label": "Borders",
+   "category": "Shared overrides",
+   "kind": "color",
+   "description": "Essential field boundaries"
+  },
+  {
+   "name": "--ftk-color-border-muted",
+   "label": "Color Border Muted",
+   "category": "Shared overrides",
+   "kind": "color",
+   "description": "Decorative container boundaries"
+  },
+  {
+   "name": "--ftk-font-size-small",
+   "label": "Font Size Small",
+   "category": "Shared overrides",
+   "kind": "font-size",
+   "description": "Help text size"
+  },
+  {
+   "name": "--ftk-radius-medium",
+   "label": "Corner radius",
+   "category": "Form fields",
+   "kind": "length or percentage",
+   "description": "One corner radius for inputs, buttons, choices, and containers."
+  },
+  {
+   "name": "--ftk-border-width",
+   "label": "Border Width",
+   "category": "Shared overrides",
+   "kind": "border-width",
+   "description": "Boundary thickness"
+  },
+  {
+   "name": "--ftk-input-padding-x",
+   "label": "Input Padding X",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "Horizontal control padding"
+  },
+  {
+   "name": "--ftk-input-padding-y",
+   "label": "Input Padding Y",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "Vertical control padding"
+  },
+  {
+   "name": "--ftk-control-height",
+   "label": "Control height",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "Control minimum target height"
+  },
+  {
+   "name": "--ftk-shadow-medium",
+   "label": "Shadow Medium",
+   "category": "Shared overrides",
+   "kind": "box-shadow",
+   "description": "Container elevation"
+  },
+  {
+   "name": "--ftk-color-surface-muted",
+   "label": "Color Surface Muted",
+   "category": "Shared overrides",
+   "kind": "color",
+   "description": "Subtle secondary surfaces"
+  },
+  {
+   "name": "--ftk-radius-small",
+   "label": "Radius Small",
+   "category": "Shared overrides",
+   "kind": "length or percentage",
+   "description": "Compact control corners"
+  },
+  {
+   "name": "--ftk-section-padding",
+   "label": "Shared section padding fallback",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "One CSS length shared by boxed section sides/bottom and standard headers. Use the separate section-content edge controls for independent spacing."
+  },
+  {
+   "name": "--ftk-section-padding-top",
+   "label": "Section content padding - top",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "Controls only the top inset of plain and boxed section content. Header padding and special address/image layouts remain separate."
+  },
+  {
+   "name": "--ftk-section-padding-right",
+   "label": "Section content padding - right",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "Controls only the right inset of plain and boxed section content. Header padding and special address/image layouts remain separate."
+  },
+  {
+   "name": "--ftk-section-padding-bottom",
+   "label": "Section content padding - bottom",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "Controls only the bottom inset of plain and boxed section content. Header padding and special address/image layouts remain separate."
+  },
+  {
+   "name": "--ftk-section-padding-left",
+   "label": "Section content padding - left",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "Controls only the left inset of plain and boxed section content. Header padding and special address/image layouts remain separate."
+  },
+  {
+   "name": "--ftk-radius-large",
+   "label": "Radius Large",
+   "category": "Shared overrides",
+   "kind": "length",
+   "description": "Template card corners; separate scale for large surfaces"
+  },
+  {
+   "name": "--ftk-color-control-surface",
+   "label": "Input background",
+   "category": "Shared overrides",
+   "kind": "color",
+   "description": "Fill inside inputs, textareas, dropdowns, survey choices, visual pickers, and attestation cards."
+  },
+  {
+   "name": "--ftk-input-placeholder-color",
+   "label": "Placeholder text color",
+   "category": "Text fields",
+   "kind": "color",
+   "description": "Placeholder text in empty inputs and text areas. Follows an authored input text color unless overridden."
+  },
+  {
+   "name": "--ftk-hero-title-size",
+   "label": "Title size",
+   "category": "Stacked headers",
+   "kind": "font-size",
+   "description": "Title size for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-hero-eyebrow-size",
+   "label": "Eyebrow size",
+   "category": "Stacked headers",
+   "kind": "font-size",
+   "description": "Eyebrow size for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-hero-kicker-size",
+   "label": "Pretitle size",
+   "category": "Stacked headers",
+   "kind": "font-size",
+   "description": "Pretitle size for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-hero-lead-size",
+   "label": "Body size",
+   "category": "Stacked headers",
+   "kind": "font-size",
+   "description": "Body size for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-hero-footer-size",
+   "label": "Footer size",
+   "category": "Stacked headers",
+   "kind": "font-size",
+   "description": "Footer size for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-hero-tag-size",
+   "label": "Tag text size",
+   "category": "Stacked headers",
+   "kind": "font-size",
+   "description": "Tag text size for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-hero-line-gap",
+   "label": "Space between lines",
+   "category": "Stacked headers",
+   "kind": "length",
+   "description": "Space between lines for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-hero-lead-gap",
+   "label": "Title to body gap",
+   "category": "Stacked headers",
+   "kind": "length",
+   "description": "Title to body gap for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-hero-max-width",
+   "label": "Maximum text width",
+   "category": "Stacked headers",
+   "kind": "length",
+   "description": "Maximum text width for the Stacked header style. Shared text and layout scales apply until a specific value is set."
+  },
+  {
+   "name": "--ftk-section-surface",
+   "label": "Frame background",
+   "category": "Section surfaces",
+   "kind": "color",
+   "description": "Default fill of Box, Shadow, Card and Title on border frames. An explicit Classic Theme section background takes priority."
+  }
+ ]
+}

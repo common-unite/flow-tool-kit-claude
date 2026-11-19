@@ -1,0 +1,20 @@
+{
+  "name": "flow-tool-kit",
+  "displayName": "Flow Tool Kit",
+  "version": "2.0.0",
+  "description": "Turn any form you already have into a working Salesforce form, and build interfaces, Experience Cloud sites and advanced Flow screens with Flow Tool Kit.",
+  "author": {
+    "name": "Common-Unite"
+  },
+  "homepage": "https://github.com/common-unite/flow-tool-kit-claude",
+  "repository": "https://github.com/common-unite/flow-tool-kit-claude",
+  "keywords": ["salesforce", "forms", "flow", "experience-cloud", "form-builder"],
+  "userConfig": {
+    "formassembly_access_token": {
+      "type": "string",
+      "title": "FormAssembly access token",
+      "description": "Optional. Only for reading forms from your own FormAssembly account through its API (form-migrate and formassembly-capture). Sent only to FormAssembly. Leave blank to work from exports or a public form link.",
+      "sensitive": true
+    }
+  }
+}

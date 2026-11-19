@@ -1,0 +1,49 @@
+{
+  "v": 3,
+  "assetGroups": {},
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-21T01:09:12Z",
+    "v": 1
+  },
+  "docs": {
+    "sections": []
+  },
+  "groups": [],
+  "lastChange": {
+    "by": "Flow Tool Kit",
+    "at": "2026-11-18T00:00:00Z",
+    "via": "flow-tool-kit plugin",
+    "note": "Shipped copy, installed by ftk-start"
+  },
+  "layout": "files",
+  "libraries": [
+    {
+      "file": "components/lib/react.production.min.js",
+      "global": "React",
+      "name": "react",
+      "version": "18.3.1"
+    },
+    {
+      "file": "components/lib/react-dom.production.min.js",
+      "global": "ReactDOM",
+      "name": "react-dom",
+      "version": "18.3.1"
+    },
+    {
+      "name": "slds-icons",
+      "version": "2.30.7",
+      "global": "SLDSIcons",
+      "file": "components/lib/slds-icons-2.30.7.js"
+    },
+    {
+      "name": "ftk-illustrations",
+      "version": "1.0.0",
+      "global": "FTKIllustrations",
+      "file": "components/lib/ftk-illustrations.js"
+    }
+  ],
+  "namespace": "FTK",
+  "sections": {},
+  "title": "FlowToolKit Forms"
+}

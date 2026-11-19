@@ -1,0 +1,91 @@
+{
+  "slug": "riverside-sample",
+  "title": "Riverside Community Fund",
+  "canvasTitle": "Riverside Community Fund site review",
+  "siteType": "lwr",
+  "edition": "paid",
+  "audiences": [
+    "guest"
+  ],
+  "pages": [
+    {
+      "urlName": "funding",
+      "title": "Funding",
+      "route": "/funding",
+      "recordObject": null,
+      "audience": [
+        "guest"
+      ]
+    },
+    {
+      "urlName": "fund",
+      "title": "Fund page",
+      "route": "/funding/:recordId",
+      "recordObject": "Funding_Opportunity__c",
+      "audience": [
+        "guest"
+      ]
+    }
+  ],
+  "palette": {
+    "brand": "#2e844a",
+    "accent": "#F4BE45",
+    "navy": "#032D60",
+    "mist": "#EEF1F4"
+  },
+  "brand": {
+    "logo": "FlowToolKit__FlowToolKit_Gray",
+    "theme": {
+      "brand": "#2e844a",
+      "accent": "#F4BE45"
+    },
+    "colors": [
+      {
+        "name": "Brand",
+        "hex": "#2e844a",
+        "role": "buttons, links, accents"
+      },
+      {
+        "name": "Accent",
+        "hex": "#F4BE45",
+        "role": "one bright highlight"
+      },
+      {
+        "name": "Navy",
+        "hex": "#032D60",
+        "role": "serious bands"
+      },
+      {
+        "name": "Mist",
+        "hex": "#EEF1F4",
+        "role": "quiet bands"
+      }
+    ],
+    "fonts": {
+      "heading": "DM Sans",
+      "body": "DM Sans",
+      "heading_css": "'DM Sans', sans-serif",
+      "body_css": "'DM Sans', sans-serif",
+      "href": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap"
+    },
+    "buttonRadius": "4px",
+    "tone": "Plain, warm and direct. We talk to applicants as partners who know their work, never as supplicants, and we say what we fund and what we do not in the first screen.",
+    "copy": [
+      "Riverside Community Fund makes unrestricted grants to the groups that keep the valley running.",
+      "[CONFIRM: office hours and contact address]"
+    ]
+  },
+  "page": {
+    "layout": "customerService",
+    "logo": "FlowToolKit__FlowToolKit_Gray",
+    "siteName": "Riverside Community Fund",
+    "navItems": [
+      "Home",
+      "Funding",
+      "Programs",
+      "Apply",
+      "Contact"
+    ],
+    "footer": "<p style=\"text-align: center;\">Riverside Community Fund · 418 Mill Race Road · grants@riverside.example.org</p>"
+  }
+}
